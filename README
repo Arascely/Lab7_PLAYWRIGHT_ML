@@ -100,6 +100,11 @@ Se automatizó el primer flujo crítico del sistema, reemplazando los datos de e
 - Se verificó que el sistema **bloquee la acción** o muestre el mensaje de error correspondiente a la falta de stock, gestionando adecuadamente el límite de inventario disponible.
 - Dificil de corroborar, requiere iniciar sesión. Se guardo la sesión y contraseña con :".env" y aun que  me loguee hay cambios en cada inicio de sesión como verificar en 2 pasos, desbloquear capcha que hace mas complicado la prueba.
 
+
+### Pruebas de casos de uso 
+
+<img width="392" height="197" alt="test23" src="https://github.com/user-attachments/assets/991f6f26-1bf5-43a4-ab6b-f0256f68f9a8" />
+
 ## Casos de uso del TC-008 al TC-014
 
 https://github.com/Luis159-ui/Tarea-guia7
