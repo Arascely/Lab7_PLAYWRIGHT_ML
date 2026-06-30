@@ -184,16 +184,16 @@ async function loginMercadoLibre(page) {
   test('TC-007: Límite superior de stock', async ({ page }) => {
   test.setTimeout(180000);
   
-  console.log('🚀 Iniciando prueba de stock...');
+  console.log('Iniciando prueba de stock...');
   
-  // PASO 1: Intentar login automático
+  // Intentar login automático
   await page.goto('https://www.mercadolibre.com.pe/');
   
   // Verificar si ya está logueado
   const isLoggedIn = await page.locator('.nav-header-user').isVisible().catch(() => false);
   
   if (!isLoggedIn) {
-    console.log('⚠️ No estás logueado. Intentando login automático...');
+    console.log('No estás logueado. Intentando login automático...');
     
     try {
       // Intentar login automático
@@ -217,51 +217,51 @@ async function loginMercadoLibre(page) {
       const hasCaptcha = await page.locator('iframe[src*="captcha"]').isVisible().catch(() => false);
       
       if (hasCaptcha) {
-        console.log('🤖 Captcha detectado!');
-        console.log('⏳ Por favor, resuelve el captcha manualmente en el navegador');
-        console.log('⏳ Esperando 60 segundos...');
+        console.log('Captcha detectado!');
+        console.log('Por favor, resuelve el captcha manualmente en el navegador');
+        console.log('Esperando 60 segundos...');
         await page.waitForTimeout(60000);
       }
       
       // Verificar login exitoso
       await expect(page.locator('.nav-header-user')).toBeVisible({ timeout: 15000 });
-      console.log('✅ Login exitoso');
+      console.log('Login exitoso');
       
     } catch (error) {
-      console.log('❌ Error en login automático');
-      console.log('🔑 Por favor, inicia sesión manualmente');
-      console.log('⏳ Esperando 60 segundos...');
+      console.log('Error en login automático');
+      console.log('Por favor, inicia sesión manualmente');
+      console.log('Esperando 60 segundos...');
       await page.waitForTimeout(60000);
     }
   } else {
-    console.log('✅ Ya estás logueado');
+    console.log('Ya estás logueado');
   }
   
-  // PASO 2: Buscar producto
-  console.log('🔍 Buscando "Mouse inalambrico"...');
+  // Buscar producto
+  console.log('Buscando "Mouse inalambrico"...');
   await page.getByRole('combobox', { name: 'Ingresa lo que quieras' }).fill('Mouse inalambrico');
   await page.keyboard.press('Enter');
   
   // Esperar resultados
   await expect(page.locator('ol.ui-search-layout')).toBeVisible({ timeout: 15000 });
-  console.log('✅ Resultados de búsqueda cargados');
+  console.log('Resultados de búsqueda cargados');
   
   // PASO 3: Entrar al primer producto
-  console.log('📦 Entrando al primer producto...');
+  console.log('Entrando al primer producto...');
   await page.locator('.poly-component__title').first().click();
   
   // Esperar que cargue la página del producto
   await page.waitForSelector('.ui-pdp-buybox', { timeout: 15000 });
-  console.log('✅ Página del producto cargada');
+  console.log('Página del producto cargada');
   
-  // PASO 4: Desplegar menú de cantidad
-  console.log('🔄 Desplegando menú de cantidad...');
+  // Desplegar menú de cantidad
+  console.log('Desplegando menú de cantidad...');
   const dropdown = page.locator('.ui-pdp-buybox__quantity__dropdown');
   await dropdown.scrollIntoViewIfNeeded();
   await dropdown.click();
   
-  // PASO 5: Seleccionar "Más de..."
-  console.log('🔢 Seleccionando "Más de..."...');
+  //  Seleccionar "Más de..."
+  console.log('Seleccionando "Más de..."...');
   try {
     await page.getByRole('option', { name: /Más de/ }).click();
   } catch {
@@ -269,29 +269,29 @@ async function loginMercadoLibre(page) {
     await page.locator('li:has-text("Más de")').click();
   }
   
-  // PASO 6: Ingresar cantidad absurda
-  console.log('✏️ Ingresando cantidad 9999...');
+  // Ingresar cantidad absurda
+  console.log('Ingresando cantidad 999...');
   const quantityInput = page.locator('input[type="number"]');
   await quantityInput.waitFor({ state: 'visible', timeout: 5000 });
   await quantityInput.click({ clickCount: 3 }); // Seleccionar todo
   await quantityInput.fill('9999');
   await page.keyboard.press('Enter');
   
-  // PASO 7: Validar error de stock
-  console.log('✅ Validando mensaje de error de stock...');
+  // Validar error de stock
+  console.log('Validando mensaje de error de stock...');
   try {
     const errorStock = page.locator('.ui-pdp-buybox__quantity__error');
     await expect(errorStock).toBeVisible({ timeout: 10000 });
     const errorText = await errorStock.textContent();
-    console.log(`✅ Mensaje de error visible: "${errorText}"`);
+    console.log(`Mensaje de error visible: "${errorText}"`);
   } catch (error) {
-    console.log('⚠️ No se encontró mensaje de error visible');
+    console.log('No se encontró mensaje de error visible');
     
     // Verificar que el botón de compra esté deshabilitado
     const buyButton = page.locator('.ui-pdp-buybox__action--primary button');
     await expect(buyButton).toBeDisabled({ timeout: 5000 });
-    console.log('✅ Botón de compra deshabilitado correctamente');
+    console.log('Botón de compra deshabilitado correctamente');
   }
   
-  console.log('✅ Prueba completada exitosamente');
+  console.log('Prueba completada exitosamente');
 });

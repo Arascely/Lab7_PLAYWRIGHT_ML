@@ -1,0 +1,2436 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: mercado-libre.spec.ts >> TC-007: Límite superior de stock
+- Location: tests\mercado-libre.spec.ts:184:7
+
+# Error details
+
+```
+Test timeout of 180000ms exceeded.
+```
+
+```
+Error: locator.scrollIntoViewIfNeeded: Test timeout of 180000ms exceeded.
+Call log:
+  - waiting for locator('.ui-pdp-buybox__quantity__dropdown')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - button "Menú de atajos" [ref=e5] [cursor=pointer]:
+          - generic [ref=e6]: Menú de atajos
+        - dialog [ref=e7]:
+          - list [ref=e8]:
+            - link [ref=e9] [cursor=pointer]:
+              - /url: "#root-app"
+              - text: Saltar el contenido
+            - link [ref=e10] [cursor=pointer]:
+              - /url: https://www.mercadolibre.com.pe/accesibilidad/feedback
+              - text: Comentar sobre accesibilidad
+          - separator [ref=e11]
+          - list [ref=e12]:
+            - link [ref=e13] [cursor=pointer]:
+              - /url: "#cb1-edit"
+              - generic [ref=e15]: /
+            - link [ref=e16] [cursor=pointer]:
+              - /url: https://myaccount.mercadolibre.com.pe/purchases/list
+              - generic [ref=e18]: P
+            - link [ref=e19] [cursor=pointer]:
+              - /url: https://www.mercadolibre.com.pe/gz/cart/v2
+              - generic [ref=e21]: C
+            - link [ref=e22] [cursor=pointer]:
+              - /url: "#description"
+              - generic [ref=e24]: D
+            - link [ref=e25] [cursor=pointer]:
+              - /url: "#questions"
+              - generic [ref=e27]: Q
+            - link [ref=e28] [cursor=pointer]:
+              - /url: "#reviews_capability_v3"
+              - generic [ref=e30]: R
+            - link [ref=e31] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e33]: Z
+        - link "Mercado Libre Perú - Donde comprar y vender de todo" [ref=e34] [cursor=pointer]:
+          - /url: //www.mercadolibre.com.pe
+      - search [ref=e36]:
+        - generic [ref=e37]: Ingresa lo que quieras encontrar
+        - combobox "Ingresa lo que quieras encontrar" [ref=e38]
+        - button "Buscar" [ref=e39] [cursor=pointer]:
+          - img "Buscar" [ref=e40]: 
+        - text: Tiendas oficiales
+      - link "Descarga gratis la app de Mercado Libre" [ref=e42] [cursor=pointer]:
+        - /url: https://www.mercadolibre.com.pe/ofertas/descarga-la-app#origin=banner-menu&me.audience=all&me.bu=3&me.bu_line=26&me.component_id=banner_menu_web_ml&me.content_id=BANNER_MENU_WEB_DESCARGAELAPP_S20&me.flow=-1&me.logic=user_journey&me.position=0
+        - img "Descarga gratis la app de Mercado Libre" [ref=e43]
+      - button " Enviar a Lima Metropolitana" [ref=e46] [cursor=pointer]:
+        - text: 
+        - generic [ref=e47]: Enviar a
+        - generic [ref=e48]: Lima Metropolitana
+      - list [ref=e51]:
+        - listitem [ref=e52]:
+          - button "Categorías" [ref=e53] [cursor=pointer]
+        - listitem [ref=e54]:
+          - link "Ofertas" [ref=e55] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/ofertas#nav-header
+        - listitem [ref=e56]:
+          - link "Cupones" [ref=e57] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/cupones#nav-header
+        - listitem [ref=e58]:
+          - link "Moda" [ref=e59] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/c/ropa-y-accesorios#nav-header
+        - listitem [ref=e60]:
+          - link "Mercado Play Gratis" [ref=e61] [cursor=pointer]:
+            - /url: https://play.mercadolibre.com.pe/?origin=navigation_menu_web#nav-header
+            - text: Mercado Play
+            - generic [ref=e62]: Gratis
+        - listitem [ref=e63]:
+          - link "Vender" [ref=e64] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/syi/core/list#nav-header
+        - listitem [ref=e65]:
+          - link "Ayuda" [ref=e66] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/ayuda#nav-header
+      - generic [ref=e67]:
+        - navigation "Menú de usuario" [ref=e68]:
+          - list [ref=e69]:
+            - listitem [ref=e70]:
+              - button "Grissel, menú" [ref=e73] [cursor=pointer]:
+                - generic [ref=e74]:
+                  - generic [ref=e77]: GR
+                  - generic [ref=e78]: Grissel
+            - listitem [ref=e80]:
+              - link "Mis compras" [ref=e81] [cursor=pointer]:
+                - /url: https://myaccount.mercadolibre.com.pe/purchases/list#nav-header
+              - button "Favoritos" [ref=e82] [cursor=pointer]:
+                - generic [ref=e83]: Favoritos
+              - button "Notificaciones" [ref=e84] [cursor=pointer]:
+                - generic [ref=e85]: 
+            - listitem
+        - link "2 productos en tu carrito" [ref=e86] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/gz/cart/v2
+          - generic [ref=e87]: 
+          - generic [ref=e88]: 2 productos en tu carrito
+          - generic [ref=e89]: "2"
+  - main [ref=e90]:
+    - generic [ref=e91]:
+      - generic [ref=e92]:
+        - list [ref=e96]:
+          - listitem [ref=e97]: "También puede interesarte :"
+          - listitem [ref=e98]:
+            - link "mouse" [ref=e99] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouse#topkeyword
+          - listitem [ref=e100]:
+            - text: "-"
+            - link "mouses" [ref=e101] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouses#topkeyword
+          - listitem [ref=e102]:
+            - text: "-"
+            - link "teclado inalambrico recargable" [ref=e103] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/teclado-inalambrico-recargable#topkeyword
+          - listitem [ref=e104]:
+            - text: "-"
+            - link "mouse bluetooth" [ref=e105] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouse-bluetooth#topkeyword
+          - listitem [ref=e106]:
+            - text: "-"
+            - link "xp pen deco pro sw bluetooth" [ref=e107] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/xp-pen-deco-pro-sw-bluetooth#topkeyword
+          - listitem [ref=e108]:
+            - text: "-"
+            - link "mouse vertical" [ref=e109] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouse-vertical#topkeyword
+          - listitem [ref=e110]:
+            - text: "-"
+            - link "mouse ergonomico vertical inalambrico" [ref=e111] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouse-ergonomico-vertical-inalambrico#topkeyword
+        - generic [ref=e112]:
+          - generic [ref=e115]:
+            - link "Volver al listado" [ref=e116] [cursor=pointer]:
+              - /url: https://listado.mercadolibre.com.pe/mouse-inalambrico
+            - navigation [ref=e117]:
+              - list [ref=e118]:
+                - listitem [ref=e119]:
+                  - link "Computación" [ref=e120] [cursor=pointer]:
+                    - /url: https://www.mercadolibre.com.pe/c/computacion
+                  - img [ref=e122]
+                - listitem [ref=e124]:
+                  - link "Periféricos de PC" [ref=e125] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/computacion/perifericos-pc/
+                  - img [ref=e127]
+                - listitem [ref=e129]:
+                  - link "Mouses y Teclados" [ref=e130] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/computacion/perifericos-pc/mouses-teclados/
+                  - img [ref=e132]
+                - listitem [ref=e134]:
+                  - link "Mouses" [ref=e135] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/computacion/perifericos-pc/mouses-teclados/mouses/
+          - generic [ref=e136]:
+            - link "Vender uno igual" [ref=e138] [cursor=pointer]:
+              - /url: https://www.mercadolibre.com.pe/syi/core/list/equals?itemId=MPE873201394&productId=MPE60038556
+            - button "Compartir" [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]: Compartir
+      - generic [ref=e144]:
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - group "Galería de fotos, Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e151]:
+                - generic [ref=e152]:
+                  - generic [ref=e153]:
+                    - button "Imagen 1 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e155] [cursor=pointer]:
+                      - img "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e156]
+                    - figure [ref=e157]:
+                      - img "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e158]
+                  - button "Imagen 2 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e161] [cursor=pointer]:
+                    - img "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e162]
+                  - button "Imagen 3 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e165] [cursor=pointer]:
+                    - img "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e166]
+                  - button "Imagen 4 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e169] [cursor=pointer]:
+                    - img "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e170]
+              - generic [ref=e171]:
+                - generic [ref=e172]:
+                  - generic [ref=e173]:
+                    - generic [ref=e174]: Nuevo | +50 vendidos
+                    - heading "Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [level=1] [ref=e176]
+                    - link "Calificación 4.7 de 5. 15 opiniones." [ref=e178] [cursor=pointer]:
+                      - /url: /noindex/catalog/reviews/MPE60038555?noIndex=true&access=view_all&modal=true&controlled=true&show_fae=true&brandId=10953934&domain_id=MPE-COMPUTER_MICE&category_id=MPE1714&vpp-view-type=pdp&source_platform=%2Fweb%2Fdesktop&device_id_variant=f359892d-989b-417d-9e5e-32e7af3d3dcd
+                      - generic [ref=e179]: "4.7"
+                      - generic [ref=e180]:
+                        - img [ref=e182]
+                        - img [ref=e185]
+                        - img [ref=e188]
+                        - img [ref=e191]
+                        - img [ref=e194]
+                      - generic [ref=e196]: Calificación 4.7 de 5. 15 opiniones.
+                      - generic [ref=e197]: (15)
+                  - switch "Agregar a favoritos" [ref=e198] [cursor=pointer]:
+                    - img [ref=e200]
+                    - generic:
+                      - img
+                    - generic [ref=e203]: Agregar a favoritos
+                - generic [ref=e205]:
+                  - generic [ref=e206]:
+                    - generic [ref=e207]:
+                      - generic [ref=e208]: 50% OFF
+                      - 'img "Antes: 99 soles" [ref=e210]':
+                        - generic [ref=e211]: S/
+                        - generic [ref=e212]: "99"
+                    - img "49 soles con 01 céntimo" [ref=e215]:
+                      - generic [ref=e216]: S/
+                      - generic [ref=e217]: "49"
+                      - generic [ref=e218]: ","
+                      - generic [ref=e219]: "01"
+                    - group [ref=e220]:
+                      - paragraph [ref=e221]:
+                        - text: 12 cuotas de
+                        - img "4 soles con 08 céntimos" [ref=e223]:
+                          - generic [ref=e224]: S/
+                          - generic [ref=e225]: "4"
+                          - generic [ref=e226]: ","
+                          - generic [ref=e227]: "08"
+                        - text: sin interés
+                  - link "Ver los medios de pago" [ref=e231] [cursor=pointer]:
+                    - /url: https://articulo.mercadolibre.com.pe/noindex/services/MPE873201394/payments?new_version=true&modal=false&newIndex=true
+                    - generic [ref=e232]: Ver los medios de pago
+                - generic [ref=e233]:
+                  - generic [ref=e235]:
+                    - generic [ref=e236]: Cupón
+                    - paragraph [ref=e238]:
+                      - img [ref=e240]
+                      - generic [ref=e242]: Cupón
+                    - checkbox "Aplicar 25 soles OFF. Compra mínima 51 soles." [ref=e246] [cursor=pointer]
+                    - generic [ref=e247] [cursor=pointer]:
+                      - text: Aplicar
+                      - img "25 soles" [ref=e249]:
+                        - generic [ref=e250]: S/
+                        - text: "25"
+                      - text: OFF.
+                  - paragraph [ref=e251] [cursor=pointer]:
+                    - text: Compra mínima
+                    - img "51 soles" [ref=e253]:
+                      - generic [ref=e254]: S/
+                      - text: "51"
+                    - text: .
+                  - link "Ver cupones disponibles" [ref=e260] [cursor=pointer]:
+                    - /url: https://www.mercadolibre.com.pe/cupones/pdp?title=Cupones&item_id=MPE873201394&unit_price=49.01&quantity=1&loyalty=1&new_version=true&modal=false
+                - generic [ref=e262]:
+                  - paragraph [ref=e263]: Color:Blanco
+                  - button "Botón 1 de 1, Blanco" [ref=e265] [cursor=pointer]:
+                    - img "Blanco" [ref=e266]
+                - generic [ref=e268]:
+                  - heading "Lo que tienes que saber de este producto" [level=2] [ref=e270]
+                  - generic [ref=e272]:
+                    - list [ref=e273]:
+                      - listitem [ref=e274]: •Resolución del sensor ajustable de 800 a 2400 DPI para un control preciso.
+                      - listitem [ref=e275]: •Conexión inalámbrica Bluetooth dual para mayor flexibilidad.
+                    - link "Ver características" [ref=e276] [cursor=pointer]:
+                      - /url: "#highlighted_specs_attrs"
+                      - generic [ref=e277]: Ver características
+                - link "Ir a la compra" [ref=e278] [cursor=pointer]:
+                  - /url: "#buybox-form"
+            - generic [ref=e280]:
+              - generic [ref=e282]:
+                - generic [ref=e283]:
+                  - heading "Productos relacionados" [level=2] [ref=e286]
+                  - generic [ref=e289]: Ad
+                - region "Productos relacionados" [ref=e290]:
+                  - generic [ref=e291]:
+                    - generic [ref=e293]:
+                      - group "1 de 25" [ref=e294]:
+                        - generic [ref=e295]:
+                          - img [ref=e298]
+                          - generic [ref=e299]:
+                            - link "Mouse Gamer Vertical Bluetooth Teros Te-5169n - Ergonomico Negro" [ref=e300] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=1TXhhRr3oT5hK9Uxzf0a4jLUcxiHVvd%2F4qRTRNL3NI6BJb0O30VatFdijtExP7dBbLlpdgKRfEVNPpawNlgRT%2Fz9CUdmWaih8swOtRTrftcLrtguR2PHswCoWsnPTknkx5HEPV7uXeHgAIC3ScZ99hJ2QOgXj%2BBTvkW27aAVWYNTmE3she7YUl5Q0cRurpWPNUs7zOz56E0cW8v053Qp0i6W5NterOaMmDUNfKdGXX0g%2B3m4ILEjsJlVyATjCxL2FojcgKNMxz29C4EKvT48z0votMbx6Ldg91ZOyJqCrzA12o1UISJBUW2v27aXiLqr%2Fmc%2FjF8OREqS%2F7ekaYFVVrnlK99hYzzyzwSgD9%2B3YtqPpuNWq0Z1zjbi%2BNruWxPmhxAngKma%2Fiazg3%2BZLYYsjpm%2BaiV6ToAlz%2FrBnBr9YcTbA9WNaWXGan6hVt1FpHZUqQZnTXDSJ7HmTmVutfmBZQOgLw%2BpGdBz0om5R1UgBOHU83KLGItfoS9gyEFNMiZ5JGuFxzA0f6y4GipqR7dtTv4yFeMdZa%2FeBqtaRvimojbFkFSl%2FvxN2bvAhK13P8JF6xhDcK5wy0NYvqIUcvisPXYM%2B07GIxLSwvfk08FjM9g8P7lF7gIeRPt7UP9kfJcrDO3ut8dik9l5lx9%2FpK4J%2BEvZFpNUauPxvry8nJTuog07v7p0M9QT1F9dv7ZKdd4LWPx1ccEX7qvRV1BJpcUnCwGwQrkprVpG846x%2BnkgqcQg2aGa6VBzjFjajs06wgRfkxIAbP3tmfIspp8kZ4CzN3insHl5dvglqKdgIzD1BTFAGi%2B2ljICMEsSLnyq0XS6LSY7l2G1oVvEroMnOB0iEnk9ROXTBAaiNv29Sf8J0DYbWst1Q%2BOxmwipQc%2B2UyciYaq%2FZvNd%2FU5w2WW4rAybRlfy546e%2B5AAdT%2F20AQZesqERFVG%2FF3IFEfwA0JDISAy1Kwb8BwgzUuX8c%2BE7sYcEvetzWibzWrFbcmJANWqIpo52QLtYotkK2Aiz1FiC27opWoncpF1l1Dc3mIiwS876KvNBQ%3D%3D&catalog_product_id=MPEU2978747261&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                            - generic [ref=e301]:
+                              - 'img "Antes: 78 soles" [ref=e302]':
+                                - generic [ref=e303]: S/
+                                - generic [ref=e304]: "78"
+                              - generic [ref=e305]:
+                                - 'img "Ahora: 46 soles con 33 céntimos" [ref=e306]':
+                                  - generic [ref=e307]: S/
+                                  - generic [ref=e308]: "46"
+                                  - generic [ref=e309]: ","
+                                  - generic [ref=e310]: "33"
+                                - generic [ref=e311]: 40% OFF
+                              - generic [ref=e312]:
+                                - text: 12 cuotas de
+                                - img "3 soles con 86 céntimos" [ref=e313]:
+                                  - generic [ref=e315]: S/
+                                  - generic [ref=e316]: "3"
+                                  - generic [ref=e317]: ","
+                                  - generic [ref=e318]: "86"
+                                - text: sin interés
+                            - generic [ref=e319]: Envío gratis
+                      - group "2 de 25" [ref=e320]:
+                        - generic [ref=e321]:
+                          - img [ref=e324]
+                          - generic [ref=e325]:
+                            - link "Mouse Gamer Vertical Bluetooth Teros Te-1236s - Ergonomico Blanco" [ref=e326] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=pp7yJ0s07NW52%2FhFojCwkr%2B21r8m2bveq3e%2FWZHZq6FPZPCLo7wFi%2BNVgjsgRulyOFZb4Yc0hxoOqvp%2FDFN%2FIru8a93ah%2FNkgAP0YrKHWCUmwnhjzQm87dQr7jABAow22mjW4KlWIXDjmaoQqaHaoz7Fc3Ot9Q67ufG97f5Nh2HDnd9reTBrEHYhXfPEyJ3fvNiZCwptC4Fam0340V0FWzETplv9TJB2Z2M9lnbex9r1c00pxB1H6lGlsrffT6ir9olsXNWaBHlS4S74hPntBVlENqsdhlCTtqUU37swR6FhPFcxYKp8DBVpht5fbSQE9nF1t%2FCCa66fR3ej2y%2BCOCjoLWKj8Id%2FqAAgT%2B0wdz5fecdmR5I57T%2FlyrqVw%2B3%2F1fQv8h3zko3LuOaOxXqor6m7%2FtbMcLTwHIN1UwopysZisN9wjzQFHYzs2YsKvFj4w1FaYwLuiFw22aPKhn%2FxNPlX6pqX8xMSjJ8EN%2F5ZixL5dKKSpCkz9sTCA7QXznHi%2F%2BSWEpqmmHeFGhAVg%2BMHYC%2BCfXguJQ%2F2VPHJNs%2B6YBVEibkEHGODAOGrP99Af5I7%2BWDJxMhWCO2WUO04yuxtI8b5IcWizx01UKnZsCJMhQM4DsKWRrKT%2Fock3%2FTGVgehbFWOjqgJUppCIZuPg9NS9UJ%2Bdc5tMkn4D1pvABhPLzGNU3bl5yBLOwGOtC9nvaB1NDs1DyeLWqRG%2BEq6zzrKVCOU0APN94RbZ1cMTMTlRUXfYvs%2FMr74iNZU9rQi9dOsATU4jgNz3F2w0YJwIb6cj9kY32fryX9ArM%2FkDSxnpK6anc5Cx5ag%2BzAqIh8rhIRK9QwwX5WkRyov0NRFSFjChE8Nw%2F8PG1uzPW9Fg516MMDrZkXmPnSYyj67wOMHAkdfDaRFkDIOjDRGZxZ%2BaBoTUJVikvJVIRyQG3yNwws1agxwLRDgVDEfjE0T%2Fe5lXEhBmX4DvK0HlLzZgcMBgRzi6lfH9O8SXjYVoT0QgoigCHozvWlBhj2US1IcObftnDidtW0Foq8tKws%2F76ht6dS%2B68JkuA%3D%3D&catalog_product_id=MPEU3368082464&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                            - generic [ref=e327]:
+                              - 'img "Antes: 99 soles" [ref=e328]':
+                                - generic [ref=e329]: S/
+                                - generic [ref=e330]: "99"
+                              - generic [ref=e331]:
+                                - 'img "Ahora: 58 soles con 81 céntimos" [ref=e332]':
+                                  - generic [ref=e333]: S/
+                                  - generic [ref=e334]: "58"
+                                  - generic [ref=e335]: ","
+                                  - generic [ref=e336]: "81"
+                                - generic [ref=e337]: 40% OFF
+                              - generic [ref=e338]:
+                                - text: 6 cuotas de
+                                - img "9 soles con 80 céntimos" [ref=e339]:
+                                  - generic [ref=e341]: S/
+                                  - generic [ref=e342]: "9"
+                                  - generic [ref=e343]: ","
+                                  - generic [ref=e344]: "80"
+                                - text: sin interés
+                            - generic [ref=e345]: Envío gratis
+                      - group "3 de 25" [ref=e346]:
+                        - generic [ref=e347]:
+                          - img [ref=e350]
+                          - generic [ref=e351]:
+                            - link "Mouse Inalámbrico Ergonómico Ugreen 1600 Dpi Usb 2.4ghz 10mt Color Negro" [ref=e352] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=J5QZWfCQvRE0vptdudTiSivmNCpaU74y6sXQ8sMCflbp%2BdCGsHg71pzYL64t%2FB16IqrJaDWUlAYWuFa5pyyw%2FBMt%2BxPn2eiFa4LDH3o3%2Bd4%2FvoLuKaGbeHTSi7Z1SsrxVk25WPg9U3xzTkduesEDBORaTb8mBKoI6iAMc29ykOEK2dG77L%2BSpp0ElnAAY%2B1NVN%2Fum%2F%2BEIkS4Jo96encVTeGGtRVZRGLxIGbQDQot04ufDw5iCXxAIHuIC1ICOmGvSfFmL5KhhdZ2D%2F85N2X7a8V1Ra0Nmuxmr4KTv7pChIAmkj7QAFRhiXa8OQdpv1gemSAriO4Yu%2FYauD8kmq27J%2BpevqGHSLaYxeDVoovASNJ%2Fg9fCkQ3VqRyOR0CGymR%2F44kQXVK6K2n4Nlig%2BdyyVpgx9exNtxGr0VDi9gB8TLiNyT1Njdax5ek3RuSdIkfca8ZDCdIqjm3TyE5kOwkqR9X15t0hAPY7XDJ7vJyZSFg7OHakPI5ClajxzgYgxRmv7%2BLs6O9LDAkiGU8BgXz5%2FGo9i%2FAKWX4BpmIJuolB5%2FF%2BW4f2GKLgO1AYhWv4r3yxxsZx8XkAmy26hW1%2F0fBNQnOAzcNLCUExIK0npfgMEHIM%2FOG63IvtgPwxNfJiWXf5Us2kQtwUK0QWLRDtmRwPfqVPW4br7YCSfmzhywm%2BAC8v3g5io%2BMzkbWDmMYoVB%2BSvgaJzDbfGjpVt4tRaYLgn7PSyqye%2B0beoqKs3CQaceEV1J5K7ke0Zsls0kUHRERZpiSmlUO%2FjOn4j7K%2BGyIaRYRfRpt3qtHWSzURU9Qfzt25zUXRnSczDReOH7Pmg0l9RjBhRzknRJEVkKlz13vbInw%2F4t29Fm2IWr64tRrNAtQ2QKlzlQjjp9PJokue6iTPAyhEefxnAC4tZVNiTch5NUml3vJvbOLc1LK%2FP%2Fa8QbP%2F3FwcrZkgUrt63yr7bUvN2jgwUJyJowyjXF0XgeXuDYTwyDWPuAJi2Hi8XHtvF55j%2BSjCYY%2BvWMKiy96B7IbQ0dqRtAuU6TWviVm%2BITuIa3KPQeIG0PYOGb09M0cdYw%3D%3D&catalog_product_id=MPE42948021&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                            - generic [ref=e353]:
+                              - 'img "Antes: 65 soles con 99 céntimos" [ref=e354]':
+                                - generic [ref=e355]: S/
+                                - generic [ref=e356]: "65"
+                                - generic [ref=e357]: ","
+                                - generic [ref=e358]: "99"
+                              - generic [ref=e359]:
+                                - 'img "Ahora: 60 soles con 71 céntimos" [ref=e360]':
+                                  - generic [ref=e361]: S/
+                                  - generic [ref=e362]: "60"
+                                  - generic [ref=e363]: ","
+                                  - generic [ref=e364]: "71"
+                                - generic [ref=e365]: 8% OFF
+                              - generic [ref=e366]:
+                                - text: 6 cuotas de
+                                - img "10 soles con 12 céntimos" [ref=e367]:
+                                  - generic [ref=e369]: S/
+                                  - generic [ref=e370]: "10"
+                                  - generic [ref=e371]: ","
+                                  - generic [ref=e372]: "12"
+                                - text: sin interés
+                            - generic [ref=e373]: Envío gratis
+                      - group [ref=e374]:
+                        - generic [ref=e375]:
+                          - img [ref=e378]
+                          - generic [ref=e379]:
+                            - link [ref=e380] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=mYMn2kVkrQTv56VhUuxIhM3rAaKCbjBmn81ueZ7He0t4MdhW2ew1fHVNy%2FPQuXlODyiALM1BILqxmK%2FkxFGmWn26cJf4BcR7I6a9%2Bhp%2FsgvxN%2B%2Fdn7omI26waB8QziaeI6jA4bYt%2B9GofHY%2BOB4WFunm308vuNi57knvr%2BGg0U0S6D7%2BelbEzKPe68DC2FgL0pWUGod%2By1u2AXFI8KibGogOhdgM25J4rk2vdbmWI%2BV758H18Zh7Adq1qZjwDWK2koljj2E4ExpVZkTtDTK21o%2BjGWhwZEqQrMTnNrhJDfPHLMUVJaVVeAvc18y6D8NJETGfubG3VLZw0yUTH%2BzQPEO8VVrH%2F93%2B3Blv9r%2FYYhX88geqZMfXWkwxv0oXvTVqqcqeDsq%2BaHSIe1ugtl1KbNTo8qr4y9ip6ZBkItugGE4IKZu%2FcbEvOd%2BfQmORajqpHv22DgRZu00u1upACoYLxzbwW94nF8GdMOe%2FWmiztfHZCsUBWhuoGlF6leQAgK2UHDNCg6VRUYb%2FvIBhqrXxBtv6sOvOp7kYiR6JvQwwKoifVAiS%2FlAHB3pG6qbzj4yf49OnPvELMMgdGCQ9oo7T8PczVMXS1vPupUvE9sZeJ3T4UUzqrhpBsRDuYlx3pzH1tEIUxbV5oQFN%2FirxdAlRQoKzDSI1UVItpKzMK%2B5MGu8NMhOh7CD3QPW6yRaDnrXRE%2FBpBDi8K3eBSU8kzcDU8JJ8F6gGmtutzQZdgwTZwJM3lh5%2BstGjYSKBLXZmmrwrvM%2FJ%2FvF3P7ukmx7PrGRevrTfvX87xDqH0MPOV7Hs704Yd%2FC%2BMk4Et3FGGrS6qtQVR8W%2FHNslEfy2Kb8v4x1Yr39zCqTdQpOpWWZaVs9P%2BJu314rOKbvvLdVZa2oETvcJbC1EK4yzZ43BfjSG8EuN4c0YdKcdV7CBKB2n3K%2BEPB3EmpuXjKpDyzlwsKT0gUIAYbB0yAqjf%2Fi6X1JSZZ%2BW29A%2Bx9KLm1jFLNjWqV0ChkxTpY7r8osekTgBONWeKAncpr8MpEf6OzvTUBzgo8lzAcMqj2im0VjMOeM%3D&catalog_product_id=MPEU3932876108&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gamer Perifericos Mause Gamers Daeru Tri-modo 1000hz Negro
+                            - generic [ref=e381]:
+                              - img [ref=e382]:
+                                - generic [ref=e383]: S/
+                                - generic [ref=e384]: "254"
+                              - generic [ref=e385]:
+                                - img [ref=e386]:
+                                  - generic [ref=e387]: S/
+                                  - generic [ref=e388]: "115"
+                                  - generic [ref=e389]: ","
+                                  - generic [ref=e390]: "67"
+                                - generic [ref=e391]: 54% OFF
+                              - generic [ref=e392]:
+                                - text: 6 cuotas de
+                                - img [ref=e393]:
+                                  - generic [ref=e395]: S/
+                                  - generic [ref=e396]: "19"
+                                  - generic [ref=e397]: ","
+                                  - generic [ref=e398]: "28"
+                                - text: sin interés
+                            - generic [ref=e399]: Envío gratis
+                      - group [ref=e400]:
+                        - generic [ref=e401]:
+                          - img [ref=e404]
+                          - generic [ref=e405]:
+                            - link [ref=e406] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=YNsf7Ro%2Fo2XwFDBvKnlhMqoiITi7G3CBtIxr3jhvoenGeI8Ol8jkmhRCBdXrbk8Dk3N0Z7OGUY8KflV8G2PXBMQU4Xa6kNp4NfyI9uZ%2F8d4gq7WGSpNas6JkqwXpoIzX6b2cO6nxdjWFSmFO5GNyQAsj6qUICP3WqqJUDP0qsiqLrKoKpRubCe14jLgFfzex7kL9kxrbudWXVB6D6wy2dg%2B79pIq9IfnF3T0VxP%2BEtj%2F9CeZuAxuxFNwJgGagcVXqvi3oTjLbw4NKhhNGhBH0vI9%2BZtv8Zb3DuA908Ja6e%2BDLpaflUgT6we1ZNE6aXv5QGiJ3bfOXUFUwnGzMfvZn8POW0zuxb%2FDF343ZgHlr6Yq0Unk89SklJnV8gw4XkTaWu21R4gzwog8PRzcvWYBsIghxWkYRZrBJJUmnEk7k89AVlSOW3NnD312lQklk9S6Pc%2BQumx52EoyMEcFiSif44tBQHytYvG1hMUT%2F2PYjvGmHOpUwulFB3gLcERD4Ys0yQ4KzBzTvDToMqXyQn%2FV75MzDtphAUVwDjP90Ip3A0OKCHzHQMYYmZffnUsMvqM66iuWLyd1cdY2FY7j%2FjcwCcA3HJbpNu9K7u0ddhu6q0VGqRMZl72Ii4Y4dkVpcD1IB8EQq7jvGBIk18%2Bzmwrauq1ZogNueqezMFb7WzlIOq8FSg4uaCEMpcrubju7pIVsVATEmcp9aGTi8zEiwC1yaQlTVwsOexg9MHHKqTMa05%2BwfXvtG9FJkO0t1AwA9Eg3Uk8tqQ5nnQDxYfhGS8UgVfsGkhDhfSbQY75ipaKaC5MQsPzbw%2Fepk3RHcGpLdEI2Ly%2FuIgkkh9YzeYGKa4g5%2BblFM1C1EsGBhE0A0v4buCWJ8wz%2FluHqwVreg%2BB6OVbuKZEP6P8jon94rgaCNKkHjEbQla4scvPtoYYzXXGIJeSR5vwqxOQSozmLwPXUla4bsydmK8ICCIiGZuboqcNlUkgWHq9F3HW2Az%2B4y1ylk7QA6xZbimZX48XAhzvMAwxychGaoBTyYVFS6QmGZg%3D%3D&catalog_product_id=MPE18237035&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Vertical Klip Xtreme Krown Kmo-506 Kmo-506 Negro
+                            - generic [ref=e407]:
+                              - img [ref=e408]:
+                                - generic [ref=e409]: S/
+                                - generic [ref=e410]: "96"
+                                - generic [ref=e411]: ","
+                                - generic [ref=e412]: "50"
+                              - generic [ref=e413]:
+                                - img [ref=e414]:
+                                  - generic [ref=e415]: S/
+                                  - generic [ref=e416]: "89"
+                                - generic [ref=e417]: 7% OFF
+                              - generic [ref=e418]:
+                                - text: 12 cuotas de
+                                - img [ref=e419]:
+                                  - generic [ref=e421]: S/
+                                  - generic [ref=e422]: "7"
+                                  - generic [ref=e423]: ","
+                                  - generic [ref=e424]: "42"
+                                - text: sin interés
+                            - generic [ref=e425]: Envío gratis
+                      - group [ref=e426]:
+                        - generic [ref=e427]:
+                          - img [ref=e430]
+                          - generic [ref=e431]:
+                            - link [ref=e432] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=Cpj0%2Bq0a2Kw2I6eBGg1jIM6cAPaKsAvZiostaela%2Bk%2BGA4AtWf5FFO1LAkI0SJkUOEKYBS4kMsa3T6sHjpSxsrq8uLVxeELdA2wvupsMPY5bs90rAT0z6HtXEWBI%2Fk7WHu77jrY%2FTkjED0GCcqIdzObldbF2NC6871iMOcDxYm4xccF0SSe74gJcFmvxd%2B6lITddbUqS4la5Ngdqss56MlJ2VMxLC8cjphbWYlzx1P8jlXy6Ce19unAvSV1yVJgAqfI6EZejcvpmRN8a7x6Ie%2BMZXcVK85d3lBrRW2MEYnFPlpMBVYuON3BwAGVvS0ZEqv8Xz3S78ETeoZWc%2FbhBrloruYI4EtR9j2gGZRiRiIPw6Sz4c9B%2F0TZlJkF9Qz2EDLPoI3IEcAVHlg%2BTBtZKy6N1TE3OgSmg9DItaRURAvyNeRZv9eb%2BAUC7K%2BK8B8wSjy%2Fa%2BSGZlnWqKAew3sxCINv7FCfnkAYMUekrxhnrcy7Q2Ss4op8rEO6Q1b3oK7wpf2dSa6mEG5PSuL4irvHUnwFkyZVz4D2pKMqLIc36uws75z%2BDPLOZkvDQOEIylSlUv4SZnDNWFmDk1yftyrfJfACFM7y3AqX4VgCSHs3jfBQpBjtmiI1EFz8UjSu0hZzHaBS4xWEl8Oo0E0cvvSQg4O5rLYi44OoNaF6qugejELnCQT7ZKPhDfEiwNhaVycJKFextaSMm99fxDLNwSSNA7SOWsHTfkHZkkReI9lczY885OfrgknAewfTEiONaLXhnCwGEvuN%2FQ0%2FU2C0%2FFmiXn1cp6itsaMVG40K32kZF1gpsWq6%2F9R47BHEoVhQpwBOGH0MYTr46J6EwmkIzITMIlzQ6pxm85tbqJuACSD0IenNxoqiAD6dadlpjFQzYPtHdUIiNk0dhx%2FppVc%2BMud1xcOGlODs0NXxIHwu38MpjtvRIQnTe7bgjOwPaMZQnEYF8SkZElpQXLsA%2BQGNnlII2ovY%2FmdvTTLJ%2BWEcRwqoAQCIKjvF1wtyiO7shA97mNaGTr89SBX01ieYWHyFb81MoegzYXxAlrro%2FRT0%3D&catalog_product_id=MPE46370442&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gaming Wireless Antryx Scorpio 350 Dpi 10000 Usb, 2.4g Negro
+                            - generic [ref=e433]:
+                              - img [ref=e434]:
+                                - generic [ref=e435]: S/
+                                - generic [ref=e436]: "150"
+                              - generic [ref=e437]:
+                                - img [ref=e438]:
+                                  - generic [ref=e439]: S/
+                                  - generic [ref=e440]: "141"
+                                  - generic [ref=e441]: ","
+                                  - generic [ref=e442]: "07"
+                                - generic [ref=e443]: 5% OFF
+                              - generic [ref=e444]:
+                                - text: 6 cuotas de
+                                - img [ref=e445]:
+                                  - generic [ref=e447]: S/
+                                  - generic [ref=e448]: "23"
+                                  - generic [ref=e449]: ","
+                                  - generic [ref=e450]: "51"
+                                - text: sin interés
+                            - generic [ref=e451]: Envío gratis
+                      - group [ref=e452]:
+                        - generic [ref=e453]:
+                          - img [ref=e456]
+                          - generic [ref=e457]:
+                            - link [ref=e458] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=29C8KQIksJ5ahLs43KJt2JfeXJVLPCmDvps3XTsdECcn0w4tgaaNqByBYxu2jgvGaXP0beiW7F83I9vLQdcbbhwPnCsLd5kWp03oNTzLRzNnBZjffIzN0CTd5p3kafVgD4Y5PGav08w6o3t8NRDR9WRk4V2%2F9xU2%2BpFz3eiTd71H%2Fw3Qvh1sc5cPqVgQaYfAg%2B4neFO7VZMQ5VHOqH3znhmNwLBf4Q4mSfZG8EC9mDfxoHHhH%2B8MipQS7zOxKDvNBE5eWyDqv29n9ot7aIVy6rRl4xmiTLcoBNvlFu5KBlvrZW3wiA8TIZHsLR%2B%2F0ruY%2B%2BNXwTW4EAUrCC71yA8Gn%2BlbVDt5VFv1UMc000KlTomGrH0IERTBg5impkzun6Rd9eXhC%2B1SlZG6GbjMmhZOjPpGIRi7H7UjKvzmPOu0GbnoWp8dC1fKuILzDs0i%2FYOIvfnE2u4jQYG6sh%2BeX71K3Z0NJZ9bimSW2T6Xsk6RW%2B%2Bfaz2FjeZfSzpw%2BYRiPmFXuvIr3SzTho74vaB1Ay%2B%2FpqQCt%2BtxCust%2BGxxYibS0m3r60JE4E2N0z7AHQj4NNLjjn%2F34c%2F12C04X3mt06xI6gJO%2FruEPEahfQdWkHOsBmIHccuAWhjcLLyjyYOy6rN8ll9RU76zAsGWlxPWvtl5qQVRxkpM01KUN81FEpYqOBYjp%2FO4WYBvFMcsHO0jAoMj5IPDpQNmkO%2F9Kil2BmzG1HxlLiEHcIQEDuN%2F%2FCyej8zXiJqExVJl%2BEq6jtsL2yDZ6Lqv3qLo%2Be5BIT9tqdBxWbPFqiSDPq0m6rjF3GR1bLlMCh0C4GAUQTqwFrmRVol4v%2FtLwudh5IFYaag%2BzFpiVEOh4VjMcb40hswl%2FTxWpFu6Z8SLbX6YN9BNoRCjv4Q5Lt0r%2BQipjvd9xjxYeFSKS8pnjb4j2FK7buDT3W3N8G4CFkgkzJQVPY%2BKd9jc5MYHNJxECKbFZVoDpDKSzuOEHM13hVOzszNtbZp856j0z4O1bfGGdEV98fu07SPqpnY1GyZVwP%2FIwHfcuKDMLR6X2Fj3Nfw%3D&catalog_product_id=MPEU3165821961&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gamer Teros Te-1232g 7 Botones Rgb Usb Professional Negro
+                            - generic [ref=e459]:
+                              - img [ref=e460]:
+                                - generic [ref=e461]: S/
+                                - generic [ref=e462]: "78"
+                              - generic [ref=e463]:
+                                - img [ref=e464]:
+                                  - generic [ref=e465]: S/
+                                  - generic [ref=e466]: "38"
+                                  - generic [ref=e467]: ","
+                                  - generic [ref=e468]: "61"
+                                - generic [ref=e469]: 50% OFF
+                              - generic [ref=e470]:
+                                - text: 12 cuotas de
+                                - img [ref=e471]:
+                                  - generic [ref=e473]: S/
+                                  - generic [ref=e474]: "3"
+                                  - generic [ref=e475]: ","
+                                  - generic [ref=e476]: "22"
+                                - text: sin interés
+                            - generic [ref=e477]: Envío gratis
+                      - group [ref=e478]:
+                        - generic [ref=e479]:
+                          - img [ref=e482]
+                          - generic [ref=e483]:
+                            - link [ref=e484] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=QpBl%2BiZbr4b%2FRRkS0ko1IL%2BNPgF%2BnM7TztgoCNvJ7VN9YxxeHdwzOdUgAzgLz6D%2FPFEPXbPB5yRdgMYdvuOJGUuj%2BdHXOanoTpadCPYzJemmRjfvZb80ExcD1EScHPLTaNaQV3fMpvyj0Ap9TdELPEPszML00dK2WDXojfbFTbg%2FQ7c8%2FUBeR3DFXH9nJlmITweEG%2B9WJDCvXmx9m6t8GSOt3iCUoiuq31nTJJV%2FFA9UyjfoW48TNl6gWVOPfcEV3pvB%2FQQPRSGDFMSarYjgpBaKzm5%2BMw7ZM1uff0HH1jawLgMB8sR7R18Rbjq5F0XI9Do2yer8fWC6mFr0KA1X8BPV3a9JUvjYwhNTe2bXiuRSOSCk0yabPwg8fpCAHz6R6jTPRYcUVSI9lYbSdu3DX1Ut4cYxJL1NKD%2FLEuokoDMcdzgFSHl0iFck61UdVubv4uAbmDRTm31Xtc9qFcL4O7syMNO2Mmbsqsd%2BSFXuc%2FF2yurfRCuueZ9q1KuGszq%2BIGERLEFHCxnTjB91fp19XTkwZ%2FAeOTdguBLV0%2Fl2xGLiwV3%2Fi83Qv1jnArsabIlf2bHSatn%2F8X6PnclItumRg7rvMN1iDJfnUlpkgFrJvSt06fFeCdxtQBtBQ2n50mixXT1GzYNgd4cgZ%2Bn4eLbSfE4EKCVM4O2iNQ6Ub51UsmvU%2FWUBtH1AtzvYtP7qw%2B9xgxafHCETIZ6adJrGLuXJBK4EWQd%2BpWh3%2FTK%2FWyc7x7coq%2F%2FXcrJL4Lj672RGTs7HnZol4n1OCU78OqQa8%2BeX%2F2SmSyBjzQtFhK1cRpdfpriTyVln2XDD8LwpD%2FwDvii3WM3lGLwYRXK%2BeDdtZtbXmcVj3S24sLhF%2FVIFN5LUBI16za7VJziLxtqyvsJW1xD80lMa6t1goCUHc1tudUJWJa6wOC%2BaH11F5LxVDQbAXY%2BmXxF2UgxpieZXMNTm%2Fh034U3CZ0fO%2FJd2%2F6ckZS6J09QV2eO6xpmpm71g36BEA%2B5rmpUPkU%2B6NG2YYS4e0LkqdwVL6Aag%2FKSXmQ45TwnzWNLd1buCfEW1gs5C&catalog_product_id=MPE22969739&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Razer Basilisk V3 26k Ppp Focus+ Hyperscroll Chroma Color Negro
+                            - generic [ref=e485]:
+                              - img [ref=e486]:
+                                - generic [ref=e487]: S/
+                                - generic [ref=e488]: "154"
+                                - generic [ref=e489]: ","
+                                - generic [ref=e490]: "99"
+                              - generic [ref=e491]:
+                                - img [ref=e492]:
+                                  - generic [ref=e493]: S/
+                                  - generic [ref=e494]: "153"
+                                  - generic [ref=e495]: ","
+                                  - generic [ref=e496]: "44"
+                                - generic [ref=e497]: 1% OFF
+                              - generic [ref=e498]:
+                                - text: 6 cuotas de
+                                - img [ref=e499]:
+                                  - generic [ref=e501]: S/
+                                  - generic [ref=e502]: "25"
+                                  - generic [ref=e503]: ","
+                                  - generic [ref=e504]: "57"
+                                - text: sin interés
+                            - generic [ref=e505]: Envío gratis
+                      - group [ref=e506]:
+                        - generic [ref=e507]:
+                          - img [ref=e510]
+                          - generic [ref=e511]:
+                            - link [ref=e512] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=w9q1so8bkd3TFGjPywGUWi3MCxRRzGb0peg9evMfwFS6B1zCsHf6EoUf85qW6qw%2FNuhlb%2FBqcDixrC7oM7YrLax%2B6DZecVTp7ZBK9MWyptrtx272J3IFLi%2F3O%2B2PiG1uQRuDBzoyFrUiq%2B4TJHaiOYtd%2FQIkGQmAKWga5NXPvJq0RuAvEdL0uJEn8QLSi2ZGifydvBQqgssVhUx2cDVYyCIffFGntxiT2LOeoOa%2FW%2B3XQBg9zAJdbsWDmLEksMOzWIpvdbg6SdORValPFbWTVDGy2OjB7klEZTp%2Bv0odA00GAknd8Wb8qjRamMKSZW9rzgedmGC%2BvvjbjD%2FblXEz3bYqkwfkKyncKdlDpKAZ3jDZ20ziSxlOFwg4neIqsb37NdelzBoHSzW7T3LX8czU2hiDOfDkkEn%2Fpnd8ptXcP0iQcNHIq94kmjRTrpA304C6vg4uIl%2FrEIr169TmdMgxwwy%2Frn7qRQxOOg24mptJQ7n3nBHi%2FyFKyWgcPKRtY0c1oHkKGRBYAwCi1DZZkm9AB3GkbhUtJdUZm%2Ffjokh0GsSrH2rVjV7ZtOkRnOcX7Orut0XDcSqtzeXh7z0N5XzQoTATmGh1Zqcg%2BggK%2FRRBSxLTJ7n%2FP%2FkGnEGJa3dkq8ZXM5mpXAmZPyu2iA7gF8n7q0y6x6KKgNRhned9q6Tr22rEMUchOYBuI2WziKrfScrpT7EAks1ewnx1YaWAPrNt%2B7w7c8BhpklnzQ42NwZcrqATdZcWocDh%2BWJLl%2FJxUiPeBRC%2FCkdpNSJiTKWwKB0iLFoOdoItNfn%2B%2FiJTTLr9cUh0utFD7Tt3MIdjJL%2B2WmQcTYNMzj2BB%2B0HdSSI0t6wamC2gaKWKl7tvtTQvD6RVk1kK2osWq8jx5HQyikWEa9Ey8WGMLZn4uiBOf4Ll%2BugPh2j9dfj%2Bnbm%2BkO9B9%2BoaxPY%2Bo%2BdfvbbYozlSpLq%2FtrUWXZlMRPFzzFxrHz9sy8Oh7m420H1N033PfpQYcVTJ790t6c79nhnYKM3C%2FjmjgIEEFz6zu0Ol2VaqJuKxw%3D%3D&catalog_product_id=MPEU3815719833&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Acer Gamer Emw130 X Plus 7 Botones Ergonomico Negro
+                            - generic [ref=e513]:
+                              - img [ref=e514]:
+                                - generic [ref=e515]: S/
+                                - generic [ref=e516]: "99"
+                              - generic [ref=e517]:
+                                - img [ref=e518]:
+                                  - generic [ref=e519]: S/
+                                  - generic [ref=e520]: "39"
+                                  - generic [ref=e521]: ","
+                                  - generic [ref=e522]: "20"
+                                - generic [ref=e523]: 60% OFF
+                              - generic [ref=e524]:
+                                - text: 12 cuotas de
+                                - img [ref=e525]:
+                                  - generic [ref=e527]: S/
+                                  - generic [ref=e528]: "3"
+                                  - generic [ref=e529]: ","
+                                  - generic [ref=e530]: "27"
+                                - text: sin interés
+                            - generic [ref=e531]: Envío gratis
+                      - group [ref=e532]:
+                        - generic [ref=e533]:
+                          - img [ref=e536]
+                          - generic [ref=e537]:
+                            - link [ref=e538] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=L2n5eQJFyAakT4RWAcOJB8W%2BLGJ0lBHqo9p9rishTOwiBruY7GWT0W7UXPIT9hMBKR3V59qBPb6bj93ctzXQfUy3%2Buh9iwpSJlx0ng1sbSVwtW28RR3zOVfzZchrqhiw9cYv7khkHg4af6LqBtId76b3gVFeLMP%2BwyazZ5X4ukRZhp64p6SAbGWj6SIWr%2BEKGQ7w7cu7npJ9TH1Ey97KpMXO4FPuWsm8w6HlCQfxztcWF4GO44Sk1WK6dQdt%2FNJpshYWWO4cDI4%2BqPVlIhehK6NW4eRefDiph8y%2B%2BXjKgk%2B5ox0ZQekWoS5laSfZjDhHZ3D0VP3QwpomqvebvbNzKNuywYQ7LpJIGyTceKlPxSibctF7kNtoD3F1PVBK%2FwIXZMQ9e2pi7YCc%2B91y0M%2F%2BRjQE5mOn%2BfitO7G9vTFKcYPaWB8tZJn0QjLsoQYVvwE7a%2BAsDf4sRU%2F6LKHShd30n7i5owaMm%2Bm41ER1eH461bNjt2moy7BACbDFGFDO%2ByJL35urIaGkSOVcEOselweTfFED8lUEgY6HY4CKZy6YFbjWp30EQ1%2F%2BspIx0XdAauyFrbqcufKs%2BzIbznHK19OZgm4jxVxjO5efmIq1tD6d5O3Y48Pwzxtzc8BvUMKG%2FdfXnN%2Bi%2F6mG4qtsRM8w1OBkUxPb5K%2F685DIIXNQ7mVGv8T1yDBxTyKPYuW2NewLry%2Bi%2FOVr0jRbUywr5npOD%2BT1C%2FpoPMbIfXmxu%2FFS5Gq2GTjNiOhNJFuUBW%2FDcopm791ChaGX84M9mK6aup1XGBQJLm%2BRkX7OYWHtlgLP5DP8oRFaRE7aW593ag%2FgCJGOeaaE6u%2FjF5F3FokWIvc59rqDj25wbfaHhI64k8%2BW5GC8Bkv66TdJ3u9SLVFWkGRYFnCLSNt91b3Ktg2Js%2BLQ7k1RL13uvdF81CLfOk3sY5%2BO2L2d%2Bdq6RUcUliZpHo7UVzKxZGIk2ZWDyUQebwmeYSjj87FmD0ikPdPYPUfvPzgTsHCtD%2B9a8FjxR3HhmRK7rjCJ%2Fb5oyHEGOWT8WzSgC2uIf%2BHkZrV%2FISMN1qHrFU%2BQ9nUJ&catalog_product_id=MPE35945383&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Vertical Inalámbrico Yelandar D5 3600dpi 6 Botones Ergonómico Negro
+                            - generic [ref=e539]:
+                              - img [ref=e540]:
+                                - generic [ref=e541]: S/
+                                - generic [ref=e542]: "42"
+                              - generic [ref=e543]:
+                                - img [ref=e544]:
+                                  - generic [ref=e545]: S/
+                                  - generic [ref=e546]: "39"
+                                  - generic [ref=e547]: ","
+                                  - generic [ref=e548]: "06"
+                                - generic [ref=e549]: 7% OFF
+                              - generic [ref=e550]:
+                                - text: 12 cuotas de
+                                - img [ref=e551]:
+                                  - generic [ref=e553]: S/
+                                  - generic [ref=e554]: "3"
+                                  - generic [ref=e555]: ","
+                                  - generic [ref=e556]: "26"
+                                - text: sin interés
+                            - generic [ref=e557]: Envío gratis
+                      - group [ref=e558]:
+                        - generic [ref=e559]:
+                          - img [ref=e562]
+                          - generic [ref=e563]:
+                            - link [ref=e564] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=ejsQTcIn0XZazOiFb2eXhFuTRRIPDxYwwwxRnDi75ZR%2FaUetBaNJCdCfgDn0Y8JEbjxip72wa%2BllnC%2B4a7lYEDo1GtTuRoYZDwo0bmL725Z9asnFHuXhJhqRSulIeMxjnDGW%2B0eh765l3PAy%2BGL0KH7kW3CRVvyqbO77nH2TXw%2Bh8KvkZsohEONEhzRljBXeRnmOmdHeLSZnRvs7Php8MMrz9Wrlu06VS5x86sav9RoAVtOYKifW0fcjj8WBwY7WINdnp2MbDmN8WdFOaBtEe9so8HpeduJTeGLP%2Bm5oDVOE2qCT8Sd8FxqClpWyoLtsWHxQ%2FOLvbmvTBMMIMwPMrewXDU5wwUa%2BOM2%2FFwFRRLTipJqH1rUhK7GGCTvCWTGhR2%2F%2FbVaflLrcAvhA146Qoo4VioKPvoMQ4Sv5cnVU4l2XpZC3dGOoYYExzk%2FiBa6tPD2ZRxV0TYensAIWONXuircONFj4ufHV3v4CZ4gg7g6571u841L9q4csuiTOASA%2B1Yr%2F%2FTmI5dYP9PNvr9QM%2FlbeMe%2FJA9omZ517qMhr%2FbZ8z6TslQukna5LY5IzyX1G5C9%2B76b00mqwdUC4w186g%2BC8mIjxLDYrFKnt6zu9TvKNJ1rT7T2ICd9dtaQ6w0Sc7yBJXOK0aMZPjdGGyeQX9t6ffA%2FWXmerVELXl8Vw1X0WHVGayZQuRFWJyUkrbfdzjfTUSAXxq2t%2BCOYSZIbEQ1uIDpSfCQ0gt9X8TeZ%2Fb75H6c3%2BD8SM55ygmpt5%2BlHbMNlUEXtp%2FwWVBZlEbM4FAIAqIKK9iAAV0A8q0V3RdBaTRvuTC6bhyQ9goPcZ%2BpSy8WEDlL44hUAzjtCQt9dyqj%2BucMl71ctEl%2FmRB%2FShEO6aaus5SbNI2NwPlK%2BBVdjiYMsNNf7QYv0UrMpq7EbXj0S66zecH%2F6uNpI5cORJpyY1gObdg2xgL7S%2BKVmJqRGFD6AF%2FuwxlpDDCpOZpA12b378hkG6fxzATsBKJr%2BadDPIOOSCJfMA7BhxGqT2gHoieCj%2FvcmDAupZ%2BAjf1y4%3D&catalog_product_id=MPE48235231&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Razer Deathadder V3 Pro Mouse Inalámbrico Negro Ews
+                            - generic [ref=e565]:
+                              - img [ref=e567]:
+                                - generic [ref=e568]: S/
+                                - generic [ref=e569]: "620"
+                              - generic [ref=e570]:
+                                - text: 6 cuotas de
+                                - img [ref=e571]:
+                                  - generic [ref=e573]: S/
+                                  - generic [ref=e574]: "103"
+                                  - generic [ref=e575]: ","
+                                  - generic [ref=e576]: "33"
+                                - text: sin interés
+                            - generic [ref=e577]: Envío gratis
+                      - group [ref=e578]:
+                        - generic [ref=e579]:
+                          - img [ref=e582]
+                          - generic [ref=e583]:
+                            - link [ref=e584] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=tGr3iDa6qaU%2BcdBLgycTmwQhwfz6tUPiC1k5l%2F7CSUCTMRVdk8j9i%2FSuE7S2DV0SC%2F%2BRt119vI36JfVNB6qpNZIbC1n7qc5OEKIWvqhF1bYNzRyrfQgAj9LKx1128a5sly8QYe8vkWpEhZ2erHaPoQtALXs%2BsII36MwDOZs7ueJeSV1Uhq%2BOTGpC%2FIfVJDPIu6oqhsHY%2B6fRlc%2FX5KvIasAVlPguPxTMpEX4Yqo0EISS%2Fvsn4s1MRbA%2FVtO7TGHgbte%2FJs6bLMwoDIz7FMmcTSQbFpVDN3VDew7hsuzmoqkqv4VeJu53S3yFLmGejmzOyRpi%2FTtufpLMqoyBj0%2BFi%2BIO3o1cOWC73XtZAm6OW0ro3wL6a66gcqJyNewY704HJjiFkjxLNmXK9j27e6iyoa1UhJoE24RIyzAJcoJuSNVDpLneAa02blfEpdNMJVtmr8U3d2wY5kE1mNE%2FvLgcJn64lKuzTIMsEMU7HxFmDYzx5mg5N9PP2FY6MlAUzeY7woNcDT9qNmxeMYUNDisRrxi0y8E%2FjquEj9YsdPHP%2Fyme9xNVnevWJOqjGStbpcSiEHMvHK0t15a6OH4Otu6%2BizINRbn9N%2B99PTZl5sUsUyOjhoCFnpKe457IIaGwOKlRZodidMicANDeNHCeu%2BFFxVmAAPfbN4XNT%2FtuSPslxz0U6w8rxmTorsN4I%2BZ9VUgGxlfONJEe76CTckY%2BskGZ4YkuuDvHo4UvTip%2B3elNm%2BYfYLQiFMMrzZExeyxk5l0zP%2FjX%2Bw5ASVRKjK1zE2%2FVR5ec4x7kPtEacbcOxAld1gAyT%2Fj80EPy3cLT1xaS7meh6czjeR3%2F%2FXidaJEdmCxNbJq1sDNnEMj174O6TvGVPtACPv7HvFkyjL%2Fu70aOshdHpN%2FopJ4JkvW20MgtlLCTX%2FYgQxEOfhQYINNTtthMzTWM8SmdXwrf0BtiNr%2BUtBe%2Bk9MzuLC0eKEAjGiHQUUnnSIhMpqTZNGQgHfADOCwbP2bL2oBQfbiKbeboggDc20whdMbgFYiTFwz4gykiDAo2XZGlsVTiGW04OfxjD6kQDQ2%2Fv1%2B0u4On%2BMFZAOjmFZuns34%2FGXrC5nqPORkMw%3D%3D&catalog_product_id=MPE20630237&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Inalambrico Dual Bluetooth Usb Recargable Linkon Para Mac Macbook Windows Notebook - Negro
+                            - generic [ref=e585]:
+                              - img [ref=e586]:
+                                - generic [ref=e587]: S/
+                                - generic [ref=e588]: "59"
+                              - generic [ref=e589]:
+                                - img [ref=e590]:
+                                  - generic [ref=e591]: S/
+                                  - generic [ref=e592]: "47"
+                                  - generic [ref=e593]: ","
+                                  - generic [ref=e594]: "20"
+                                - generic [ref=e595]: 20% OFF
+                              - generic [ref=e596]:
+                                - text: 6 cuotas de
+                                - img [ref=e597]:
+                                  - generic [ref=e599]: S/
+                                  - generic [ref=e600]: "7"
+                                  - generic [ref=e601]: ","
+                                  - generic [ref=e602]: "87"
+                                - text: sin interés
+                            - generic [ref=e603]: Envío gratis
+                      - group [ref=e604]:
+                        - generic [ref=e605]:
+                          - img [ref=e608]
+                          - generic [ref=e609]:
+                            - link [ref=e610] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=faZy0paSaQCHcKMLcs9%2FaF%2FbUkFZjjTu8kY1NGXracCpbUe8gAr7oK%2BhIJCUVmvIgTa76M9CjqBnckPoyg2dLjyQj8ezk%2BD6udULR0uFA66hp57oJLaZxfa0shswPeyRphAMZzOX%2F9zeERJUsdrizrUGJhH4qhtzi33hLD5V9%2FiIUr1y2Z8RdA%2FYsdBOWlQpu8YuEojWCpTm0nsHFxD9eTa3p2Dxi%2F5LiQF34i%2B1Ee3IK3J9mpc2MQHh13lN%2FL3zWGH5G8QZUS0zt8EieECiy%2F5B4DBVHpT4p4fhnxQY8v0bAfd86HcOsMrVcwlwiVVDHhmQRO5E6DyxBAe2ZmQrQXIVLbSTakp2cvVcJx0YhRlRPW7TPM62VVbe%2BnaTcVEUvddgZMwBlB6YCROTj1xQI9B41A32bmiefgluvqEhN38fxJItMlsebkCbzwGxRf9AScnpRxm6pAfZ3mSYhhb5Q4TtxIaxOwxUsrr4MVlMFRjzOSmO7MkJ2nCOdK5Oux9TELnvWsosfzhmkiR14QbHWYg%2Bq2UblTLsCWB4gw5Gis2FHytZn3xxqYiCGby3hzwoXg0LK4iENPiEOvNdKsijwohsy9HupqQ1IDJk7f67FOQSIWUAgvDwVAPgAoYGy4HSBIKyqRhe3EnJSJSrc9%2FwoNF0UN59zcAs4CFpbL4Z3x0B5t6eB15ow1yFp9rbzDWXYnSOWoO%2FXIT0C1eIlGYPdZhCJCskxG2N1zWoipqFnR5VtNIJAJ91nBtfsFPs1txbhV6Ortht%2FNmtxThMDKZb7BXKuHqnHtcNG2qxM%2BxTQvz%2BGR7%2FEKsBZ0dZfzpLNvVOHM7wxJy7dOsc%2F3%2FdzBmLwTlO34QiOOasd5Pfxrcit6JRIEo0MMCjo0IlKTTjVKmTHb%2F1BpYPRDEhMDp2qpQKgeQbd9oW2V%2F4aKBi3kIeuCsn51%2BF%2BvbprGpttYb77tt1HeniLY4mZad0Ks4%2FciBulT1AulrwLcmoR628oTO3Bm96GHcg0XHVTaVh0U%2Fg%2B2wcXOS4j0k8Lg%2BzEYs%3D&catalog_product_id=MPEU4006918718&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Ratón Inalámbrico Portátil Para Oficina Negro
+                            - generic [ref=e611]:
+                              - img [ref=e612]:
+                                - generic [ref=e613]: S/
+                                - generic [ref=e614]: "150"
+                              - generic [ref=e615]:
+                                - img [ref=e616]:
+                                  - generic [ref=e617]: S/
+                                  - generic [ref=e618]: "65"
+                                - generic [ref=e619]: 56% OFF
+                              - generic [ref=e620]:
+                                - text: 6 cuotas de
+                                - img [ref=e621]:
+                                  - generic [ref=e623]: S/
+                                  - generic [ref=e624]: "10"
+                                  - generic [ref=e625]: ","
+                                  - generic [ref=e626]: "83"
+                                - text: sin interés
+                            - generic [ref=e627]: Envío gratis
+                      - group [ref=e628]:
+                        - generic [ref=e629]:
+                          - img [ref=e632]
+                          - generic [ref=e633]:
+                            - link [ref=e634] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=JD8lFME4m5vc3oIgai4q6LPXTg%2B6SpMn1A72tMKGwHhjoJL52uKmpxyA0GcnAcX3vHPdQy3VRfq%2Blt6WOn%2FiRpEt5gQRcRxWq5WJ3e0zh7RsXtIo9MBEq1cd%2FtjqjYfr%2FE5oANKAFJbjyX7UxIWxtFXoMY0JcMdKZlFc2EKjXzl63v%2FqxNSgF8m0XYXiEWPFpS1ly6eYg0%2FkGn9RbRMzHjoEjKIEckprYvqrr%2BPjZZlmPe8uL%2BO05i1oaWpFG%2BAlVgxoD0iTho%2BAVmc3zJuZV%2BLXI7psZSuPuw31k21R4OFfgEywdAkgdIF7lG8BR%2BhzelhCS%2FaQWellMMXMTI4CPB30rZ%2Bs9vVB3allWI6Sw2cU%2FRu721kZXGOT5hjFGVdJYYHcS7Dy6QFQ6tiglTNCL3PnkVjH0DmQ0qIboWsm8%2BeReSFgutS3g6QhhYrcs%2Bt%2FdSGluAEprOr6xD9XGKZoks9G18xO0DMsLo4EOm7fkCH%2FWtY4g1EwRXjoHo%2FPDCXn5sfUy23S1L63BmmPpWyVluq%2B61aj6OU%2Fv7TNuAsTwwkDAjPao1%2FebaCN%2FEZWGTrn3cJ4bb0TD1oh%2BM3lzx0FCcVlvEjEGQ3UlkFrwK2Adz%2B1b%2BTIqblxuP7i49BckcRj8TNCGKZD1Que1Hnrev4DX%2Fl32LOyylLoBYwqiWoJ9hj3uL2RYfN68AvE4QTKMrw9OZfmt8HiiovFt1ewDN2KPWn5qyQnNJbCJFXBbF4M7oWmJGYEM1RI6K9EJZL5ExXglgjB40mz8r3Ujqb%2BedXwLWHBCl5kxaI5FVaKN0g8oKMKm%2FyQCBC2YXiMy3H80TgXnyYFniG%2Fq%2FbqLdo7ErQsH737NyUABntf0UDscsimY4tUURao1fXIWPOUonrNzCC%2FEJ72tGajqTD1aQtdxek12%2BLZdesF5EiCPEFJD5%2F6%2FvWqSPSmGIS5IQi%2FTVfUTNf4KILVRB5oRJ6xP7cXqzY7eTKBt%2BuNf%2FOmOhq8E90WG%2F9vut%2FVeLeInmfAI8sAaKsVcqylaeD9VFPWP%2B1x1nU3Gte9gSxZ%2FMcSNlnzrJwO0Vc%3D&catalog_product_id=MPE40601378&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Ergonomico Inalambrico Recargable Trust Bayo Ii | 3mes Color Negro
+                            - generic [ref=e635]:
+                              - img [ref=e637]:
+                                - generic [ref=e638]: S/
+                                - generic [ref=e639]: "199"
+                              - generic [ref=e640]:
+                                - text: 12 cuotas de
+                                - img [ref=e641]:
+                                  - generic [ref=e643]: S/
+                                  - generic [ref=e644]: "16"
+                                  - generic [ref=e645]: ","
+                                  - generic [ref=e646]: "58"
+                                - text: sin interés
+                            - generic [ref=e647]: Envío gratis
+                      - group [ref=e648]:
+                        - generic [ref=e649]:
+                          - img [ref=e652]
+                          - generic [ref=e653]:
+                            - link [ref=e654] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=y5HxK9IswnKdvZ6%2Fow%2Bo0awm7Xa3sV2jpBqkXeAEiqrdSQTNqo9iqX6%2Bp%2BsKrLrda%2BnRROLVZLXXghiJMemmH7n0ZWOnr5JHar3Hr19k7brnroGZnQJk9w9Z7pb892da6neGNqgq089hEivRzXJ897iD%2F5LUbuVzkelMYhV3MB%2BTXG2sPr3KVbD8FJfGz2Wqgc8%2F5GBv8RKF17NGahbPcCHAnlL8tQFJx%2FjvlInVG0yw6zYWAcpzcPKRPFljczB8b8rpCTRiH00qNxpmCMO%2FnAxkXygn3dH%2BDsbOounVruriBd%2FQ%2FlujJcwUp9jMkR%2BcLNJ%2BgM2oPitzChT8DEmaUel6Vt84dcmaPBmOzIV74p%2FGEaQbafXO78lFNGmrvJOB2Hnprk4BNCaRdebcM4YgXjzFuLmL%2Bi5MSr2q6BzDiNcmVojBg70qhClV68W8AUjzCUQoYWJiDL9tIORTT0VMP2fG06aO%2Bd4v1h%2FvYL3FZRjxEA5xvOLhJn55WhtoAaxiKRCDqCsI2adB31JaNemvGBQ0xUfzA9mQpKjzv6ZnULyp6hMtGa0uujCsHctCevdjzztF9CHFqvIDbbBKyHjewqWC3mYUiwl3URxhu5udWB8YfHO%2BCbASoT7t1wuHTUpXQVdDZm0lqDqWjEfFy7REve5ypK29m9yqm3zZbbMEOwKIzyRryvOIo35umBF95tFBlWeifmWi0mX%2FzGeEHHn2vSx5LeydktJX1uZv2%2BA7QXc7kJbXzQyPuyI%2BCSViG89yt4dtYV0RE%2BsaPlnwUZS7AtfotdYqWJ7e4iQYQ0dqSU480XRwaRUQkWGNmHBeoN8z3xzfg3YO0M6kWJPWYd1AjHmNPE28S0vx%2B1Lsjk9MfEnHGOyXXWdMMSWNuUlG2pqXEGYLP%2FHF6XDTsQPNExtxWlSN%2By0UyyHTsE%2FhqinvxMHPY%2F7sHQtxLEl1qDXSRKJl6EHS6loElR7276ETzkhlkzPcv9TMja3%2BHNyEKcgeWyNmj1SS4HIF4N8LdohJ2boQHZ7ryQwElUguagtkGhZFW9CqfTUnwAYeehWddxsjByc%3D&catalog_product_id=MPE23531814&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gamer Deepcool Mg350 16000 Dpi 8 Botones Sensor Óptico Cable Usb Negro
+                            - generic [ref=e655]:
+                              - img [ref=e657]:
+                                - generic [ref=e658]: S/
+                                - generic [ref=e659]: "215"
+                              - generic [ref=e660]:
+                                - text: 6 cuotas de
+                                - img [ref=e661]:
+                                  - generic [ref=e663]: S/
+                                  - generic [ref=e664]: "35"
+                                  - generic [ref=e665]: ","
+                                  - generic [ref=e666]: "83"
+                                - text: sin interés
+                            - generic [ref=e667]: Envío gratis
+                      - group [ref=e668]:
+                        - generic [ref=e669]:
+                          - img [ref=e672]
+                          - generic [ref=e673]:
+                            - link [ref=e674] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=k80J2VWjDv0N6TrbwNYZ9rCPlO9ESPjLYaLaE4in6Pv6sig1jsNenauqgfgNtHUf6vIEOz90PN6G%2FAL2vUvxzfaRzZTgdCIWug%2B7B71EJciSKAzMGrpWdAjSyKdm3pdmo788W5PJlg%2BmYup1e%2BUMVk2R3llNWlenP5IqDGWars9whWxkAP05Yx4Q5MxNv3fXEIWdkTJfuzmgXYUK1kDbblrn9pQFA7vo%2B9pIVp3J3OQSbaIdQro1r%2BgVLaAwFc67OGgqV%2Fd2qqwsmQrHxNvqz33NbJUqz4r7X1Y9G%2FkH8EJXAtMuX2YXNLVjHsT2gqcS4%2B0alkF8HogG7vUvQIjCkl9b3Mrc4yCAVQwJ9MaBBtTDrLIvt3Fo1Lfoxq0cRMLV%2BpU0zPiwcVle6qfHhlSqvNnVTOdmE79kPqBTZWA62DIBJdrpcdpyO7d7rxUqAe3CFda1rezyV23%2FCh%2B70wJrskp0QNKFd%2FcVwCuCTa57mMql%2FfLHMqnbdu1UMO1kCEJr6LWsTcRd15PfpYdlyabajsbOcJlIAMh1xIDgJr8I3FnvMKxLwt4LsXMnfLPX3TQu0u%2F3fUG7MhSR8d%2B7gfbU1EcMN9gV6BorLJ2kqrZ%2FfstlOvZHcJIXg1Tp8gyOFUKhsVf5B4j6TfyZJ65C61XuDWbCbMMqAwzlE%2BUpTBh93qxcxCPhBW%2F5d%2Fn2cuCoCTJmsQrYqrJEqYNMWXP1S1f9Q3F9qsm44%2FqGkBW%2F97c7EheGMfi7Zg2cGu%2BnvF1g%2Bxl5%2FMv6UPakYQlFkp2yOZsRSJR9%2BXUufz7UZLKpAmX8aX%2FZAyL1yUUdTsbixFA1JfUGJ%2Bt7ElCOVSsUn8EooG4jqjDW2JNf5kkD37KVGOyK7c0I71YLYexMz0NolOk7BUdNooA8E4Ek1cGPAbVuQyTsg3RUzUYaS7nVDSkJQOpj3DK9AoYAdsiiGe1mMtcEAxDF2RZtSzNVFJt%2BYE4cbDo3KEUuFcRtbliR%2BXEFg%2BrO9%2BgksayzC2fep6joAVsBnEyWLazwHrL45JXL1VQHXSJamJJwPJJmoW%2BfKJJ3wQ%3D%3D&catalog_product_id=MPE23872299&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Razer Basilisk V3 Pro - Mouse Gaming Ergonomico Wireless Color Blanco
+                            - generic [ref=e675]:
+                              - img [ref=e676]:
+                                - generic [ref=e677]: S/
+                                - generic [ref=e678]: "559"
+                              - generic [ref=e679]:
+                                - img [ref=e680]:
+                                  - generic [ref=e681]: S/
+                                  - generic [ref=e682]: "553"
+                                  - generic [ref=e683]: ","
+                                  - generic [ref=e684]: "41"
+                                - generic [ref=e685]: 1% OFF
+                              - generic [ref=e686]:
+                                - text: 6 cuotas de
+                                - img [ref=e687]:
+                                  - generic [ref=e689]: S/
+                                  - generic [ref=e690]: "92"
+                                  - generic [ref=e691]: ","
+                                  - generic [ref=e692]: "24"
+                                - text: sin interés
+                            - generic [ref=e693]: Envío gratis
+                      - group [ref=e694]:
+                        - generic [ref=e695]:
+                          - img [ref=e698]
+                          - generic [ref=e699]:
+                            - link [ref=e700] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=hpkB%2BG5z7BYr9BHHS65QSAkk3k9tIQveSul7Nj08NnBuvIOYQHbvz7oQ%2FeFwl27YTM25gCcS%2BYNpqFytxW9nKDGPYt7p0e4LD4XyjYviXWnTiSKydIVvJAVCZ1jkSGtSpAHdRGykKKEjolS3r%2BX%2BOCtC%2FWZaX6Wfb6wAKWQ8mr8a47ze%2BI0NzaO6tZn372NQsgUmiddMtSZe%2FMneRz5qZq6pfdnRxzQJiXOGJh6sRc1tvW%2Bqg9xw%2B9hi6hUJB%2Fo2Ps%2F8D7Pf%2FKYIEyfNDrR3cBbFjCxNH5l1K3y0NHoRupJDokh7aIpDGv8bGSmKEGg6GSudnZ43qvbns4GITZCfMZdqQpdGMm4veyzaEG1YtnAU312Ws3DQJar929jF6x90nw8KIN18uGnALwDhwtdY%2FoQgBUy0IFygPbSu52cXjXfJzZQUHD99gr%2B5FUqOnzLBgPjMz%2FXAaBMchRYsOE%2B4fOjb5i2UYBgipWk64jXe527kBepsPaWNe37wemWZFhbLme8lpuEAXGIkub0Yv7mUS48kJxahonqv9oE9Sqcr0TR5kaD7W%2FcnsvW%2BGDAxucRFXYkAzS5nFWK19M%2B34gE6NhSpDwNfTZcTODE6Mx1ifqVViilcPruveSTwP4Vb3JLJkkTGEU5iF8ptGR6oQaUBzYoloSH4EgZEkOCFS9laZtsV3axTMsHh7Migd%2B%2BEMN5wx2QM%2BAI9uq%2BGWEfU%2Fi9bd2tstZJhRjTs%2BaDqjUy7EAiqAhgCs0%2FUirczCdsGiYkBaTRmyEquro3eIZBOwX0lX7k26av3l1VRl5BwpkuI%2Bx05X0NVrqi7haWzkrPSBzibN7kLYdZrdS0L4ID4LOw%2BXekqJAzmhlHh78A28QYialkjLE83wdVTCmXWQMKe%2FJ5lQRYHE99GrLY3WrNFD9ndPJbSF9bBI9f%2FLg15t2humaSWifvvQ2SmCXTRDKw3CNOHpgdoqNom5yYCxWffWAi1OFSG9r%2F9jY5mH7JBF9xuomSv1F772N4Jhf0d%2F8iG%2B%2B0DEwNxiQa3ylKr2m0naSUJaI1syoxS7ASk&catalog_product_id=MPEU3921141701&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gaming Daeru Gamer Mause Alámbrico Óptico Dpi 10000 Negro
+                            - generic [ref=e701]:
+                              - img [ref=e702]:
+                                - generic [ref=e703]: S/
+                                - generic [ref=e704]: "126"
+                              - generic [ref=e705]:
+                                - img [ref=e706]:
+                                  - generic [ref=e707]: S/
+                                  - generic [ref=e708]: "44"
+                                  - generic [ref=e709]: ","
+                                  - generic [ref=e710]: "10"
+                                - generic [ref=e711]: 65% OFF
+                              - generic [ref=e712]:
+                                - text: 6 cuotas de
+                                - img [ref=e713]:
+                                  - generic [ref=e715]: S/
+                                  - generic [ref=e716]: "7"
+                                  - generic [ref=e717]: ","
+                                  - generic [ref=e718]: "35"
+                                - text: sin interés
+                            - generic [ref=e719]: Envío gratis
+                      - group [ref=e720]:
+                        - generic [ref=e721]:
+                          - img [ref=e724]
+                          - generic [ref=e725]:
+                            - link [ref=e726] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=5HrsM%2F12FgYPTSqhffiK%2BOBVcPG%2Fk6Cm2n8IFC%2FTLAuSQg4qQGtff%2BBntSFl6hlripHUGw7SISNC7D4YSyUjSltKfvcrY%2F8sEZgR58YcyYQNlL1qO6%2FtekbrgkjW4KZcXN9znYJYrCMf%2FgFAeKBpq4yjwO39pkRnUU3BLjRNZ4Ht0zCYC7n2o6kyMk29odigHTFj%2FlNiT8UGpyolH%2Bp40WrtBXm6yIFUD1voVQvDIZ%2BcjH5AiMpM8t8l5YpcrZhdmHam3%2F%2FYkZKfnAQiv7SRw6TtY8cPKrVsL%2FAWwHCTCslaxpsQyrB9rIhkiXDDljzCbWkFKPiF6l3qDQ4rAmd6zbPoadFBbKoI8PoBL6yraZaoBmOPc23OiqmM2lSwurVLi4QLXOxKFZ3PT2H%2BqRlHiTj7sdwkQ2DZ3tx2hlriq1GcQmfD%2BlNfioPnYiDbonx2cY7Hca2PqWm6HspEEKmHEGSOmiaP7F0IW32EefLiAIPCGQ9CxcRY8WSsZoBLRzHg3d5gUaSBmy48%2Fr6RC5rwOSVQvps4Ul6X5NBExR4InNp5kPMmFswskFSLUElF%2FYpJs3lMR3SvgSFA0vRpqLWLl0%2FzdHkz2TJ86fb%2BNxcQ2pK%2FY%2Fti429WISViX9BCjiHNMtQodKhC5y6Io5ALK%2B%2Bynku%2FqLU80T2rU6XQqXX19IwfzYauugYXvGIm8qkBprRrfpeRf%2F%2BbxxssKGoizD%2FHJXU6%2B4%2B9Vhp1YI5eCVDBxrCK%2Fk4pHtVuP5w0KXcPsfEBmp8u9ESagcK5AegVzvYWCpE3vnOQQI0VRSoTQ3w2VUSU04Z0uxqhGwOkJd2tecaDqLF%2BpyG72O2eRriUefN6nBQBDsPVk1LSXnAgFAiPOOGvUU7anVT0c7fEK4CPkzzJY3oO9gq%2F0oP309OxVbl0Uqpm41dXPSRs5bz%2FcWDSeLn3WiQS6OymcHr5LGT3I93evrKeNvlYrxN74KvZdVrcJ%2Fvxq3W5m2z1kPdBSieTBL3uMJtGa5DRyIAE3YhgO75N6UD%2BMwLarWp0x4AwYvIehTBUFVgxa1NoHsbk%2Fw%3D%3D&catalog_product_id=MPEU3294657416&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Vertical Ergonómico Usb Recargable Antifatiga 3600 Dpi Negro
+                            - generic [ref=e727]:
+                              - img [ref=e729]:
+                                - generic [ref=e730]: S/
+                                - generic [ref=e731]: "49"
+                                - generic [ref=e732]: ","
+                                - generic [ref=e733]: "99"
+                              - generic [ref=e734]:
+                                - text: 6 cuotas de
+                                - img [ref=e735]:
+                                  - generic [ref=e737]: S/
+                                  - generic [ref=e738]: "8"
+                                  - generic [ref=e739]: ","
+                                  - generic [ref=e740]: "33"
+                                - text: sin interés
+                            - generic [ref=e741]: Envío gratis
+                      - group [ref=e742]:
+                        - generic [ref=e743]:
+                          - img [ref=e746]
+                          - generic [ref=e747]:
+                            - link [ref=e748] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=%2B7L%2B%2BkdvGZ%2B877z%2BFxKhc031d0SnfZvyixIz2KqNYYSjEUwPSnYXXGz362cr6ZnToHSzuf%2FcW9UgeJ%2B7j0gvAL%2BtodoGCpltfpT7EMvB2UK5AigC6VQLVKYKgL%2BuIdSUBnl99hzhTq6xIKWxqeDV4VSnI%2Bwo1VHNGs5FvuwVBWhguOeaHqw%2FVkafOVpy0ShW%2Fut9HtSWbgtTLXsy4TWEEXHvyvYMofVMJFNA5faPA22EJUxeu87A77eaQ09geAU9M6HAEi6saQNJULy21L7nuCpM%2Fdcq0%2BB4hLD8aTdGxu5AdiCqPh0CfYQ59W23iMY%2BoEr0a6%2BYCAzRSSSF3PFCkLD0%2Fxyvklon0MF79wI9cVgKgisDDZkvZbjbQjMZJjnMQFXBlzbZ6vXuB%2FxeD0tYTbsOw0hnUFrfDT7TvMCAR6dX3WMw6NOFYKctaE4qraeeikAiMC2f0owMDs%2FzMHOD752gMf9jJU76WXy8%2BbVkQ0SSSECXqceK%2FfgY6%2BXsY0SYEou8ES61bpgzQmbSTdKkE7JrNhGgap5yEFVtBLtpSuk%2BsH%2FPaFmWDYoWQNmwpkesrBSkk0DtjLvvKhMdmcqlsJ%2F%2Bc6mmBRQJDAk8M0jTbuVXOO5rOb3iKA%2BMaX%2BR3e8NQPXZbAbcSTi8Nmu2Mg2FoJCB5NkuwTSj90SQqe%2BnsQtUNPH0hVtik28%2Br0m4ROuRGzcMwEFZhUTYanFJKBpH1YdrDzJ6klvTFMOgfqpAMbV%2BYxF4xL0Btp2HBR3amwJl7weQFMfQ%2FUk7r%2F%2FGbGKhNQm4skF4bpgz6rxSJljwJ6IPZYP%2Fn7RsugNKOkZxJ0zn%2FRUgt04wPolVrdczU%2BL2Tqv61XDA6l8dtXSGXKNJloYdESSEi6uG0sQVsayf%2BBrGZtOut4C%2FvVBB1RAGw8Gw32ML8itIA2bSlXuRioLGscprCMZvL%2Bz7zOdqlL5xZCJpygoCEYWSmwb7aXGFX%2Bt5aILtZru6DOTdUdxHkyCKpPtKv7DW4n%2BpCP7NlhixoxTrLs3U20qaLXitnf%2F9rC3lSzFyZw%3D%3D&catalog_product_id=MPE58188447&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Soporte De Brazo Para Escritorio, Alivia La Presion Negro
+                            - generic [ref=e749]:
+                              - img [ref=e750]:
+                                - generic [ref=e751]: S/
+                                - generic [ref=e752]: "59"
+                              - generic [ref=e753]:
+                                - img [ref=e754]:
+                                  - generic [ref=e755]: S/
+                                  - generic [ref=e756]: "34"
+                                  - generic [ref=e757]: ","
+                                  - generic [ref=e758]: "81"
+                                - generic [ref=e759]: 41% OFF
+                              - generic [ref=e760]:
+                                - text: 12 cuotas de
+                                - img [ref=e761]:
+                                  - generic [ref=e763]: S/
+                                  - generic [ref=e764]: "2"
+                                  - generic [ref=e765]: ","
+                                  - generic [ref=e766]: "90"
+                                - text: sin interés
+                      - group [ref=e767]:
+                        - generic [ref=e768]:
+                          - img [ref=e771]
+                          - generic [ref=e772]:
+                            - link [ref=e773] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=wEGulmRURopVH2gQWjmpXYJUVJaUVeEYU6E8IZZYJUEH7RO%2BV2EFGX%2FBzLc47P%2FrieYnHSQdGA8vrOhVF9DxxM5XV%2FI3WPix%2Fx9LeAqMTLA7WEiO%2BQCJIzIjpHPK6Llgsj6tHnrkCHrQiSdc2QHFX4SAUC31joj4uNBY3lZQ5TKthYvQTLhel5vK871FaIoCLAXxY%2FBA%2FaUWx1bzdCFqBGnZh5bUJX7xukca%2B2IAgQYjIklPXejoDunbQzfxZ%2F1AdXcozuPB7m6bsgoyAKUiRLpMbkmRTojZRpBZRh2txBNimDUCekJXqecITK5%2B061qOojiRrZQDRB8NrPQfjd%2BRyL3O8gxM3aQRPxtE6c2ikUz6EmPXQpRRPmfWX%2Bq8iD19ORFfLjrhXqlEpzJ8BhannZqp3mN%2Ff6Wu7BLuaFjc9lONZVeDaEHLjs6wda7DQEKexnqScGCj9y3gb2DOoQUyvQ1nRyc6zbGE2TWQoMbB86Z7%2Fc%2FagKtFpiIWSj%2B2kVIjUODpdTa3b%2F50yZCN7f9taqvP8P32hepqFPF8BUHGVQQ41htdpz3mvXbT9cAqx0Se4CxHHy6iK7BBn6fs1KyEduX%2BgpPHCgg7xRRHn%2Fit2bucLu%2FoL5HoVh0FsNDvioqLTkWu8U9O%2BaqlUTQrUs9WO%2FF6CIdSneds%2BiKDGXiHEuFzTNJVqzH7LyVElFRVUj8SM6S61MSEvZNxRal6nPJb4snyk0pmpr4cxZjxPmtDrA7lzy2EGdcQrFgeDtEqWpw1JbGQ4gJDMR4P2EU2H8Ytk4IyBoCyOpoilvczBgjHeBvtKXHp%2FHrryGYOqZN1NKmRC6RzZzbvIvNWsTegeCB%2Foni%2FTC5Pq0VE10Xc1LzsIPOSVV6%2Fbr%2FcompoH%2FoJf3dHmxvWYyTbs3Zi34qVLw%2FElcloQUjtji3xyTpGBSd1hWHjx5on8MQNNQneTOd3iZ%2FAd%2BdyNgoTO3V1rZuiH6Rbn8YYaaMrmNHSEGJP1VDNFSzQ1vFOI3cul1hqJtpyTIOu7DOKnTenD95GvRCC20g2Z9utUYUNJJlsg%3D%3D&catalog_product_id=MPE30200983&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gamer Primus Gladius 12400t Star Wars Ahsoka Tano Blanco
+                            - generic [ref=e774]:
+                              - img [ref=e775]:
+                                - generic [ref=e776]: S/
+                                - generic [ref=e777]: "185"
+                              - generic [ref=e778]:
+                                - img [ref=e779]:
+                                  - generic [ref=e780]: S/
+                                  - generic [ref=e781]: "173"
+                                  - generic [ref=e782]: ","
+                                  - generic [ref=e783]: "99"
+                                - generic [ref=e784]: 5% OFF
+                              - generic [ref=e785]:
+                                - text: 6 cuotas de
+                                - img [ref=e786]:
+                                  - generic [ref=e788]: S/
+                                  - generic [ref=e789]: "29"
+                                - text: sin interés
+                            - generic [ref=e790]: Envío gratis
+                      - group [ref=e791]:
+                        - generic [ref=e792]:
+                          - img [ref=e795]
+                          - generic [ref=e796]:
+                            - link [ref=e797] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=p70r13hOAuahAW%2B73YPtuR18vHMP%2B7RP9PUW2jhqpFD8TtniOQBhuYSEje5dRkT3QSF1pEe4siIGRmnQazabC5HagzxCYtjLgOeedcaa0TsOOVBTR1NNFv5LPvgEA7KPFOthP7CEMxtTvaCqOQMsbqSBE7LvyeXp5QfpCgqY8BJvindkUxMHqB451g9KWznvXLvKQzzJsk7VWjBBt8w1BhDzeRiRAVE0QYU7tPjfArPhsIzI%2FoCVthTgfA3f0%2FA%2FdwXZiLg%2Fv5fI9HjM85MsqDnGWw7S4Kds5TfWyjqkejnAS6mgNJqIWv%2Bo74faAY%2FFho7RZIzu8dIRW4wmexlVNlHhvslkKm9weBefRjYCRx7H9eRZ9oZHBIlrrYAzF9qPlvCwAompap8LTWaijHa73JrwVxwJHXrIQM5pMw1OcV34ydjEhUofQ46Za293xZP1UovlDZZZuRZZJ8fNi2cJqkt2vGArCw33vX6EOuhjWo1%2Fs7HJQKYfBuSn6vCfOESeMdptx0%2BdD8dh9a8HeSEX5mc2zXpHfFeL46mBpmKjHhpZx0v1HLvTdn25T6A6X0FHsZB1qaZqegaIuP3hOeqTB3mCJ1y1z9xn2Y0B7Glr%2Bbb7%2FwgyggqCu2qF45FiDH7PQlXH5d8RlYlccd2ts%2F9pjJJk0NfeiSWa%2BDFkmifwedClFpGhT3SjafaDxEYD16Z7G5Ot9pgs5c6sP2Shp%2BsmJo7yUGhwjckY6LN1WRWmQ7Ia2GRA3NOvSQFuLMmQ8m8JXZcEeirZwsoweFozVuo%2F%2FXhnYfOE5Le1uJPKetkW9uFVBcks%2BF7ZoDvktzoWwzZDYweUZJsPpKG3fP3tcG9jFpPqr7Oe7wacp5NSDA2lxDWGMuHmjH%2Bpp28ltbtl8MHYz%2FeIYsVzxSD2vJ0qsFBnHH4reP1yypKeSNosiCU0qaij0v3303GDL1JARR1MzhO7I2%2FTGJM9roOL9bo7DgKpYLW7OYO59%2FdsmA0z3BkKNgNS3C6bUjR9fiy8YFc%2FB0Ag9mXoifArh16GqqN3svTWG3mLpzGuRYniMNI%3D&catalog_product_id=MPEU2457836025&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Soporte De Brazo Para Escritorio, Ideal Para Teclado Y Mouse Negro
+                            - generic [ref=e798]:
+                              - img [ref=e799]:
+                                - generic [ref=e800]: S/
+                                - generic [ref=e801]: "89"
+                              - generic [ref=e802]:
+                                - img [ref=e803]:
+                                  - generic [ref=e804]: S/
+                                  - generic [ref=e805]: "57"
+                                  - generic [ref=e806]: ","
+                                  - generic [ref=e807]: "42"
+                                - generic [ref=e808]: 35% OFF
+                              - generic [ref=e809]:
+                                - text: 6 cuotas de
+                                - img [ref=e810]:
+                                  - generic [ref=e812]: S/
+                                  - generic [ref=e813]: "9"
+                                  - generic [ref=e814]: ","
+                                  - generic [ref=e815]: "57"
+                                - text: sin interés
+                            - generic [ref=e816]: Envío gratis
+                      - group [ref=e817]:
+                        - generic [ref=e818]:
+                          - img [ref=e821]
+                          - generic [ref=e822]:
+                            - link [ref=e823] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=P2pJiod78oq4d5hN2ZAoNk4JqJa%2FHL0QXf9cxfKLSWH%2BdMXtZJweJFNjXOZkvQew3Iy%2FA503sILl3%2FM%2BnxZ9XqVT1REYbzuel4IfJiqsbadgeJd2qtwMDOZfhd31x%2BgaxPoE2RrMYR8k90%2FE3AYZdAnCkEztVw995WANqFkAAc4Eq6WGorsCByJUdReWmetuqXUfanZ3P7YBcpKjip0aAzAxrbAiemjM%2FNz4ymUxihsUGoGAWU3YMamq19y45nksZIE8Bu%2FkG4SUgK4rlaCI7F%2FfJnqwm1wdxURFKekmRGdYFrQpU3ybvr%2FPceP0VKZbaL3sGwLAfJn9CA7g%2F1LB0LTxAd%2FoMhslw8z%2FqWy08hB8xbLtHX6Gn8eBAR6halavpjHh%2FpdPgamPQosKY%2FSfndcGSKJ%2FwRkTFQbHRehZSz4YSXFKmhxANsbV2YorJqSjmMMtLhHwGBCZFfr8ym5ImhRrMJSaHmpyCkYLAadjQqbkkNKBv2Fcsf43i11OJtASbfjTWANsJF2e9lm9bdNOo%2F02RR%2BRZGS2IlD5SCJFO1CtSgQvVrcVBeaoo5obkOWibXbi9Sz8ysClKt9dKT9LZ9SnYNRfeXMmeYRtAhnLoNilI%2F00a1FBtz8jD%2BnaCG2Vsf5dlG6ZPLNZcaCx8Vi%2BsduMpqXpWWH%2FsNJ7dPF%2FYwb4GAhDaUjO%2FTODtV%2FAtSq%2BjN7KPO2z%2BySxyMYk9jnoeCfxY8%2Fki4l0t%2BKAswnbhiffI6jVzghL3NgQ5Rz%2FnDdhTb90fx2AUNazj%2FrXdZoVs2oihycFpYwElqKknNvBuo7MfEC1JRrs0PEf7aFn8lB7712rC1jFNxLT4%2FYfEs0Yh6m6gdC8rxEi4%2Bot2QW6MkUixktLzbx0xIGPyl%2B9czzZJREZSXLY4QRPjsQ0PAMwCS%2BLtOZMg1avzqn8570NLyRd%2FFEGDyvjc6bq8Ky%2BGvAdRimLYhLI3DtQR9mkcjkJzSaOuAyVrj9sALR7S%2FcsX91k4qh5tUKA%2BT98ytFJcAWu5DLrRE3y4SxTtQ9b9rIcX%2Fw%3D&catalog_product_id=MPEU3729157688&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Inalambrico Bluetooth, 4 Botones Teros Te-1239s Púrpura
+                            - generic [ref=e824]:
+                              - img [ref=e826]:
+                                - generic [ref=e827]: S/
+                                - generic [ref=e828]: "35"
+                              - generic [ref=e829]:
+                                - text: 12 cuotas de
+                                - img [ref=e830]:
+                                  - generic [ref=e832]: S/
+                                  - generic [ref=e833]: "2"
+                                  - generic [ref=e834]: ","
+                                  - generic [ref=e835]: "92"
+                                - text: sin interés
+                      - group [ref=e836]:
+                        - generic [ref=e837]:
+                          - img [ref=e840]
+                          - generic [ref=e841]:
+                            - link [ref=e842] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=zFKOJgbATBrgqXlo8I2rpYdS%2FS9vI0ZbLrKqL1q1WEkjYiyCxehQvH6kwr4kFIRYRIqTJ%2B0jcvam76IqV6TSsuDzLUuR8BuaN2N7fRXHqaTkk%2FtaPvY4NCAao55R5cU13hhqhuWZv9HZrVikW%2FkjX8%2Fk%2F099oiLW4krlj9dhKQQOTVN%2F0F%2FJDAyNkbWv%2F3P8nDC7TxgznOAplJO2KU3eEgMBLPLUsEk2zr9dP3FovhdePThPnlJn344P89bRrXFCPwS5O4jv34%2FK4pi5g0uOycWEe5U73IEm89TA3KEdMfaT9LKys%2F7xFEzblflStoaHN9rptdbiuT870Ldl220LYeOxoYshpNp%2F8jlas%2BQnQ02QJr6rhNtNR%2FWkrW%2FNE31hvh7fvQ3rrbwsBmZN9gZADx0pYGQi1%2BK6RA3rLuqXPXw8HYnbN6VLMhLs3hbtI4aHQFtGCZNcNf2p%2BofALKga2i4LklMLNlME7r8l3MZ7j7%2B65Xp%2FrXBLILdq68RKpC%2BG9Zju2Qp96RLXoSeU%2BBbYlURbicHt%2F9Oi38Rrd9skjFfAcrRWv5RsxuzmTDlUqg5CuOfP6kSvzJLpTVmI3X9r0DFNY4u4XOlMjMTSD%2B%2FAfhf3RQms2TGPti5rhEzkPfk%2FvrptVeBVElP8W2hC%2BMVqp1i7LL7dgpz6zLhadDl6G%2BAsF5KlEd7iVKXn2pTJnUbqvFNtm7V0iZkvf3IxpFSwgy1GPlRnC2v9IjWI5R%2FpWdbsYDbAl25ykwZcHr3DhMqPmZ1Avuv61SJNsCC7qcN9zL%2Bm71SVUlN042Pf1lUlMaKszt0204kDeurp1Nc51BvzTv%2FPcwSxRw2ZbCmaeygnMp6eqChFWgGqk%2BboQLdyNblv64BLhZpYz7MCLFzjtT3bntGax1%2BcDJS05pLz%2BrWwgRu3y1%2B7RdHS2OH%2F%2Fnuq1wu4rHHCKF9MpHIUkeDfroqe1mtLhNRnSfphkVmRD2M%2FOVKb83c%2FX%2BO5x5H%2BMPGmVqZx%2BP3dEsS17uOb3jpwsGPitPShI27BzcKELEmRNKRLjOkIW19X7gc%3D&catalog_product_id=MPEU3720180751&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Inalambrico - Bluetooth, 4 Botones Teros Te-1240s Azul Azul
+                            - generic [ref=e843]:
+                              - img [ref=e845]:
+                                - generic [ref=e846]: S/
+                                - generic [ref=e847]: "35"
+                              - generic [ref=e848]:
+                                - text: 12 cuotas de
+                                - img [ref=e849]:
+                                  - generic [ref=e851]: S/
+                                  - generic [ref=e852]: "2"
+                                  - generic [ref=e853]: ","
+                                  - generic [ref=e854]: "92"
+                                - text: sin interés
+                      - group [ref=e855]:
+                        - generic [ref=e856]:
+                          - img [ref=e859]
+                          - generic [ref=e860]:
+                            - link [ref=e861] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=xQPpVnRZReJUNd4xhtkVTc%2Btcm%2BYL2TKEQdcADgqu6YW0%2BSRIVEhhnNZwXS7IwFViHhV6RXLcrCKGSYACm%2FWF%2FoyqpagdS9obLNheymkJBjhdQSSW2pbUn6gXaEXCrdYK%2BVUMnP3v8nt%2BvkJjfOQbsu4DN2Dx%2BjRhM2T0InY7m1G7WZfJiIMbtCPnSpnMxayoNEwFcP4hMI%2BVBUIPT7HqjiwiyRLkgEaXkL6Axzf5mrGPcKATjU%2F49l61HgyBqZtdVB9KOlzBj9dcQntc7nSwH2w4aWP2RmscnT%2Fx2xHY6aE3y%2F49OJ5AMmiUiqVhOad%2FImtEn4vFQSoKmKHA7%2BjT337j%2FRQtGZt5Fx8xxnwgjB3J6W40Wn6eOkpbCxENwzrjBRFto1AFgM%2FQgFPk3PJg%2F6MmSGQ%2FWeOr4FwgOptMDUtGMpEw%2Fdg1d9h4GrbCmSbErMRQDopggTTEnjBluPxKi1%2FW5kPp%2FrfL5uN6TRzNMZ5pl4B2EYerJGH4SDQvfVUEySAR6IiyGdzpvBa4%2B4dCA4bQPLvNrz90ldNof5KI3umB0J5EE7xZA1rwROpu9iVYDjdmrdjxi3ts112AalvYEmGTYZ1%2FQqFv9smgF9U6kipPE6URVIC4r4nddyfHIzLOk5Q2JBnf%2B4o8o3WkRE%2FqW4joIPadKCDoqPVapeJbMrCHh8BHMtt4Oc7LR8esFz%2FOJLeq61iV5MgPZ4xP7reLPfTRlKb95UYNTNv1jDjesTfXU7FuoIsJEmjl%2BynrtLkkkQd0xy%2FXbHrceuDYgCEMsRHSxhqDjUMlz8jxNwJkmgWPqSofXooDYLtRmHUf%2FFpIUbFbOZDlqp8QYay9riBvtYM4Mc6Mg%2FcRENWitAXn5if39ZxvDyxiBFWT%2BBzPhtPhA1xSyA%2B1RphuzmHWrA604qjtKrI04Ti2jiU0LdN4xtAmsRc%2F2y6fmye7coAfTLff6c4Jv30QCYoNOWHKZx5%2FLlQLi3xVRo%2BDoLmQ%2FFZslfaR6iiTX43pfDqQuftyQou%2Fn7T3ACqlm2MfylUUkHAEi46kYQYwQ%3D%3D&catalog_product_id=MPEU3051176699&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Usb Led Gamer 6 Botones Sporting Mic M838 Micronics Gris
+                            - generic [ref=e862]:
+                              - img [ref=e864]:
+                                - generic [ref=e865]: S/
+                                - generic [ref=e866]: "54"
+                                - generic [ref=e867]: ","
+                                - generic [ref=e868]: "90"
+                              - generic [ref=e869]:
+                                - text: 12 cuotas de
+                                - img [ref=e870]:
+                                  - generic [ref=e872]: S/
+                                  - generic [ref=e873]: "4"
+                                  - generic [ref=e874]: ","
+                                  - generic [ref=e875]: "58"
+                                - text: sin interés
+                            - generic [ref=e876]: Envío gratis
+                      - group [ref=e877]:
+                        - generic [ref=e878]:
+                          - img [ref=e881]
+                          - generic [ref=e882]:
+                            - link [ref=e883] [cursor=pointer]:
+                              - /url: https://click1.mercadolibre.com.pe/mclics/clicks/external/MPE/count?a=DAyj9JeYDSCHHYjDfG3hS6xpNgzdFKFv2tRZe1rb3FEL71G0y63MFHMgZM9VSJmxxKAZmDgsxooju5Nc9Yw8t3LLHZ1nn99mTiJyKcS%2BFlI61drbt%2FwzAVVeOfr6QDvKoQVH12J1ylqkGHhpSk74htmCnjfABrMAHHTugbvXj7rZToKwUGYRoSUgGZgGkOxE5zm9g4FuaQtpkYMD7zXLleRimtjaaSXTN1NtOzuJDDfBjCvXvaYccuw4vclIRtRPR%2BuDNqnYSeNPPpmEWxHjCyL0l3C09eSPsc4CTvyEiue2IEgE%2FMGCG8gUXSOW7O3EWbwZiW4TpcJgBK3%2BiKrucdLi%2FvhS%2BIrz9vx5VOHkhiIfSuaCFSz%2FMujMqPh5DEHsMNk1WCIFN0Jw2NtmKNAu9Z02B0mdhC4ZqKmPIYCXvW7iB4bb5B9sSC7%2B%2FqDylTpOyXHSezErqNJasMR4UoBeMUqV3FZwGg0SNifEGR%2FwubQBPcIrgnsDgW562hLSf3fucZ%2FpPnbEIdTW8UFtIFWXxdaxMVtSEl8b5%2FDDoRj0CKpoIKZghcBW%2Bpa1PxEeedOCd0pxRGuIonQeW2spV%2FrzyFirRBmmZBlPcjQ8fL9V7gbVyYYgNLbtCv4PkN14xSOLEWtVRWMcXef8up%2B5NdS47pVHMETspdzHMNW9PQWG1tQCgKnsJGjR6n3fXE%2FBRQycgb6GXRfJnwlwQLS%2BNucuzICaGDCZsAkp%2BP54nsE9NwXkphBsudj0VbKER9VuxJJeSGLpHg%2BzLvEsTczPsUFlD9Qt%2B%2FrPmPq0MTLkEpRlATsrPOU3uSglVy1TF7sblO2kdLtrN0PJojHD7IMXJo3KdfY7n8GV5VxybaXLxMzuXz6GcwyhX8RHU2%2FNwOvwMgEjNRLCHiagjyCc3JaMxCvgJP32hwcp7D0bclvel7Yb7XDqbPbRSdCnYtqXn%2FOVQFdhIvptkNmQdzn%2FKgAI7jCEyPpTKoghDQNlJImU185wRFvWgw6RTVpTA5cS3dfPk8rX4pSh%2FjUV%2Fu%2BQL3vzafseIk5ayGur4Q%3D%3D&catalog_product_id=MPEU2463124488&zip_code=PE-LMA_UEUtTE1BTGltYQ
+                              - text: Mouse Gamer Ramko Rm1070 3200dpi Peso Ajustable Iluminado Negro
+                            - generic [ref=e884]:
+                              - img [ref=e886]:
+                                - generic [ref=e887]: S/
+                                - generic [ref=e888]: "56"
+                                - generic [ref=e889]: ","
+                                - generic [ref=e890]: "90"
+                              - generic [ref=e891]:
+                                - text: 12 cuotas de
+                                - img [ref=e892]:
+                                  - generic [ref=e894]: S/
+                                  - generic [ref=e895]: "4"
+                                  - generic [ref=e896]: ","
+                                  - generic [ref=e897]: "74"
+                                - text: sin interés
+                            - generic [ref=e898]: Envío gratis
+                    - button "Siguiente" [ref=e899] [cursor=pointer]:
+                      - img [ref=e900]
+              - generic [ref=e903]:
+                - heading "Productos del vendedor" [level=2] [ref=e907]
+                - region "Productos del vendedor" [ref=e908]:
+                  - generic [ref=e909]:
+                    - generic [ref=e911]:
+                      - group "1 de 20" [ref=e912]:
+                        - generic [ref=e913]:
+                          - img [ref=e916]
+                          - generic [ref=e917]:
+                            - link "Mouse Gamer Vertical Bluetooth Teros Te-5169n - Ergonomico Negro" [ref=e918] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-gamer-vertical-bluetooth-teros-te5169n--ergonomico/up/MPEU2978747261?pdp_filters=seller_id%3A723626341#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=0&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE698833036&sid=recos
+                            - generic [ref=e919]:
+                              - 'img "Antes: 78 soles" [ref=e920]':
+                                - generic [ref=e921]: S/
+                                - generic [ref=e922]: "78"
+                              - generic [ref=e923]:
+                                - 'img "Ahora: 46 soles con 33 céntimos" [ref=e924]':
+                                  - generic [ref=e925]: S/
+                                  - generic [ref=e926]: "46"
+                                  - generic [ref=e927]: ","
+                                  - generic [ref=e928]: "33"
+                                - generic [ref=e929]: 40% OFF
+                              - generic [ref=e930]:
+                                - text: 12 cuotas de
+                                - img "3 soles con 86 céntimos" [ref=e931]:
+                                  - generic [ref=e933]: S/
+                                  - generic [ref=e934]: "3"
+                                  - generic [ref=e935]: ","
+                                  - generic [ref=e936]: "86"
+                                - text: sin interés
+                            - generic [ref=e937]: Envío gratis
+                      - group "2 de 20" [ref=e938]:
+                        - generic [ref=e939]:
+                          - img [ref=e942]
+                          - generic [ref=e943]:
+                            - link "Mouse Gamer Vertical Bluetooth Teros Te-1236s - Ergonomico Blanco" [ref=e944] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-gamer-vertical-bluetooth-teros-te1236s--ergonomico/up/MPEU3368082464?pdp_filters=seller_id%3A723626341#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=1&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE802831412&sid=recos
+                            - generic [ref=e945]:
+                              - 'img "Antes: 99 soles" [ref=e946]':
+                                - generic [ref=e947]: S/
+                                - generic [ref=e948]: "99"
+                              - generic [ref=e949]:
+                                - 'img "Ahora: 58 soles con 81 céntimos" [ref=e950]':
+                                  - generic [ref=e951]: S/
+                                  - generic [ref=e952]: "58"
+                                  - generic [ref=e953]: ","
+                                  - generic [ref=e954]: "81"
+                                - generic [ref=e955]: 40% OFF
+                              - generic [ref=e956]:
+                                - text: 6 cuotas de
+                                - img "9 soles con 80 céntimos" [ref=e957]:
+                                  - generic [ref=e959]: S/
+                                  - generic [ref=e960]: "9"
+                                  - generic [ref=e961]: ","
+                                  - generic [ref=e962]: "80"
+                                - text: sin interés
+                            - generic [ref=e963]: Envío gratis
+                      - group [ref=e964]:
+                        - generic [ref=e965]:
+                          - img [ref=e968]
+                          - generic [ref=e969]:
+                            - link [ref=e970] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-inalambrico-teros-te-1228s-6-botones-usb-negro-optico/p/MPE62718342?pdp_filters=item_id%3AMPE933923012#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=2&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE933923012&sid=recos
+                              - text: Mouse Inalámbrico Teros Te-1228s 6 Botones Usb Negro Óptico
+                            - generic [ref=e971]:
+                              - img [ref=e972]:
+                                - generic [ref=e973]: S/
+                                - generic [ref=e974]: "78"
+                              - generic [ref=e975]:
+                                - img [ref=e976]:
+                                  - generic [ref=e977]: S/
+                                  - generic [ref=e978]: "38"
+                                  - generic [ref=e979]: ","
+                                  - generic [ref=e980]: "61"
+                                - generic [ref=e981]: 50% OFF
+                              - generic [ref=e982]:
+                                - text: 12 cuotas de
+                                - img [ref=e983]:
+                                  - generic [ref=e985]: S/
+                                  - generic [ref=e986]: "3"
+                                  - generic [ref=e987]: ","
+                                  - generic [ref=e988]: "22"
+                                - text: sin interés
+                            - generic [ref=e989]: Envío gratis
+                      - group [ref=e990]:
+                        - generic [ref=e991]:
+                          - img [ref=e994]
+                          - generic [ref=e995]:
+                            - link [ref=e996] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-acer-gamer-emw130-x-plus-7-botones-ergonomico/up/MPEU3815719833?pdp_filters=seller_id%3A723626341#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=3&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE998793338&sid=recos
+                              - text: Mouse Acer Gamer Emw130 X Plus 7 Botones Ergonomico Negro
+                            - generic [ref=e997]:
+                              - img [ref=e998]:
+                                - generic [ref=e999]: S/
+                                - generic [ref=e1000]: "99"
+                              - generic [ref=e1001]:
+                                - img [ref=e1002]:
+                                  - generic [ref=e1003]: S/
+                                  - generic [ref=e1004]: "39"
+                                  - generic [ref=e1005]: ","
+                                  - generic [ref=e1006]: "20"
+                                - generic [ref=e1007]: 60% OFF
+                              - generic [ref=e1008]:
+                                - text: 12 cuotas de
+                                - img [ref=e1009]:
+                                  - generic [ref=e1011]: S/
+                                  - generic [ref=e1012]: "3"
+                                  - generic [ref=e1013]: ","
+                                  - generic [ref=e1014]: "27"
+                                - text: sin interés
+                            - generic [ref=e1015]: Envío gratis
+                      - group [ref=e1016]:
+                        - generic [ref=e1017]:
+                          - img [ref=e1020]
+                          - generic [ref=e1021]:
+                            - link [ref=e1022] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-gamer-teros-te1232g-7-botones-rgb-usb-professional/up/MPEU3165821961?pdp_filters=seller_id%3A723626341#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=4&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE719153204&sid=recos
+                              - text: Mouse Gamer Teros Te-1232g 7 Botones Rgb Usb Professional Negro
+                            - generic [ref=e1023]:
+                              - img [ref=e1024]:
+                                - generic [ref=e1025]: S/
+                                - generic [ref=e1026]: "78"
+                              - generic [ref=e1027]:
+                                - img [ref=e1028]:
+                                  - generic [ref=e1029]: S/
+                                  - generic [ref=e1030]: "38"
+                                  - generic [ref=e1031]: ","
+                                  - generic [ref=e1032]: "61"
+                                - generic [ref=e1033]: 50% OFF
+                              - generic [ref=e1034]:
+                                - text: 12 cuotas de
+                                - img [ref=e1035]:
+                                  - generic [ref=e1037]: S/
+                                  - generic [ref=e1038]: "3"
+                                  - generic [ref=e1039]: ","
+                                  - generic [ref=e1040]: "22"
+                                - text: sin interés
+                            - generic [ref=e1041]: Envío gratis
+                      - group [ref=e1042]:
+                        - generic [ref=e1043]:
+                          - img [ref=e1046]
+                          - generic [ref=e1047]:
+                            - link [ref=e1048] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/forza-fvr-902-estabilizador-regulador-900va-450w-8-tomas-color-negro/p/MPE23652167?pdp_filters=item_id%3AMPE660823302#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=5&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE660823302&sid=recos
+                              - text: Forza Fvr-902 - Estabilizador Regulador 900va 450w 8 Tomas Color Negro
+                            - generic [ref=e1049]:
+                              - img [ref=e1050]:
+                                - generic [ref=e1051]: S/
+                                - generic [ref=e1052]: "78"
+                              - generic [ref=e1053]:
+                                - img [ref=e1054]:
+                                  - generic [ref=e1055]: S/
+                                  - generic [ref=e1056]: "42"
+                                  - generic [ref=e1057]: ","
+                                  - generic [ref=e1058]: "99"
+                                - generic [ref=e1059]: 44% OFF
+                              - generic [ref=e1060]:
+                                - text: 6 cuotas de
+                                - img [ref=e1061]:
+                                  - generic [ref=e1063]: S/
+                                  - generic [ref=e1064]: "7"
+                                  - generic [ref=e1065]: ","
+                                  - generic [ref=e1066]: "16"
+                                - text: sin interés
+                            - generic [ref=e1067]: Envío gratis
+                      - group [ref=e1068]:
+                        - generic [ref=e1069]:
+                          - img [ref=e1072]
+                          - generic [ref=e1073]:
+                            - link [ref=e1074] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/parlante-gamer-halion-ha-s266-20-rgb-6w-negro-conector-jack-35mm/p/MPE47298547?pdp_filters=item_id%3AMPE706683172#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=6&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE706683172&sid=recos
+                              - text: Parlante Gamer Halion Ha-s266 2.0 Rgb 6w Negro Conector Jack 3.5mm
+                            - generic [ref=e1075]:
+                              - img [ref=e1076]:
+                                - generic [ref=e1077]: S/
+                                - generic [ref=e1078]: "89"
+                              - generic [ref=e1079]:
+                                - img [ref=e1080]:
+                                  - generic [ref=e1081]: S/
+                                  - generic [ref=e1082]: "49"
+                                  - generic [ref=e1083]: ","
+                                  - generic [ref=e1084]: "84"
+                                - generic [ref=e1085]: 44% OFF
+                              - generic [ref=e1086]:
+                                - text: 6 cuotas de
+                                - img [ref=e1087]:
+                                  - generic [ref=e1089]: S/
+                                  - generic [ref=e1090]: "8"
+                                  - generic [ref=e1091]: ","
+                                  - generic [ref=e1092]: "31"
+                                - text: sin interés
+                            - generic [ref=e1093]: Envío gratis
+                      - group [ref=e1094]:
+                        - generic [ref=e1095]:
+                          - img [ref=e1098]
+                          - generic [ref=e1099]:
+                            - link [ref=e1100] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/teclado-mecanico-gamer-teros-rgb-en-espanol/p/MPE50125181?pdp_filters=item_id%3AMPE749844440#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=7&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE749844440&sid=recos
+                              - text: Teclado Mecánico Gamer Teros Rgb En Español Negro Español Latinoamérica
+                            - generic [ref=e1101]:
+                              - img [ref=e1102]:
+                                - generic [ref=e1103]: S/
+                                - generic [ref=e1104]: "129"
+                              - generic [ref=e1105]:
+                                - img [ref=e1106]:
+                                  - generic [ref=e1107]: S/
+                                  - generic [ref=e1108]: "87"
+                                  - generic [ref=e1109]: ","
+                                  - generic [ref=e1110]: "72"
+                                - generic [ref=e1111]: 32% OFF
+                              - generic [ref=e1112]:
+                                - text: 6 cuotas de
+                                - img [ref=e1113]:
+                                  - generic [ref=e1115]: S/
+                                  - generic [ref=e1116]: "14"
+                                  - generic [ref=e1117]: ","
+                                  - generic [ref=e1118]: "62"
+                                - text: sin interés
+                            - generic [ref=e1119]: Envío gratis
+                      - group [ref=e1120]:
+                        - generic [ref=e1121]:
+                          - img [ref=e1124]
+                          - generic [ref=e1125]:
+                            - link [ref=e1126] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-gamer-teros-te-1233g-dpi-7200-rgb7-botones-usb-negro/p/MPE73963128?pdp_filters=item_id%3AMPE1084658016#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=8&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE1084658016&sid=recos
+                              - text: Mouse Gamer Teros Te-1233g, Dpi 7200, Rgb,7 Botones, Usb Negro
+                            - generic [ref=e1127]:
+                              - img [ref=e1128]:
+                                - generic [ref=e1129]: S/
+                                - generic [ref=e1130]: "78"
+                              - generic [ref=e1131]:
+                                - img [ref=e1132]:
+                                  - generic [ref=e1133]: S/
+                                  - generic [ref=e1134]: "39"
+                                - generic [ref=e1135]: 50% OFF
+                              - generic [ref=e1136]:
+                                - text: 12 cuotas de
+                                - img [ref=e1137]:
+                                  - generic [ref=e1139]: S/
+                                  - generic [ref=e1140]: "3"
+                                  - generic [ref=e1141]: ","
+                                  - generic [ref=e1142]: "25"
+                                - text: sin interés
+                            - generic [ref=e1143]: Envío gratis
+                      - group [ref=e1144]:
+                        - generic [ref=e1145]:
+                          - img [ref=e1148]
+                          - generic [ref=e1149]:
+                            - link [ref=e1150] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/kit-teclado-mouse-inalambrico-recargable-25-30-dias-negro/p/MPE66329724?pdp_filters=item_id%3AMPE1014770014#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=9&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE1014770014&sid=recos
+                              - text: Kit Teclado + Mouse Inalambrico Recargable 25- 30 Dias Negro
+                            - generic [ref=e1151]:
+                              - img [ref=e1152]:
+                                - generic [ref=e1153]: S/
+                                - generic [ref=e1154]: "78"
+                              - generic [ref=e1155]:
+                                - img [ref=e1156]:
+                                  - generic [ref=e1157]: S/
+                                  - generic [ref=e1158]: "54"
+                                  - generic [ref=e1159]: ","
+                                  - generic [ref=e1160]: "05"
+                                - generic [ref=e1161]: 30% OFF
+                              - generic [ref=e1162]:
+                                - text: 12 cuotas de
+                                - img [ref=e1163]:
+                                  - generic [ref=e1165]: S/
+                                  - generic [ref=e1166]: "4"
+                                  - generic [ref=e1167]: ","
+                                  - generic [ref=e1168]: "50"
+                                - text: sin interés
+                            - generic [ref=e1169]: Envío gratis
+                      - group [ref=e1170]:
+                        - generic [ref=e1171]:
+                          - img [ref=e1174]
+                          - generic [ref=e1175]:
+                            - link [ref=e1176] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/soplador-aspiradora-800w-pc-gamer-laptop-casa-auto-aire-blue-dragon-tb2086/p/MPE28343258?pdp_filters=item_id%3AMPE695164200#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=10&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE695164200&sid=recos
+                              - text: Soplador Aspiradora 800w Pc Gamer Laptop Casa Auto Aire Blue Dragon Tb2086
+                            - generic [ref=e1177]:
+                              - img [ref=e1178]:
+                                - generic [ref=e1179]: S/
+                                - generic [ref=e1180]: "78"
+                              - generic [ref=e1181]:
+                                - img [ref=e1182]:
+                                  - generic [ref=e1183]: S/
+                                  - generic [ref=e1184]: "55"
+                                  - generic [ref=e1185]: ","
+                                  - generic [ref=e1186]: "21"
+                                - generic [ref=e1187]: 29% OFF
+                              - generic [ref=e1188]:
+                                - text: 6 cuotas de
+                                - img [ref=e1189]:
+                                  - generic [ref=e1191]: S/
+                                  - generic [ref=e1192]: "9"
+                                  - generic [ref=e1193]: ","
+                                  - generic [ref=e1194]: "20"
+                                - text: sin interés
+                            - generic [ref=e1195]: Envío gratis
+                      - group [ref=e1196]:
+                        - generic [ref=e1197]:
+                          - img [ref=e1200]
+                          - generic [ref=e1201]:
+                            - link [ref=e1202] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/adaptador-carcasa-ssd-m2-a-usb-30-sata-iii-gris-aluminio-50000-gbs/p/MPE37336776?pdp_filters=item_id%3AMPE689003966#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=11&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE689003966&sid=recos
+                              - text: Adaptador Carcasa Ssd M.2 A Usb 3.0 Sata Iii Gris Aluminio 50000 Gb/s
+                            - generic [ref=e1203]:
+                              - img [ref=e1204]:
+                                - generic [ref=e1205]: S/
+                                - generic [ref=e1206]: "78"
+                                - generic [ref=e1207]: ","
+                                - generic [ref=e1208]: "10"
+                              - generic [ref=e1209]:
+                                - img [ref=e1210]:
+                                  - generic [ref=e1211]: S/
+                                  - generic [ref=e1212]: "46"
+                                  - generic [ref=e1213]: ","
+                                  - generic [ref=e1214]: "39"
+                                - generic [ref=e1215]: 40% OFF
+                              - generic [ref=e1216]:
+                                - text: 12 cuotas de
+                                - img [ref=e1217]:
+                                  - generic [ref=e1219]: S/
+                                  - generic [ref=e1220]: "3"
+                                  - generic [ref=e1221]: ","
+                                  - generic [ref=e1222]: "87"
+                                - text: sin interés
+                            - generic [ref=e1223]: Envío gratis
+                      - group [ref=e1224]:
+                        - generic [ref=e1225]:
+                          - img [ref=e1228]
+                          - generic [ref=e1229]:
+                            - link [ref=e1230] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/fuente-de-poder-para-pc-gamemax-vp-series-vp-600-rgb-600w-negra/p/MPE43937954?pdp_filters=item_id%3AMPE674365498#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=12&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE674365498&sid=recos
+                              - text: Fuente De Poder Para Pc Gamemax Vp Series Vp-600-rgb 600w Negra Negro
+                            - generic [ref=e1231]:
+                              - img [ref=e1232]:
+                                - generic [ref=e1233]: S/
+                                - generic [ref=e1234]: "359"
+                                - generic [ref=e1235]: ","
+                                - generic [ref=e1236]: "30"
+                              - generic [ref=e1237]:
+                                - img [ref=e1238]:
+                                  - generic [ref=e1239]: S/
+                                  - generic [ref=e1240]: "206"
+                                  - generic [ref=e1241]: ","
+                                  - generic [ref=e1242]: "31"
+                                - generic [ref=e1243]: 42% OFF
+                              - generic [ref=e1244]:
+                                - text: 6 cuotas de
+                                - img [ref=e1245]:
+                                  - generic [ref=e1247]: S/
+                                  - generic [ref=e1248]: "34"
+                                  - generic [ref=e1249]: ","
+                                  - generic [ref=e1250]: "38"
+                                - text: sin interés
+                            - generic [ref=e1251]: Envío gratis
+                      - group [ref=e1252]:
+                        - generic [ref=e1253]:
+                          - img [ref=e1256]
+                          - generic [ref=e1257]:
+                            - link [ref=e1258] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/kit-de-teclado-y-mouse-logitech-mk120-espanol-de-color-negro/p/MPE18611117?pdp_filters=item_id%3AMPE684961444#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=13&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE684961444&sid=recos
+                              - text: Kit De Teclado Y Mouse Logitech Mk120 Español De Color Negro
+                            - generic [ref=e1259]:
+                              - img [ref=e1260]:
+                                - generic [ref=e1261]: S/
+                                - generic [ref=e1262]: "78"
+                              - generic [ref=e1263]:
+                                - img [ref=e1264]:
+                                  - generic [ref=e1265]: S/
+                                  - generic [ref=e1266]: "48"
+                                  - generic [ref=e1267]: ","
+                                  - generic [ref=e1268]: "14"
+                                - generic [ref=e1269]: 38% OFF
+                              - generic [ref=e1270]:
+                                - text: 6 cuotas de
+                                - img [ref=e1271]:
+                                  - generic [ref=e1273]: S/
+                                  - generic [ref=e1274]: "8"
+                                  - generic [ref=e1275]: ","
+                                  - generic [ref=e1276]: "02"
+                                - text: sin interés
+                            - generic [ref=e1277]: Envío gratis
+                      - group [ref=e1278]:
+                        - generic [ref=e1279]:
+                          - img [ref=e1282]
+                          - generic [ref=e1283]:
+                            - link [ref=e1284] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-pad-gamer-antideslizante-teros-te-3014s-tela-negro-32x27-cm/p/MPE50831694?pdp_filters=item_id%3AMPE635963549#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=14&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE635963549&sid=recos
+                              - text: Mouse Pad Gamer Antideslizante Teros Te-3014s Tela Negro 32x27 Cm
+                            - generic [ref=e1285]:
+                              - img [ref=e1286]:
+                                - generic [ref=e1287]: S/
+                                - generic [ref=e1288]: "29"
+                                - generic [ref=e1289]: ","
+                                - generic [ref=e1290]: "25"
+                              - generic [ref=e1291]:
+                                - img [ref=e1292]:
+                                  - generic [ref=e1293]: S/
+                                  - generic [ref=e1294]: "9"
+                                  - generic [ref=e1295]: ","
+                                  - generic [ref=e1296]: "36"
+                                - generic [ref=e1297]: 68% OFF
+                      - group [ref=e1298]:
+                        - generic [ref=e1299]:
+                          - img [ref=e1302]
+                          - generic [ref=e1303]:
+                            - link [ref=e1304] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/mouse-gamer-acer-omr210-bluetooth-y-wirreles-baterias-rec-blanco/p/MPE66812039?pdp_filters=item_id%3AMPE1027809044#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=15&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE1027809044&sid=recos
+                              - text: Mouse Gamer Acer Omr210 Bluetooth Y Wirreles (baterias Rec) Blanco
+                            - generic [ref=e1305]:
+                              - img [ref=e1306]:
+                                - generic [ref=e1307]: S/
+                                - generic [ref=e1308]: "119"
+                              - generic [ref=e1309]:
+                                - img [ref=e1310]:
+                                  - generic [ref=e1311]: S/
+                                  - generic [ref=e1312]: "88"
+                                  - generic [ref=e1313]: ","
+                                  - generic [ref=e1314]: "36"
+                                - generic [ref=e1315]: 25% OFF
+                              - generic [ref=e1316]:
+                                - text: 12 cuotas de
+                                - img [ref=e1317]:
+                                  - generic [ref=e1319]: S/
+                                  - generic [ref=e1320]: "7"
+                                  - generic [ref=e1321]: ","
+                                  - generic [ref=e1322]: "36"
+                                - text: sin interés
+                            - generic [ref=e1323]: Envío gratis
+                      - group [ref=e1324]:
+                        - generic [ref=e1325]:
+                          - img [ref=e1328]
+                          - generic [ref=e1329]:
+                            - link [ref=e1330] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/forza-fvr-1222usb-estabilizador-regulador-de-voltaje-1200va-600w-8-tomas-universales-2-usb-color-negro/p/MPE24612570?pdp_filters=item_id%3AMPE661028158#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=16&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE661028158&sid=recos
+                              - text: Forza Fvr-1222usb Estabilizador Regulador De Voltaje 1200va 600w 8 Tomas Universales 2 Usb Color Negro
+                            - generic [ref=e1331]:
+                              - img [ref=e1332]:
+                                - generic [ref=e1333]: S/
+                                - generic [ref=e1334]: "122"
+                                - generic [ref=e1335]: ","
+                                - generic [ref=e1336]: "98"
+                              - generic [ref=e1337]:
+                                - img [ref=e1338]:
+                                  - generic [ref=e1339]: S/
+                                  - generic [ref=e1340]: "86"
+                                  - generic [ref=e1341]: ","
+                                  - generic [ref=e1342]: "09"
+                                - generic [ref=e1343]: 30% OFF
+                              - generic [ref=e1344]:
+                                - text: 6 cuotas de
+                                - img [ref=e1345]:
+                                  - generic [ref=e1347]: S/
+                                  - generic [ref=e1348]: "14"
+                                  - generic [ref=e1349]: ","
+                                  - generic [ref=e1350]: "35"
+                                - text: sin interés
+                            - generic [ref=e1351]: Envío gratis
+                      - group [ref=e1352]:
+                        - generic [ref=e1353]:
+                          - img [ref=e1356]
+                          - generic [ref=e1357]:
+                            - link [ref=e1358] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/monitor-teros-flat-te-2415s-238-pantalla-plana-color-negro/p/MPE45288166?pdp_filters=item_id%3AMPE1077001326#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=17&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE1077001326&sid=recos
+                              - text: Monitor Teros Flat Te-2415s 23.8 Pantalla Plana Color Negro
+                            - generic [ref=e1359]:
+                              - img [ref=e1360]:
+                                - generic [ref=e1361]: S/
+                                - generic [ref=e1362]: "418"
+                                - generic [ref=e1363]: ","
+                                - generic [ref=e1364]: "95"
+                              - generic [ref=e1365]:
+                                - img [ref=e1366]:
+                                  - generic [ref=e1367]: S/
+                                  - generic [ref=e1368]: "273"
+                                  - generic [ref=e1369]: ","
+                                  - generic [ref=e1370]: "74"
+                                - generic [ref=e1371]: 34% OFF
+                              - generic [ref=e1372]:
+                                - text: 12 cuotas de
+                                - img [ref=e1373]:
+                                  - generic [ref=e1375]: S/
+                                  - generic [ref=e1376]: "22"
+                                  - generic [ref=e1377]: ","
+                                  - generic [ref=e1378]: "81"
+                                - text: sin interés
+                            - generic [ref=e1379]: Envío gratis
+                      - group [ref=e1380]:
+                        - generic [ref=e1381]:
+                          - img [ref=e1384]
+                          - generic [ref=e1385]:
+                            - link [ref=e1386] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/cooler-para-laptop-teros-hasta-156-color-negro/p/MPE27381974?pdp_filters=item_id%3AMPE633333719#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=18&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE633333719&sid=recos
+                              - text: Cooler Para Laptop Teros Hasta 15.6 Color Negro
+                            - generic [ref=e1387]:
+                              - img [ref=e1388]:
+                                - generic [ref=e1389]: S/
+                                - generic [ref=e1390]: "78"
+                              - generic [ref=e1391]:
+                                - img [ref=e1392]:
+                                  - generic [ref=e1393]: S/
+                                  - generic [ref=e1394]: "39"
+                                - generic [ref=e1395]: 50% OFF
+                              - generic [ref=e1396]:
+                                - text: 12 cuotas de
+                                - img [ref=e1397]:
+                                  - generic [ref=e1399]: S/
+                                  - generic [ref=e1400]: "3"
+                                  - generic [ref=e1401]: ","
+                                  - generic [ref=e1402]: "25"
+                                - text: sin interés
+                            - generic [ref=e1403]: Envío gratis
+                      - group [ref=e1404]:
+                        - generic [ref=e1405]:
+                          - img [ref=e1408]
+                          - generic [ref=e1409]:
+                            - link [ref=e1410] [cursor=pointer]:
+                              - /url: https://www.mercadolibre.com.pe/regleta-forza-ps-001b-2200w-6-tomas-color-negro/p/MPE25396642?pdp_filters=item_id%3AMPE666528402#polycard_client=recommendations_pdp-seller_items-above&reco_backend=ranker-retsys-same-seller&reco_model=fallback_same-seller&reco_client=pdp-seller_items-above&reco_item_pos=19&reco_backend_type=low_level&reco_id=c5d0ed11-8d20-4795-8a97-3c030a5d5e22&wid=MPE666528402&sid=recos
+                              - text: Regleta Forza Ps-001b 2200w 6 Tomas Color Negro
+                            - generic [ref=e1411]:
+                              - img [ref=e1412]:
+                                - generic [ref=e1413]: S/
+                                - generic [ref=e1414]: "78"
+                              - generic [ref=e1415]:
+                                - img [ref=e1416]:
+                                  - generic [ref=e1417]: S/
+                                  - generic [ref=e1418]: "38"
+                                  - generic [ref=e1419]: ","
+                                  - generic [ref=e1420]: "61"
+                                - generic [ref=e1421]: 50% OFF
+                              - generic [ref=e1422]:
+                                - text: 12 cuotas de
+                                - img [ref=e1423]:
+                                  - generic [ref=e1425]: S/
+                                  - generic [ref=e1426]: "3"
+                                  - generic [ref=e1427]: ","
+                                  - generic [ref=e1428]: "22"
+                                - text: sin interés
+                            - generic [ref=e1429]: Envío gratis
+                    - button "Siguiente" [ref=e1430] [cursor=pointer]:
+                      - img [ref=e1431]
+                - link "Ir a la página del vendedor" [ref=e1433] [cursor=pointer]:
+                  - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077?item_id=MPE873201394&category_id=MPE1714&seller_id=723626341&client=recoview-selleritems&recos_listing=true
+                  - generic [ref=e1435]: Ir a la página del vendedor
+            - generic [ref=e1438]:
+              - heading "Características del producto" [level=2] [ref=e1440]
+              - generic [ref=e1442]:
+                - generic [ref=e1443]:
+                  - generic [ref=e1445]:
+                    - img [ref=e1447]
+                    - paragraph [ref=e1449]:
+                      - generic [ref=e1450]: "Tipo de mouse:"
+                      - generic [ref=e1451]: Vertical
+                  - generic [ref=e1453]:
+                    - img [ref=e1455]
+                    - paragraph [ref=e1457]:
+                      - generic [ref=e1458]: "Es inalámbrico:"
+                      - generic [ref=e1459]: Sí
+                - generic [ref=e1462]:
+                  - img [ref=e1464]
+                  - paragraph [ref=e1466]:
+                    - generic [ref=e1467]: "Resolución del sensor:"
+                    - generic [ref=e1468]: 2400 dpi
+              - generic [ref=e1470]:
+                - generic [ref=e1472]:
+                  - generic [ref=e1473]:
+                    - generic [ref=e1474]:
+                      - heading "Características generales" [level=3] [ref=e1475]
+                      - table [ref=e1476]:
+                        - rowgroup [ref=e1477]:
+                          - row "Marca Teros" [ref=e1478]:
+                            - rowheader "Marca" [ref=e1479]:
+                              - generic [ref=e1480]: Marca
+                            - cell "Teros" [ref=e1481]:
+                              - generic [ref=e1482]: Teros
+                          - row "Modelo TE-1236S" [ref=e1483]:
+                            - rowheader "Modelo" [ref=e1484]:
+                              - generic [ref=e1485]: Modelo
+                            - cell "TE-1236S" [ref=e1486]:
+                              - generic [ref=e1487]: TE-1236S
+                          - row "Color Blanco" [ref=e1488]:
+                            - rowheader "Color" [ref=e1489]:
+                              - generic [ref=e1490]: Color
+                            - cell "Blanco" [ref=e1491]:
+                              - generic [ref=e1492]: Blanco
+                    - generic [ref=e1493]:
+                      - heading "Sensor" [level=3] [ref=e1494]
+                      - table [ref=e1495]:
+                        - rowgroup [ref=e1496]:
+                          - row "Resolución del sensor 2,400 dpi" [ref=e1497]:
+                            - rowheader "Resolución del sensor" [ref=e1498]:
+                              - generic [ref=e1499]: Resolución del sensor
+                            - cell "2,400 dpi" [ref=e1500]:
+                              - generic [ref=e1501]: 2,400 dpi
+                    - generic [ref=e1502]:
+                      - heading "Otros" [level=3] [ref=e1503]
+                      - table [ref=e1504]:
+                        - rowgroup [ref=e1505]:
+                          - row "Con luces Sí" [ref=e1506]:
+                            - rowheader "Con luces" [ref=e1507]:
+                              - generic [ref=e1508]: Con luces
+                            - cell "Sí" [ref=e1509]:
+                              - generic [ref=e1510]: Sí
+                    - generic [ref=e1511]:
+                      - heading "Otros" [level=3] [ref=e1512]
+                      - table [ref=e1513]:
+                        - rowgroup [ref=e1514]:
+                          - row "Tecnología inalámbrica Bluetooth" [ref=e1515]:
+                            - rowheader "Tecnología inalámbrica" [ref=e1516]:
+                              - generic [ref=e1517]: Tecnología inalámbrica
+                            - cell "Bluetooth" [ref=e1518]:
+                              - generic [ref=e1519]: Bluetooth
+                  - generic [ref=e1520]:
+                    - generic [ref=e1521]:
+                      - heading "Especificaciones" [level=3] [ref=e1522]
+                      - table [ref=e1523]:
+                        - rowgroup [ref=e1524]:
+                          - row "Tipo de mouse Vertical" [ref=e1525]:
+                            - rowheader "Tipo de mouse" [ref=e1526]:
+                              - generic [ref=e1527]: Tipo de mouse
+                            - cell "Vertical" [ref=e1528]:
+                              - generic [ref=e1529]: Vertical
+                          - row "Es inalámbrico Sí" [ref=e1530]:
+                            - rowheader "Es inalámbrico" [ref=e1531]:
+                              - generic [ref=e1532]: Es inalámbrico
+                            - cell "Sí" [ref=e1533]:
+                              - generic [ref=e1534]: Sí
+                          - row "Cantidad de botones 6" [ref=e1535]:
+                            - rowheader "Cantidad de botones" [ref=e1536]:
+                              - generic [ref=e1537]: Cantidad de botones
+                            - cell "6" [ref=e1538]:
+                              - generic [ref=e1539]: "6"
+                    - generic [ref=e1540]:
+                      - heading "Tecnología" [level=3] [ref=e1541]
+                      - table [ref=e1542]:
+                        - rowgroup [ref=e1543]:
+                          - row "Con Bluetooth Sí" [ref=e1544]:
+                            - rowheader "Con Bluetooth" [ref=e1545]:
+                              - generic [ref=e1546]: Con Bluetooth
+                            - cell "Sí" [ref=e1547]:
+                              - generic [ref=e1548]: Sí
+                    - generic [ref=e1549]:
+                      - heading "Peso y dimensiones" [level=3] [ref=e1550]
+                      - table [ref=e1551]:
+                        - rowgroup [ref=e1552]:
+                          - row "Peso 109 g" [ref=e1553]:
+                            - rowheader "Peso" [ref=e1554]:
+                              - generic [ref=e1555]: Peso
+                            - cell "109 g" [ref=e1556]:
+                              - generic [ref=e1557]: 109 g
+                - button "Ver todas las características" [ref=e1558] [cursor=pointer]:
+                  - text: Ver todas las características
+                  - img [ref=e1560]
+            - generic [ref=e1566]:
+              - heading "Imágenes del producto" [level=2] [ref=e1567]
+              - generic [ref=e1568]:
+                - link "Imagen 1 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e1570] [cursor=pointer]:
+                  - /url: https://http2.mlstatic.com/D_Q_NP_672170-MLA96229356532_102025-F.webp
+                  - img "Imagen 1 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e1571]
+                - link "Imagen 2 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e1573] [cursor=pointer]:
+                  - /url: https://http2.mlstatic.com/D_Q_NP_678402-MLA94913107521_102025-F.webp
+                  - img "Imagen 2 de 4 de Mouse Vertical Inalámbrico Teros TE-1236S Blanco RGB Bluetooth 2400 DPI" [ref=e1574]
+              - button "Ver más imágenes" [ref=e1575] [cursor=pointer]:
+                - paragraph [ref=e1577]: Ver más imágenes
+            - generic [ref=e1582]:
+              - heading "Descripción" [level=2] [ref=e1583]
+              - paragraph [ref=e1584]: Mouse inalámbrico TEROS TE-1236S en color blanco, con retroiluminación RGB y diseño ergonómico ideal para trabajo o gaming. Cuenta con 6 botones, rueda de desplazamiento y conexión inalámbrica Bluetooth dual (BT1/BT2). Ofrece sensibilidad ajustable de 800 a 2400 DPI para adaptarse a tu ritmo, batería recargable de 700 mAh y peso ligero de 109g.
+          - generic [ref=e1586]:
+            - generic [ref=e1588]:
+              - generic [ref=e1592]:
+                - paragraph [ref=e1593]:
+                  - generic [ref=e1594]: Envío gratis
+                  - text: a todo el país
+                - paragraph [ref=e1595]: Conoce los tiempos y las formas de envío.
+                - link "Calcular cuándo llega" [ref=e1599] [cursor=pointer]:
+                  - generic [ref=e1600]: Calcular cuándo llega
+              - 'combobox "Cantidad: 1 unidad" [ref=e1605] [cursor=pointer]':
+                - generic [ref=e1606]:
+                  - generic [ref=e1607]: "Cantidad:"
+                  - generic [ref=e1608]: 1 unidad
+                  - img [ref=e1610]
+                  - generic [ref=e1612]: (+5 disponibles)
+              - generic [ref=e1614]:
+                - button "Comprar ahora" [ref=e1615] [cursor=pointer]:
+                  - generic [ref=e1616]: Comprar ahora
+                - button "Agregar al carrito" [ref=e1617] [cursor=pointer]:
+                  - generic [ref=e1618]:
+                    - img [ref=e1620]
+                    - text: Agregar al carrito
+              - generic [ref=e1624]:
+                - generic [ref=e1626]:
+                  - generic [ref=e1627]: Vendido por
+                  - button "CORPORATION BLUEDRAGON" [ref=e1628] [cursor=pointer]:
+                    - link "CORPORATION BLUEDRAGON" [ref=e1629]:
+                      - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077
+                - paragraph [ref=e1631]:
+                  - text: MercadoLíder |
+                  - generic [ref=e1632]: +10 mil ventas
+              - list [ref=e1633]:
+                - listitem [ref=e1634]:
+                  - generic [ref=e1635]:
+                    - figure [ref=e1636]:
+                      - img [ref=e1638]
+                    - generic [ref=e1641]:
+                      - link "Devolución gratis." [ref=e1645] [cursor=pointer]:
+                        - /url: https://articulo.mercadolibre.com.pe/noindex/freeReturn/fashion?itemId=MPE873201394&quantity=1&new_version=true&modal=false&controlled=true
+                      - text: Tienes 30 días desde que lo recibes.
+                - listitem [ref=e1646]:
+                  - generic [ref=e1647]:
+                    - figure [ref=e1648]:
+                      - img [ref=e1650]
+                    - generic [ref=e1653]:
+                      - link "Compra Protegida Se abrirá en una nueva ventana" [ref=e1654] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/compra-protegida
+                        - text: Compra Protegida
+                        - generic [ref=e1655]: Se abrirá en una nueva ventana
+                      - text: . Recibe el producto que esperabas o te devolvemos tu dinero.
+                - listitem [ref=e1656]:
+                  - generic [ref=e1657]:
+                    - figure [ref=e1658]:
+                      - img [ref=e1660]
+                    - generic [ref=e1663]: 12 meses de garantía de fábrica.
+              - generic [ref=e1667] [cursor=pointer]:
+                - img [ref=e1668]
+                - text: Agregar a una lista
+            - generic [ref=e1670]:
+              - generic [ref=e1671]:
+                - generic [ref=e1673]:
+                  - link "Ir a la página del vendedor Ir a la página del vendedor" [ref=e1675] [cursor=pointer]:
+                    - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077?category_id=MPE1714&item_id=MPE873201394&recos_listing=true&client=recoview-selleritems&seller_id=723626341#origin=vpp
+                    - generic [ref=e1677]:
+                      - img "Ir a la página del vendedor" [ref=e1678]
+                      - generic [ref=e1679]: Ir a la página del vendedor
+                  - generic [ref=e1680]:
+                    - generic [ref=e1682]:
+                      - link "CORPORATION BLUEDRAGON" [ref=e1683] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077?category_id=MPE1714&item_id=MPE873201394&recos_listing=true&client=recoview-selleritems&seller_id=723626341#origin=vpp
+                        - heading "CORPORATION BLUEDRAGON" [level=2] [ref=e1685]
+                      - button "Seguir tienda" [ref=e1687] [cursor=pointer]:
+                        - generic [ref=e1689]: Seguir
+                    - link "+1,300 Seguidores +100 Productos" [ref=e1690] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077?category_id=MPE1714&item_id=MPE873201394&recos_listing=true&client=recoview-selleritems&seller_id=723626341#origin=vpp
+                      - generic [ref=e1693]:
+                        - paragraph [ref=e1694]:
+                          - generic [ref=e1695]: +1,300
+                          - text: Seguidores
+                        - paragraph [ref=e1696]:
+                          - generic [ref=e1697]: "+100"
+                          - text: Productos
+                - generic [ref=e1699]:
+                  - generic [ref=e1703]:
+                    - paragraph [ref=e1704]: MercadoLíder Gold
+                    - paragraph [ref=e1705]: ¡Uno de los mejores del sitio!
+                  - list [ref=e1706]:
+                    - listitem [ref=e1707]
+                    - listitem [ref=e1708]
+                    - listitem [ref=e1709]
+                    - listitem [ref=e1710]
+                    - listitem [ref=e1711]
+                  - generic [ref=e1712]:
+                    - generic [ref=e1713]:
+                      - paragraph [ref=e1714]: +10 mil
+                      - paragraph [ref=e1715]: Ventas
+                    - paragraph [ref=e1719]: Buena atención
+                    - paragraph [ref=e1723]: Entrega a tiempo
+                - link "Ir a la página del vendedor" [ref=e1726] [cursor=pointer]:
+                  - /url: https://www.mercadolibre.com.pe/pagina/corporationbluedragon1077?category_id=MPE1714&item_id=MPE873201394&recos_listing=true&client=recoview-selleritems&seller_id=723626341#origin=vpp
+                  - generic [ref=e1727]: Ir a la página del vendedor
+              - generic [ref=e1728]:
+                - heading "Otras opciones de compra" [level=2] [ref=e1729]
+                - list
+                - link "Ver 6 opciones desde 49 soles con 01 céntimo" [ref=e1731] [cursor=pointer]:
+                  - generic [ref=e1732]:
+                    - generic [ref=e1733]: Ver 6 opciones desde
+                    - img "49 soles con 01 céntimo" [ref=e1735]:
+                      - generic [ref=e1737]: S/
+                      - generic [ref=e1738]: "49"
+                      - generic [ref=e1739]: ","
+                      - generic [ref=e1740]: "01"
+              - generic [ref=e1751]:
+                - heading "Medios de pago" [level=2] [ref=e1752]
+                - generic [ref=e1753]:
+                  - link "¡Paga en hasta 12 cuotas sin interés!" [ref=e1757] [cursor=pointer]:
+                    - /url: https://articulo.mercadolibre.com.pe/noindex/services/MPE873201394/payments?new_version=true&modal=false&newIndex=true
+                    - generic [ref=e1758]:
+                      - figure [ref=e1759]:
+                        - img [ref=e1761]
+                      - paragraph [ref=e1764]:
+                        - text: ¡Paga en
+                        - generic [ref=e1765]: hasta 12 cuotas sin interés
+                        - text: "!"
+                  - paragraph [ref=e1766]: Tarjetas de crédito y débito
+                  - generic [ref=e1767]:
+                    - img "Visa" [ref=e1770]
+                    - img "American Express" [ref=e1773]
+                    - img "Mastercard" [ref=e1776]
+                    - img "Diners" [ref=e1779]
+                  - paragraph [ref=e1780]: Tarjetas de débito
+                  - generic [ref=e1781]:
+                    - img "Mastercard Débito" [ref=e1784]
+                    - img "Visa Débito" [ref=e1787]
+                    - img "yape" [ref=e1790]
+                - link "Conoce otros medios de pago" [ref=e1794] [cursor=pointer]:
+                  - /url: https://articulo.mercadolibre.com.pe/noindex/services/MPE873201394/payments?new_version=true&modal=false&newIndex=true
+        - generic [ref=e1796]:
+          - generic [ref=e1799]:
+            - heading "Preguntas" [level=2] [ref=e1800]
+            - generic [ref=e1803]:
+              - textbox "Escribe tu pregunta..." [ref=e1807]
+              - button "Preguntar" [ref=e1809] [cursor=pointer]:
+                - generic [ref=e1811]:
+                  - img [ref=e1813]
+                  - generic [ref=e1815]: Preguntar
+            - link "Ver todas las preguntas" [ref=e1821] [cursor=pointer]:
+              - /url: https://articulo.mercadolibre.com.pe/noindex/questions/MPE873201394?scroll_to_question=1&new_version=true&modal=false&parent_origin=undefined
+          - generic [ref=e1826]:
+            - heading "Opiniones del producto" [level=2] [ref=e1829]
+            - generic [ref=e1830]:
+              - generic [ref=e1832]:
+                - generic [ref=e1833]:
+                  - paragraph [ref=e1835]: "4.7"
+                  - generic [ref=e1836]:
+                    - generic [ref=e1838]:
+                      - img [ref=e1839]
+                      - img [ref=e1841]
+                      - img [ref=e1843]
+                      - img [ref=e1845]
+                      - img [ref=e1847]
+                      - paragraph [ref=e1849]: Calificación 4.7 de 5. 15 opiniones.
+                    - paragraph [ref=e1851]: 15 calificaciones
+                - generic [ref=e1852]:
+                  - img [ref=e1853]
+                  - generic [ref=e1856]: Incluye opiniones de otros países.
+                - list [ref=e1858]:
+                  - listitem [ref=e1859]:
+                    - generic [ref=e1864]:
+                      - generic [ref=e1865]: "5"
+                      - img [ref=e1867]
+                  - listitem [ref=e1869]:
+                    - generic [ref=e1874]:
+                      - generic [ref=e1875]: "4"
+                      - img [ref=e1877]
+                  - listitem [ref=e1879]:
+                    - generic [ref=e1884]:
+                      - generic [ref=e1885]: "3"
+                      - img [ref=e1887]
+                  - listitem [ref=e1889]:
+                    - generic [ref=e1893]:
+                      - generic [ref=e1894]: "2"
+                      - img [ref=e1896]
+                  - listitem [ref=e1898]:
+                    - generic [ref=e1902]:
+                      - generic [ref=e1903]: "1"
+                      - img [ref=e1905]
+              - generic [ref=e1909]:
+                - heading "Opiniones" [level=3] [ref=e1910]
+                - generic [ref=e1911]: 2 comentarios
+                - generic [ref=e1912]:
+                  - article [ref=e1914]:
+                    - generic [ref=e1916]:
+                      - generic [ref=e1917]:
+                        - img [ref=e1918]
+                        - img [ref=e1920]
+                        - img [ref=e1922]
+                        - img [ref=e1924]
+                        - img [ref=e1926]
+                        - paragraph [ref=e1928]: Calificación 5 de 5
+                      - generic [ref=e1929]:
+                        - generic [ref=e1930]: Perú
+                        - generic [ref=e1932]: Hace 1 mes
+                    - text: Me encanta, lo estoy usando desde el 20 de abril y todo va bien.
+                    - generic [ref=e1933]:
+                      - switch "Marcar como útil, 1 personas marcaron esta opinión como útil." [ref=e1935] [cursor=pointer]:
+                        - generic [ref=e1936]:
+                          - generic [ref=e1937]: Útil
+                          - img [ref=e1938]
+                          - paragraph [ref=e1940]: "1"
+                      - button "Más opciones" [ref=e1943] [cursor=pointer]:
+                        - button "Más opciones" [ref=e1945]
+                  - article [ref=e1950]:
+                    - generic [ref=e1952]:
+                      - generic [ref=e1953]:
+                        - img [ref=e1954]
+                        - img [ref=e1956]
+                        - img [ref=e1958]
+                        - img [ref=e1960]
+                        - img [ref=e1962]
+                        - paragraph [ref=e1964]: Calificación 5 de 5
+                      - generic [ref=e1965]:
+                        - generic [ref=e1966]: Perú
+                        - generic [ref=e1968]: Hace 2 semanas
+                    - text: Cumple con lo que te dicen, muy bueno y una larga batería que dura demasiado, contento por mi compra.
+                    - generic [ref=e1969]:
+                      - switch "Marcar como útil, 0 personas marcaron esta opinión como útil." [ref=e1971] [cursor=pointer]:
+                        - generic [ref=e1972]:
+                          - generic [ref=e1973]: Útil
+                          - img [ref=e1974]
+                          - paragraph [ref=e1976]: "0"
+                      - button "Más opciones" [ref=e1979] [cursor=pointer]:
+                        - button "Más opciones" [ref=e1981]
+      - generic [ref=e1986]:
+        - generic [ref=e1988]:
+          - paragraph [ref=e1989]:
+            - text: Publicación
+            - generic [ref=e1990]: "#873201394"
+          - link "Denunciar Se abrirá en una nueva ventana" [ref=e1991] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/noindex/denounce?item_id=MPE873201394&element_type=ITM
+            - generic [ref=e1992]: Denunciar
+            - generic [ref=e1993]: Se abrirá en una nueva ventana
+        - generic [ref=e1996]:
+          - heading "Quienes vieron este producto también compraron" [level=2] [ref=e2000]
+          - region "Quienes vieron este producto también compraron" [ref=e2001]:
+            - generic [ref=e2002]:
+              - generic [ref=e2004]:
+                - group "1 de 16" [ref=e2005]:
+                  - generic [ref=e2006]:
+                    - img [ref=e2009]
+                    - generic [ref=e2010]:
+                      - link "Mouse Gamer Vertical Bluetooth Teros Te-5169n - Ergonomico Negro" [ref=e2011] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-gamer-vertical-bluetooth-teros-te5169n--ergonomico/up/MPEU2978747261#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=0&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE698833036&sid=recos
+                      - generic [ref=e2012]:
+                        - 'img "Antes: 78 soles" [ref=e2013]':
+                          - generic [ref=e2014]: S/
+                          - generic [ref=e2015]: "78"
+                        - generic [ref=e2016]:
+                          - 'img "Ahora: 46 soles con 33 céntimos" [ref=e2017]':
+                            - generic [ref=e2018]: S/
+                            - generic [ref=e2019]: "46"
+                            - generic [ref=e2020]: ","
+                            - generic [ref=e2021]: "33"
+                          - generic [ref=e2022]: 40% OFF
+                        - generic [ref=e2023]:
+                          - text: 12 cuotas de
+                          - img "3 soles con 86 céntimos" [ref=e2024]:
+                            - generic [ref=e2026]: S/
+                            - generic [ref=e2027]: "3"
+                            - generic [ref=e2028]: ","
+                            - generic [ref=e2029]: "86"
+                          - text: sin interés
+                      - generic [ref=e2030]: Envío gratis
+                - group "2 de 16" [ref=e2031]:
+                  - generic [ref=e2032]:
+                    - img [ref=e2035]
+                    - generic [ref=e2036]:
+                      - link "Mouse Gamer Vertical Bluetooth Teros Te-1236s - Ergonomico Blanco" [ref=e2037] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-gamer-vertical-bluetooth-teros-te1236s--ergonomico/up/MPEU3368082464#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=1&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE802831412&sid=recos
+                      - generic [ref=e2038]:
+                        - 'img "Antes: 99 soles" [ref=e2039]':
+                          - generic [ref=e2040]: S/
+                          - generic [ref=e2041]: "99"
+                        - generic [ref=e2042]:
+                          - 'img "Ahora: 58 soles con 81 céntimos" [ref=e2043]':
+                            - generic [ref=e2044]: S/
+                            - generic [ref=e2045]: "58"
+                            - generic [ref=e2046]: ","
+                            - generic [ref=e2047]: "81"
+                          - generic [ref=e2048]: 40% OFF
+                        - generic [ref=e2049]:
+                          - text: 6 cuotas de
+                          - img "9 soles con 80 céntimos" [ref=e2050]:
+                            - generic [ref=e2052]: S/
+                            - generic [ref=e2053]: "9"
+                            - generic [ref=e2054]: ","
+                            - generic [ref=e2055]: "80"
+                          - text: sin interés
+                      - generic [ref=e2056]: Envío gratis
+                - group "3 de 16" [ref=e2057]:
+                  - generic [ref=e2058]:
+                    - img [ref=e2061]
+                    - generic [ref=e2062]:
+                      - link "Mouse Gamer Inalámbrico Logitech G Pro X 2 Superstrike Negro Y Blanco" [ref=e2063] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-gamer-inalambrico-logitech-g-pro-x-2-superstrike/p/MPE69558348#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=2&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE1084305696&sid=recos
+                      - generic [ref=e2064]:
+                        - img "849 soles con 99 céntimos" [ref=e2066]:
+                          - generic [ref=e2067]: S/
+                          - generic [ref=e2068]: "849"
+                          - generic [ref=e2069]: ","
+                          - generic [ref=e2070]: "99"
+                        - generic [ref=e2071]:
+                          - text: 6 cuotas de
+                          - img "141 soles con 66 céntimos" [ref=e2072]:
+                            - generic [ref=e2074]: S/
+                            - generic [ref=e2075]: "141"
+                            - generic [ref=e2076]: ","
+                            - generic [ref=e2077]: "66"
+                          - text: sin interés
+                      - generic [ref=e2078]: Envío gratis
+                - group "4 de 16" [ref=e2079]:
+                  - generic [ref=e2080]:
+                    - img [ref=e2083]
+                    - generic [ref=e2084]:
+                      - link "Mouse Yelandar D5-charger Precisión Y Estilo Inigualables Negro" [ref=e2085] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-yelandar-d5charger--precision-y-estilo-inigualables/up/MPEU3294648170#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=3&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE765378736&sid=recos
+                      - generic [ref=e2086]:
+                        - img "39 soles" [ref=e2088]:
+                          - generic [ref=e2089]: S/
+                          - generic [ref=e2090]: "39"
+                        - generic [ref=e2091]:
+                          - text: 6 cuotas de
+                          - img "6 soles con 50 céntimos" [ref=e2092]:
+                            - generic [ref=e2094]: S/
+                            - generic [ref=e2095]: "6"
+                            - generic [ref=e2096]: ","
+                            - generic [ref=e2097]: "50"
+                          - text: sin interés
+                      - generic [ref=e2098]: Envío gratis
+                - group "5 de 16" [ref=e2099]:
+                  - generic [ref=e2100]:
+                    - img [ref=e2103]
+                    - generic [ref=e2104]:
+                      - link "Mouse Silencioso Ugreen Blanco Vertical Doble Conexión Bluetooth 2.4g Oficina" [ref=e2105] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-silencioso-ugreen-blanco-vertical-doble-conexion-bluetooth-24g-oficina/p/MPE47239812#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=4&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE964799548&sid=recos
+                      - generic [ref=e2106]:
+                        - img "71 soles con 65 céntimos" [ref=e2108]:
+                          - generic [ref=e2109]: S/
+                          - generic [ref=e2110]: "71"
+                          - generic [ref=e2111]: ","
+                          - generic [ref=e2112]: "65"
+                        - generic [ref=e2113]:
+                          - text: 6 cuotas de
+                          - img "11 soles con 94 céntimos" [ref=e2114]:
+                            - generic [ref=e2116]: S/
+                            - generic [ref=e2117]: "11"
+                            - generic [ref=e2118]: ","
+                            - generic [ref=e2119]: "94"
+                          - text: sin interés
+                      - generic [ref=e2120]: Envío gratis
+                - group [ref=e2121]:
+                  - generic [ref=e2122]:
+                    - img [ref=e2125]
+                    - generic [ref=e2126]:
+                      - link [ref=e2127] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-vertical-ugreen-bluetooth-ergonomico-24ghz-silencioso/up/MPEU3576036429#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=5&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE884634556&sid=recos
+                        - text: Mouse Vertical Ugreen Bluetooth Ergonomico 2.4ghz Silencioso Blanco
+                      - generic [ref=e2128]:
+                        - img [ref=e2129]:
+                          - generic [ref=e2130]: S/
+                          - generic [ref=e2131]: "129"
+                        - generic [ref=e2132]:
+                          - img [ref=e2133]:
+                            - generic [ref=e2134]: S/
+                            - generic [ref=e2135]: "89"
+                          - generic [ref=e2136]: 31% OFF
+                        - generic [ref=e2137]:
+                          - text: 6 cuotas de
+                          - img [ref=e2138]:
+                            - generic [ref=e2140]: S/
+                            - generic [ref=e2141]: "14"
+                            - generic [ref=e2142]: ","
+                            - generic [ref=e2143]: "83"
+                          - text: sin interés
+                      - generic [ref=e2144]: Envío gratis
+                - group [ref=e2145]:
+                  - generic [ref=e2146]:
+                    - img [ref=e2149]
+                    - generic [ref=e2150]:
+                      - link [ref=e2151] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-vertical-ugreen-wireless-ergonomico-silencioso-24ghz/up/MPEU3658602458#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=6&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE905739108&sid=recos
+                        - text: Mouse Vertical Ugreen Wireless Ergonomico Silencioso 2.4ghz Gris
+                      - generic [ref=e2152]:
+                        - img [ref=e2153]:
+                          - generic [ref=e2154]: S/
+                          - generic [ref=e2155]: "89"
+                          - generic [ref=e2156]: ","
+                          - generic [ref=e2157]: "90"
+                        - generic [ref=e2158]:
+                          - img [ref=e2159]:
+                            - generic [ref=e2160]: S/
+                            - generic [ref=e2161]: "79"
+                            - generic [ref=e2162]: ","
+                            - generic [ref=e2163]: "90"
+                          - generic [ref=e2164]: 11% OFF
+                        - generic [ref=e2165]:
+                          - text: 6 cuotas de
+                          - img [ref=e2166]:
+                            - generic [ref=e2168]: S/
+                            - generic [ref=e2169]: "13"
+                            - generic [ref=e2170]: ","
+                            - generic [ref=e2171]: "32"
+                          - text: sin interés
+                      - generic [ref=e2172]: Envío gratis
+                - group [ref=e2173]:
+                  - generic [ref=e2174]:
+                    - img [ref=e2177]
+                    - generic [ref=e2178]:
+                      - link [ref=e2179] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-gamer-inalambrico-micronics-recargable-rgb-7-botones/up/MPEU2463775332#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=7&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE644608806&sid=recos
+                        - text: Mouse Gamer Inalambrico Micronics Recargable Rgb 7 Botones Negro
+                      - generic [ref=e2180]:
+                        - img [ref=e2181]:
+                          - generic [ref=e2182]: S/
+                          - generic [ref=e2183]: "78"
+                          - generic [ref=e2184]: ","
+                          - generic [ref=e2185]: "50"
+                        - generic [ref=e2186]:
+                          - img [ref=e2187]:
+                            - generic [ref=e2188]: S/
+                            - generic [ref=e2189]: "58"
+                            - generic [ref=e2190]: ","
+                            - generic [ref=e2191]: "29"
+                          - generic [ref=e2192]: 25% OFF
+                        - generic [ref=e2193]:
+                          - text: 6 cuotas de
+                          - img [ref=e2194]:
+                            - generic [ref=e2196]: S/
+                            - generic [ref=e2197]: "9"
+                            - generic [ref=e2198]: ","
+                            - generic [ref=e2199]: "72"
+                          - text: sin interés
+                      - generic [ref=e2200]: Envío gratis
+                - group [ref=e2201]:
+                  - generic [ref=e2202]:
+                    - img [ref=e2205]
+                    - generic [ref=e2206]:
+                      - link [ref=e2207] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/raton-bluetooth-inalambrico-logitech-m196-para-ordenadores-portatiles-color-blanco-roto/p/MPE47970410#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=8&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE960599118&sid=recos
+                        - text: Ratón Bluetooth Inalámbrico Logitech M196 Para Ordenadores Portátiles, Color Blanco Roto
+                      - generic [ref=e2208]:
+                        - img [ref=e2210]:
+                          - generic [ref=e2211]: S/
+                          - generic [ref=e2212]: "42"
+                          - generic [ref=e2213]: ","
+                          - generic [ref=e2214]: "78"
+                        - generic [ref=e2215]:
+                          - text: 6 cuotas de
+                          - img [ref=e2216]:
+                            - generic [ref=e2218]: S/
+                            - generic [ref=e2219]: "7"
+                            - generic [ref=e2220]: ","
+                            - generic [ref=e2221]: "13"
+                          - text: sin interés
+                      - generic [ref=e2222]: Envío gratis
+                - group [ref=e2223]:
+                  - generic [ref=e2224]:
+                    - img [ref=e2227]
+                    - generic [ref=e2228]:
+                      - link [ref=e2229] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-logitech-m240-silent-bluetooth-inalambrico-color-rosa/p/MPE26972402#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=9&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE831990698&sid=recos
+                        - text: Mouse Logitech M240 Silent Bluetooth Inalámbrico Color Rosa
+                      - generic [ref=e2230]:
+                        - img [ref=e2232]:
+                          - generic [ref=e2233]: S/
+                          - generic [ref=e2234]: "58"
+                          - generic [ref=e2235]: ","
+                          - generic [ref=e2236]: "16"
+                        - generic [ref=e2237]:
+                          - text: 6 cuotas de
+                          - img [ref=e2238]:
+                            - generic [ref=e2240]: S/
+                            - generic [ref=e2241]: "9"
+                            - generic [ref=e2242]: ","
+                            - generic [ref=e2243]: "69"
+                          - text: sin interés
+                      - generic [ref=e2244]: Envío gratis
+                - group [ref=e2245]:
+                  - generic [ref=e2246]:
+                    - img [ref=e2249]
+                    - generic [ref=e2250]:
+                      - link [ref=e2251] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-vertical-ugreen-bluetooth-ergonomico-silencioso-24ghz/up/MPEU3128898379#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=10&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE713119642&sid=recos
+                        - text: Mouse Vertical Ugreen Bluetooth Ergonomico Silencioso 2.4ghz Negro
+                      - generic [ref=e2252]:
+                        - img [ref=e2253]:
+                          - generic [ref=e2254]: S/
+                          - generic [ref=e2255]: "129"
+                        - generic [ref=e2256]:
+                          - img [ref=e2257]:
+                            - generic [ref=e2258]: S/
+                            - generic [ref=e2259]: "89"
+                          - generic [ref=e2260]: 31% OFF
+                        - generic [ref=e2261]:
+                          - text: 6 cuotas de
+                          - img [ref=e2262]:
+                            - generic [ref=e2264]: S/
+                            - generic [ref=e2265]: "14"
+                            - generic [ref=e2266]: ","
+                            - generic [ref=e2267]: "83"
+                          - text: sin interés
+                      - generic [ref=e2268]: Envío gratis
+                - group [ref=e2269]:
+                  - generic [ref=e2270]:
+                    - img [ref=e2273]
+                    - generic [ref=e2274]:
+                      - link [ref=e2275] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-inalambrico-recargable-bluetooth-rgb-negro-wireless-1600-dpi/p/MPE44602081#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=11&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE703823406&sid=recos
+                        - text: Mouse Inalámbrico Recargable Bluetooth Rgb Negro Wireless 1600 Dpi
+                      - generic [ref=e2276]:
+                        - img [ref=e2277]:
+                          - generic [ref=e2278]: S/
+                          - generic [ref=e2279]: "38"
+                          - generic [ref=e2280]: ","
+                          - generic [ref=e2281]: "99"
+                        - generic [ref=e2282]:
+                          - img [ref=e2283]:
+                            - generic [ref=e2284]: S/
+                            - generic [ref=e2285]: "31"
+                            - generic [ref=e2286]: ","
+                            - generic [ref=e2287]: "03"
+                          - generic [ref=e2288]: 20% OFF
+                      - generic [ref=e2289]: Envío gratis
+                - group [ref=e2290]:
+                  - generic [ref=e2291]:
+                    - img [ref=e2294]
+                    - generic [ref=e2295]:
+                      - link [ref=e2296] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-ergonomico-vertical-inalambrico-ugreen-m571-silencioso/up/MPEU3933137586#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=12&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE1070800140&sid=recos
+                        - text: Mouse Ergonómico Vertical Inalámbrico Ugreen M571 Silencioso Negro
+                      - generic [ref=e2297]:
+                        - img [ref=e2298]:
+                          - generic [ref=e2299]: S/
+                          - generic [ref=e2300]: "129"
+                        - generic [ref=e2301]:
+                          - img [ref=e2302]:
+                            - generic [ref=e2303]: S/
+                            - generic [ref=e2304]: "84"
+                            - generic [ref=e2305]: ","
+                            - generic [ref=e2306]: "99"
+                          - generic [ref=e2307]: 34% OFF
+                        - generic [ref=e2308]:
+                          - text: 12 cuotas de
+                          - img [ref=e2309]:
+                            - generic [ref=e2311]: S/
+                            - generic [ref=e2312]: "7"
+                            - generic [ref=e2313]: ","
+                            - generic [ref=e2314]: "08"
+                          - text: sin interés
+                      - generic [ref=e2315]: Envío gratis
+                - group [ref=e2316]:
+                  - generic [ref=e2317]:
+                    - img [ref=e2320]
+                    - generic [ref=e2321]:
+                      - link [ref=e2322] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-logitech-mx-master-4-inalambrico-receptor-bluetooth/p/MPE57720331#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=13&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE948093178&sid=recos
+                        - text: Mouse Logitech Mx Master 4, Inalámbrico, Receptor + Bluetooth Black
+                      - generic [ref=e2323]:
+                        - img [ref=e2324]:
+                          - generic [ref=e2325]: S/
+                          - generic [ref=e2326]: "799"
+                        - generic [ref=e2327]:
+                          - img [ref=e2328]:
+                            - generic [ref=e2329]: S/
+                            - generic [ref=e2330]: "419"
+                            - generic [ref=e2331]: ","
+                            - generic [ref=e2332]: "76"
+                          - generic [ref=e2333]: 47% OFF
+                        - generic [ref=e2334]:
+                          - text: 6 cuotas de
+                          - img [ref=e2335]:
+                            - generic [ref=e2337]: S/
+                            - generic [ref=e2338]: "69"
+                            - generic [ref=e2339]: ","
+                            - generic [ref=e2340]: "96"
+                          - text: sin interés
+                      - generic [ref=e2341]: Envío gratis
+                - group [ref=e2342]:
+                  - generic [ref=e2343]:
+                    - img [ref=e2346]
+                    - generic [ref=e2347]:
+                      - link [ref=e2348] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/ugreen-mouse-inalambrico-ergonomico-color-gris/p/MPE26185275#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=14&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE1081291220&sid=recos
+                        - text: Ugreen Mouse Inalámbrico Ergonómico Color Gris
+                      - generic [ref=e2349]:
+                        - img [ref=e2351]:
+                          - generic [ref=e2352]: S/
+                          - generic [ref=e2353]: "45"
+                          - generic [ref=e2354]: ","
+                          - generic [ref=e2355]: "90"
+                        - generic [ref=e2356]:
+                          - text: 6 cuotas de
+                          - img [ref=e2357]:
+                            - generic [ref=e2359]: S/
+                            - generic [ref=e2360]: "7"
+                            - generic [ref=e2361]: ","
+                            - generic [ref=e2362]: "65"
+                          - text: sin interés
+                      - generic [ref=e2363]: Envío gratis
+                - group [ref=e2364]:
+                  - generic [ref=e2365]:
+                    - img [ref=e2368]
+                    - generic [ref=e2369]:
+                      - link [ref=e2370] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/mouse-inalambrico-teros-te-1228s-6-botones-usb-negro-optico/p/MPE62718342#polycard_client=recommendations_pdp-v2p&reco_backend=ranker_retrieval_system_org&reco_model=coldstart_low_exposition&reco_client=pdp-v2p&reco_item_pos=15&reco_backend_type=low_level&reco_id=1bb70986-388b-45b2-94ac-8c36fcf972f0&wid=MPE1025118880&sid=recos
+                        - text: Mouse Inalámbrico Teros Te-1228s 6 Botones Usb Negro Óptico
+                      - img [ref=e2373]:
+                        - generic [ref=e2374]: S/
+                        - generic [ref=e2375]: "29"
+                      - generic [ref=e2376]: Envío gratis
+              - button "Siguiente" [ref=e2377] [cursor=pointer]:
+                - img [ref=e2378]
+      - generic [ref=e2384]:
+        - heading "Destacado en Computación" [level=2] [ref=e2386]
+        - generic [ref=e2387]:
+          - generic [ref=e2388]:
+            - heading "Laptop" [level=4] [ref=e2389]:
+              - link "Laptop" [ref=e2390] [cursor=pointer]:
+                - /url: https://listado.mercadolibre.com.pe/laptop#headterms
+            - list [ref=e2391]:
+              - listitem [ref=e2392]:
+                - link "Laptop gamer" [ref=e2393] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/laptop-gamer#headterms
+              - listitem [ref=e2394]:
+                - link "Laptop thunderobot" [ref=e2395] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/laptop-thunderobot#headterms
+              - listitem [ref=e2396]:
+                - link "Laptop 16gb ram" [ref=e2397] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/laptop-16gb-ram#headterms
+              - listitem [ref=e2398]:
+                - link "Lenovo thinkpad" [ref=e2399] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/lenovo-thinkpad#headterms
+              - listitem [ref=e2400]:
+                - link "Alienware m15 r3" [ref=e2401] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/alienware-m15-r3#headterms
+              - listitem [ref=e2402]:
+                - link "Macbook air m1" [ref=e2403] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/macbook-air-m1#headterms
+              - listitem [ref=e2404]:
+                - link "Laptop lenovo" [ref=e2405] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/laptop-lenovo#headterms
+            - button "Ver todo" [ref=e2406] [cursor=pointer]:
+              - text: Ver todo
+              - img [ref=e2407]
+          - generic [ref=e2409]:
+            - heading "Tablet" [level=4] [ref=e2410]:
+              - link "Tablet" [ref=e2411] [cursor=pointer]:
+                - /url: https://listado.mercadolibre.com.pe/tablet#headterms
+            - list [ref=e2412]:
+              - listitem [ref=e2413]:
+                - link "Ipad" [ref=e2414] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/ipad#headterms
+              - listitem [ref=e2415]:
+                - link "Tablet uso rudo" [ref=e2416] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/tablet-uso-rudo#headterms
+              - listitem [ref=e2417]:
+                - link "Tablet samsung" [ref=e2418] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/tablet-samsung#headterms
+              - listitem [ref=e2419]:
+                - link "Ipad modelo a1474" [ref=e2420] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/ipad-modelo-a1474#headterms
+              - listitem [ref=e2421]:
+                - link "Samsung tab s7" [ref=e2422] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/samsung-tab-s7#headterms
+              - listitem [ref=e2423]:
+                - link "One plus pad" [ref=e2424] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/one-plus-pad#headterms
+              - listitem [ref=e2425]:
+                - link "Xiaomi pad 5" [ref=e2426] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/xiaomi-pad-5#headterms
+            - button "Ver todo" [ref=e2427] [cursor=pointer]:
+              - text: Ver todo
+              - img [ref=e2428]
+  - generic:
+    - heading "Más información " [level=2]:
+      - button "Más información " [ref=e2430] [cursor=pointer]:
+        - text: Más información
+        - generic [ref=e2431]: 
+  - contentinfo [ref=e2432]:
+    - generic [ref=e2434]:
+      - generic [ref=e2435]:
+        - generic [ref=e2436]: Copyright © 1999-2026 MercadoLibre Perú S.R.L.
+        - navigation [ref=e2437]:
+          - list [ref=e2438]:
+            - listitem [ref=e2439]:
+              - link "Trabaja con nosotros" [ref=e2440] [cursor=pointer]:
+                - /url: https://careers-meli.mercadolibre.com/?utm_campaign=site-mpe&utm_source=mercadolibre&utm_medium=mercadolibre
+            - listitem [ref=e2441]:
+              - link "Términos y condiciones" [ref=e2442] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/ayuda/terminos-condiciones-uso-pe_2280
+            - listitem [ref=e2443]:
+              - link "Promociones" [ref=e2444] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/l/promociones
+            - listitem [ref=e2445]:
+              - link "Cómo cuidamos tu privacidad" [ref=e2446] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/privacidad
+            - listitem [ref=e2447]:
+              - link "Accesibilidad" [ref=e2448] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/accesibilidad
+            - listitem [ref=e2449]:
+              - link "Ayuda" [ref=e2450] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/ayuda
+      - paragraph [ref=e2451]: Avenida Victor Andrés Belaunde N°332 oficina 702, San Isidro, Lima, Perú.
+    - link "Mercado Libre" [ref=e2452] [cursor=pointer]:
+      - /url: https://hp.mercadolibre.com/?p=ML&s=MPE&d=desktop
+```
+
+# Test source
+
+```ts
+  160 |   await page.waitForTimeout(2000);
+  161 |   
+  162 |   // Validamos las etiquetas de filtros aplicados
+  163 |   const etiquetasAplicadas = page.locator('.andes-tag');
+  164 |   await expect(etiquetasAplicadas).toHaveCount(2, { timeout: 15000 });
+  165 | });
+  166 | 
+  167 |   test('TC-006: Agregar producto al carrito', async ({ page }) => {
+  168 |     await page.goto('https://www.mercadolibre.com.pe/');
+  169 |     await page.locator('input[id="cb1-edit"]').fill('Teclado gamer');
+  170 |     await page.keyboard.press('Enter');
+  171 |     await expect(page.locator('.ui-search-layout')).toBeVisible({ timeout: 15000 });
+  172 | 
+  173 |     // Entramos al primer producto de la lista
+  174 |     await page.locator('.poly-component__title').first().click();
+  175 | 
+  176 |     // Agregamos al carrito
+  177 |     await page.locator('button', { hasText: 'Agregar al carrito' }).click();
+  178 | 
+  179 |     // Validamos que nos mande a la ruta de carrito
+  180 |     await expect(page).toHaveURL(/.*cart.*/, { timeout: 15000 });
+  181 |   });
+  182 | 
+  183 | 
+  184 |   test('TC-007: Límite superior de stock', async ({ page }) => {
+  185 |   test.setTimeout(180000);
+  186 |   
+  187 |   console.log('🚀 Iniciando prueba de stock...');
+  188 |   
+  189 |   // PASO 1: Intentar login automático
+  190 |   await page.goto('https://www.mercadolibre.com.pe/');
+  191 |   
+  192 |   // Verificar si ya está logueado
+  193 |   const isLoggedIn = await page.locator('.nav-header-user').isVisible().catch(() => false);
+  194 |   
+  195 |   if (!isLoggedIn) {
+  196 |     console.log('⚠️ No estás logueado. Intentando login automático...');
+  197 |     
+  198 |     try {
+  199 |       // Intentar login automático
+  200 |       await page.click('a:has-text("Ingresar")');
+  201 |       await page.waitForSelector('input#user_id', { timeout: 10000 });
+  202 |       
+  203 |       const email = process.env.ML_EMAIL;
+  204 |       const password = process.env.ML_PASSWORD;
+  205 |       
+  206 |       await page.fill('input#user_id', email);
+  207 |       await page.click('button:has-text("Continuar")');
+  208 |       
+  209 |       await page.waitForSelector('input#password', { timeout: 10000 });
+  210 |       await page.fill('input#password', password);
+  211 |       await page.click('button:has-text("Ingresar")');
+  212 |       
+  213 |       // Esperar y verificar si hay captcha
+  214 |       await page.waitForTimeout(3000);
+  215 |       
+  216 |       // Verificar si apareció captcha
+  217 |       const hasCaptcha = await page.locator('iframe[src*="captcha"]').isVisible().catch(() => false);
+  218 |       
+  219 |       if (hasCaptcha) {
+  220 |         console.log('🤖 Captcha detectado!');
+  221 |         console.log('⏳ Por favor, resuelve el captcha manualmente en el navegador');
+  222 |         console.log('⏳ Esperando 60 segundos...');
+  223 |         await page.waitForTimeout(60000);
+  224 |       }
+  225 |       
+  226 |       // Verificar login exitoso
+  227 |       await expect(page.locator('.nav-header-user')).toBeVisible({ timeout: 15000 });
+  228 |       console.log('✅ Login exitoso');
+  229 |       
+  230 |     } catch (error) {
+  231 |       console.log('❌ Error en login automático');
+  232 |       console.log('🔑 Por favor, inicia sesión manualmente');
+  233 |       console.log('⏳ Esperando 60 segundos...');
+  234 |       await page.waitForTimeout(60000);
+  235 |     }
+  236 |   } else {
+  237 |     console.log('✅ Ya estás logueado');
+  238 |   }
+  239 |   
+  240 |   // PASO 2: Buscar producto
+  241 |   console.log('🔍 Buscando "Mouse inalambrico"...');
+  242 |   await page.getByRole('combobox', { name: 'Ingresa lo que quieras' }).fill('Mouse inalambrico');
+  243 |   await page.keyboard.press('Enter');
+  244 |   
+  245 |   // Esperar resultados
+  246 |   await expect(page.locator('ol.ui-search-layout')).toBeVisible({ timeout: 15000 });
+  247 |   console.log('✅ Resultados de búsqueda cargados');
+  248 |   
+  249 |   // PASO 3: Entrar al primer producto
+  250 |   console.log('📦 Entrando al primer producto...');
+  251 |   await page.locator('.poly-component__title').first().click();
+  252 |   
+  253 |   // Esperar que cargue la página del producto
+  254 |   await page.waitForSelector('.ui-pdp-buybox', { timeout: 15000 });
+  255 |   console.log('✅ Página del producto cargada');
+  256 |   
+  257 |   // PASO 4: Desplegar menú de cantidad
+  258 |   console.log('🔄 Desplegando menú de cantidad...');
+  259 |   const dropdown = page.locator('.ui-pdp-buybox__quantity__dropdown');
+> 260 |   await dropdown.scrollIntoViewIfNeeded();
+      |                  ^ Error: locator.scrollIntoViewIfNeeded: Test timeout of 180000ms exceeded.
+  261 |   await dropdown.click();
+  262 |   
+  263 |   // PASO 5: Seleccionar "Más de..."
+  264 |   console.log('🔢 Seleccionando "Más de..."...');
+  265 |   try {
+  266 |     await page.getByRole('option', { name: /Más de/ }).click();
+  267 |   } catch {
+  268 |     // Alternativa: buscar por texto exacto
+  269 |     await page.locator('li:has-text("Más de")').click();
+  270 |   }
+  271 |   
+  272 |   // PASO 6: Ingresar cantidad absurda
+  273 |   console.log('✏️ Ingresando cantidad 9999...');
+  274 |   const quantityInput = page.locator('input[type="number"]');
+  275 |   await quantityInput.waitFor({ state: 'visible', timeout: 5000 });
+  276 |   await quantityInput.click({ clickCount: 3 }); // Seleccionar todo
+  277 |   await quantityInput.fill('9999');
+  278 |   await page.keyboard.press('Enter');
+  279 |   
+  280 |   // PASO 7: Validar error de stock
+  281 |   console.log('✅ Validando mensaje de error de stock...');
+  282 |   try {
+  283 |     const errorStock = page.locator('.ui-pdp-buybox__quantity__error');
+  284 |     await expect(errorStock).toBeVisible({ timeout: 10000 });
+  285 |     const errorText = await errorStock.textContent();
+  286 |     console.log(`✅ Mensaje de error visible: "${errorText}"`);
+  287 |   } catch (error) {
+  288 |     console.log('⚠️ No se encontró mensaje de error visible');
+  289 |     
+  290 |     // Verificar que el botón de compra esté deshabilitado
+  291 |     const buyButton = page.locator('.ui-pdp-buybox__action--primary button');
+  292 |     await expect(buyButton).toBeDisabled({ timeout: 5000 });
+  293 |     console.log('✅ Botón de compra deshabilitado correctamente');
+  294 |   }
+  295 |   
+  296 |   console.log('✅ Prueba completada exitosamente');
+  297 | });
+```

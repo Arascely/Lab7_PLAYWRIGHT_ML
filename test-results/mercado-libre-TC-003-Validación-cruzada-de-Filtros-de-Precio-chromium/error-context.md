@@ -1,0 +1,4244 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: mercado-libre.spec.ts >> TC-003: Validación cruzada de Filtros de Precio
+- Location: tests\mercado-libre.spec.ts:87:7
+
+# Error details
+
+```
+Error: locator.click: Error: strict mode violation: getByTestId('ui-search-range-filter__text-submit-test') resolved to 6 elements:
+    1) <button type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: 'PrecioHasta S/ 1,000S/ 1,000' }).getByTestId('ui-search-range-filter__text-submit-test')
+    2) <button disabled type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: 'Menos de 256 GB256 a 511' }).getByTestId('ui-search-range-filter__text-submit-test')
+    3) <button disabled type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: 'Menos de 6 GB6 a 11 GB12 a 15' }).getByTestId('ui-search-range-filter__text-submit-test')
+    4) <button disabled type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: '32 Mpx o menos32 a 49 Mpx50 a' }).getByTestId('ui-search-range-filter__text-submit-test')
+    5) <button disabled type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: 'Menos de 6,2 "6,2 a 6,57 "6,' }).getByTestId('ui-search-range-filter__text-submit-test')
+    6) <button disabled type="submit" aria-label="Aplicar" class="ui-search-range-filter__action-btn" data-testid="ui-search-range-filter__text-submit-test">…</button> aka getByRole('list').filter({ hasText: '13 Mpx o menos13 a 19 Mpx20 a' }).getByTestId('ui-search-range-filter__text-submit-test')
+
+Call log:
+  - waiting for getByTestId('ui-search-range-filter__text-submit-test')
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - button "Menú de atajos" [ref=e5] [cursor=pointer]:
+          - generic [ref=e6]: Menú de atajos
+        - dialog [ref=e7]:
+          - list [ref=e8]:
+            - link [ref=e9] [cursor=pointer]:
+              - /url: "#root-app"
+              - text: Saltar el contenido
+            - link [ref=e10] [cursor=pointer]:
+              - /url: https://www.mercadolibre.com.pe/accesibilidad/feedback
+              - text: Comentar sobre accesibilidad
+          - separator [ref=e11]
+          - list [ref=e12]:
+            - link [ref=e13] [cursor=pointer]:
+              - /url: "#cb1-edit"
+              - generic [ref=e15]: /
+            - link [ref=e16] [cursor=pointer]:
+              - /url: https://myaccount.mercadolibre.com.pe/purchases/list
+              - generic [ref=e18]: P
+            - link [ref=e19] [cursor=pointer]:
+              - /url: https://www.mercadolibre.com.pe/gz/cart/v2
+              - generic [ref=e21]: C
+            - link [ref=e22] [cursor=pointer]:
+              - /url: "#results"
+              - generic [ref=e24]: F
+            - link [ref=e25] [cursor=pointer]:
+              - /url: "#"
+              - generic [ref=e27]: Z
+        - link "Mercado Libre Perú - Donde comprar y vender de todo" [ref=e28] [cursor=pointer]:
+          - /url: //www.mercadolibre.com.pe
+      - search [ref=e30]:
+        - generic [ref=e31]: Ingresa lo que quieras encontrar
+        - combobox "Ingresa lo que quieras encontrar" [ref=e32]: celular
+        - button "en todo Mercado Libre" [ref=e33]:
+          - generic: en todo Mercado Libre
+        - button "Buscar" [ref=e35] [cursor=pointer]:
+          - img "Buscar" [ref=e36]: 
+        - text: Tiendas oficiales
+      - link "Primera compra con envío gratis y hasta S/25 de descuento" [ref=e38] [cursor=pointer]:
+        - /url: https://listado.mercadolibre.com.pe/_Container_nb-mas-comprados-2026#origin=banner-menu&me.audience=unknown&me.bu=3&me.bu_line=26&me.component_id=banner_menu_web_ml&me.content_id=BANNER_MENU_WEB_CUPON_NB_UNKNOWN_2025&me.flow=-1&me.logic=user_journey&me.position=0
+        - img "Primera compra con envío gratis y hasta S/25 de descuento" [ref=e39]
+      - link " Enviar a Lima Metropolitana" [ref=e42] [cursor=pointer]:
+        - /url: https://www.mercadolibre.com.pe/addresses/v3/navigation/hub?go=https%3A%2F%2Flistado.mercadolibre.com.pe%2Fcelular
+        - text: 
+        - generic [ref=e43]: Enviar a
+        - generic [ref=e44]: Lima Metropolitana
+      - list [ref=e47]:
+        - listitem [ref=e48]:
+          - button "Categorías" [ref=e49] [cursor=pointer]
+        - listitem [ref=e50]:
+          - link "Ofertas" [ref=e51] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/ofertas#nav-header
+        - listitem [ref=e52]:
+          - link "Cupones" [ref=e53] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/cupones#nav-header
+        - listitem [ref=e54]:
+          - link "Moda" [ref=e55] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/c/ropa-y-accesorios#nav-header
+        - listitem [ref=e56]:
+          - link "Mercado Play Gratis" [ref=e57] [cursor=pointer]:
+            - /url: https://play.mercadolibre.com.pe/?origin=navigation_menu_web#nav-header
+            - text: Mercado Play
+            - generic [ref=e58]: Gratis
+        - listitem [ref=e59]:
+          - link "Vender" [ref=e60] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/syi/core/list#nav-header
+        - listitem [ref=e61]:
+          - link "Ayuda" [ref=e62] [cursor=pointer]:
+            - /url: https://www.mercadolibre.com.pe/ayuda#nav-header
+      - generic [ref=e63]:
+        - navigation "Menú de usuario" [ref=e64]:
+          - list [ref=e65]:
+            - listitem [ref=e66]:
+              - link "Crea tu cuenta" [ref=e67] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/registration?confirmation_url=https%3A%2F%2Flistado.mercadolibre.com.pe%2Fcelular#nav-header
+            - listitem [ref=e68]:
+              - link "Ingresa" [ref=e69] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com/jms/mpe/lgz/login?platform_id=ML&go=https%3A%2F%2Flistado.mercadolibre.com.pe%2Fcelular&loginType=explicit&client_id=6280072776285528#nav-header
+            - listitem [ref=e70]:
+              - link "Mis compras" [ref=e71] [cursor=pointer]:
+                - /url: https://myaccount.mercadolibre.com.pe/purchases/list#nav-header
+        - link "0 productos en tu carrito" [ref=e72] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/gz/cart/v2
+          - generic [ref=e73]: 
+  - main [ref=e74]:
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - complementary [ref=e77]:
+          - generic [ref=e78]:
+            - list [ref=e79]:
+              - listitem [ref=e80]:
+                - link "Celulares y Teléfonos" [ref=e81] [cursor=pointer]:
+                  - /url: https://www.mercadolibre.com.pe/c/celulares-y-telefonos
+                - img [ref=e82]
+              - listitem [ref=e84]:
+                - link "Celulares y Smartphones" [ref=e85] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/
+            - heading "Celular" [level=1] [ref=e86]
+          - generic [ref=e88]: 5,993 resultados
+          - link "Saltar a resultados" [ref=e89] [cursor=pointer]:
+            - /url: "#results"
+          - heading "Filtros" [level=2] [ref=e90]
+          - generic [ref=e91]:
+            - list [ref=e93]:
+              - listitem [ref=e94] [cursor=pointer]:
+                - generic [ref=e96]:
+                  - switch "Envío gratis" [ref=e97]
+                  - generic [ref=e99]: Envío gratis
+            - generic [ref=e100]:
+              - heading "Marca" [level=3] [ref=e101]
+              - list [ref=e102]:
+                - listitem [ref=e103]:
+                  - link "Apple" [ref=e104] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/apple/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D9344%26applied_value_name%3DApple%26applied_value_order%3D1%26applied_value_results%3D2011%26is_custom%3Dfalse
+                    - generic [ref=e105]: Apple
+                - listitem [ref=e106]:
+                  - link "Xiaomi" [ref=e107] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/xiaomi/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D59387%26applied_value_name%3DXiaomi%26applied_value_order%3D2%26applied_value_results%3D1150%26is_custom%3Dfalse
+                    - generic [ref=e108]: Xiaomi
+                - listitem [ref=e109]:
+                  - link "Samsung" [ref=e110] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/samsung/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D206%26applied_value_name%3DSamsung%26applied_value_order%3D3%26applied_value_results%3D833%26is_custom%3Dfalse
+                    - generic [ref=e111]: Samsung
+                - listitem [ref=e112]:
+                  - link "Honor" [ref=e113] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/marca-honor/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D6623623%26applied_value_name%3DHonor%26applied_value_order%3D4%26applied_value_results%3D577%26is_custom%3Dfalse
+                    - generic [ref=e114]: Honor
+                - listitem [ref=e115]:
+                  - link "Motorola" [ref=e116] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/motorola/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D2503%26applied_value_name%3DMotorola%26applied_value_order%3D5%26applied_value_results%3D353%26is_custom%3Dfalse
+                    - generic [ref=e117]: Motorola
+                - listitem [ref=e118]:
+                  - link "ZTE" [ref=e119] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/zte/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D7561%26applied_value_name%3DZTE%26applied_value_order%3D6%26applied_value_results%3D161%26is_custom%3Dfalse
+                    - generic [ref=e120]: ZTE
+                - listitem [ref=e121]:
+                  - link "Infinix" [ref=e122] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/infinix/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D9009352%26applied_value_name%3DInfinix%26applied_value_order%3D7%26applied_value_results%3D128%26is_custom%3Dfalse
+                    - generic [ref=e123]: Infinix
+                - listitem [ref=e124]:
+                  - link "Huawei" [ref=e125] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/huawei/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D8784%26applied_value_name%3DHuawei%26applied_value_order%3D8%26applied_value_results%3D68%26is_custom%3Dfalse
+                    - generic [ref=e126]: Huawei
+                - listitem [ref=e127]:
+                  - link "Google" [ref=e128] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/google/celular_NoIndex_True#applied_filter_id%3DBRAND%26applied_filter_name%3DMarca%26applied_filter_order%3D2%26applied_value_id%3D52701%26applied_value_name%3DGoogle%26applied_value_order%3D9%26applied_value_results%3D56%26is_custom%3Dfalse
+                    - generic [ref=e129]: Google
+                - listitem [ref=e130]:
+                  - link "Mostrar más Marca" [ref=e131] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=BRAND
+                    - text: Mostrar más
+            - generic [ref=e132]:
+              - heading "Modelo" [level=3] [ref=e133]
+              - list [ref=e134]:
+                - listitem [ref=e135]:
+                  - link "iPhone 17 Pro Max" [ref=e136] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-17-pro-max/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D59462516%26applied_value_name%3DiPhone+17+Pro+Max%26applied_value_order%3D239%26applied_value_results%3D155%26is_custom%3Dfalse
+                    - generic [ref=e137]: iPhone 17 Pro Max
+                - listitem [ref=e138]:
+                  - link "iPhone 17" [ref=e139] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-17/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D59610481%26applied_value_name%3DiPhone+17%26applied_value_order%3D237%26applied_value_results%3D140%26is_custom%3Dfalse
+                    - generic [ref=e140]: iPhone 17
+                - listitem [ref=e141]:
+                  - link "iPhone 16" [ref=e142] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/modelo-iphone-16/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D41954949%26applied_value_name%3DiPhone+16%26applied_value_order%3D232%26applied_value_results%3D116%26is_custom%3Dfalse
+                    - generic [ref=e143]: iPhone 16
+                - listitem [ref=e144]:
+                  - link "iPhone 13" [ref=e145] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-13/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D11159139%26applied_value_name%3DiPhone+13%26applied_value_order%3D220%26applied_value_results%3D108%26is_custom%3Dfalse
+                    - generic [ref=e146]: iPhone 13
+                - listitem [ref=e147]:
+                  - link "15C" [ref=e148] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/15c/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D896672%26applied_value_name%3D15C%26applied_value_order%3D32%26applied_value_results%3D90%26is_custom%3Dfalse
+                    - generic [ref=e149]: 15C
+                - listitem [ref=e150]:
+                  - link "iPhone 15" [ref=e151] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/modelo-iphone-15/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D25527344%26applied_value_name%3DiPhone+15%26applied_value_order%3D228%26applied_value_results%3D88%26is_custom%3Dfalse
+                    - generic [ref=e152]: iPhone 15
+                - listitem [ref=e153]:
+                  - link "iPhone 14 Pro Max" [ref=e154] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-14-pro-max/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D13188535%26applied_value_name%3DiPhone+14+Pro+Max%26applied_value_order%3D227%26applied_value_results%3D79%26is_custom%3Dfalse
+                    - generic [ref=e155]: iPhone 14 Pro Max
+                - listitem [ref=e156]:
+                  - link "iPhone 13 Pro Max" [ref=e157] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-13-pro-max/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D11151776%26applied_value_name%3DiPhone+13+Pro+Max%26applied_value_order%3D223%26applied_value_results%3D79%26is_custom%3Dfalse
+                    - generic [ref=e158]: iPhone 13 Pro Max
+                - listitem [ref=e159]:
+                  - link "iPhone 17 Pro" [ref=e160] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-17-pro/celular_NoIndex_True#applied_filter_id%3DMODEL%26applied_filter_name%3DModelo%26applied_filter_order%3D3%26applied_value_id%3D59462442%26applied_value_name%3DiPhone+17+Pro%26applied_value_order%3D238%26applied_value_results%3D73%26is_custom%3Dfalse
+                    - generic [ref=e161]: iPhone 17 Pro
+                - listitem [ref=e162]:
+                  - link "Mostrar más Modelo" [ref=e163] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=MODEL
+                    - text: Mostrar más
+            - generic [ref=e164]:
+              - heading "Condición" [level=3] [ref=e165]
+              - list [ref=e166]:
+                - listitem [ref=e167]:
+                  - link "Nuevo" [ref=e168] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/nuevo/celular_NoIndex_True#applied_filter_id%3DITEM_CONDITION%26applied_filter_name%3DCondici%C3%B3n%26applied_filter_order%3D4%26applied_value_id%3D2230284%26applied_value_name%3DNuevo%26applied_value_order%3D2%26applied_value_results%3D4326%26is_custom%3Dfalse
+                    - generic [ref=e169]: Nuevo
+                - listitem [ref=e170]:
+                  - link "Usado" [ref=e171] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/usado/celular_NoIndex_True#applied_filter_id%3DITEM_CONDITION%26applied_filter_name%3DCondici%C3%B3n%26applied_filter_order%3D4%26applied_value_id%3D2230581%26applied_value_name%3DUsado%26applied_value_order%3D4%26applied_value_results%3D922%26is_custom%3Dfalse
+                    - generic [ref=e172]: Usado
+                - listitem [ref=e173]:
+                  - link "Reacondicionado" [ref=e174] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/reacondicionado/celular_NoIndex_True#applied_filter_id%3DITEM_CONDITION%26applied_filter_name%3DCondici%C3%B3n%26applied_filter_order%3D4%26applied_value_id%3D2230582%26applied_value_name%3DReacondicionado%26applied_value_order%3D3%26applied_value_results%3D443%26is_custom%3Dfalse
+                    - generic [ref=e175]: Reacondicionado
+                - listitem [ref=e176]:
+                  - link "Caja abierta" [ref=e177] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_ITEM*CONDITION_46759135_NoIndex_True#applied_filter_id%3DITEM_CONDITION%26applied_filter_name%3DCondici%C3%B3n%26applied_filter_order%3D4%26applied_value_id%3D46759135%26applied_value_name%3DCaja+abierta%26applied_value_order%3D1%26applied_value_results%3D295%26is_custom%3Dfalse
+                    - generic [ref=e178]: Caja abierta
+            - generic [ref=e179]:
+              - heading "Tiendas oficiales" [level=3] [ref=e180]
+              - list [ref=e181]:
+                - listitem [ref=e182]:
+                  - link "Solo tiendas oficiales" [ref=e183] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Tienda_all_NoIndex_True#applied_filter_id%3Dofficial_store%26applied_filter_name%3DTiendas+oficiales%26applied_filter_order%3D5%26applied_value_id%3Dall%26applied_value_name%3DSolo+tiendas+oficiales%26applied_value_order%3D1%26applied_value_results%3D546%26is_custom%3Dfalse
+                    - generic [ref=e184]: Solo tiendas oficiales
+            - list [ref=e186]:
+              - listitem [ref=e187]:
+                - heading "Precio" [level=3] [ref=e188]
+              - listitem [ref=e189]:
+                - link "Hasta S/ 1,000" [ref=e190] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_PriceRange_0PEN-1000PEN_NoIndex_True
+                  - generic [ref=e191]: Hasta S/ 1,000
+              - listitem [ref=e192]:
+                - link "S/ 1,000 a S/ 2,500" [ref=e193] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_PriceRange_1000PEN-2500PEN_NoIndex_True
+                  - generic [ref=e194]: S/ 1,000 a S/ 2,500
+              - listitem [ref=e195]:
+                - link "Más de S/ 2,500" [ref=e196] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_PriceRange_2500PEN-0PEN_NoIndex_True
+                  - generic [ref=e197]: Más de S/ 2,500
+              - listitem [ref=e198]:
+                - generic [ref=e199]:
+                  - textbox "Mínimo" [ref=e203]
+                  - generic [ref=e204]: —
+                  - textbox "Máximo" [active] [ref=e208]: "4500"
+                  - button "Aplicar" [ref=e210] [cursor=pointer]:
+                    - img [ref=e211]
+            - generic [ref=e213]:
+              - heading "Descuentos" [level=3] [ref=e214]
+              - list [ref=e215]:
+                - listitem [ref=e216]:
+                  - link "Desde 60% OFF" [ref=e217] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_60-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D60-100%26applied_value_name%3DDesde+60%25+OFF%26applied_value_order%3D1%26applied_value_results%3D3%26is_custom%3Dfalse
+                    - generic [ref=e218]: Desde 60% OFF
+                - listitem [ref=e219]:
+                  - link "Desde 50% OFF" [ref=e220] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_50-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D50-100%26applied_value_name%3DDesde+50%25+OFF%26applied_value_order%3D2%26applied_value_results%3D41%26is_custom%3Dfalse
+                    - generic [ref=e221]: Desde 50% OFF
+                - listitem [ref=e222]:
+                  - link "Desde 40% OFF" [ref=e223] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_40-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D40-100%26applied_value_name%3DDesde+40%25+OFF%26applied_value_order%3D3%26applied_value_results%3D152%26is_custom%3Dfalse
+                    - generic [ref=e224]: Desde 40% OFF
+                - listitem [ref=e225]:
+                  - link "Desde 30% OFF" [ref=e226] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_30-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D30-100%26applied_value_name%3DDesde+30%25+OFF%26applied_value_order%3D4%26applied_value_results%3D503%26is_custom%3Dfalse
+                    - generic [ref=e227]: Desde 30% OFF
+                - listitem [ref=e228]:
+                  - link "Desde 25% OFF" [ref=e229] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_25-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D25-100%26applied_value_name%3DDesde+25%25+OFF%26applied_value_order%3D5%26applied_value_results%3D774%26is_custom%3Dfalse
+                    - generic [ref=e230]: Desde 25% OFF
+                - listitem [ref=e231]:
+                  - link "Desde 20% OFF" [ref=e232] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_20-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D20-100%26applied_value_name%3DDesde+20%25+OFF%26applied_value_order%3D6%26applied_value_results%3D1085%26is_custom%3Dfalse
+                    - generic [ref=e233]: Desde 20% OFF
+                - listitem [ref=e234]:
+                  - link "Desde 15% OFF" [ref=e235] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_15-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D15-100%26applied_value_name%3DDesde+15%25+OFF%26applied_value_order%3D7%26applied_value_results%3D1281%26is_custom%3Dfalse
+                    - generic [ref=e236]: Desde 15% OFF
+                - listitem [ref=e237]:
+                  - link "Desde 10% OFF" [ref=e238] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_10-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D10-100%26applied_value_name%3DDesde+10%25+OFF%26applied_value_order%3D8%26applied_value_results%3D1559%26is_custom%3Dfalse
+                    - generic [ref=e239]: Desde 10% OFF
+                - listitem [ref=e240]:
+                  - link "Desde 5% OFF" [ref=e241] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Discount_5-100_NoIndex_True#applied_filter_id%3Ddiscount%26applied_filter_name%3DDescuentos%26applied_filter_order%3D7%26applied_value_id%3D5-100%26applied_value_name%3DDesde+5%25+OFF%26applied_value_order%3D9%26applied_value_results%3D1674%26is_custom%3Dfalse
+                    - generic [ref=e242]: Desde 5% OFF
+            - generic [ref=e243]:
+              - heading "Costo de envío" [level=3] [ref=e244]
+              - list [ref=e245]:
+                - listitem [ref=e246]:
+                  - link "Gratis" [ref=e247] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_CostoEnvio_Gratis_NoIndex_True#applied_filter_id%3Dshipping_cost%26applied_filter_name%3DCosto+de+env%C3%ADo%26applied_filter_order%3D8%26applied_value_id%3Dfree%26applied_value_name%3DGratis%26applied_value_order%3D1%26applied_value_results%3D5373%26is_custom%3Dfalse
+                    - generic [ref=e248]: Gratis
+            - generic [ref=e249]:
+              - heading "Envío" [level=3] [ref=e250]
+              - list [ref=e251]:
+                - listitem [ref=e252]:
+                  - link "Mercado Envíos" [ref=e253] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Envio_MercadoEnvios_NoIndex_True#applied_filter_id%3Dshipping%26applied_filter_name%3DEnv%C3%ADo%26applied_filter_order%3D9%26applied_value_id%3Dmercadoenvios%26applied_value_name%3DMercado+Env%C3%ADos%26applied_value_order%3D2%26applied_value_results%3D5968%26is_custom%3Dfalse
+                    - generic [ref=e254]: Mercado Envíos
+                - listitem [ref=e255]:
+                  - link "Full" [ref=e256] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Envio_Full_NoIndex_True#applied_filter_id%3Dshipping%26applied_filter_name%3DEnv%C3%ADo%26applied_filter_order%3D9%26applied_value_id%3Dfulfillment%26applied_value_name%3DFull%26applied_value_order%3D1%26applied_value_results%3D57%26is_custom%3Dfalse
+                    - img "full" [ref=e257]
+            - generic [ref=e259]:
+              - heading "Memoria interna" [level=3] [ref=e260]
+              - list [ref=e261]:
+                - listitem [ref=e262]:
+                  - link "Menos de 256 GB" [ref=e263] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_INTERNAL*MEMORY_*-256GB_NoIndex_True#applied_filter_id%3DINTERNAL_MEMORY%26applied_filter_name%3DMemoria+interna%26applied_filter_order%3D10%26applied_value_id%3D%28*-256GB%29%26applied_value_name%3DMenos+de+256+GB%26applied_value_order%3D4%26applied_value_results%3D2162%26is_custom%3Dfalse
+                    - generic [ref=e264]: Menos de 256 GB
+                - listitem [ref=e265]:
+                  - link "256 a 511 GB" [ref=e266] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_INTERNAL*MEMORY_256GB-512GB_NoIndex_True#applied_filter_id%3DINTERNAL_MEMORY%26applied_filter_name%3DMemoria+interna%26applied_filter_order%3D10%26applied_value_id%3D%5B256GB-512GB%29%26applied_value_name%3D256+a+511+GB%26applied_value_order%3D2%26applied_value_results%3D2631%26is_custom%3Dfalse
+                    - generic [ref=e267]: 256 a 511 GB
+                - listitem [ref=e268]:
+                  - link "512 a 1 TB" [ref=e269] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_INTERNAL*MEMORY_512GB-1TB_NoIndex_True#applied_filter_id%3DINTERNAL_MEMORY%26applied_filter_name%3DMemoria+interna%26applied_filter_order%3D10%26applied_value_id%3D%5B512GB-1TB%29%26applied_value_name%3D512+a+1+TB%26applied_value_order%3D3%26applied_value_results%3D997%26is_custom%3Dfalse
+                    - generic [ref=e270]: 512 a 1 TB
+                - listitem [ref=e271]:
+                  - link "1 TB o más" [ref=e272] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_INTERNAL*MEMORY_1TB-*_NoIndex_True#applied_filter_id%3DINTERNAL_MEMORY%26applied_filter_name%3DMemoria+interna%26applied_filter_order%3D10%26applied_value_id%3D%5B1TB-*%29%26applied_value_name%3D1+TB+o+m%C3%A1s%26applied_value_order%3D1%26applied_value_results%3D139%26is_custom%3Dfalse
+                    - generic [ref=e273]: 1 TB o más
+                - listitem [ref=e274]:
+                  - generic [ref=e275]:
+                    - textbox "Mínimo" [ref=e279]
+                    - generic [ref=e280]: —
+                    - textbox "Máximo" [ref=e284]
+                    - generic [ref=e285]:
+                      - button "Aplicar" [disabled]:
+                        - img
+            - generic [ref=e286]:
+              - heading "Memoria RAM" [level=3] [ref=e287]
+              - list [ref=e288]:
+                - listitem [ref=e289]:
+                  - link "Menos de 6 GB" [ref=e290] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_RAM_*-6GB#applied_filter_id%3DRAM%26applied_filter_name%3DMemoria+RAM%26applied_filter_order%3D11%26applied_value_id%3D%28*-6GB%29%26applied_value_name%3DMenos+de+6+GB%26applied_value_order%3D4%26applied_value_results%3D1433%26is_custom%3Dfalse
+                    - generic [ref=e291]: Menos de 6 GB
+                - listitem [ref=e292]:
+                  - link "6 a 11 GB" [ref=e293] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_RAM_6GB-12GB#applied_filter_id%3DRAM%26applied_filter_name%3DMemoria+RAM%26applied_filter_order%3D11%26applied_value_id%3D%5B6GB-12GB%29%26applied_value_name%3D6+a+11+GB%26applied_value_order%3D3%26applied_value_results%3D2845%26is_custom%3Dfalse
+                    - generic [ref=e294]: 6 a 11 GB
+                - listitem [ref=e295]:
+                  - link "12 a 15 GB" [ref=e296] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_RAM_12GB-16GB#applied_filter_id%3DRAM%26applied_filter_name%3DMemoria+RAM%26applied_filter_order%3D11%26applied_value_id%3D%5B12GB-16GB%29%26applied_value_name%3D12+a+15+GB%26applied_value_order%3D1%26applied_value_results%3D1294%26is_custom%3Dfalse
+                    - generic [ref=e297]: 12 a 15 GB
+                - listitem [ref=e298]:
+                  - link "16 GB o más" [ref=e299] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_RAM_16GB-*#applied_filter_id%3DRAM%26applied_filter_name%3DMemoria+RAM%26applied_filter_order%3D11%26applied_value_id%3D%5B16GB-*%29%26applied_value_name%3D16+GB+o+m%C3%A1s%26applied_value_order%3D2%26applied_value_results%3D272%26is_custom%3Dfalse
+                    - generic [ref=e300]: 16 GB o más
+                - listitem [ref=e301]:
+                  - generic [ref=e302]:
+                    - textbox "Mínimo" [ref=e306]
+                    - generic [ref=e307]: —
+                    - textbox "Máximo" [ref=e311]
+                    - generic [ref=e312]:
+                      - button "Aplicar" [disabled]:
+                        - img
+            - generic [ref=e313]:
+              - heading "Color" [level=3] [ref=e314]
+              - list [ref=e315]:
+                - listitem [ref=e316]:
+                  - list [ref=e317]:
+                    - listitem [ref=e318]:
+                      - link "Negro" [ref=e319] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450295_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450295%26applied_value_name%3DNegro%26applied_value_order%3D1%26applied_value_results%3D1939%26is_custom%3Dfalse
+                        - generic [ref=e323]: Negro
+                    - listitem [ref=e324]:
+                      - link "Azul" [ref=e325] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450293_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450293%26applied_value_name%3DAzul%26applied_value_order%3D2%26applied_value_results%3D647%26is_custom%3Dfalse
+                        - generic [ref=e329]: Azul
+                    - listitem [ref=e330]:
+                      - link "Gris" [ref=e331] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450294_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450294%26applied_value_name%3DGris%26applied_value_order%3D3%26applied_value_results%3D436%26is_custom%3Dfalse
+                        - generic [ref=e335]: Gris
+                    - listitem [ref=e336]:
+                      - link "Blanco" [ref=e337] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450308_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450308%26applied_value_name%3DBlanco%26applied_value_order%3D4%26applied_value_results%3D342%26is_custom%3Dfalse
+                        - generic [ref=e341]: Blanco
+                    - listitem [ref=e342]:
+                      - link "Verde" [ref=e343] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450314_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450314%26applied_value_name%3DVerde%26applied_value_order%3D5%26applied_value_results%3D310%26is_custom%3Dfalse
+                        - generic [ref=e347]: Verde
+                    - listitem [ref=e348]:
+                      - link "Violeta" [ref=e349] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450311_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450311%26applied_value_name%3DVioleta%26applied_value_order%3D6%26applied_value_results%3D211%26is_custom%3Dfalse
+                        - generic [ref=e353]: Violeta
+                    - listitem [ref=e354]:
+                      - link "Dorado" [ref=e355] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450289_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450289%26applied_value_name%3DDorado%26applied_value_order%3D7%26applied_value_results%3D165%26is_custom%3Dfalse
+                        - generic [ref=e359]: Dorado
+                    - listitem [ref=e360]:
+                      - link "Plateado" [ref=e361] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450303_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450303%26applied_value_name%3DPlateado%26applied_value_order%3D8%26applied_value_results%3D141%26is_custom%3Dfalse
+                        - generic [ref=e365]: Plateado
+                    - listitem [ref=e366]:
+                      - link "Naranja" [ref=e367] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450327_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450327%26applied_value_name%3DNaranja%26applied_value_order%3D9%26applied_value_results%3D138%26is_custom%3Dfalse
+                        - generic [ref=e371]: Naranja
+                    - listitem [ref=e372]:
+                      - link "Rosa" [ref=e373] [cursor=pointer]:
+                        - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*COLOR_2450312_NoIndex_True#applied_filter_id%3DMAIN_COLOR%26applied_filter_name%3DColor%26applied_filter_order%3D12%26applied_value_id%3D2450312%26applied_value_name%3DRosa%26applied_value_order%3D10%26applied_value_results%3D96%26is_custom%3Dfalse
+                        - generic [ref=e377]: Rosa
+                - listitem [ref=e378]:
+                  - link "Mostrar más Color" [ref=e379] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=MAIN_COLOR
+                    - text: Mostrar más
+            - generic [ref=e380]:
+              - heading "Línea" [level=3] [ref=e381]
+              - list [ref=e382]:
+                - listitem [ref=e383]:
+                  - link "iPhone 17" [ref=e384] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/linea-iphone-17/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D59610203%26applied_value_name%3DiPhone+17%26applied_value_order%3D47%26applied_value_results%3D440%26is_custom%3Dfalse
+                    - generic [ref=e385]: iPhone 17
+                - listitem [ref=e386]:
+                  - link "Redmi" [ref=e387] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/xiaomi/redmi/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D199791%26applied_value_name%3DRedmi%26applied_value_order%3D88%26applied_value_results%3D348%26is_custom%3Dfalse
+                    - generic [ref=e388]: Redmi
+                - listitem [ref=e389]:
+                  - link "Galaxy S" [ref=e390] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/samsung/galaxy-s/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D249991%26applied_value_name%3DGalaxy+S%26applied_value_order%3D33%26applied_value_results%3D296%26is_custom%3Dfalse
+                    - generic [ref=e391]: Galaxy S
+                - listitem [ref=e392]:
+                  - link "iPhone 13" [ref=e393] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/linea-iphone-13/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D13834194%26applied_value_name%3DiPhone+13%26applied_value_order%3D43%26applied_value_results%3D258%26is_custom%3Dfalse
+                    - generic [ref=e394]: iPhone 13
+                - listitem [ref=e395]:
+                  - link "Galaxy A" [ref=e396] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/galaxy-a/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D322977%26applied_value_name%3DGalaxy+A%26applied_value_order%3D29%26applied_value_results%3D256%26is_custom%3Dfalse
+                    - generic [ref=e397]: Galaxy A
+                - listitem [ref=e398]:
+                  - link "iPhone 16" [ref=e399] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-16/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D42068752%26applied_value_name%3DiPhone+16%26applied_value_order%3D46%26applied_value_results%3D247%26is_custom%3Dfalse
+                    - generic [ref=e400]: iPhone 16
+                - listitem [ref=e401]:
+                  - link "iPhone 14" [ref=e402] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/linea-iphone-14/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D13876686%26applied_value_name%3DiPhone+14%26applied_value_order%3D44%26applied_value_results%3D247%26is_custom%3Dfalse
+                    - generic [ref=e403]: iPhone 14
+                - listitem [ref=e404]:
+                  - link "iPhone 15" [ref=e405] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/iphone-15/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D25320927%26applied_value_name%3DiPhone+15%26applied_value_order%3D45%26applied_value_results%3D241%26is_custom%3Dfalse
+                    - generic [ref=e406]: iPhone 15
+                - listitem [ref=e407]:
+                  - link "iPhone" [ref=e408] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/apple/iphone/celular_NoIndex_True#applied_filter_id%3DLINE%26applied_filter_name%3DL%C3%ADnea%26applied_filter_order%3D13%26applied_value_id%3D58993%26applied_value_name%3DiPhone%26applied_value_order%3D42%26applied_value_results%3D204%26is_custom%3Dfalse
+                    - generic [ref=e409]: iPhone
+                - listitem [ref=e410]:
+                  - link "Mostrar más Línea" [ref=e411] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=LINE
+                    - text: Mostrar más
+            - generic [ref=e412]:
+              - heading "Red móvil" [level=3] [ref=e413]
+              - list [ref=e414]:
+                - listitem [ref=e415]:
+                  - link "2G" [ref=e416] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/2g/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D7472026%26applied_value_name%3D2G%26applied_value_order%3D1%26applied_value_results%3D59%26is_custom%3Dfalse
+                    - generic [ref=e417]: 2G
+                - listitem [ref=e418]:
+                  - link "3G" [ref=e419] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/red-3g/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D367874%26applied_value_name%3D3G%26applied_value_order%3D2%26applied_value_results%3D47%26is_custom%3Dfalse
+                    - generic [ref=e420]: 3G
+                - listitem [ref=e421]:
+                  - link "4G" [ref=e422] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/red-4g/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D9133368%26applied_value_name%3D4G%26applied_value_order%3D3%26applied_value_results%3D435%26is_custom%3Dfalse
+                    - generic [ref=e423]: 4G
+                - listitem [ref=e424]:
+                  - link "5G" [ref=e425] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/5g/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D7472027%26applied_value_name%3D5G%26applied_value_order%3D4%26applied_value_results%3D3622%26is_custom%3Dfalse
+                    - generic [ref=e426]: 5G
+                - listitem [ref=e427]:
+                  - link "4G LTE" [ref=e428] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/red-movil-4g-lte/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D12290478%26applied_value_name%3D4G+LTE%26applied_value_order%3D5%26applied_value_results%3D1%26is_custom%3Dfalse
+                    - generic [ref=e429]: 4G LTE
+                - listitem [ref=e430]:
+                  - link "4G/5G" [ref=e431] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/4g-5g/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D37449572%26applied_value_name%3D4G%2F5G%26applied_value_order%3D6%26applied_value_results%3D86%26is_custom%3Dfalse
+                    - generic [ref=e432]: 4G/5G
+                - listitem [ref=e433]:
+                  - link "4G/LTE" [ref=e434] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/4g-lte/celular_NoIndex_True#applied_filter_id%3DMOBILE_NETWORK%26applied_filter_name%3DRed+m%C3%B3vil%26applied_filter_order%3D14%26applied_value_id%3D367876%26applied_value_name%3D4G%2FLTE%26applied_value_order%3D7%26applied_value_results%3D1245%26is_custom%3Dfalse
+                    - generic [ref=e435]: 4G/LTE
+            - generic [ref=e436]:
+              - heading "Compañía telefónica" [level=3] [ref=e437]
+              - list [ref=e438]:
+                - listitem [ref=e439]:
+                  - link "Liberado" [ref=e440] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/liberado/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D298335%26applied_value_name%3DLiberado%26applied_value_order%3D4%26applied_value_results%3D5750%26is_custom%3Dfalse
+                    - generic [ref=e441]: Liberado
+                - listitem [ref=e442]:
+                  - link "Claro" [ref=e443] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/claro/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D298333%26applied_value_name%3DClaro%26applied_value_order%3D2%26applied_value_results%3D61%26is_custom%3Dfalse
+                    - generic [ref=e444]: Claro
+                - listitem [ref=e445]:
+                  - link "Entel" [ref=e446] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/entel/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D7294495%26applied_value_name%3DEntel%26applied_value_order%3D3%26applied_value_results%3D27%26is_custom%3Dfalse
+                    - generic [ref=e447]: Entel
+                - listitem [ref=e448]:
+                  - link "Movistar" [ref=e449] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/movistar/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D303170%26applied_value_name%3DMovistar%26applied_value_order%3D5%26applied_value_results%3D16%26is_custom%3Dfalse
+                    - generic [ref=e450]: Movistar
+                - listitem [ref=e451]:
+                  - link "Virgin Mobile" [ref=e452] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/virgin-mobile/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D7294494%26applied_value_name%3DVirgin+Mobile%26applied_value_order%3D6%26applied_value_results%3D3%26is_custom%3Dfalse
+                    - generic [ref=e453]: Virgin Mobile
+                - listitem [ref=e454]:
+                  - link "Bitel" [ref=e455] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/bitel/celular_NoIndex_True#applied_filter_id%3DCARRIER%26applied_filter_name%3DCompa%C3%B1%C3%ADa+telef%C3%B3nica%26applied_filter_order%3D15%26applied_value_id%3D7294502%26applied_value_name%3DBitel%26applied_value_order%3D1%26applied_value_results%3D2%26is_custom%3Dfalse
+                    - generic [ref=e456]: Bitel
+            - generic [ref=e457]:
+              - heading "Resolución de la cámara trasera principal" [level=3] [ref=e458]
+              - list [ref=e459]:
+                - listitem [ref=e460]:
+                  - link "32 Mpx o menos" [ref=e461] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*REAR*CAMERA*RESOLUTION_*-32Mpx_NoIndex_True#applied_filter_id%3DMAIN_REAR_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+trasera+principal%26applied_filter_order%3D16%26applied_value_id%3D%28*-32Mpx%29%26applied_value_name%3D32+Mpx+o+menos%26applied_value_order%3D2%26applied_value_results%3D950%26is_custom%3Dfalse
+                    - generic [ref=e462]: 32 Mpx o menos
+                - listitem [ref=e463]:
+                  - link "32 a 49 Mpx" [ref=e464] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*REAR*CAMERA*RESOLUTION_32Mpx-50Mpx_NoIndex_True#applied_filter_id%3DMAIN_REAR_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+trasera+principal%26applied_filter_order%3D16%26applied_value_id%3D%5B32Mpx-50Mpx%29%26applied_value_name%3D32+a+49+Mpx%26applied_value_order%3D1%26applied_value_results%3D1008%26is_custom%3Dfalse
+                    - generic [ref=e465]: 32 a 49 Mpx
+                - listitem [ref=e466]:
+                  - link "50 a 63 Mpx" [ref=e467] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*REAR*CAMERA*RESOLUTION_50Mpx-64Mpx_NoIndex_True#applied_filter_id%3DMAIN_REAR_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+trasera+principal%26applied_filter_order%3D16%26applied_value_id%3D%5B50Mpx-64Mpx%29%26applied_value_name%3D50+a+63+Mpx%26applied_value_order%3D3%26applied_value_results%3D1137%26is_custom%3Dfalse
+                    - generic [ref=e468]: 50 a 63 Mpx
+                - listitem [ref=e469]:
+                  - link "64 Mpx o más" [ref=e470] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*REAR*CAMERA*RESOLUTION_64Mpx-*_NoIndex_True#applied_filter_id%3DMAIN_REAR_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+trasera+principal%26applied_filter_order%3D16%26applied_value_id%3D%5B64Mpx-*%29%26applied_value_name%3D64+Mpx+o+m%C3%A1s%26applied_value_order%3D4%26applied_value_results%3D840%26is_custom%3Dfalse
+                    - generic [ref=e471]: 64 Mpx o más
+                - listitem [ref=e472]:
+                  - generic [ref=e473]:
+                    - textbox "Mínimo" [ref=e477]
+                    - generic [ref=e478]: —
+                    - textbox "Máximo" [ref=e482]
+                    - generic [ref=e483]:
+                      - button "Aplicar" [disabled]:
+                        - img
+            - generic [ref=e484]:
+              - heading "Tamaño de la pantalla" [level=3] [ref=e485]
+              - list [ref=e486]:
+                - listitem [ref=e487]:
+                  - link "Menos de 6,2" [ref=e488] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_DISPLAY*SIZE_*-6.2%22_NoIndex_True#applied_filter_id%3DDISPLAY_SIZE%26applied_filter_name%3DTama%C3%B1o+de+la+pantalla%26applied_filter_order%3D17%26applied_value_id%3D%28*-6.2%22%29%26applied_value_name%3DMenos+de+6%2C2+%22%26applied_value_order%3D5%26applied_value_results%3D987%26is_custom%3Dfalse
+                    - generic [ref=e489]: Menos de 6,2 "
+                - listitem [ref=e490]:
+                  - link "6,2 a 6,57" [ref=e491] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_DISPLAY*SIZE_6.2%22-6.67%22_NoIndex_True#applied_filter_id%3DDISPLAY_SIZE%26applied_filter_name%3DTama%C3%B1o+de+la+pantalla%26applied_filter_order%3D17%26applied_value_id%3D%5B6.2%22-6.67%22%29%26applied_value_name%3D6%2C2+a+6%2C57+%22%26applied_value_order%3D1%26applied_value_results%3D814%26is_custom%3Dfalse
+                    - generic [ref=e492]: 6,2 a 6,57 "
+                - listitem [ref=e493]:
+                  - link "6,67 a 6,74" [ref=e494] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_DISPLAY*SIZE_6.67%22-6.74%22_NoIndex_True#applied_filter_id%3DDISPLAY_SIZE%26applied_filter_name%3DTama%C3%B1o+de+la+pantalla%26applied_filter_order%3D17%26applied_value_id%3D%5B6.67%22-6.74%22%29%26applied_value_name%3D6%2C67+a+6%2C74+%22%26applied_value_order%3D2%26applied_value_results%3D900%26is_custom%3Dfalse
+                    - generic [ref=e495]: 6,67 a 6,74 "
+                - listitem [ref=e496]:
+                  - link "6,74 a 6,78" [ref=e497] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_DISPLAY*SIZE_6.74%22-6.88%22_NoIndex_True#applied_filter_id%3DDISPLAY_SIZE%26applied_filter_name%3DTama%C3%B1o+de+la+pantalla%26applied_filter_order%3D17%26applied_value_id%3D%5B6.74%22-6.88%22%29%26applied_value_name%3D6%2C74+a+6%2C78+%22%26applied_value_order%3D3%26applied_value_results%3D882%26is_custom%3Dfalse
+                    - generic [ref=e498]: 6,74 a 6,78 "
+                - listitem [ref=e499]:
+                  - link "6,88 o más" [ref=e500] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_DISPLAY*SIZE_6.88%22-*_NoIndex_True#applied_filter_id%3DDISPLAY_SIZE%26applied_filter_name%3DTama%C3%B1o+de+la+pantalla%26applied_filter_order%3D17%26applied_value_id%3D%5B6.88%22-*%29%26applied_value_name%3D6%2C88+%22+o+m%C3%A1s%26applied_value_order%3D4%26applied_value_results%3D735%26is_custom%3Dfalse
+                    - generic [ref=e501]: 6,88 " o más
+                - listitem [ref=e502]:
+                  - generic [ref=e503]:
+                    - textbox "Mínimo" [ref=e507]
+                    - generic [ref=e508]: —
+                    - textbox "Máximo" [ref=e512]
+                    - generic [ref=e513]:
+                      - button "Aplicar" [disabled]:
+                        - img
+            - generic [ref=e514]:
+              - heading "Nombre del sistema operativo" [level=3] [ref=e515]
+              - list [ref=e516]:
+                - listitem [ref=e517]:
+                  - link "Android" [ref=e518] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/android/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D7403813%26applied_value_name%3DAndroid%26applied_value_order%3D2%26applied_value_results%3D2563%26is_custom%3Dfalse
+                    - generic [ref=e519]: Android
+                - listitem [ref=e520]:
+                  - link "iOS" [ref=e521] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/ios/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D7404961%26applied_value_name%3DiOS%26applied_value_order%3D5%26applied_value_results%3D1867%26is_custom%3Dfalse
+                    - generic [ref=e522]: iOS
+                - listitem [ref=e523]:
+                  - link "Propietario" [ref=e524] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/propietario/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D20180884%26applied_value_name%3DPropietario%26applied_value_order%3D8%26applied_value_results%3D10%26is_custom%3Dfalse
+                    - generic [ref=e525]: Propietario
+                - listitem [ref=e526]:
+                  - link "HarmonyOS" [ref=e527] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/harmonyos/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D13055324%26applied_value_name%3DHarmonyOS%26applied_value_order%3D4%26applied_value_results%3D7%26is_custom%3Dfalse
+                    - generic [ref=e528]: HarmonyOS
+                - listitem [ref=e529]:
+                  - link "S30+" [ref=e530] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/nombre-del-sistema-operativo-s30/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D11488553%26applied_value_name%3DS30%2B%26applied_value_order%3D9%26applied_value_results%3D5%26is_custom%3Dfalse
+                    - generic [ref=e531]: S30+
+                - listitem [ref=e532]:
+                  - link "KaiOS" [ref=e533] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/nombre-del-sistema-operativo-kaios/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D7199654%26applied_value_name%3DKaiOS%26applied_value_order%3D6%26applied_value_results%3D4%26is_custom%3Dfalse
+                    - generic [ref=e534]: KaiOS
+                - listitem [ref=e535]:
+                  - link "Nokia" [ref=e536] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/nombre-del-sistema-operativo-nokia/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D8033910%26applied_value_name%3DNokia%26applied_value_order%3D7%26applied_value_results%3D3%26is_custom%3Dfalse
+                    - generic [ref=e537]: Nokia
+                - listitem [ref=e538]:
+                  - link "ColorOS" [ref=e539] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/coloros/celular_NoIndex_True#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D7199645%26applied_value_name%3DColorOS%26applied_value_order%3D3%26applied_value_results%3D2%26is_custom%3Dfalse
+                    - generic [ref=e540]: ColorOS
+                - listitem [ref=e541]:
+                  - link "Andriod/Redmagic" [ref=e542] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_OPERATING*SYSTEM*NAME_42166028#applied_filter_id%3DOPERATING_SYSTEM_NAME%26applied_filter_name%3DNombre+del+sistema+operativo%26applied_filter_order%3D18%26applied_value_id%3D42166028%26applied_value_name%3DAndriod%2FRedmagic%26applied_value_order%3D1%26applied_value_results%3D2%26is_custom%3Dfalse
+                    - generic [ref=e543]: Andriod/Redmagic
+            - generic [ref=e544]:
+              - heading "Resolución de la cámara frontal principal" [level=3] [ref=e545]
+              - list [ref=e546]:
+                - listitem [ref=e547]:
+                  - link "13 Mpx o menos" [ref=e548] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*FRONT*CAMERA*RESOLUTION_*-13Mpx_NoIndex_True#applied_filter_id%3DMAIN_FRONT_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+frontal+principal%26applied_filter_order%3D19%26applied_value_id%3D%28*-13Mpx%29%26applied_value_name%3D13+Mpx+o+menos%26applied_value_order%3D2%26applied_value_results%3D2182%26is_custom%3Dfalse
+                    - generic [ref=e549]: 13 Mpx o menos
+                - listitem [ref=e550]:
+                  - link "13 a 19 Mpx" [ref=e551] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*FRONT*CAMERA*RESOLUTION_13Mpx-20Mpx_NoIndex_True#applied_filter_id%3DMAIN_FRONT_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+frontal+principal%26applied_filter_order%3D19%26applied_value_id%3D%5B13Mpx-20Mpx%29%26applied_value_name%3D13+a+19+Mpx%26applied_value_order%3D1%26applied_value_results%3D671%26is_custom%3Dfalse
+                    - generic [ref=e552]: 13 a 19 Mpx
+                - listitem [ref=e553]:
+                  - link "20 a 47 Mpx" [ref=e554] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*FRONT*CAMERA*RESOLUTION_20Mpx-48Mpx_NoIndex_True#applied_filter_id%3DMAIN_FRONT_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+frontal+principal%26applied_filter_order%3D19%26applied_value_id%3D%5B20Mpx-48Mpx%29%26applied_value_name%3D20+a+47+Mpx%26applied_value_order%3D3%26applied_value_results%3D687%26is_custom%3Dfalse
+                    - generic [ref=e555]: 20 a 47 Mpx
+                - listitem [ref=e556]:
+                  - link "48 Mpx o más" [ref=e557] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_MAIN*FRONT*CAMERA*RESOLUTION_48Mpx-*_NoIndex_True#applied_filter_id%3DMAIN_FRONT_CAMERA_RESOLUTION%26applied_filter_name%3DResoluci%C3%B3n+de+la+c%C3%A1mara+frontal+principal%26applied_filter_order%3D19%26applied_value_id%3D%5B48Mpx-*%29%26applied_value_name%3D48+Mpx+o+m%C3%A1s%26applied_value_order%3D4%26applied_value_results%3D274%26is_custom%3Dfalse
+                    - generic [ref=e558]: 48 Mpx o más
+                - listitem [ref=e559]:
+                  - generic [ref=e560]:
+                    - textbox "Mínimo" [ref=e564]
+                    - generic [ref=e565]: —
+                    - textbox "Máximo" [ref=e569]
+                    - generic [ref=e570]:
+                      - button "Aplicar" [disabled]:
+                        - img
+            - generic [ref=e571]:
+              - heading "Wi-Fi" [level=3] [ref=e572]
+              - list [ref=e573]:
+                - listitem [ref=e574]:
+                  - link "Con Wi-Fi" [ref=e575] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_WITH*WIFI_242085#applied_filter_id%3DWITH_WIFI%26applied_filter_name%3DWi-Fi%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+Wi-Fi%26applied_value_order%3D1%26applied_value_results%3D4017%26is_custom%3Dfalse
+                    - generic [ref=e576]: Con Wi-Fi
+            - generic [ref=e577]:
+              - heading "Otras características" [level=3] [ref=e578]
+              - list [ref=e579]:
+                - listitem [ref=e580]:
+                  - link "Es Dual SIM" [ref=e581] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/es-dual-sim/celular_NoIndex_True#applied_filter_id%3DIS_DUAL_SIM%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DEs+Dual+SIM%26applied_value_order%3D25%26applied_value_results%3D4378%26is_custom%3Dfalse
+                    - generic [ref=e582]: Es Dual SIM
+                - listitem [ref=e583]:
+                  - link "Es resistente al polvo" [ref=e584] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/es-resistente-al-polvo/celular_NoIndex_True#applied_filter_id%3DIS_DUST_RESISTANT%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DEs+resistente+al+polvo%26applied_value_order%3D27%26applied_value_results%3D2915%26is_custom%3Dfalse
+                    - generic [ref=e585]: Es resistente al polvo
+                - listitem [ref=e586]:
+                  - link "Es a prueba de agua" [ref=e587] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_IS*WATERPROOF_242085_NoIndex_True#applied_filter_id%3DIS_WATERPROOF%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DEs+a+prueba+de+agua%26applied_value_order%3D24%26applied_value_results%3D731%26is_custom%3Dfalse
+                    - generic [ref=e588]: Es a prueba de agua
+                - listitem [ref=e589]:
+                  - link "Es resistente al agua" [ref=e590] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/es-resistente-al-agua/celular_NoIndex_True#applied_filter_id%3DIS_WATER_RESISTANT%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DEs+resistente+al+agua%26applied_value_order%3D26%26applied_value_results%3D2398%26is_custom%3Dfalse
+                    - generic [ref=e591]: Es resistente al agua
+                - listitem [ref=e592]:
+                  - link "Con conector jack 3.5 mm" [ref=e593] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/con-conector-jack-35-mm/celular_NoIndex_True#applied_filter_id%3DWITH_3_5_MM_JACK_CONNECTOR%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+conector+jack+3.5+mm%26applied_value_order%3D8%26applied_value_results%3D582%26is_custom%3Dfalse
+                    - generic [ref=e594]: Con conector jack 3.5 mm
+                - listitem [ref=e595]:
+                  - link "Con acelerómetro" [ref=e596] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_WITH*ACCELEROMETER_242085#applied_filter_id%3DWITH_ACCELEROMETER%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+aceler%C3%B3metro%26applied_value_order%3D0%26applied_value_results%3D3227%26is_custom%3Dfalse
+                    - generic [ref=e597]: Con acelerómetro
+                - listitem [ref=e598]:
+                  - link "Con barómetro" [ref=e599] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_WITH*BAROMETER_242085#applied_filter_id%3DWITH_BAROMETER%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+bar%C3%B3metro%26applied_value_order%3D1%26applied_value_results%3D2015%26is_custom%3Dfalse
+                    - generic [ref=e600]: Con barómetro
+                - listitem [ref=e601]:
+                  - link "Con Bluetooth" [ref=e602] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_WITH*BLUETOOTH_242085#applied_filter_id%3DWITH_BLUETOOTH%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+Bluetooth%26applied_value_order%3D3%26applied_value_results%3D4031%26is_custom%3Dfalse
+                    - generic [ref=e603]: Con Bluetooth
+                - listitem [ref=e604]:
+                  - link "Con cámara" [ref=e605] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_WITH*CAMERA_242085#applied_filter_id%3DWITH_CAMERA%26applied_filter_name%3DOtras+caracter%C3%ADsticas%26applied_filter_order%3D20%26applied_value_id%3D242085%26applied_value_name%3DCon+c%C3%A1mara%26applied_value_order%3D10%26applied_value_results%3D3922%26is_custom%3Dfalse
+                    - generic [ref=e606]: Con cámara
+                - listitem [ref=e607]:
+                  - link "Mostrar más Otras características" [ref=e608] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=group_1
+                    - text: Mostrar más
+            - generic [ref=e609]:
+              - heading "Retiro gratis" [level=3] [ref=e610]
+              - list [ref=e611]:
+                - listitem [ref=e612]:
+                  - link "Lima Metropolitana" [ref=e613] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-LMA#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-LMA%26applied_value_name%3DLima+Metropolitana%26applied_value_order%3D14%26applied_value_results%3D2556%26is_custom%3Dfalse
+                    - generic [ref=e614]: Lima Metropolitana
+                - listitem [ref=e615]:
+                  - link "Arequipa" [ref=e616] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-ARE#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-ARE%26applied_value_name%3DArequipa%26applied_value_order%3D4%26applied_value_results%3D70%26is_custom%3Dfalse
+                    - generic [ref=e617]: Arequipa
+                - listitem [ref=e618]:
+                  - link "La Libertad" [ref=e619] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-LAL#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-LAL%26applied_value_name%3DLa+Libertad%26applied_value_order%3D12%26applied_value_results%3D66%26is_custom%3Dfalse
+                    - generic [ref=e620]: La Libertad
+                - listitem [ref=e621]:
+                  - link "Lambayeque" [ref=e622] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-LAM#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-LAM%26applied_value_name%3DLambayeque%26applied_value_order%3D13%26applied_value_results%3D43%26is_custom%3Dfalse
+                    - generic [ref=e623]: Lambayeque
+                - listitem [ref=e624]:
+                  - link "Ica" [ref=e625] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-ICA#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-ICA%26applied_value_name%3DIca%26applied_value_order%3D10%26applied_value_results%3D38%26is_custom%3Dfalse
+                    - generic [ref=e626]: Ica
+                - listitem [ref=e627]:
+                  - link "Ucayali" [ref=e628] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-UCA#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-UCA%26applied_value_name%3DUcayali%26applied_value_order%3D23%26applied_value_results%3D35%26is_custom%3Dfalse
+                    - generic [ref=e629]: Ucayali
+                - listitem [ref=e630]:
+                  - link "Piura" [ref=e631] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-PIU#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-PIU%26applied_value_name%3DPiura%26applied_value_order%3D18%26applied_value_results%3D22%26is_custom%3Dfalse
+                    - generic [ref=e632]: Piura
+                - listitem [ref=e633]:
+                  - link "Ancash" [ref=e634] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-ANC#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-ANC%26applied_value_name%3DAncash%26applied_value_order%3D2%26applied_value_results%3D18%26is_custom%3Dfalse
+                    - generic [ref=e635]: Ancash
+                - listitem [ref=e636]:
+                  - link "Cusco" [ref=e637] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_NoIndex_True_pickup*state_PE-CUS#applied_filter_id%3Dpickup_state%26applied_filter_name%3DRetiro+gratis%26applied_filter_order%3D22%26applied_value_id%3DPE-CUS%26applied_value_name%3DCusco%26applied_value_order%3D7%26applied_value_results%3D17%26is_custom%3Dfalse
+                    - generic [ref=e638]: Cusco
+                - listitem [ref=e639]:
+                  - link "Mostrar más Retiro gratis" [ref=e640] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular_FiltersAvailableSidebar?filter=pickup_state
+                    - text: Mostrar más
+            - generic [ref=e641]:
+              - heading "Detalles de la publicación" [level=3] [ref=e642]
+              - list [ref=e643]:
+                - listitem [ref=e644]:
+                  - link "Mejores vendedores" [ref=e645] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_BestSellers_YES_NoIndex_True#applied_filter_id%3Dpower_seller%26applied_filter_name%3DFiltro+por+calidad+de+vendedores%26applied_filter_order%3D1%26applied_value_id%3Dyes%26applied_value_name%3DMejores+vendedores%26applied_value_order%3D1%26applied_value_results%3D1507%26is_custom%3Dfalse
+                    - generic [ref=e646]: Mejores vendedores
+                - listitem [ref=e647]:
+                  - link "Cuotas sin interés" [ref=e648] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Installments_NoInterest_NoIndex_True#applied_filter_id%3Dinstallments%26applied_filter_name%3DPago%26applied_filter_order%3D2%26applied_value_id%3Dno_interest%26applied_value_name%3DCuotas+sin+inter%C3%A9s%26applied_value_order%3D1%26applied_value_results%3D1432%26is_custom%3Dfalse
+                    - generic [ref=e649]: Cuotas sin interés
+                - listitem [ref=e650]:
+                  - link "En cuotas" [ref=e651] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celulares-telefonos/celulares-smartphones/celular_Installments_YES_NoIndex_True#applied_filter_id%3Dinstallments%26applied_filter_name%3DPago%26applied_filter_order%3D2%26applied_value_id%3Dyes%26applied_value_name%3DEn+cuotas%26applied_value_order%3D2%26applied_value_results%3D5985%26is_custom%3Dfalse
+                    - generic [ref=e652]: En cuotas
+            - generic [ref=e653]:
+              - heading "Otras personas buscaron" [level=3] [ref=e654]
+              - list [ref=e655]:
+                - listitem [ref=e656]:
+                  - link "celular de 300" [ref=e657] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular-de-300#D[R:celular,P:1,Q:5]
+                    - generic [ref=e658]: celular de 300
+                - listitem [ref=e659]:
+                  - link "celula" [ref=e660] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celula#D[R:celular,P:2,Q:5]
+                    - generic [ref=e661]: celula
+                - listitem [ref=e662]:
+                  - link "celular nuevo" [ref=e663] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular-nuevo#D[R:celular,P:3,Q:5]
+                    - generic [ref=e664]: celular nuevo
+                - listitem [ref=e665]:
+                  - link "remera" [ref=e666] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/remera#D[R:celular,P:4,Q:5]
+                    - generic [ref=e667]: remera
+                - listitem [ref=e668]:
+                  - link "celular redmi 15" [ref=e669] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/celular-redmi-15#D[R:celular,P:5,Q:5]
+                    - generic [ref=e670]: celular redmi 15
+        - generic [ref=e671]:
+          - generic [ref=e672]:
+            - heading "Resultados" [level=2] [ref=e673]
+            - generic [ref=e676]:
+              - generic [ref=e677]: Ordenar por
+              - combobox "Más relevantes" [ref=e681] [cursor=pointer]:
+                - generic [ref=e682]: Más relevantes
+                - img [ref=e684]
+          - list [ref=e686]:
+            - listitem [ref=e687]:
+              - generic [ref=e689]:
+                - img [ref=e692]
+                - generic [ref=e693]:
+                  - heading "Motorola Edge 60 Fusion 256gb y 8gb de Ram Expande 20gb color Azul" [level=3] [ref=e694]:
+                    - link "Motorola Edge 60 Fusion 256gb y 8gb de Ram Expande 20gb color Azul" [ref=e695] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/motorola-edge-60-fusion-256gb-y-8gb-de-ram-expande-20gb-color-azul/p/MPE50127383#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=1&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE922327012&sid=search
+                  - generic [ref=e696]:
+                    - text: Motorola
+                    - img "Tienda oficial" [ref=e697]
+                  - generic [ref=e699]:
+                    - img [ref=e700]
+                    - text: "4.8"
+                  - generic [ref=e702]:
+                    - 'img "Antes: 1499 soles" [ref=e703]':
+                      - generic [ref=e704]: S/
+                      - generic [ref=e705]: "1.499"
+                    - generic [ref=e706]:
+                      - 'img "Ahora: 984 soles con 46 céntimos" [ref=e707]':
+                        - generic [ref=e708]: S/
+                        - generic [ref=e709]: "984"
+                        - generic [ref=e710]: ","
+                        - generic [ref=e711]: "46"
+                      - generic [ref=e712]: 34% OFF
+                    - generic [ref=e713]:
+                      - text: 6 cuotas de
+                      - img "164 soles con 08 céntimos" [ref=e714]:
+                        - generic [ref=e716]: S/
+                        - generic [ref=e717]: "164"
+                        - generic [ref=e718]: ","
+                        - generic [ref=e719]: "08"
+                      - text: sin interés
+                  - generic [ref=e722]:
+                    - img [ref=e723]
+                    - text: Cupón
+                    - img "25 soles" [ref=e725]:
+                      - generic [ref=e727]: S/
+                      - generic [ref=e728]: "25"
+                    - text: "OFF"
+                  - generic [ref=e731]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e732]
+                  - generic [ref=e734]:
+                    - generic [ref=e735] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 1399 soles Ahora: 1079 soles 22% OFF 12 cuotas de 89 soles con 92 céntimos sin interés" [ref=e736] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/motorola-edge-60-fusion-256gb-y-8gb-de-ram-expande-20gb-color-azul/p/MPE50127383?offer_type=BEST_INSTALLMENTS#wid=MPE959365406&sid=search
+                      - generic [ref=e737]:
+                        - 'img "Antes: 1399 soles" [ref=e738]':
+                          - generic [ref=e739]: S/
+                          - generic [ref=e740]: "1.399"
+                        - generic [ref=e741]:
+                          - 'img "Ahora: 1079 soles" [ref=e742]':
+                            - generic [ref=e743]: S/
+                            - generic [ref=e744]: "1.079"
+                          - generic [ref=e745]: 22% OFF
+                        - generic [ref=e746]:
+                          - text: 12 cuotas de
+                          - img "89 soles con 92 céntimos" [ref=e747]:
+                            - generic [ref=e749]: S/
+                            - generic [ref=e750]: "89"
+                            - generic [ref=e751]: ","
+                            - generic [ref=e752]: "92"
+                          - text: sin interés
+                - switch "Favorito" [ref=e754] [cursor=pointer]:
+                  - img [ref=e755]
+            - listitem [ref=e757]:
+              - generic [ref=e759]:
+                - generic [ref=e760]:
+                  - img [ref=e762]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e763]:
+                  - heading "Celular Xiaomi Poco X7 Pro Negro 512 Gb 12 Gb 6.67 120hz 90w Carga 6000mah Resistencia al Agua y al Polvo Ip68" [level=3] [ref=e764]:
+                    - link "Celular Xiaomi Poco X7 Pro Negro 512 Gb 12 Gb 6.67 120hz 90w Carga 6000mah Resistencia al Agua y al Polvo Ip68" [ref=e765] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-xiaomi-poco-x7-pro-negro-512-gb-12-gb-667-120hz-90w-carga-6000mah-resistencia-al-agua-y-al-polvo-ip68/p/MPE45766004#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=2&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE700973608&sid=search
+                  - generic [ref=e766]:
+                    - img [ref=e767]
+                    - text: "4.9"
+                  - generic [ref=e769]:
+                    - 'img "Antes: 2165 soles" [ref=e770]':
+                      - generic [ref=e771]: S/
+                      - generic [ref=e772]: "2.165"
+                    - generic [ref=e773]:
+                      - 'img "Ahora: 1359 soles" [ref=e774]':
+                        - generic [ref=e775]: S/
+                        - generic [ref=e776]: "1.359"
+                      - generic [ref=e777]: 37% OFF
+                    - generic [ref=e778]:
+                      - text: 6 cuotas de
+                      - img "226 soles con 50 céntimos" [ref=e779]:
+                        - generic [ref=e781]: S/
+                        - generic [ref=e782]: "226"
+                        - generic [ref=e783]: ","
+                        - generic [ref=e784]: "50"
+                      - text: sin interés
+                  - generic [ref=e787]:
+                    - img [ref=e788]
+                    - text: Cupón
+                    - img "100 soles" [ref=e790]:
+                      - generic [ref=e792]: S/
+                      - generic [ref=e793]: "100"
+                    - text: "OFF"
+                  - generic [ref=e796]: Llega gratis mañana
+                - switch "Favorito" [ref=e798] [cursor=pointer]:
+                  - img [ref=e799]
+            - listitem [ref=e801]:
+              - generic [ref=e803]:
+                - img [ref=e806]
+                - generic [ref=e807]:
+                  - heading "Celular Moto G77 8+256gb Negro Negro" [level=3] [ref=e808]:
+                    - link "Celular Moto G77 8+256gb Negro Negro" [ref=e809] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-moto-g77-8256gb-negro-negro/p/MPE66710692#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=3&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1018813128&sid=search
+                  - generic [ref=e810]:
+                    - text: Motorola
+                    - img "Tienda oficial" [ref=e811]
+                  - generic [ref=e813]:
+                    - img [ref=e814]
+                    - text: "4.8"
+                  - generic [ref=e816]:
+                    - 'img "Antes: 999 soles" [ref=e817]':
+                      - generic [ref=e818]: S/
+                      - generic [ref=e819]: "999"
+                    - generic [ref=e820]:
+                      - 'img "Ahora: 799 soles" [ref=e821]':
+                        - generic [ref=e822]: S/
+                        - generic [ref=e823]: "799"
+                      - generic [ref=e824]: 20% OFF
+                    - generic [ref=e825]:
+                      - text: 6 cuotas de
+                      - img "133 soles con 17 céntimos" [ref=e826]:
+                        - generic [ref=e828]: S/
+                        - generic [ref=e829]: "133"
+                        - generic [ref=e830]: ","
+                        - generic [ref=e831]: "17"
+                      - text: sin interés
+                  - generic [ref=e834]:
+                    - img [ref=e835]
+                    - text: Cupón
+                    - img "25 soles" [ref=e837]:
+                      - generic [ref=e839]: S/
+                      - generic [ref=e840]: "25"
+                    - text: "OFF"
+                  - generic [ref=e843]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e844]
+                - switch "Favorito" [ref=e847] [cursor=pointer]:
+                  - img [ref=e848]
+            - listitem [ref=e850]:
+              - generic [ref=e852]:
+                - img [ref=e855]
+                - generic [ref=e856]:
+                  - heading "Celular Motorola Moto G06 256gb 4gb Color Azul" [level=3] [ref=e857]:
+                    - link "Celular Motorola Moto G06 256gb 4gb Color Azul" [ref=e858] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-motorola-moto-g06-256gb-4gb-color-azul/p/MPE63043377#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=4&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE636406641&sid=search
+                  - generic [ref=e859]:
+                    - img [ref=e860]
+                    - text: "4.8"
+                  - generic [ref=e862]:
+                    - img "419 soles" [ref=e864]:
+                      - generic [ref=e865]: S/
+                      - generic [ref=e866]: "419"
+                    - generic [ref=e867]:
+                      - text: 6 cuotas de
+                      - img "69 soles con 83 céntimos" [ref=e868]:
+                        - generic [ref=e870]: S/
+                        - generic [ref=e871]: "69"
+                        - generic [ref=e872]: ","
+                        - generic [ref=e873]: "83"
+                      - text: sin interés
+                  - generic [ref=e876]:
+                    - img [ref=e877]
+                    - text: Cupón
+                    - img "25 soles" [ref=e879]:
+                      - generic [ref=e881]: S/
+                      - generic [ref=e882]: "25"
+                    - text: "OFF"
+                  - generic [ref=e884]:
+                    - text: Envío gratis
+                    - generic [ref=e885]: Envío gratis
+                  - generic [ref=e886]:
+                    - generic [ref=e887] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 599 soles Ahora: 428 soles 28% OFF 6 cuotas de 71 soles con 33 céntimos sin interés Motorola Tienda oficial" [ref=e888] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/celular-motorola-moto-g06-256gb-4gb-color-azul/p/MPE63043377?offer_type=OFFICIAL_STORE#wid=MPE937628580&sid=search
+                      - generic [ref=e889]:
+                        - 'img "Antes: 599 soles" [ref=e890]':
+                          - generic [ref=e891]: S/
+                          - generic [ref=e892]: "599"
+                        - generic [ref=e893]:
+                          - 'img "Ahora: 428 soles" [ref=e894]':
+                            - generic [ref=e895]: S/
+                            - generic [ref=e896]: "428"
+                          - generic [ref=e897]: 28% OFF
+                        - generic [ref=e898]:
+                          - text: 6 cuotas de
+                          - img "71 soles con 33 céntimos" [ref=e899]:
+                            - generic [ref=e901]: S/
+                            - generic [ref=e902]: "71"
+                            - generic [ref=e903]: ","
+                            - generic [ref=e904]: "33"
+                          - text: sin interés
+                      - generic [ref=e905]:
+                        - text: Motorola
+                        - img "Tienda oficial" [ref=e906]
+                - switch "Favorito" [ref=e909] [cursor=pointer]:
+                  - img [ref=e910]
+            - listitem [ref=e912]:
+              - generic [ref=e914]:
+                - img [ref=e917]
+                - generic [ref=e918]:
+                  - heading "Samsung Galaxy S25 Ultra 512gb Titanium Black" [level=3] [ref=e919]:
+                    - link "Samsung Galaxy S25 Ultra 512gb Titanium Black" [ref=e920] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25-ultra-512gb-titanium-black/p/MPE45513937#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=5&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE933013250&sid=search
+                  - generic [ref=e921]:
+                    - img [ref=e922]
+                    - text: "4.9"
+                  - generic [ref=e924]:
+                    - img "3600 soles" [ref=e926]:
+                      - generic [ref=e927]: S/
+                      - generic [ref=e928]: "3.600"
+                    - generic [ref=e929]:
+                      - text: 6 cuotas de
+                      - img "600 soles con 04 céntimos" [ref=e930]:
+                        - generic [ref=e932]: S/
+                        - generic [ref=e933]: "600"
+                        - generic [ref=e934]: ","
+                        - generic [ref=e935]: "04"
+                      - text: sin interés
+                  - generic [ref=e938]:
+                    - img [ref=e939]
+                    - text: Cupón
+                    - img "100 soles" [ref=e941]:
+                      - generic [ref=e943]: S/
+                      - generic [ref=e944]: "100"
+                    - text: "OFF"
+                  - generic [ref=e947]: Llega gratis mañana
+                - switch "Favorito" [ref=e949] [cursor=pointer]:
+                  - img [ref=e950]
+            - listitem [ref=e952]:
+              - generic [ref=e954]:
+                - img [ref=e957]
+                - generic [ref=e958]:
+                  - heading "Apple iPhone 17 (256 GB) - Negro - Sólo eSIM" [level=3] [ref=e959]:
+                    - link "Apple iPhone 17 (256 GB) - Negro - Sólo eSIM" [ref=e960] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-negro-solo-esim/p/MPE54107042#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=6&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE973326016&sid=search
+                  - generic [ref=e961]:
+                    - img [ref=e962]
+                    - text: "4.8"
+                  - generic [ref=e964]:
+                    - 'img "Antes: 3359 soles" [ref=e965]':
+                      - generic [ref=e966]: S/
+                      - generic [ref=e967]: "3.359"
+                    - generic [ref=e968]:
+                      - 'img "Ahora: 3120 soles" [ref=e969]':
+                        - generic [ref=e970]: S/
+                        - generic [ref=e971]: "3.120"
+                      - generic [ref=e972]: 7% OFF
+                    - generic [ref=e973]:
+                      - text: 6 cuotas de
+                      - img "520 soles" [ref=e974]:
+                        - generic [ref=e976]: S/
+                        - generic [ref=e977]: "520"
+                      - text: sin interés
+                  - generic [ref=e980]:
+                    - img [ref=e981]
+                    - text: Cupón
+                    - img "100 soles" [ref=e983]:
+                      - generic [ref=e985]: S/
+                      - generic [ref=e986]: "100"
+                    - text: "OFF"
+                  - generic [ref=e989]: Llega gratis mañana
+                  - generic [ref=e990]:
+                    - generic [ref=e991] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 8000 soles Ahora: 3365 soles 57% OFF 12 cuotas de 280 soles con 42 céntimos sin interés" [ref=e992] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-negro-solo-esim/p/MPE54107042?offer_type=BEST_INSTALLMENTS#wid=MPE1082244370&sid=search
+                      - generic [ref=e993]:
+                        - 'img "Antes: 8000 soles" [ref=e994]':
+                          - generic [ref=e995]: S/
+                          - generic [ref=e996]: "8.000"
+                        - generic [ref=e997]:
+                          - 'img "Ahora: 3365 soles" [ref=e998]':
+                            - generic [ref=e999]: S/
+                            - generic [ref=e1000]: "3.365"
+                          - generic [ref=e1001]: 57% OFF
+                        - generic [ref=e1002]:
+                          - text: 12 cuotas de
+                          - img "280 soles con 42 céntimos" [ref=e1003]:
+                            - generic [ref=e1005]: S/
+                            - generic [ref=e1006]: "280"
+                            - generic [ref=e1007]: ","
+                            - generic [ref=e1008]: "42"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1010] [cursor=pointer]:
+                  - img [ref=e1011]
+            - listitem [ref=e1013]:
+              - generic [ref=e1015]:
+                - img [ref=e1018]
+                - generic [ref=e1019]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Color plata" [level=3] [ref=e1020]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Color plata" [ref=e1021] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata/p/MPE55308605#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=7&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE636405849&sid=search
+                  - generic [ref=e1022]:
+                    - img [ref=e1023]
+                    - text: "4.8"
+                  - generic [ref=e1025]:
+                    - img "4920 soles" [ref=e1027]:
+                      - generic [ref=e1028]: S/
+                      - generic [ref=e1029]: "4.920"
+                    - generic [ref=e1030]:
+                      - text: 6 cuotas de
+                      - img "820 soles" [ref=e1031]:
+                        - generic [ref=e1033]: S/
+                        - generic [ref=e1034]: "820"
+                      - text: sin interés
+                  - generic [ref=e1037]:
+                    - img [ref=e1038]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1040]:
+                      - generic [ref=e1042]: S/
+                      - generic [ref=e1043]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1046]: Llega gratis mañana
+                  - generic [ref=e1047]:
+                    - generic [ref=e1048] [cursor=pointer]: Otra opción de compra
+                    - link "5150 soles 12 cuotas de 429 soles con 17 céntimos sin interés" [ref=e1049] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata/p/MPE55308605?offer_type=BEST_INSTALLMENTS#wid=MPE1083909152&sid=search
+                      - generic [ref=e1050]:
+                        - img "5150 soles" [ref=e1052]:
+                          - generic [ref=e1053]: S/
+                          - generic [ref=e1054]: "5.150"
+                        - generic [ref=e1055]:
+                          - text: 12 cuotas de
+                          - img "429 soles con 17 céntimos" [ref=e1056]:
+                            - generic [ref=e1058]: S/
+                            - generic [ref=e1059]: "429"
+                            - generic [ref=e1060]: ","
+                            - generic [ref=e1061]: "17"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1063] [cursor=pointer]:
+                  - img [ref=e1064]
+            - listitem [ref=e1066]:
+              - generic [ref=e1068]:
+                - img [ref=e1071]
+                - generic [ref=e1072]:
+                  - heading "Apple iPhone 17 (256 GB) - Negro" [level=3] [ref=e1073]:
+                    - link "Apple iPhone 17 (256 GB) - Negro" [ref=e1074] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-negro/p/MPE55308917#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=8&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1071055188&sid=search
+                  - generic [ref=e1075]:
+                    - img [ref=e1076]
+                    - text: "4.8"
+                  - generic [ref=e1078]:
+                    - img "3039 soles" [ref=e1080]:
+                      - generic [ref=e1081]: S/
+                      - generic [ref=e1082]: "3.039"
+                    - generic [ref=e1083]:
+                      - text: 6 cuotas de
+                      - img "506 soles con 50 céntimos" [ref=e1084]:
+                        - generic [ref=e1086]: S/
+                        - generic [ref=e1087]: "506"
+                        - generic [ref=e1088]: ","
+                        - generic [ref=e1089]: "50"
+                      - text: sin interés
+                  - generic [ref=e1092]:
+                    - img [ref=e1093]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1095]:
+                      - generic [ref=e1097]: S/
+                      - generic [ref=e1098]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1101]: Llega gratis mañana
+                  - generic [ref=e1102]:
+                    - generic [ref=e1103] [cursor=pointer]: Otra opción de compra
+                    - link "3275 soles 12 cuotas de 272 soles con 94 céntimos sin interés" [ref=e1104] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-negro/p/MPE55308917?offer_type=BEST_INSTALLMENTS#wid=MPE1078015442&sid=search
+                      - generic [ref=e1105]:
+                        - img "3275 soles" [ref=e1107]:
+                          - generic [ref=e1108]: S/
+                          - generic [ref=e1109]: "3.275"
+                        - generic [ref=e1110]:
+                          - text: 12 cuotas de
+                          - img "272 soles con 94 céntimos" [ref=e1111]:
+                            - generic [ref=e1113]: S/
+                            - generic [ref=e1114]: "272"
+                            - generic [ref=e1115]: ","
+                            - generic [ref=e1116]: "94"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1118] [cursor=pointer]:
+                  - img [ref=e1119]
+            - listitem [ref=e1121]:
+              - generic [ref=e1123]:
+                - generic [ref=e1124]:
+                  - img [ref=e1126]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e1127]:
+                  - heading "Smartphone Xiaomi Redmi Note 15 4G Azul De 8 Gb+ 256 Gb With Doble Sim." [level=3] [ref=e1128]:
+                    - link "Smartphone Xiaomi Redmi Note 15 4G Azul De 8 Gb+ 256 Gb With Doble Sim." [ref=e1129] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/smartphone-xiaomi-redmi-note-15-4g-azul-de-8-gb-256-gb-with-doble-sim/p/MPE66849578#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=9&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1067764288&sid=search
+                  - generic [ref=e1130]:
+                    - img [ref=e1131]
+                    - text: "4.8"
+                  - generic [ref=e1133]:
+                    - 'img "Antes: 1049 soles" [ref=e1134]':
+                      - generic [ref=e1135]: S/
+                      - generic [ref=e1136]: "1.049"
+                    - generic [ref=e1137]:
+                      - 'img "Ahora: 769 soles" [ref=e1138]':
+                        - generic [ref=e1139]: S/
+                        - generic [ref=e1140]: "769"
+                      - generic [ref=e1141]: 26% OFF
+                    - generic [ref=e1142]:
+                      - text: 6 cuotas de
+                      - img "128 soles con 17 céntimos" [ref=e1143]:
+                        - generic [ref=e1145]: S/
+                        - generic [ref=e1146]: "128"
+                        - generic [ref=e1147]: ","
+                        - generic [ref=e1148]: "17"
+                      - text: sin interés
+                  - generic [ref=e1151]:
+                    - img [ref=e1152]
+                    - text: Cupón
+                    - img "25 soles" [ref=e1154]:
+                      - generic [ref=e1156]: S/
+                      - generic [ref=e1157]: "25"
+                    - text: "OFF"
+                  - generic [ref=e1160]: Llega gratis mañana
+                - switch "Favorito" [ref=e1162] [cursor=pointer]:
+                  - img [ref=e1163]
+            - listitem [ref=e1165]:
+              - generic [ref=e1167]:
+                - generic [ref=e1168]:
+                  - img [ref=e1170]
+                  - generic: MÁS VENDIDO
+                - generic [ref=e1171]:
+                  - heading "Apple iPhone 17 (256 GB) - Blanco" [level=3] [ref=e1172]:
+                    - link "Apple iPhone 17 (256 GB) - Blanco" [ref=e1173] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-blanco/p/MPE55309009#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=10&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1065574006&sid=search
+                  - generic [ref=e1174]:
+                    - img [ref=e1175]
+                    - text: "4.8"
+                  - generic [ref=e1177]:
+                    - img "3039 soles" [ref=e1179]:
+                      - generic [ref=e1180]: S/
+                      - generic [ref=e1181]: "3.039"
+                    - generic [ref=e1182]:
+                      - text: 6 cuotas de
+                      - img "506 soles con 50 céntimos" [ref=e1183]:
+                        - generic [ref=e1185]: S/
+                        - generic [ref=e1186]: "506"
+                        - generic [ref=e1187]: ","
+                        - generic [ref=e1188]: "50"
+                      - text: sin interés
+                  - generic [ref=e1191]:
+                    - img [ref=e1192]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1194]:
+                      - generic [ref=e1196]: S/
+                      - generic [ref=e1197]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1200]: Llega gratis mañana
+                  - generic [ref=e1201]:
+                    - generic [ref=e1202] [cursor=pointer]: Otra opción de compra
+                    - link "3274 soles 12 cuotas de 272 soles con 83 céntimos sin interés" [ref=e1203] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-blanco/p/MPE55309009?offer_type=BEST_INSTALLMENTS#wid=MPE1081365448&sid=search
+                      - generic [ref=e1204]:
+                        - img "3274 soles" [ref=e1206]:
+                          - generic [ref=e1207]: S/
+                          - generic [ref=e1208]: "3.274"
+                        - generic [ref=e1209]:
+                          - text: 12 cuotas de
+                          - img "272 soles con 83 céntimos" [ref=e1210]:
+                            - generic [ref=e1212]: S/
+                            - generic [ref=e1213]: "272"
+                            - generic [ref=e1214]: ","
+                            - generic [ref=e1215]: "83"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1217] [cursor=pointer]:
+                  - img [ref=e1218]
+            - listitem [ref=e1220]:
+              - generic [ref=e1222]:
+                - generic [ref=e1223]:
+                  - img [ref=e1225]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e1226]:
+                  - heading "Poco X8 Pro 5g 512 GB 12 GB" [level=3] [ref=e1227]:
+                    - link "Poco X8 Pro 5g 512 GB 12 GB" [ref=e1228] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/poco-x8-pro-5g-512-gb-12-gb/p/MPE66901775#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=11&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1065444114&sid=search
+                  - generic [ref=e1229]:
+                    - img [ref=e1230]
+                    - text: "4.9"
+                  - generic [ref=e1232]:
+                    - 'img "Antes: 2500 soles" [ref=e1233]':
+                      - generic [ref=e1234]: S/
+                      - generic [ref=e1235]: "2.500"
+                    - generic [ref=e1236]:
+                      - 'img "Ahora: 1499 soles" [ref=e1237]':
+                        - generic [ref=e1238]: S/
+                        - generic [ref=e1239]: "1.499"
+                      - generic [ref=e1240]: 40% OFF
+                    - generic [ref=e1241]:
+                      - text: 6 cuotas de
+                      - img "249 soles con 83 céntimos" [ref=e1242]:
+                        - generic [ref=e1244]: S/
+                        - generic [ref=e1245]: "249"
+                        - generic [ref=e1246]: ","
+                        - generic [ref=e1247]: "83"
+                      - text: sin interés
+                  - generic [ref=e1249]: S/. 100 OFF BBVA
+                  - generic [ref=e1252]:
+                    - img [ref=e1253]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1255]:
+                      - generic [ref=e1257]: S/
+                      - generic [ref=e1258]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1261]: Llega gratis mañana
+                  - generic [ref=e1262]:
+                    - generic [ref=e1263] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 2800 soles Ahora: 1609 soles 42% OFF 12 cuotas de 134 soles con 15 céntimos sin interés" [ref=e1264] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/poco-x8-pro-5g-512-gb-12-gb/p/MPE66901775?offer_type=BEST_INSTALLMENTS#wid=MPE1070818398&sid=search
+                      - generic [ref=e1265]:
+                        - 'img "Antes: 2800 soles" [ref=e1266]':
+                          - generic [ref=e1267]: S/
+                          - generic [ref=e1268]: "2.800"
+                        - generic [ref=e1269]:
+                          - 'img "Ahora: 1609 soles" [ref=e1270]':
+                            - generic [ref=e1271]: S/
+                            - generic [ref=e1272]: "1.609"
+                          - generic [ref=e1273]: 42% OFF
+                        - generic [ref=e1274]:
+                          - text: 12 cuotas de
+                          - img "134 soles con 15 céntimos" [ref=e1275]:
+                            - generic [ref=e1277]: S/
+                            - generic [ref=e1278]: "134"
+                            - generic [ref=e1279]: ","
+                            - generic [ref=e1280]: "15"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1282] [cursor=pointer]:
+                  - img [ref=e1283]
+            - listitem [ref=e1285]:
+              - generic [ref=e1287]:
+                - generic [ref=e1288]:
+                  - img [ref=e1290]
+                  - generic: APPLE TIENDA OFICIAL
+                - generic [ref=e1291]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Color plata - Distribuidor Autorizado" [level=3] [ref=e1292]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Color plata - Distribuidor Autorizado" [ref=e1293] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata-distribuidor-autorizado/p/MPE1055308605#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=12&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1083293238&sid=search
+                  - generic [ref=e1294]:
+                    - text: Apple
+                    - img "Tienda oficial" [ref=e1295]
+                  - generic [ref=e1297]:
+                    - img [ref=e1298]
+                    - text: "4.9"
+                  - generic [ref=e1300]:
+                    - 'img "Antes: 6399 soles" [ref=e1301]':
+                      - generic [ref=e1302]: S/
+                      - generic [ref=e1303]: "6.399"
+                    - generic [ref=e1304]:
+                      - 'img "Ahora: 5699 soles" [ref=e1305]':
+                        - generic [ref=e1306]: S/
+                        - generic [ref=e1307]: "5.699"
+                      - generic [ref=e1308]: 10% OFF
+                    - generic [ref=e1309]:
+                      - text: 6 cuotas de
+                      - img "949 soles con 83 céntimos" [ref=e1310]:
+                        - generic [ref=e1312]: S/
+                        - generic [ref=e1313]: "949"
+                        - generic [ref=e1314]: ","
+                        - generic [ref=e1315]: "83"
+                      - text: sin interés
+                  - generic [ref=e1318]:
+                    - img [ref=e1319]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1321]:
+                      - generic [ref=e1323]: S/
+                      - generic [ref=e1324]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1327]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e1328]
+                  - generic [ref=e1330]:
+                    - generic [ref=e1331] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 6554 soles Ahora: 6139 soles 6% OFF 12 cuotas de 511 soles con 58 céntimos sin interés" [ref=e1332] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata-distribuidor-autorizado/p/MPE1055308605?offer_type=BEST_INSTALLMENTS#wid=MPE869196024&sid=search
+                      - generic [ref=e1333]:
+                        - 'img "Antes: 6554 soles" [ref=e1334]':
+                          - generic [ref=e1335]: S/
+                          - generic [ref=e1336]: "6.554"
+                        - generic [ref=e1337]:
+                          - 'img "Ahora: 6139 soles" [ref=e1338]':
+                            - generic [ref=e1339]: S/
+                            - generic [ref=e1340]: "6.139"
+                          - generic [ref=e1341]: 6% OFF
+                        - generic [ref=e1342]:
+                          - text: 12 cuotas de
+                          - img "511 soles con 58 céntimos" [ref=e1343]:
+                            - generic [ref=e1345]: S/
+                            - generic [ref=e1346]: "511"
+                            - generic [ref=e1347]: ","
+                            - generic [ref=e1348]: "58"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1350] [cursor=pointer]:
+                  - img [ref=e1351]
+            - listitem [ref=e1353]:
+              - generic [ref=e1355]:
+                - generic [ref=e1356]:
+                  - img [ref=e1358]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e1359]:
+                  - heading "Samsung Galaxy A56 5g Dual Sim 256 Gb Awesome Graphite 8 Gb Ram" [level=3] [ref=e1360]:
+                    - link "Samsung Galaxy A56 5g Dual Sim 256 Gb Awesome Graphite 8 Gb Ram" [ref=e1361] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-a56-5g-dual-sim-256-gb-awesome-graphite-8-gb-ram/p/MPE51032045#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=13&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE998755406&sid=search
+                  - generic [ref=e1362]:
+                    - img [ref=e1363]
+                    - text: "4.9"
+                  - generic [ref=e1365]:
+                    - 'img "Antes: 2100 soles" [ref=e1366]':
+                      - generic [ref=e1367]: S/
+                      - generic [ref=e1368]: "2.100"
+                    - generic [ref=e1369]:
+                      - 'img "Ahora: 1359 soles" [ref=e1370]':
+                        - generic [ref=e1371]: S/
+                        - generic [ref=e1372]: "1.359"
+                      - generic [ref=e1373]: 35% OFF
+                    - generic [ref=e1374]:
+                      - text: 6 cuotas de
+                      - img "226 soles con 50 céntimos" [ref=e1375]:
+                        - generic [ref=e1377]: S/
+                        - generic [ref=e1378]: "226"
+                        - generic [ref=e1379]: ","
+                        - generic [ref=e1380]: "50"
+                      - text: sin interés
+                  - generic [ref=e1383]:
+                    - img [ref=e1384]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1386]:
+                      - generic [ref=e1388]: S/
+                      - generic [ref=e1389]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1392]: Llega gratis mañana
+                - switch "Favorito" [ref=e1394] [cursor=pointer]:
+                  - img [ref=e1395]
+            - listitem [ref=e1397]:
+              - generic [ref=e1399]:
+                - img [ref=e1402]
+                - generic [ref=e1403]:
+                  - heading "Xiaomi Redmi 15c 6,9 4g 128gb 4gb Ram Hyperos Cámara 50mpx - Black" [level=3] [ref=e1404]:
+                    - link "Xiaomi Redmi 15c 6,9 4g 128gb 4gb Ram Hyperos Cámara 50mpx - Black" [ref=e1405] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-redmi-15c-69-4g-128gb-4gb-ram-hyperos-camara-50mpx-black/p/MPE54103543#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=14&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE981908052&sid=search
+                  - generic [ref=e1406]:
+                    - img [ref=e1407]
+                    - text: "4.7"
+                  - generic [ref=e1409]:
+                    - 'img "Antes: 599 soles" [ref=e1410]':
+                      - generic [ref=e1411]: S/
+                      - generic [ref=e1412]: "599"
+                    - generic [ref=e1413]:
+                      - 'img "Ahora: 425 soles con 60 céntimos" [ref=e1414]':
+                        - generic [ref=e1415]: S/
+                        - generic [ref=e1416]: "425"
+                        - generic [ref=e1417]: ","
+                        - generic [ref=e1418]: "60"
+                      - generic [ref=e1419]: 28% OFF
+                    - generic [ref=e1420]:
+                      - text: 6 cuotas de
+                      - img "70 soles con 93 céntimos" [ref=e1421]:
+                        - generic [ref=e1423]: S/
+                        - generic [ref=e1424]: "70"
+                        - generic [ref=e1425]: ","
+                        - generic [ref=e1426]: "93"
+                      - text: sin interés
+                  - generic [ref=e1429]:
+                    - img [ref=e1430]
+                    - text: Cupón
+                    - img "25 soles" [ref=e1432]:
+                      - generic [ref=e1434]: S/
+                      - generic [ref=e1435]: "25"
+                    - text: "OFF"
+                  - generic [ref=e1438]: Llega gratis mañana
+                  - generic [ref=e1439]:
+                    - generic [ref=e1440] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 600 soles Ahora: 459 soles con 95 céntimos 23% OFF 12 cuotas de 38 soles con 33 céntimos sin interés" [ref=e1441] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-redmi-15c-69-4g-128gb-4gb-ram-hyperos-camara-50mpx-black/p/MPE54103543?offer_type=BEST_INSTALLMENTS#wid=MPE1083462780&sid=search
+                      - generic [ref=e1442]:
+                        - 'img "Antes: 600 soles" [ref=e1443]':
+                          - generic [ref=e1444]: S/
+                          - generic [ref=e1445]: "600"
+                        - generic [ref=e1446]:
+                          - 'img "Ahora: 459 soles con 95 céntimos" [ref=e1447]':
+                            - generic [ref=e1448]: S/
+                            - generic [ref=e1449]: "459"
+                            - generic [ref=e1450]: ","
+                            - generic [ref=e1451]: "95"
+                          - generic [ref=e1452]: 23% OFF
+                        - generic [ref=e1453]:
+                          - text: 12 cuotas de
+                          - img "38 soles con 33 céntimos" [ref=e1454]:
+                            - generic [ref=e1456]: S/
+                            - generic [ref=e1457]: "38"
+                            - generic [ref=e1458]: ","
+                            - generic [ref=e1459]: "33"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1461] [cursor=pointer]:
+                  - img [ref=e1462]
+            - listitem [ref=e1464]:
+              - generic [ref=e1466]:
+                - img [ref=e1469]
+                - generic [ref=e1470]:
+                  - heading "Apple iPhone 16 (128 GB) - Negro" [level=3] [ref=e1471]:
+                    - link "Apple iPhone 16 (128 GB) - Negro" [ref=e1472] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-negro/p/MPE40287808#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=15&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE821772976&sid=search
+                  - generic [ref=e1473]:
+                    - img [ref=e1474]
+                    - text: "4.8"
+                  - generic [ref=e1476]:
+                    - img "2609 soles" [ref=e1478]:
+                      - generic [ref=e1479]: S/
+                      - generic [ref=e1480]: "2.609"
+                    - generic [ref=e1481]:
+                      - text: 6 cuotas de
+                      - img "434 soles con 83 céntimos" [ref=e1482]:
+                        - generic [ref=e1484]: S/
+                        - generic [ref=e1485]: "434"
+                        - generic [ref=e1486]: ","
+                        - generic [ref=e1487]: "83"
+                      - text: sin interés
+                  - generic [ref=e1490]:
+                    - img [ref=e1491]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1493]:
+                      - generic [ref=e1495]: S/
+                      - generic [ref=e1496]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1499]: Llega gratis mañana
+                  - generic [ref=e1500]:
+                    - generic [ref=e1501] [cursor=pointer]: Otra opción de compra
+                    - link "2799 soles 12 cuotas de 233 soles con 27 céntimos sin interés" [ref=e1502] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-negro/p/MPE40287808?offer_type=BEST_INSTALLMENTS#wid=MPE1082310094&sid=search
+                      - generic [ref=e1503]:
+                        - img "2799 soles" [ref=e1505]:
+                          - generic [ref=e1506]: S/
+                          - generic [ref=e1507]: "2.799"
+                        - generic [ref=e1508]:
+                          - text: 12 cuotas de
+                          - img "233 soles con 27 céntimos" [ref=e1509]:
+                            - generic [ref=e1511]: S/
+                            - generic [ref=e1512]: "233"
+                            - generic [ref=e1513]: ","
+                            - generic [ref=e1514]: "27"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1516] [cursor=pointer]:
+                  - img [ref=e1517]
+            - listitem [ref=e1519]:
+              - generic [ref=e1521]:
+                - img [ref=e1524]
+                - generic [ref=e1525]:
+                  - heading "Apple iPhone 17 Pro (256 GB) - Azul profundo" [level=3] [ref=e1526]:
+                    - link "Apple iPhone 17 Pro (256 GB) - Azul profundo" [ref=e1527] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-azul-profundo/p/MPE55308781#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=16&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE912772052&sid=search
+                  - generic [ref=e1528]:
+                    - img [ref=e1529]
+                    - text: "4.8"
+                  - generic [ref=e1531]:
+                    - 'img "Antes: 4999 soles" [ref=e1532]':
+                      - generic [ref=e1533]: S/
+                      - generic [ref=e1534]: "4.999"
+                    - generic [ref=e1535]:
+                      - 'img "Ahora: 4683 soles" [ref=e1536]':
+                        - generic [ref=e1537]: S/
+                        - generic [ref=e1538]: "4.683"
+                      - generic [ref=e1539]: 6% OFF
+                    - generic [ref=e1540]:
+                      - text: 6 cuotas de
+                      - img "780 soles con 66 céntimos" [ref=e1541]:
+                        - generic [ref=e1543]: S/
+                        - generic [ref=e1544]: "780"
+                        - generic [ref=e1545]: ","
+                        - generic [ref=e1546]: "66"
+                      - text: sin interés
+                  - generic [ref=e1549]:
+                    - img [ref=e1550]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1552]:
+                      - generic [ref=e1554]: S/
+                      - generic [ref=e1555]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1558]: Llega gratis mañana
+                - switch "Favorito" [ref=e1560] [cursor=pointer]:
+                  - img [ref=e1561]
+            - listitem [ref=e1563]:
+              - generic [ref=e1565]:
+                - img [ref=e1568]
+                - generic [ref=e1569]:
+                  - heading "Celular Samsung Galaxy A17 256 Gb Black Sm-a175fzkkltp Negro" [level=3] [ref=e1570]:
+                    - link "Celular Samsung Galaxy A17 256 Gb Black Sm-a175fzkkltp Negro" [ref=e1571] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-samsung-galaxy-a17-256-gb-black-sm-a175fzkkltp-negro/p/MPE66044973#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=17&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1034894002&sid=search
+                  - generic [ref=e1572]:
+                    - text: Samsung
+                    - img "Tienda oficial" [ref=e1573]
+                  - generic [ref=e1575]:
+                    - img [ref=e1576]
+                    - text: "4.8"
+                  - generic [ref=e1578]:
+                    - 'img "Antes: 1049 soles" [ref=e1579]':
+                      - generic [ref=e1580]: S/
+                      - generic [ref=e1581]: "1.049"
+                    - generic [ref=e1582]:
+                      - 'img "Ahora: 779 soles" [ref=e1583]':
+                        - generic [ref=e1584]: S/
+                        - generic [ref=e1585]: "779"
+                      - generic [ref=e1586]: 25% OFF
+                    - generic [ref=e1587]:
+                      - text: 6 cuotas de
+                      - img "129 soles con 83 céntimos" [ref=e1588]:
+                        - generic [ref=e1590]: S/
+                        - generic [ref=e1591]: "129"
+                        - generic [ref=e1592]: ","
+                        - generic [ref=e1593]: "83"
+                      - text: sin interés
+                  - generic [ref=e1596]:
+                    - img [ref=e1597]
+                    - text: Cupón
+                    - img "25 soles" [ref=e1599]:
+                      - generic [ref=e1601]: S/
+                      - generic [ref=e1602]: "25"
+                    - text: "OFF"
+                  - generic [ref=e1605]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e1606]
+                - switch "Favorito" [ref=e1609] [cursor=pointer]:
+                  - img [ref=e1610]
+            - listitem [ref=e1612]:
+              - generic [ref=e1614]:
+                - generic [ref=e1615]:
+                  - img [ref=e1617]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e1618]:
+                  - heading "Cel Samsung A56 12 Gb Ram 256 Gb 5g 6.7 Pulgadas Rosa" [level=3] [ref=e1619]:
+                    - link "Cel Samsung A56 12 Gb Ram 256 Gb 5g 6.7 Pulgadas Rosa" [ref=e1620] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/cel-samsung-a56-12-gb-ram-256-gb-5g-67-pulgadas-rosa/p/MPE47797574#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=18&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE710677416&sid=search
+                  - generic [ref=e1621]:
+                    - img [ref=e1622]
+                    - text: "4.9"
+                  - generic [ref=e1624]:
+                    - 'img "Antes: 2449 soles" [ref=e1625]':
+                      - generic [ref=e1626]: S/
+                      - generic [ref=e1627]: "2.449"
+                    - generic [ref=e1628]:
+                      - 'img "Ahora: 1469 soles" [ref=e1629]':
+                        - generic [ref=e1630]: S/
+                        - generic [ref=e1631]: "1.469"
+                      - generic [ref=e1632]: 40% OFF
+                    - generic [ref=e1633]:
+                      - text: 6 cuotas de
+                      - img "244 soles con 83 céntimos" [ref=e1634]:
+                        - generic [ref=e1636]: S/
+                        - generic [ref=e1637]: "244"
+                        - generic [ref=e1638]: ","
+                        - generic [ref=e1639]: "83"
+                      - text: sin interés
+                  - generic [ref=e1642]:
+                    - img [ref=e1643]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1645]:
+                      - generic [ref=e1647]: S/
+                      - generic [ref=e1648]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1651]: Llega gratis mañana
+                  - generic [ref=e1652]:
+                    - generic [ref=e1653] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 1989 soles Ahora: 1555 soles 21% OFF 12 cuotas de 129 soles con 58 céntimos sin interés" [ref=e1654] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/cel-samsung-a56-12-gb-ram-256-gb-5g-67-pulgadas-rosa/p/MPE47797574?offer_type=BEST_INSTALLMENTS#wid=MPE1068004000&sid=search
+                      - generic [ref=e1655]:
+                        - 'img "Antes: 1989 soles" [ref=e1656]':
+                          - generic [ref=e1657]: S/
+                          - generic [ref=e1658]: "1.989"
+                        - generic [ref=e1659]:
+                          - 'img "Ahora: 1555 soles" [ref=e1660]':
+                            - generic [ref=e1661]: S/
+                            - generic [ref=e1662]: "1.555"
+                          - generic [ref=e1663]: 21% OFF
+                        - generic [ref=e1664]:
+                          - text: 12 cuotas de
+                          - img "129 soles con 58 céntimos" [ref=e1665]:
+                            - generic [ref=e1667]: S/
+                            - generic [ref=e1668]: "129"
+                            - generic [ref=e1669]: ","
+                            - generic [ref=e1670]: "58"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1672] [cursor=pointer]:
+                  - img [ref=e1673]
+            - listitem [ref=e1675]:
+              - generic [ref=e1677]:
+                - img [ref=e1680]
+                - generic [ref=e1681]:
+                  - heading "Apple iPhone 16 (128 GB) - Verde azulado" [level=3] [ref=e1682]:
+                    - link "Apple iPhone 16 (128 GB) - Verde azulado" [ref=e1683] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-verde-azulado/p/MPE40287792#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=19&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE960612792&sid=search
+                  - generic [ref=e1684]:
+                    - img [ref=e1685]
+                    - text: "4.8"
+                  - generic [ref=e1687]:
+                    - img "2609 soles" [ref=e1689]:
+                      - generic [ref=e1690]: S/
+                      - generic [ref=e1691]: "2.609"
+                    - generic [ref=e1692]:
+                      - text: 6 cuotas de
+                      - img "434 soles con 83 céntimos" [ref=e1693]:
+                        - generic [ref=e1695]: S/
+                        - generic [ref=e1696]: "434"
+                        - generic [ref=e1697]: ","
+                        - generic [ref=e1698]: "83"
+                      - text: sin interés
+                  - generic [ref=e1701]:
+                    - img [ref=e1702]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1704]:
+                      - generic [ref=e1706]: S/
+                      - generic [ref=e1707]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1710]: Llega gratis mañana
+                  - generic [ref=e1711]:
+                    - generic [ref=e1712] [cursor=pointer]: Otra opción de compra
+                    - link "2799 soles 12 cuotas de 233 soles con 27 céntimos sin interés" [ref=e1713] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-verde-azulado/p/MPE40287792?offer_type=BEST_INSTALLMENTS#wid=MPE1082245284&sid=search
+                      - generic [ref=e1714]:
+                        - img "2799 soles" [ref=e1716]:
+                          - generic [ref=e1717]: S/
+                          - generic [ref=e1718]: "2.799"
+                        - generic [ref=e1719]:
+                          - text: 12 cuotas de
+                          - img "233 soles con 27 céntimos" [ref=e1720]:
+                            - generic [ref=e1722]: S/
+                            - generic [ref=e1723]: "233"
+                            - generic [ref=e1724]: ","
+                            - generic [ref=e1725]: "27"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1727] [cursor=pointer]:
+                  - img [ref=e1728]
+            - listitem [ref=e1730]:
+              - generic [ref=e1732]:
+                - img [ref=e1735]
+                - generic [ref=e1736]:
+                  - heading "Samsung Galaxy S25 Ultra 5g Dual Sim 512 Gb Color Titanium Whitesilver" [level=3] [ref=e1737]:
+                    - link "Samsung Galaxy S25 Ultra 5g Dual Sim 512 Gb Color Titanium Whitesilver" [ref=e1738] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25-ultra-5g-dual-sim-512-gb-color-titanium-whitesilver/p/MPE46687988#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=20&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1071068472&sid=search
+                  - generic [ref=e1739]:
+                    - img [ref=e1740]
+                    - text: "4.9"
+                  - generic [ref=e1742]:
+                    - img "3600 soles" [ref=e1744]:
+                      - generic [ref=e1745]: S/
+                      - generic [ref=e1746]: "3.600"
+                    - generic [ref=e1747]:
+                      - text: 6 cuotas de
+                      - img "600 soles con 04 céntimos" [ref=e1748]:
+                        - generic [ref=e1750]: S/
+                        - generic [ref=e1751]: "600"
+                        - generic [ref=e1752]: ","
+                        - generic [ref=e1753]: "04"
+                      - text: sin interés
+                  - generic [ref=e1756]:
+                    - img [ref=e1757]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1759]:
+                      - generic [ref=e1761]: S/
+                      - generic [ref=e1762]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1765]: Llega gratis mañana
+                - switch "Favorito" [ref=e1767] [cursor=pointer]:
+                  - img [ref=e1768]
+            - listitem [ref=e1770]:
+              - generic [ref=e1772]:
+                - img [ref=e1775]
+                - generic [ref=e1776]:
+                  - heading "Celular Samsung Galaxy A17 256gb Light Blue" [level=3] [ref=e1777]:
+                    - link "Celular Samsung Galaxy A17 256gb Light Blue" [ref=e1778] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-samsung-galaxy-a17-256gb-light-blue/p/MPE67399210#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=21&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1070761060&sid=search
+                  - generic [ref=e1779]:
+                    - text: Samsung
+                    - img "Tienda oficial" [ref=e1780]
+                  - generic [ref=e1782]:
+                    - img [ref=e1783]
+                    - text: "4.7"
+                  - generic [ref=e1785]:
+                    - 'img "Antes: 1049 soles" [ref=e1786]':
+                      - generic [ref=e1787]: S/
+                      - generic [ref=e1788]: "1.049"
+                    - generic [ref=e1789]:
+                      - 'img "Ahora: 779 soles" [ref=e1790]':
+                        - generic [ref=e1791]: S/
+                        - generic [ref=e1792]: "779"
+                      - generic [ref=e1793]: 25% OFF
+                    - generic [ref=e1794]:
+                      - text: 6 cuotas de
+                      - img "129 soles con 83 céntimos" [ref=e1795]:
+                        - generic [ref=e1797]: S/
+                        - generic [ref=e1798]: "129"
+                        - generic [ref=e1799]: ","
+                        - generic [ref=e1800]: "83"
+                      - text: sin interés
+                  - generic [ref=e1803]:
+                    - img [ref=e1804]
+                    - text: Cupón
+                    - img "25 soles" [ref=e1806]:
+                      - generic [ref=e1808]: S/
+                      - generic [ref=e1809]: "25"
+                    - text: "OFF"
+                  - generic [ref=e1812]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e1813]
+                - switch "Favorito" [ref=e1816] [cursor=pointer]:
+                  - img [ref=e1817]
+            - listitem [ref=e1819]:
+              - generic [ref=e1821]:
+                - generic [ref=e1822]:
+                  - img [ref=e1824]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e1825]:
+                  - heading "Celular Samsung Galaxy A56 5G 256GB Awesome Lightgray SM-A566EZAFLTP" [level=3] [ref=e1826]:
+                    - link "Celular Samsung Galaxy A56 5G 256GB Awesome Lightgray SM-A566EZAFLTP" [ref=e1827] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-samsung-galaxy-a56-5g-256gb-awesome-lightgray-sm-a566ezafltp/p/MPE47114363#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=22&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE707749330&sid=search
+                  - generic [ref=e1828]:
+                    - img [ref=e1829]
+                    - text: "4.9"
+                  - generic [ref=e1831]:
+                    - 'img "Antes: 2315 soles" [ref=e1832]':
+                      - generic [ref=e1833]: S/
+                      - generic [ref=e1834]: "2.315"
+                    - generic [ref=e1835]:
+                      - 'img "Ahora: 1359 soles" [ref=e1836]':
+                        - generic [ref=e1837]: S/
+                        - generic [ref=e1838]: "1.359"
+                      - generic [ref=e1839]: 41% OFF
+                    - generic [ref=e1840]:
+                      - text: 6 cuotas de
+                      - img "226 soles con 50 céntimos" [ref=e1841]:
+                        - generic [ref=e1843]: S/
+                        - generic [ref=e1844]: "226"
+                        - generic [ref=e1845]: ","
+                        - generic [ref=e1846]: "50"
+                      - text: sin interés
+                  - generic [ref=e1849]:
+                    - img [ref=e1850]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1852]:
+                      - generic [ref=e1854]: S/
+                      - generic [ref=e1855]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1858]: Llega gratis mañana
+                - switch "Favorito" [ref=e1860] [cursor=pointer]:
+                  - img [ref=e1861]
+            - listitem [ref=e1863]:
+              - generic [ref=e1865]:
+                - img [ref=e1868]
+                - generic [ref=e1869]:
+                  - heading "Samsung Galaxy A56 5G Dual Sim 256GB 12GB Negro 6.7''" [level=3] [ref=e1870]:
+                    - link "Samsung Galaxy A56 5G Dual Sim 256GB 12GB Negro 6.7''" [ref=e1871] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-a56-5g-dual-sim-256gb-12gb-negro-67/p/MPE47797906#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=23&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE710742368&sid=search
+                  - generic [ref=e1872]:
+                    - img [ref=e1873]
+                    - text: "4.9"
+                  - generic [ref=e1875]:
+                    - 'img "Antes: 2449 soles" [ref=e1876]':
+                      - generic [ref=e1877]: S/
+                      - generic [ref=e1878]: "2.449"
+                    - generic [ref=e1879]:
+                      - 'img "Ahora: 1469 soles" [ref=e1880]':
+                        - generic [ref=e1881]: S/
+                        - generic [ref=e1882]: "1.469"
+                      - generic [ref=e1883]: 40% OFF
+                    - generic [ref=e1884]:
+                      - text: 6 cuotas de
+                      - img "244 soles con 83 céntimos" [ref=e1885]:
+                        - generic [ref=e1887]: S/
+                        - generic [ref=e1888]: "244"
+                        - generic [ref=e1889]: ","
+                        - generic [ref=e1890]: "83"
+                      - text: sin interés
+                  - generic [ref=e1893]:
+                    - img [ref=e1894]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1896]:
+                      - generic [ref=e1898]: S/
+                      - generic [ref=e1899]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1902]: Llega gratis mañana
+                  - generic [ref=e1903]:
+                    - generic [ref=e1904] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 2299 soles Ahora: 1533 soles 33% OFF 12 cuotas de 127 soles con 79 céntimos sin interés" [ref=e1905] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-a56-5g-dual-sim-256gb-12gb-negro-67/p/MPE47797906?offer_type=BEST_INSTALLMENTS#wid=MPE847850310&sid=search
+                      - generic [ref=e1906]:
+                        - 'img "Antes: 2299 soles" [ref=e1907]':
+                          - generic [ref=e1908]: S/
+                          - generic [ref=e1909]: "2.299"
+                        - generic [ref=e1910]:
+                          - 'img "Ahora: 1533 soles" [ref=e1911]':
+                            - generic [ref=e1912]: S/
+                            - generic [ref=e1913]: "1.533"
+                          - generic [ref=e1914]: 33% OFF
+                        - generic [ref=e1915]:
+                          - text: 12 cuotas de
+                          - img "127 soles con 79 céntimos" [ref=e1916]:
+                            - generic [ref=e1918]: S/
+                            - generic [ref=e1919]: "127"
+                            - generic [ref=e1920]: ","
+                            - generic [ref=e1921]: "79"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1923] [cursor=pointer]:
+                  - img [ref=e1924]
+            - listitem [ref=e1926]:
+              - generic [ref=e1928]:
+                - img [ref=e1931]
+                - generic [ref=e1932]:
+                  - heading "Apple iPhone 17 Pro (256 GB) - Color plata" [level=3] [ref=e1933]:
+                    - link "Apple iPhone 17 Pro (256 GB) - Color plata" [ref=e1934] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-color-plata/p/MPE55308767#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=24&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE883808994&sid=search
+                  - generic [ref=e1935]:
+                    - img [ref=e1936]
+                    - text: "4.8"
+                  - generic [ref=e1938]:
+                    - 'img "Antes: 8000 soles" [ref=e1939]':
+                      - generic [ref=e1940]: S/
+                      - generic [ref=e1941]: "8.000"
+                    - generic [ref=e1942]:
+                      - 'img "Ahora: 4670 soles" [ref=e1943]':
+                        - generic [ref=e1944]: S/
+                        - generic [ref=e1945]: "4.670"
+                      - generic [ref=e1946]: 41% OFF
+                    - generic [ref=e1947]:
+                      - text: 6 cuotas de
+                      - img "778 soles con 33 céntimos" [ref=e1948]:
+                        - generic [ref=e1950]: S/
+                        - generic [ref=e1951]: "778"
+                        - generic [ref=e1952]: ","
+                        - generic [ref=e1953]: "33"
+                      - text: sin interés
+                  - generic [ref=e1956]:
+                    - img [ref=e1957]
+                    - text: Cupón
+                    - img "100 soles" [ref=e1959]:
+                      - generic [ref=e1961]: S/
+                      - generic [ref=e1962]: "100"
+                    - text: "OFF"
+                  - generic [ref=e1965]: Llega gratis mañana
+                  - generic [ref=e1966]:
+                    - generic [ref=e1967] [cursor=pointer]: Otra opción de compra
+                    - link "4799 soles 12 cuotas de 399 soles con 94 céntimos sin interés" [ref=e1968] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-color-plata/p/MPE55308767?offer_type=BEST_INSTALLMENTS#wid=MPE1083100648&sid=search
+                      - generic [ref=e1969]:
+                        - img "4799 soles" [ref=e1971]:
+                          - generic [ref=e1972]: S/
+                          - generic [ref=e1973]: "4.799"
+                        - generic [ref=e1974]:
+                          - text: 12 cuotas de
+                          - img "399 soles con 94 céntimos" [ref=e1975]:
+                            - generic [ref=e1977]: S/
+                            - generic [ref=e1978]: "399"
+                            - generic [ref=e1979]: ","
+                            - generic [ref=e1980]: "94"
+                          - text: sin interés
+                - switch "Favorito" [ref=e1982] [cursor=pointer]:
+                  - img [ref=e1983]
+            - listitem [ref=e1985]:
+              - generic [ref=e1987]:
+                - img [ref=e1990]
+                - generic [ref=e1991]:
+                  - heading "Apple iPhone 17 Pro (256 GB) - Naranja cósmico" [level=3] [ref=e1992]:
+                    - link "Apple iPhone 17 Pro (256 GB) - Naranja cósmico" [ref=e1993] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-naranja-cosmico/p/MPE55308774#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=25&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE994542012&sid=search
+                  - generic [ref=e1994]:
+                    - img [ref=e1995]
+                    - text: "4.8"
+                  - generic [ref=e1997]:
+                    - img "4679 soles" [ref=e1999]:
+                      - generic [ref=e2000]: S/
+                      - generic [ref=e2001]: "4.679"
+                    - generic [ref=e2002]:
+                      - text: 6 cuotas de
+                      - img "779 soles con 83 céntimos" [ref=e2003]:
+                        - generic [ref=e2005]: S/
+                        - generic [ref=e2006]: "779"
+                        - generic [ref=e2007]: ","
+                        - generic [ref=e2008]: "83"
+                      - text: sin interés
+                  - generic [ref=e2011]:
+                    - img [ref=e2012]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2014]:
+                      - generic [ref=e2016]: S/
+                      - generic [ref=e2017]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2020]: Llega gratis mañana
+                  - generic [ref=e2021]:
+                    - generic [ref=e2022] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 6174 soles Ahora: 5139 soles 16% OFF 12 cuotas de 428 soles con 33 céntimos sin interés" [ref=e2023] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-naranja-cosmico/p/MPE55308774?offer_type=BEST_INSTALLMENTS#wid=MPE883821370&sid=search
+                      - generic [ref=e2024]:
+                        - 'img "Antes: 6174 soles" [ref=e2025]':
+                          - generic [ref=e2026]: S/
+                          - generic [ref=e2027]: "6.174"
+                        - generic [ref=e2028]:
+                          - 'img "Ahora: 5139 soles" [ref=e2029]':
+                            - generic [ref=e2030]: S/
+                            - generic [ref=e2031]: "5.139"
+                          - generic [ref=e2032]: 16% OFF
+                        - generic [ref=e2033]:
+                          - text: 12 cuotas de
+                          - img "428 soles con 33 céntimos" [ref=e2034]:
+                            - generic [ref=e2036]: S/
+                            - generic [ref=e2037]: "428"
+                            - generic [ref=e2038]: ","
+                            - generic [ref=e2039]: "33"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2041] [cursor=pointer]:
+                  - img [ref=e2042]
+            - listitem [ref=e2044]:
+              - generic [ref=e2046]:
+                - img [ref=e2049]
+                - generic [ref=e2050]:
+                  - heading "Teléfono celular Samsung Galaxy A57 5G 256gb, 8gb RAM dark blue" [level=3] [ref=e2051]:
+                    - link "Teléfono celular Samsung Galaxy A57 5G 256gb, 8gb RAM dark blue" [ref=e2052] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/telefono-celular-samsung-galaxy-a57-5g-256gb-8gb-ram-dark-blue/p/MPE67999425#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=26&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1077989502&sid=search
+                  - generic [ref=e2053]:
+                    - text: Samsung
+                    - img "Tienda oficial" [ref=e2054]
+                  - generic [ref=e2056]:
+                    - img [ref=e2057]
+                    - text: "4.8"
+                  - generic [ref=e2059]:
+                    - 'img "Antes: 2099 soles" [ref=e2060]':
+                      - generic [ref=e2061]: S/
+                      - generic [ref=e2062]: "2.099"
+                    - generic [ref=e2063]:
+                      - 'img "Ahora: 1699 soles" [ref=e2064]':
+                        - generic [ref=e2065]: S/
+                        - generic [ref=e2066]: "1.699"
+                      - generic [ref=e2067]: 19% OFF
+                    - generic [ref=e2068]:
+                      - text: 12 cuotas de
+                      - img "141 soles con 58 céntimos" [ref=e2069]:
+                        - generic [ref=e2071]: S/
+                        - generic [ref=e2072]: "141"
+                        - generic [ref=e2073]: ","
+                        - generic [ref=e2074]: "58"
+                      - text: sin interés
+                  - generic [ref=e2076]: S/. 100 OFF BBVA
+                  - generic [ref=e2079]:
+                    - img [ref=e2080]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2082]:
+                      - generic [ref=e2084]: S/
+                      - generic [ref=e2085]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2088]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e2089]
+                - switch "Favorito" [ref=e2092] [cursor=pointer]:
+                  - img [ref=e2093]
+            - listitem [ref=e2095]:
+              - generic [ref=e2097]:
+                - img [ref=e2100]
+                - generic [ref=e2101]:
+                  - heading "Honor 400 12 GB Ram 256 GB ROM Negro" [level=3] [ref=e2102]:
+                    - link "Honor 400 12 GB Ram 256 GB ROM Negro" [ref=e2103] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/honor-400-12-gb-ram-256-gb-rom-negro/p/MPE51143704#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=27&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE868819400&sid=search
+                  - generic [ref=e2104]:
+                    - img [ref=e2105]
+                    - text: "4.8"
+                  - generic [ref=e2107]:
+                    - 'img "Antes: 1999 soles" [ref=e2108]':
+                      - generic [ref=e2109]: S/
+                      - generic [ref=e2110]: "1.999"
+                    - generic [ref=e2111]:
+                      - 'img "Ahora: 1499 soles" [ref=e2112]':
+                        - generic [ref=e2113]: S/
+                        - generic [ref=e2114]: "1.499"
+                      - generic [ref=e2115]: 25% OFF
+                    - generic [ref=e2116]:
+                      - text: 6 cuotas de
+                      - img "249 soles con 83 céntimos" [ref=e2117]:
+                        - generic [ref=e2119]: S/
+                        - generic [ref=e2120]: "249"
+                        - generic [ref=e2121]: ","
+                        - generic [ref=e2122]: "83"
+                      - text: sin interés
+                  - generic [ref=e2125]:
+                    - img [ref=e2126]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2128]:
+                      - generic [ref=e2130]: S/
+                      - generic [ref=e2131]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2134]: Llega gratis mañana
+                - switch "Favorito" [ref=e2136] [cursor=pointer]:
+                  - img [ref=e2137]
+            - listitem [ref=e2139]:
+              - generic [ref=e2141]:
+                - img [ref=e2144]
+                - generic [ref=e2145]:
+                  - heading "Apple iPhone 17 (256 GB) - Azul neblina" [level=3] [ref=e2146]:
+                    - link "Apple iPhone 17 (256 GB) - Azul neblina" [ref=e2147] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-azul-neblina/p/MPE55308852#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=28&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE868429100&sid=search
+                  - generic [ref=e2148]:
+                    - img [ref=e2149]
+                    - text: "4.8"
+                  - generic [ref=e2151]:
+                    - 'img "Antes: 4999 soles" [ref=e2152]':
+                      - generic [ref=e2153]: S/
+                      - generic [ref=e2154]: "4.999"
+                    - generic [ref=e2155]:
+                      - 'img "Ahora: 3159 soles" [ref=e2156]':
+                        - generic [ref=e2157]: S/
+                        - generic [ref=e2158]: "3.159"
+                      - generic [ref=e2159]: 36% OFF
+                    - generic [ref=e2160]:
+                      - text: 6 cuotas de
+                      - img "526 soles con 50 céntimos" [ref=e2161]:
+                        - generic [ref=e2163]: S/
+                        - generic [ref=e2164]: "526"
+                        - generic [ref=e2165]: ","
+                        - generic [ref=e2166]: "50"
+                      - text: sin interés
+                  - generic [ref=e2169]:
+                    - img [ref=e2170]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2172]:
+                      - generic [ref=e2174]: S/
+                      - generic [ref=e2175]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2178]: Llega gratis mañana
+                  - generic [ref=e2179]:
+                    - generic [ref=e2180] [cursor=pointer]: Otra opción de compra
+                    - link "3274 soles 12 cuotas de 272 soles con 83 céntimos sin interés" [ref=e2181] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-azul-neblina/p/MPE55308852?offer_type=BEST_INSTALLMENTS#wid=MPE1078028780&sid=search
+                      - generic [ref=e2182]:
+                        - img "3274 soles" [ref=e2184]:
+                          - generic [ref=e2185]: S/
+                          - generic [ref=e2186]: "3.274"
+                        - generic [ref=e2187]:
+                          - text: 12 cuotas de
+                          - img "272 soles con 83 céntimos" [ref=e2188]:
+                            - generic [ref=e2190]: S/
+                            - generic [ref=e2191]: "272"
+                            - generic [ref=e2192]: ","
+                            - generic [ref=e2193]: "83"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2195] [cursor=pointer]:
+                  - img [ref=e2196]
+            - listitem [ref=e2198]:
+              - generic [ref=e2200]:
+                - generic [ref=e2201]:
+                  - generic:
+                    - generic: Disponible en 2 colores
+                  - img [ref=e2203]
+                - generic [ref=e2204]:
+                  - heading "Celular Xiaomi Poco F8 Ultra 16gb Ram 512gb Rom color Negro" [level=3] [ref=e2205]:
+                    - link "Celular Xiaomi Poco F8 Ultra 16gb Ram 512gb Rom color Negro" [ref=e2206] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-xiaomi-poco-f8-ultra-16gb-ram-512gb-rom-color-negro/p/MPE63615506#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=29&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE935393864&sid=search
+                  - generic [ref=e2207]:
+                    - img [ref=e2208]
+                    - text: "4.9"
+                  - generic [ref=e2210]:
+                    - img "2969 soles" [ref=e2212]:
+                      - generic [ref=e2213]: S/
+                      - generic [ref=e2214]: "2.969"
+                    - generic [ref=e2215]:
+                      - text: 6 cuotas de
+                      - img "494 soles con 83 céntimos" [ref=e2216]:
+                        - generic [ref=e2218]: S/
+                        - generic [ref=e2219]: "494"
+                        - generic [ref=e2220]: ","
+                        - generic [ref=e2221]: "83"
+                      - text: sin interés
+                  - generic [ref=e2224]:
+                    - img [ref=e2225]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2227]:
+                      - generic [ref=e2229]: S/
+                      - generic [ref=e2230]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2233]: Llega gratis mañana
+                  - generic [ref=e2234]:
+                    - generic [ref=e2235] [cursor=pointer]: Otra opción de compra
+                    - link "3061 soles 12 cuotas de 255 soles con 08 céntimos sin interés" [ref=e2236] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-xiaomi-poco-f8-ultra-16gb-ram-512gb-rom-color-negro/p/MPE63615506?offer_type=BEST_INSTALLMENTS#wid=MPE1078015446&sid=search
+                      - generic [ref=e2237]:
+                        - img "3061 soles" [ref=e2239]:
+                          - generic [ref=e2240]: S/
+                          - generic [ref=e2241]: "3.061"
+                        - generic [ref=e2242]:
+                          - text: 12 cuotas de
+                          - img "255 soles con 08 céntimos" [ref=e2243]:
+                            - generic [ref=e2245]: S/
+                            - generic [ref=e2246]: "255"
+                            - generic [ref=e2247]: ","
+                            - generic [ref=e2248]: "08"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2250] [cursor=pointer]:
+                  - img [ref=e2251]
+            - listitem [ref=e2253]:
+              - generic [ref=e2255]:
+                - generic [ref=e2256]:
+                  - generic:
+                    - generic: Disponible en 2 colores
+                  - img [ref=e2258]
+                - generic [ref=e2259]:
+                  - heading "Xiaomi Note 15 Pro 8gb Ram 256gb Rom 5g 200mpx 4k Negro Dimm" [level=3] [ref=e2260]:
+                    - link "Xiaomi Note 15 Pro 8gb Ram 256gb Rom 5g 200mpx 4k Negro Dimm" [ref=e2261] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-note-15-pro-8gb-ram-256gb-rom-5g-200mpx-4k-negro-dimm/p/MPE64235171#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=30&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE959183578&sid=search
+                  - generic [ref=e2262]:
+                    - img [ref=e2263]
+                    - text: "4.9"
+                  - generic [ref=e2265]:
+                    - 'img "Antes: 1999 soles" [ref=e2266]':
+                      - generic [ref=e2267]: S/
+                      - generic [ref=e2268]: "1.999"
+                    - generic [ref=e2269]:
+                      - 'img "Ahora: 1139 soles" [ref=e2270]':
+                        - generic [ref=e2271]: S/
+                        - generic [ref=e2272]: "1.139"
+                      - generic [ref=e2273]: 43% OFF
+                    - generic [ref=e2274]:
+                      - text: 6 cuotas de
+                      - img "189 soles con 83 céntimos" [ref=e2275]:
+                        - generic [ref=e2277]: S/
+                        - generic [ref=e2278]: "189"
+                        - generic [ref=e2279]: ","
+                        - generic [ref=e2280]: "83"
+                      - text: sin interés
+                  - generic [ref=e2283]:
+                    - img [ref=e2284]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2286]:
+                      - generic [ref=e2288]: S/
+                      - generic [ref=e2289]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2292]: Llega gratis mañana
+                - switch "Favorito" [ref=e2294] [cursor=pointer]:
+                  - img [ref=e2295]
+            - listitem [ref=e2297]:
+              - generic [ref=e2299]:
+                - img [ref=e2302]
+                - generic [ref=e2303]:
+                  - heading "Samsung Galaxy S25 Ultra 512gb Titanium Gray 5G" [level=3] [ref=e2304]:
+                    - link "Samsung Galaxy S25 Ultra 512gb Titanium Gray 5G" [ref=e2305] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25-ultra-512gb-titanium-gray-5g/p/MPE45515203#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=31&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1065340080&sid=search
+                  - generic [ref=e2306]:
+                    - img [ref=e2307]
+                    - text: "4.9"
+                  - generic [ref=e2309]:
+                    - img "3600 soles" [ref=e2311]:
+                      - generic [ref=e2312]: S/
+                      - generic [ref=e2313]: "3.600"
+                    - generic [ref=e2314]:
+                      - text: 6 cuotas de
+                      - img "600 soles con 04 céntimos" [ref=e2315]:
+                        - generic [ref=e2317]: S/
+                        - generic [ref=e2318]: "600"
+                        - generic [ref=e2319]: ","
+                        - generic [ref=e2320]: "04"
+                      - text: sin interés
+                  - generic [ref=e2323]:
+                    - img [ref=e2324]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2326]:
+                      - generic [ref=e2328]: S/
+                      - generic [ref=e2329]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2332]: Llega gratis mañana
+                - switch "Favorito" [ref=e2334] [cursor=pointer]:
+                  - img [ref=e2335]
+            - listitem [ref=e2337]:
+              - generic [ref=e2339]:
+                - generic [ref=e2340]:
+                  - img [ref=e2342]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e2343]:
+                  - heading "Xiaomi Redmi Note 15 Dual Sim 256 GB 8 GB de RAM (global) Pre" [level=3] [ref=e2344]:
+                    - link "Xiaomi Redmi Note 15 Dual Sim 256 GB 8 GB de RAM (global) Pre" [ref=e2345] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-redmi-note-15-dual-sim-256-gb-8-gb-de-ram-global-pre/p/MPE64920529#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=32&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE984246208&sid=search
+                  - generic [ref=e2346]:
+                    - img [ref=e2347]
+                    - text: "4.9"
+                  - generic [ref=e2349]:
+                    - 'img "Antes: 1599 soles" [ref=e2350]':
+                      - generic [ref=e2351]: S/
+                      - generic [ref=e2352]: "1.599"
+                    - generic [ref=e2353]:
+                      - 'img "Ahora: 769 soles" [ref=e2354]':
+                        - generic [ref=e2355]: S/
+                        - generic [ref=e2356]: "769"
+                      - generic [ref=e2357]: 51% OFF
+                    - generic [ref=e2358]:
+                      - text: 6 cuotas de
+                      - img "128 soles con 17 céntimos" [ref=e2359]:
+                        - generic [ref=e2361]: S/
+                        - generic [ref=e2362]: "128"
+                        - generic [ref=e2363]: ","
+                        - generic [ref=e2364]: "17"
+                      - text: sin interés
+                  - generic [ref=e2367]:
+                    - img [ref=e2368]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2370]:
+                      - generic [ref=e2372]: S/
+                      - generic [ref=e2373]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2376]: Llega gratis mañana
+                - switch "Favorito" [ref=e2378] [cursor=pointer]:
+                  - img [ref=e2379]
+            - listitem [ref=e2381]:
+              - generic [ref=e2383]:
+                - img [ref=e2386]
+                - generic [ref=e2387]:
+                  - heading "Samsung Galaxy S25fe 256gb 8gb De Ram Negro" [level=3] [ref=e2388]:
+                    - link "Samsung Galaxy S25fe 256gb 8gb De Ram Negro" [ref=e2389] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25fe-256gb-8gb-de-ram-negro/p/MPE59105397#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=33&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1085594120&sid=search
+                  - generic [ref=e2390]:
+                    - img [ref=e2391]
+                    - text: "4.9"
+                  - generic [ref=e2393]:
+                    - 'img "Antes: 2700 soles" [ref=e2394]':
+                      - generic [ref=e2395]: S/
+                      - generic [ref=e2396]: "2.700"
+                    - generic [ref=e2397]:
+                      - 'img "Ahora: 2260 soles" [ref=e2398]':
+                        - generic [ref=e2399]: S/
+                        - generic [ref=e2400]: "2.260"
+                      - generic [ref=e2401]: 16% OFF
+                    - generic [ref=e2402]:
+                      - text: 6 cuotas de
+                      - img "376 soles con 67 céntimos" [ref=e2403]:
+                        - generic [ref=e2405]: S/
+                        - generic [ref=e2406]: "376"
+                        - generic [ref=e2407]: ","
+                        - generic [ref=e2408]: "67"
+                      - text: sin interés
+                  - generic [ref=e2411]:
+                    - img [ref=e2412]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2414]:
+                      - generic [ref=e2416]: S/
+                      - generic [ref=e2417]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2420]: Llega gratis mañana
+                - switch "Favorito" [ref=e2422] [cursor=pointer]:
+                  - img [ref=e2423]
+            - listitem [ref=e2425]:
+              - generic [ref=e2427]:
+                - img [ref=e2430]
+                - generic [ref=e2431]:
+                  - heading "Xiaomi Poco X8 Pro Max 512gb 12gb Ram" [level=3] [ref=e2432]:
+                    - link "Xiaomi Poco X8 Pro Max 512gb 12gb Ram" [ref=e2433] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-poco-x8-pro-max-512gb-12gb-ram/p/MPE67172340#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=34&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1067161046&sid=search
+                  - generic [ref=e2434]:
+                    - img [ref=e2435]
+                    - text: "4.9"
+                  - generic [ref=e2437]:
+                    - img "1869 soles" [ref=e2439]:
+                      - generic [ref=e2440]: S/
+                      - generic [ref=e2441]: "1.869"
+                    - generic [ref=e2442]:
+                      - text: 6 cuotas de
+                      - img "311 soles con 50 céntimos" [ref=e2443]:
+                        - generic [ref=e2445]: S/
+                        - generic [ref=e2446]: "311"
+                        - generic [ref=e2447]: ","
+                        - generic [ref=e2448]: "50"
+                      - text: sin interés
+                  - generic [ref=e2451]:
+                    - img [ref=e2452]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2454]:
+                      - generic [ref=e2456]: S/
+                      - generic [ref=e2457]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2460]: Llega gratis mañana
+                  - generic [ref=e2461]:
+                    - generic [ref=e2462] [cursor=pointer]: Otra opción de compra
+                    - link "2047 soles 12 cuotas de 170 soles con 58 céntimos sin interés" [ref=e2463] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-poco-x8-pro-max-512gb-12gb-ram/p/MPE67172340?offer_type=BEST_INSTALLMENTS#wid=MPE1046529294&sid=search
+                      - generic [ref=e2464]:
+                        - img "2047 soles" [ref=e2466]:
+                          - generic [ref=e2467]: S/
+                          - generic [ref=e2468]: "2.047"
+                        - generic [ref=e2469]:
+                          - text: 12 cuotas de
+                          - img "170 soles con 58 céntimos" [ref=e2470]:
+                            - generic [ref=e2472]: S/
+                            - generic [ref=e2473]: "170"
+                            - generic [ref=e2474]: ","
+                            - generic [ref=e2475]: "58"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2477] [cursor=pointer]:
+                  - img [ref=e2478]
+            - listitem [ref=e2480]:
+              - generic [ref=e2482]:
+                - img [ref=e2485]
+                - generic [ref=e2486]:
+                  - heading "Apple iPhone 16 (128 GB) - Blanco" [level=3] [ref=e2487]:
+                    - link "Apple iPhone 16 (128 GB) - Blanco" [ref=e2488] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-blanco/p/MPE40287791#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=35&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE932870098&sid=search
+                  - generic [ref=e2489]:
+                    - img [ref=e2490]
+                    - text: "4.8"
+                  - generic [ref=e2492]:
+                    - img "2619 soles" [ref=e2494]:
+                      - generic [ref=e2495]: S/
+                      - generic [ref=e2496]: "2.619"
+                    - generic [ref=e2497]:
+                      - text: 6 cuotas de
+                      - img "436 soles con 50 céntimos" [ref=e2498]:
+                        - generic [ref=e2500]: S/
+                        - generic [ref=e2501]: "436"
+                        - generic [ref=e2502]: ","
+                        - generic [ref=e2503]: "50"
+                      - text: sin interés
+                  - generic [ref=e2506]:
+                    - img [ref=e2507]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2509]:
+                      - generic [ref=e2511]: S/
+                      - generic [ref=e2512]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2515]: Llega gratis mañana
+                  - generic [ref=e2516]:
+                    - generic [ref=e2517] [cursor=pointer]: Otra opción de compra
+                    - link "2849 soles 12 cuotas de 237 soles con 42 céntimos sin interés" [ref=e2518] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-blanco/p/MPE40287791?offer_type=BEST_INSTALLMENTS#wid=MPE692788988&sid=search
+                      - generic [ref=e2519]:
+                        - img "2849 soles" [ref=e2521]:
+                          - generic [ref=e2522]: S/
+                          - generic [ref=e2523]: "2.849"
+                        - generic [ref=e2524]:
+                          - text: 12 cuotas de
+                          - img "237 soles con 42 céntimos" [ref=e2525]:
+                            - generic [ref=e2527]: S/
+                            - generic [ref=e2528]: "237"
+                            - generic [ref=e2529]: ","
+                            - generic [ref=e2530]: "42"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2532] [cursor=pointer]:
+                  - img [ref=e2533]
+            - listitem [ref=e2535]:
+              - generic [ref=e2537]:
+                - generic [ref=e2538]:
+                  - generic:
+                    - generic: Disponible en 3 colores
+                  - img [ref=e2540]
+                - generic [ref=e2541]:
+                  - heading "Xiaomi Note 15 Pro 8gb Ram 256gb Rom 5g 200mpx 4k Dorado Dimm" [level=3] [ref=e2542]:
+                    - link "Xiaomi Note 15 Pro 8gb Ram 256gb Rom 5g 200mpx 4k Dorado Dimm" [ref=e2543] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-note-15-pro-8gb-ram-256gb-rom-5g-200mpx-4k-dorado-dimm/p/MPE64222826#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=36&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE959326520&sid=search
+                  - generic [ref=e2544]:
+                    - img [ref=e2545]
+                    - text: "4.9"
+                  - generic [ref=e2547]:
+                    - 'img "Antes: 1999 soles" [ref=e2548]':
+                      - generic [ref=e2549]: S/
+                      - generic [ref=e2550]: "1.999"
+                    - generic [ref=e2551]:
+                      - 'img "Ahora: 1139 soles" [ref=e2552]':
+                        - generic [ref=e2553]: S/
+                        - generic [ref=e2554]: "1.139"
+                      - generic [ref=e2555]: 43% OFF
+                    - generic [ref=e2556]:
+                      - text: 6 cuotas de
+                      - img "189 soles con 83 céntimos" [ref=e2557]:
+                        - generic [ref=e2559]: S/
+                        - generic [ref=e2560]: "189"
+                        - generic [ref=e2561]: ","
+                        - generic [ref=e2562]: "83"
+                      - text: sin interés
+                  - generic [ref=e2565]:
+                    - img [ref=e2566]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2568]:
+                      - generic [ref=e2570]: S/
+                      - generic [ref=e2571]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2574]: Llega gratis mañana
+                - switch "Favorito" [ref=e2576] [cursor=pointer]:
+                  - img [ref=e2577]
+            - listitem [ref=e2579]:
+              - generic [ref=e2581]:
+                - img [ref=e2584]
+                - generic [ref=e2585]:
+                  - heading "Motorola Edge 60 Fusion 8GB RAM 256GB ROM azul pantalla amplia cámara potente" [level=3] [ref=e2586]:
+                    - link "Motorola Edge 60 Fusion 8GB RAM 256GB ROM azul pantalla amplia cámara potente" [ref=e2587] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/motorola-edge-60-fusion-8gb-ram-256gb-rom-azul-pantalla-amplia-camara-potente/p/MPE50678684#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=37&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE959664352&sid=search
+                  - generic [ref=e2588]:
+                    - img [ref=e2589]
+                    - text: "4.8"
+                  - generic [ref=e2591]:
+                    - 'img "Antes: 1500 soles" [ref=e2592]':
+                      - generic [ref=e2593]: S/
+                      - generic [ref=e2594]: "1.500"
+                    - generic [ref=e2595]:
+                      - 'img "Ahora: 999 soles con 90 céntimos" [ref=e2596]':
+                        - generic [ref=e2597]: S/
+                        - generic [ref=e2598]: "999"
+                        - generic [ref=e2599]: ","
+                        - generic [ref=e2600]: "90"
+                      - generic [ref=e2601]: 33% OFF
+                    - generic [ref=e2602]:
+                      - text: 6 cuotas de
+                      - img "166 soles con 65 céntimos" [ref=e2603]:
+                        - generic [ref=e2605]: S/
+                        - generic [ref=e2606]: "166"
+                        - generic [ref=e2607]: ","
+                        - generic [ref=e2608]: "65"
+                      - text: sin interés
+                  - generic [ref=e2611]:
+                    - img [ref=e2612]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2614]:
+                      - generic [ref=e2616]: S/
+                      - generic [ref=e2617]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2620]: Llega gratis mañana
+                - switch "Favorito" [ref=e2622] [cursor=pointer]:
+                  - img [ref=e2623]
+            - listitem [ref=e2625]:
+              - generic [ref=e2627]:
+                - img [ref=e2630]
+                - generic [ref=e2631]:
+                  - heading "Apple iPhone 16 (128 GB) - Rosa" [level=3] [ref=e2632]:
+                    - link "Apple iPhone 16 (128 GB) - Rosa" [ref=e2633] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-rosa/p/MPE40287802#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=38&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1082463640&sid=search
+                  - generic [ref=e2634]:
+                    - img [ref=e2635]
+                    - text: "4.8"
+                  - generic [ref=e2637]:
+                    - img "2860 soles" [ref=e2639]:
+                      - generic [ref=e2640]: S/
+                      - generic [ref=e2641]: "2.860"
+                    - generic [ref=e2642]:
+                      - text: 6 cuotas de
+                      - img "476 soles con 67 céntimos" [ref=e2643]:
+                        - generic [ref=e2645]: S/
+                        - generic [ref=e2646]: "476"
+                        - generic [ref=e2647]: ","
+                        - generic [ref=e2648]: "67"
+                      - text: sin interés
+                  - generic [ref=e2651]:
+                    - img [ref=e2652]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2654]:
+                      - generic [ref=e2656]: S/
+                      - generic [ref=e2657]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2660]: Llega gratis mañana
+                  - generic [ref=e2661]:
+                    - generic [ref=e2662] [cursor=pointer]: Otra opción de compra
+                    - 'link "Antes: 3900 soles Ahora: 3140 soles 19% OFF 12 cuotas de 261 soles con 67 céntimos sin interés" [ref=e2663] [cursor=pointer]':
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-16-128-gb-rosa/p/MPE40287802?offer_type=BEST_INSTALLMENTS#wid=MPE1071053300&sid=search
+                      - generic [ref=e2664]:
+                        - 'img "Antes: 3900 soles" [ref=e2665]':
+                          - generic [ref=e2666]: S/
+                          - generic [ref=e2667]: "3.900"
+                        - generic [ref=e2668]:
+                          - 'img "Ahora: 3140 soles" [ref=e2669]':
+                            - generic [ref=e2670]: S/
+                            - generic [ref=e2671]: "3.140"
+                          - generic [ref=e2672]: 19% OFF
+                        - generic [ref=e2673]:
+                          - text: 12 cuotas de
+                          - img "261 soles con 67 céntimos" [ref=e2674]:
+                            - generic [ref=e2676]: S/
+                            - generic [ref=e2677]: "261"
+                            - generic [ref=e2678]: ","
+                            - generic [ref=e2679]: "67"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2681] [cursor=pointer]:
+                  - img [ref=e2682]
+            - listitem [ref=e2684]:
+              - generic [ref=e2686]:
+                - img [ref=e2689]
+                - generic [ref=e2690]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Azul profundo - Sólo eSIM" [level=3] [ref=e2691]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Azul profundo - Sólo eSIM" [ref=e2692] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-azul-profundo-solo-esim/p/MPE54106939#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=39&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE636307117&sid=search
+                  - generic [ref=e2693]:
+                    - img [ref=e2694]
+                    - text: "4.9"
+                  - generic [ref=e2696]:
+                    - img "4939 soles" [ref=e2698]:
+                      - generic [ref=e2699]: S/
+                      - generic [ref=e2700]: "4.939"
+                    - generic [ref=e2701]:
+                      - text: 6 cuotas de
+                      - img "823 soles con 21 céntimos" [ref=e2702]:
+                        - generic [ref=e2704]: S/
+                        - generic [ref=e2705]: "823"
+                        - generic [ref=e2706]: ","
+                        - generic [ref=e2707]: "21"
+                      - text: sin interés
+                  - generic [ref=e2710]:
+                    - img [ref=e2711]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2713]:
+                      - generic [ref=e2715]: S/
+                      - generic [ref=e2716]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2719]: Llega gratis mañana
+                  - generic [ref=e2720]:
+                    - generic [ref=e2721] [cursor=pointer]: Otra opción de compra
+                    - link "5149 soles 12 cuotas de 429 soles con 10 céntimos sin interés" [ref=e2722] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-azul-profundo-solo-esim/p/MPE54106939?offer_type=BEST_INSTALLMENTS#wid=MPE1084073096&sid=search
+                      - generic [ref=e2723]:
+                        - img "5149 soles" [ref=e2725]:
+                          - generic [ref=e2726]: S/
+                          - generic [ref=e2727]: "5.149"
+                        - generic [ref=e2728]:
+                          - text: 12 cuotas de
+                          - img "429 soles con 10 céntimos" [ref=e2729]:
+                            - generic [ref=e2731]: S/
+                            - generic [ref=e2732]: "429"
+                            - generic [ref=e2733]: ","
+                            - generic [ref=e2734]: "10"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2736] [cursor=pointer]:
+                  - img [ref=e2737]
+            - listitem [ref=e2739]:
+              - generic [ref=e2741]:
+                - generic [ref=e2742]:
+                  - img [ref=e2744]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: ÚLTIMAS 4
+                - generic [ref=e2745]:
+                  - heading "Samsung Galaxy S25 Ultra 256G Titanium Gray" [level=3] [ref=e2746]:
+                    - link "Samsung Galaxy S25 Ultra 256G Titanium Gray" [ref=e2747] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25-ultra-256g-titanium-gray/p/MPE45514086#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=40&type=product&float_highlight=last_units&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE946559276&sid=search
+                  - generic [ref=e2748]:
+                    - img "3319 soles" [ref=e2750]:
+                      - generic [ref=e2751]: S/
+                      - generic [ref=e2752]: "3.319"
+                    - generic [ref=e2753]:
+                      - text: 6 cuotas de
+                      - img "553 soles con 17 céntimos" [ref=e2754]:
+                        - generic [ref=e2756]: S/
+                        - generic [ref=e2757]: "553"
+                        - generic [ref=e2758]: ","
+                        - generic [ref=e2759]: "17"
+                      - text: sin interés
+                  - generic [ref=e2762]:
+                    - img [ref=e2763]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2765]:
+                      - generic [ref=e2767]: S/
+                      - generic [ref=e2768]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2771]: Llega gratis mañana
+                  - generic [ref=e2772]:
+                    - generic [ref=e2773] [cursor=pointer]: Otra opción de compra
+                    - link "3549 soles 12 cuotas de 295 soles con 77 céntimos sin interés" [ref=e2774] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/samsung-galaxy-s25-ultra-256g-titanium-gray/p/MPE45514086?offer_type=BEST_INSTALLMENTS#wid=MPE1082218578&sid=search
+                      - generic [ref=e2775]:
+                        - img "3549 soles" [ref=e2777]:
+                          - generic [ref=e2778]: S/
+                          - generic [ref=e2779]: "3.549"
+                        - generic [ref=e2780]:
+                          - text: 12 cuotas de
+                          - img "295 soles con 77 céntimos" [ref=e2781]:
+                            - generic [ref=e2783]: S/
+                            - generic [ref=e2784]: "295"
+                            - generic [ref=e2785]: ","
+                            - generic [ref=e2786]: "77"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2788] [cursor=pointer]:
+                  - img [ref=e2789]
+            - listitem [ref=e2791]:
+              - generic [ref=e2793]:
+                - generic [ref=e2794]:
+                  - img [ref=e2796]
+                  - generic:
+                    - generic:
+                      - img
+                      - text: OFERTA IMPERDIBLE
+                - generic [ref=e2797]:
+                  - heading "Celular Xiaomi Redmi Note 14 Us 4g 128gb 6gb Ram Color Azul" [level=3] [ref=e2798]:
+                    - link "Celular Xiaomi Redmi Note 14 Us 4g 128gb 6gb Ram Color Azul" [ref=e2799] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-xiaomi-redmi-note-14-us-4g-128gb-6gb-ram-color-azul/p/MPE45818964#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=41&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE950421138&sid=search
+                  - generic [ref=e2800]:
+                    - img [ref=e2801]
+                    - text: "4.8"
+                  - generic [ref=e2803]:
+                    - 'img "Antes: 799 soles" [ref=e2804]':
+                      - generic [ref=e2805]: S/
+                      - generic [ref=e2806]: "799"
+                    - generic [ref=e2807]:
+                      - 'img "Ahora: 593 soles con 90 céntimos" [ref=e2808]':
+                        - generic [ref=e2809]: S/
+                        - generic [ref=e2810]: "593"
+                        - generic [ref=e2811]: ","
+                        - generic [ref=e2812]: "90"
+                      - generic [ref=e2813]: 25% OFF
+                    - generic [ref=e2814]:
+                      - text: 6 cuotas de
+                      - img "98 soles con 98 céntimos" [ref=e2815]:
+                        - generic [ref=e2817]: S/
+                        - generic [ref=e2818]: "98"
+                        - generic [ref=e2819]: ","
+                        - generic [ref=e2820]: "98"
+                      - text: sin interés
+                  - generic [ref=e2823]:
+                    - img [ref=e2824]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2826]:
+                      - generic [ref=e2828]: S/
+                      - generic [ref=e2829]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2832]: Llega gratis mañana
+                - switch "Favorito" [ref=e2834] [cursor=pointer]:
+                  - img [ref=e2835]
+            - listitem [ref=e2837]:
+              - generic [ref=e2839]:
+                - generic [ref=e2840]:
+                  - generic:
+                    - generic: Disponible en 3 colores
+                  - img [ref=e2842]
+                - generic [ref=e2843]:
+                  - heading "Apple iPhone 17 Pro (256 GB) - Color plata - Sólo eSIM" [level=3] [ref=e2844]:
+                    - link "Apple iPhone 17 Pro (256 GB) - Color plata - Sólo eSIM" [ref=e2845] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-color-plata-solo-esim/p/MPE54106840#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=42&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1080823898&sid=search
+                  - generic [ref=e2846]:
+                    - img [ref=e2847]
+                    - text: "4.8"
+                  - generic [ref=e2849]:
+                    - 'img "Antes: 8000 soles" [ref=e2850]':
+                      - generic [ref=e2851]: S/
+                      - generic [ref=e2852]: "8.000"
+                    - generic [ref=e2853]:
+                      - 'img "Ahora: 4670 soles" [ref=e2854]':
+                        - generic [ref=e2855]: S/
+                        - generic [ref=e2856]: "4.670"
+                      - generic [ref=e2857]: 41% OFF
+                    - generic [ref=e2858]:
+                      - text: 6 cuotas de
+                      - img "778 soles con 33 céntimos" [ref=e2859]:
+                        - generic [ref=e2861]: S/
+                        - generic [ref=e2862]: "778"
+                        - generic [ref=e2863]: ","
+                        - generic [ref=e2864]: "33"
+                      - text: sin interés
+                  - generic [ref=e2867]:
+                    - img [ref=e2868]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2870]:
+                      - generic [ref=e2872]: S/
+                      - generic [ref=e2873]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2876]: Llega gratis mañana
+                  - generic [ref=e2877]:
+                    - generic [ref=e2878] [cursor=pointer]: Otra opción de compra
+                    - link "4889 soles 12 cuotas de 407 soles con 42 céntimos sin interés" [ref=e2879] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-256-gb-color-plata-solo-esim/p/MPE54106840?offer_type=BEST_INSTALLMENTS#wid=MPE1075340296&sid=search
+                      - generic [ref=e2880]:
+                        - img "4889 soles" [ref=e2882]:
+                          - generic [ref=e2883]: S/
+                          - generic [ref=e2884]: "4.889"
+                        - generic [ref=e2885]:
+                          - text: 12 cuotas de
+                          - img "407 soles con 42 céntimos" [ref=e2886]:
+                            - generic [ref=e2888]: S/
+                            - generic [ref=e2889]: "407"
+                            - generic [ref=e2890]: ","
+                            - generic [ref=e2891]: "42"
+                          - text: sin interés
+                - switch "Favorito" [ref=e2893] [cursor=pointer]:
+                  - img [ref=e2894]
+            - listitem [ref=e2896]:
+              - generic [ref=e2898]:
+                - img [ref=e2901]
+                - generic [ref=e2902]:
+                  - heading "Xiaomi Redmi Note 15 Pro 5g 6,83 256gb 8gb Ram Cámara 200mpx - Black" [level=3] [ref=e2903]:
+                    - link "Xiaomi Redmi Note 15 Pro 5g 6,83 256gb 8gb Ram Cámara 200mpx - Black" [ref=e2904] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/xiaomi-redmi-note-15-pro-5g-683-256gb-8gb-ram-camara-200mpx-black/p/MPE64294420#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=43&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE959274464&sid=search
+                  - generic [ref=e2905]:
+                    - img [ref=e2906]
+                    - text: "4.7"
+                  - generic [ref=e2908]:
+                    - 'img "Antes: 1999 soles" [ref=e2909]':
+                      - generic [ref=e2910]: S/
+                      - generic [ref=e2911]: "1.999"
+                    - generic [ref=e2912]:
+                      - 'img "Ahora: 1139 soles" [ref=e2913]':
+                        - generic [ref=e2914]: S/
+                        - generic [ref=e2915]: "1.139"
+                      - generic [ref=e2916]: 43% OFF
+                    - generic [ref=e2917]:
+                      - text: 6 cuotas de
+                      - img "189 soles con 83 céntimos" [ref=e2918]:
+                        - generic [ref=e2920]: S/
+                        - generic [ref=e2921]: "189"
+                        - generic [ref=e2922]: ","
+                        - generic [ref=e2923]: "83"
+                      - text: sin interés
+                  - generic [ref=e2926]:
+                    - img [ref=e2927]
+                    - text: Cupón
+                    - img "25 soles" [ref=e2929]:
+                      - generic [ref=e2931]: S/
+                      - generic [ref=e2932]: "25"
+                    - text: "OFF"
+                  - generic [ref=e2935]: Llega gratis mañana
+                - switch "Favorito" [ref=e2937] [cursor=pointer]:
+                  - img [ref=e2938]
+            - listitem [ref=e2940]:
+              - generic [ref=e2942]:
+                - img [ref=e2945]
+                - generic [ref=e2946]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Azul profundo" [level=3] [ref=e2947]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Azul profundo" [ref=e2948] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-azul-profundo/p/MPE55308632#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=44&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE855573894&sid=search
+                  - generic [ref=e2949]:
+                    - img [ref=e2950]
+                    - text: "4.8"
+                  - generic [ref=e2952]:
+                    - 'img "Antes: 7699 soles" [ref=e2953]':
+                      - generic [ref=e2954]: S/
+                      - generic [ref=e2955]: "7.699"
+                    - generic [ref=e2956]:
+                      - 'img "Ahora: 4773 soles" [ref=e2957]':
+                        - generic [ref=e2958]: S/
+                        - generic [ref=e2959]: "4.773"
+                      - generic [ref=e2960]: 38% OFF
+                    - generic [ref=e2961]:
+                      - text: 6 cuotas de
+                      - img "795 soles con 56 céntimos" [ref=e2962]:
+                        - generic [ref=e2964]: S/
+                        - generic [ref=e2965]: "795"
+                        - generic [ref=e2966]: ","
+                        - generic [ref=e2967]: "56"
+                      - text: sin interés
+                  - generic [ref=e2970]:
+                    - img [ref=e2971]
+                    - text: Cupón
+                    - img "100 soles" [ref=e2973]:
+                      - generic [ref=e2975]: S/
+                      - generic [ref=e2976]: "100"
+                    - text: "OFF"
+                  - generic [ref=e2978]:
+                    - text: Envío gratis
+                    - generic [ref=e2979]: Envío gratis
+                - switch "Favorito" [ref=e2981] [cursor=pointer]:
+                  - img [ref=e2982]
+            - listitem [ref=e2984]:
+              - generic [ref=e2986]:
+                - generic [ref=e2987]:
+                  - img [ref=e2989]
+                  - generic: APPLE TIENDA OFICIAL
+                - generic [ref=e2990]:
+                  - heading "Apple iPhone 17 (256 GB) - Blanco - Distribuidor Autorizado" [level=3] [ref=e2991]:
+                    - link "Apple iPhone 17 (256 GB) - Blanco - Distribuidor Autorizado" [ref=e2992] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-256-gb-blanco-distribuidor-autorizado/p/MPE1055309009#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=45&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1082474964&sid=search
+                  - generic [ref=e2993]:
+                    - text: Apple
+                    - img "Tienda oficial" [ref=e2994]
+                  - generic [ref=e2996]:
+                    - img [ref=e2997]
+                    - text: "4.9"
+                  - generic [ref=e2999]:
+                    - 'img "Antes: 4299 soles" [ref=e3000]':
+                      - generic [ref=e3001]: S/
+                      - generic [ref=e3002]: "4.299"
+                    - generic [ref=e3003]:
+                      - 'img "Ahora: 3799 soles" [ref=e3004]':
+                        - generic [ref=e3005]: S/
+                        - generic [ref=e3006]: "3.799"
+                      - generic [ref=e3007]: 11% OFF
+                    - generic [ref=e3008]:
+                      - text: 12 cuotas de
+                      - img "316 soles con 58 céntimos" [ref=e3009]:
+                        - generic [ref=e3011]: S/
+                        - generic [ref=e3012]: "316"
+                        - generic [ref=e3013]: ","
+                        - generic [ref=e3014]: "58"
+                      - text: sin interés
+                  - generic [ref=e3017]:
+                    - img [ref=e3018]
+                    - text: Cupón
+                    - img "100 soles" [ref=e3020]:
+                      - generic [ref=e3022]: S/
+                      - generic [ref=e3023]: "100"
+                    - text: "OFF"
+                  - generic [ref=e3026]:
+                    - text: Llega gratis mañana
+                    - img "Enviado por FULL" [ref=e3027]
+                - switch "Favorito" [ref=e3030] [cursor=pointer]:
+                  - img [ref=e3031]
+            - listitem [ref=e3033]:
+              - generic [ref=e3035]:
+                - img [ref=e3038]
+                - generic [ref=e3039]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Naranja cósmico" [level=3] [ref=e3040]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Naranja cósmico" [ref=e3041] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-naranja-cosmico/p/MPE55308620#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=46&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE948145228&sid=search
+                  - generic [ref=e3042]:
+                    - img [ref=e3043]
+                    - text: "4.8"
+                  - generic [ref=e3045]:
+                    - 'img "Antes: 6499 soles" [ref=e3046]':
+                      - generic [ref=e3047]: S/
+                      - generic [ref=e3048]: "6.499"
+                    - generic [ref=e3049]:
+                      - 'img "Ahora: 4744 soles" [ref=e3050]':
+                        - generic [ref=e3051]: S/
+                        - generic [ref=e3052]: "4.744"
+                      - generic [ref=e3053]: 27% OFF
+                    - generic [ref=e3054]:
+                      - text: 6 cuotas de
+                      - img "790 soles con 71 céntimos" [ref=e3055]:
+                        - generic [ref=e3057]: S/
+                        - generic [ref=e3058]: "790"
+                        - generic [ref=e3059]: ","
+                        - generic [ref=e3060]: "71"
+                      - text: sin interés
+                  - generic [ref=e3063]:
+                    - img [ref=e3064]
+                    - text: Cupón
+                    - img "100 soles" [ref=e3066]:
+                      - generic [ref=e3068]: S/
+                      - generic [ref=e3069]: "100"
+                    - text: "OFF"
+                  - generic [ref=e3071]:
+                    - text: Envío gratis
+                    - generic [ref=e3072]: Envío gratis
+                - switch "Favorito" [ref=e3074] [cursor=pointer]:
+                  - img [ref=e3075]
+            - listitem [ref=e3077]:
+              - generic [ref=e3079]:
+                - img [ref=e3082]
+                - generic [ref=e3083]:
+                  - heading "Apple iPhone 17 Pro Max (256 GB) - Color plata - Sólo eSIM" [level=3] [ref=e3084]:
+                    - link "Apple iPhone 17 Pro Max (256 GB) - Color plata - Sólo eSIM" [ref=e3085] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata-solo-esim/p/MPE54106937#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=47&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE636320599&sid=search
+                  - generic [ref=e3086]:
+                    - img [ref=e3087]
+                    - text: "4.9"
+                  - generic [ref=e3089]:
+                    - img "4925 soles" [ref=e3091]:
+                      - generic [ref=e3092]: S/
+                      - generic [ref=e3093]: "4.925"
+                    - generic [ref=e3094]:
+                      - text: 6 cuotas de
+                      - img "820 soles con 83 céntimos" [ref=e3095]:
+                        - generic [ref=e3097]: S/
+                        - generic [ref=e3098]: "820"
+                        - generic [ref=e3099]: ","
+                        - generic [ref=e3100]: "83"
+                      - text: sin interés
+                  - generic [ref=e3103]:
+                    - img [ref=e3104]
+                    - text: Cupón
+                    - img "100 soles" [ref=e3106]:
+                      - generic [ref=e3108]: S/
+                      - generic [ref=e3109]: "100"
+                    - text: "OFF"
+                  - generic [ref=e3112]: Llega gratis mañana
+                  - generic [ref=e3113]:
+                    - generic [ref=e3114] [cursor=pointer]: Otra opción de compra
+                    - link "5149 soles 12 cuotas de 429 soles con 10 céntimos sin interés" [ref=e3115] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/apple-iphone-17-pro-max-256-gb-color-plata-solo-esim/p/MPE54106937?offer_type=BEST_INSTALLMENTS#wid=MPE1084073162&sid=search
+                      - generic [ref=e3116]:
+                        - img "5149 soles" [ref=e3118]:
+                          - generic [ref=e3119]: S/
+                          - generic [ref=e3120]: "5.149"
+                        - generic [ref=e3121]:
+                          - text: 12 cuotas de
+                          - img "429 soles con 10 céntimos" [ref=e3122]:
+                            - generic [ref=e3124]: S/
+                            - generic [ref=e3125]: "429"
+                            - generic [ref=e3126]: ","
+                            - generic [ref=e3127]: "10"
+                          - text: sin interés
+                - switch "Favorito" [ref=e3129] [cursor=pointer]:
+                  - img [ref=e3130]
+            - listitem [ref=e3132]:
+              - generic [ref=e3134]:
+                - img [ref=e3137]
+                - generic [ref=e3138]:
+                  - heading "Celular Samsung Galaxy S26 Ultra 512 GB Sky Blue" [level=3] [ref=e3139]:
+                    - link "Celular Samsung Galaxy S26 Ultra 512 GB Sky Blue" [ref=e3140] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/celular-samsung-galaxy-s26-ultra-512-gb-sky-blue/p/MPE65503970#polycard_client=search-desktop&be_origin=backend&search_layout=grid&position=48&type=product&tracking_id=1266a084-4f51-4009-a6eb-f1a80eea1f60&wid=MPE1015810520&sid=search
+                  - generic [ref=e3141]:
+                    - img [ref=e3142]
+                    - text: "4.9"
+                  - generic [ref=e3144]:
+                    - 'img "Antes: 5300 soles" [ref=e3145]':
+                      - generic [ref=e3146]: S/
+                      - generic [ref=e3147]: "5.300"
+                    - generic [ref=e3148]:
+                      - 'img "Ahora: 4454 soles" [ref=e3149]':
+                        - generic [ref=e3150]: S/
+                        - generic [ref=e3151]: "4.454"
+                      - generic [ref=e3152]: 15% OFF
+                    - generic [ref=e3153]:
+                      - text: 6 cuotas de
+                      - img "742 soles con 34 céntimos" [ref=e3154]:
+                        - generic [ref=e3156]: S/
+                        - generic [ref=e3157]: "742"
+                        - generic [ref=e3158]: ","
+                        - generic [ref=e3159]: "34"
+                      - text: sin interés
+                  - generic [ref=e3162]:
+                    - img [ref=e3163]
+                    - text: Cupón
+                    - img "100 soles" [ref=e3165]:
+                      - generic [ref=e3167]: S/
+                      - generic [ref=e3168]: "100"
+                    - text: "OFF"
+                  - generic [ref=e3171]: Llega gratis mañana
+                - switch "Favorito" [ref=e3173] [cursor=pointer]:
+                  - img [ref=e3174]
+          - navigation "Paginación" [ref=e3176]:
+            - list [ref=e3177]:
+              - listitem [ref=e3178]:
+                - link "Ir a la página 1" [ref=e3179]:
+                  - /url: ""
+                  - text: "1"
+              - listitem [ref=e3180]:
+                - link "Ir a la página 2" [ref=e3181] [cursor=pointer]:
+                  - /url: ""
+                  - text: "2"
+              - listitem [ref=e3182]:
+                - link "Ir a la página 3" [ref=e3183] [cursor=pointer]:
+                  - /url: ""
+                  - text: "3"
+              - listitem [ref=e3184]:
+                - link "Ir a la página 4" [ref=e3185] [cursor=pointer]:
+                  - /url: ""
+                  - text: "4"
+              - listitem [ref=e3186]:
+                - link "Ir a la página 5" [ref=e3187] [cursor=pointer]:
+                  - /url: ""
+                  - text: "5"
+              - listitem [ref=e3188]:
+                - link "Ir a la página 6" [ref=e3189] [cursor=pointer]:
+                  - /url: ""
+                  - text: "6"
+              - listitem [ref=e3190]:
+                - link "Ir a la página 7" [ref=e3191] [cursor=pointer]:
+                  - /url: ""
+                  - text: "7"
+              - listitem [ref=e3192]:
+                - link "Ir a la página 8" [ref=e3193] [cursor=pointer]:
+                  - /url: ""
+                  - text: "8"
+              - listitem [ref=e3194]:
+                - link "Ir a la página 9" [ref=e3195] [cursor=pointer]:
+                  - /url: ""
+                  - text: "9"
+              - listitem [ref=e3196]:
+                - link "Ir a la página 10" [ref=e3197] [cursor=pointer]:
+                  - /url: ""
+                  - text: "10"
+              - listitem [ref=e3198]:
+                - link "Siguiente" [ref=e3199] [cursor=pointer]:
+                  - /url: ""
+                  - generic [ref=e3200]: Siguiente
+                  - img [ref=e3201]
+          - generic [ref=e3204]:
+            - img [ref=e3207]
+            - paragraph [ref=e3212]: El envío gratis está sujeto al peso, precio y la distancia del envío.
+      - generic [ref=e3216]:
+        - region "Todo sobre Celular" [ref=e3219]:
+          - heading "Todo sobre Celular" [level=3] [ref=e3223]
+          - generic [ref=e3224]:
+            - button "Anterior" [disabled] [ref=e3225]:
+              - img [ref=e3226]
+            - generic [ref=e3229]:
+              - group "1 de 23" [ref=e3230]:
+                - generic [ref=e3232]:
+                  - generic [ref=e3235]:
+                    - link "Cómo configurar el Wi-Fi en tu smartphone ZTE Blade V10 | Mercado Libre" [ref=e3236] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/como-configurar-el-wi-fi-en-mi-zte-blade-v10
+                      - heading "Cómo configurar el Wi-Fi en tu smartphone ZTE Blade V10 | Mercado Libre" [level=2] [ref=e3237]
+                    - paragraph [ref=e3238]: En este artículo de Mercado Libre verás paso a paso cómo configurar el Wi-Fi en tu nuevo celular ZTE Blade V10
+                  - generic [ref=e3240]:
+                    - link "ZTE BLADE V10" [ref=e3241] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/zte-blade-v10/1
+                      - paragraph [ref=e3243]: ZTE BLADE V10
+                    - link "CELULAR" [ref=e3244] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3246]: CELULAR
+                    - link "CELULARES Y TELEFONOS" [ref=e3247] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3249]: CELULARES Y TELEFONOS
+              - group "2 de 23" [ref=e3250]:
+                - generic [ref=e3252]:
+                  - generic [ref=e3253]:
+                    - img "conozca todo sobre el samsung galaxy a56" [ref=e3255]
+                    - generic [ref=e3256]:
+                      - 'link "Galaxy A56 5G: La nueva apuesta de Samsung en gama media" [ref=e3257] [cursor=pointer]':
+                        - /url: https://www.mercadolibre.com.pe/blog/como-es-samsung-galaxy-a56
+                        - 'heading "Galaxy A56 5G: La nueva apuesta de Samsung en gama media" [level=2] [ref=e3258]'
+                      - paragraph [ref=e3259]: Exploramos todo sobre el nuevo Samsung Galaxy A56 5G, la apuesta fuerte de la marca para la gama media.
+                  - generic [ref=e3261]:
+                    - link "SAMSUNG" [ref=e3262] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/samsung/1
+                      - paragraph [ref=e3264]: SAMSUNG
+                    - link "CELULAR" [ref=e3265] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3267]: CELULAR
+                    - link "SAMSUNG A56" [ref=e3268] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/samsung-a56/1
+                      - paragraph [ref=e3270]: SAMSUNG A56
+                    - link "CELULARES Y TELEFONOS" [ref=e3271] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3273]: CELULARES Y TELEFONOS
+              - group "3 de 23" [ref=e3274]:
+                - generic [ref=e3276]:
+                  - generic [ref=e3279]:
+                    - link "¿Cuáles son los mejores modelos del ZTE Blade V10? | Mercado Libre" [ref=e3280] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cuales-son-los-mejores-modelos-del-zte-blade-v10
+                      - heading "¿Cuáles son los mejores modelos del ZTE Blade V10? | Mercado Libre" [level=2] [ref=e3281]
+                    - paragraph [ref=e3282]: En este artículo explorarás en detalle las características y especificaciones técnicas del ZTE Blade V10
+                  - generic [ref=e3284]:
+                    - link "ZTE BLADE V10" [ref=e3285] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/zte-blade-v10/1
+                      - paragraph [ref=e3287]: ZTE BLADE V10
+                    - link "CELULAR" [ref=e3288] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3290]: CELULAR
+                    - link "CELULARES Y TELEFONOS" [ref=e3291] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3293]: CELULARES Y TELEFONOS
+              - group "4 de 23" [ref=e3294]:
+                - generic [ref=e3296]:
+                  - generic [ref=e3297]:
+                    - img "hombre poniendo música en su coche desde su Samsung Galaxy A15&nbsp;" [ref=e3299]
+                    - generic [ref=e3300]:
+                      - 'link "Mejores Samsung Galaxy A15: modelos, versiones y cuál conviene más" [ref=e3301] [cursor=pointer]':
+                        - /url: https://www.mercadolibre.com.pe/blog/mejores-celulares-samsung-galaxy-a15
+                        - 'heading "Mejores Samsung Galaxy A15: modelos, versiones y cuál conviene más" [level=2] [ref=e3302]'
+                      - paragraph [ref=e3303]: Descubre las mejores opciones del Samsung Galaxy A15 en Perú y elige la versión ideal según memoria y precio.
+                  - generic [ref=e3305]:
+                    - link "CELULARES Y TELEFONOS" [ref=e3306] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3308]: CELULARES Y TELEFONOS
+                    - link "CELULAR" [ref=e3309] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3311]: CELULAR
+                    - link "CELULAR SAMSUNG A15" [ref=e3312] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular-samsung-a15/1
+                      - paragraph [ref=e3314]: CELULAR SAMSUNG A15
+              - group [ref=e3315]:
+                - generic [ref=e3317]:
+                  - generic [ref=e3318]:
+                    - img [ref=e3320]
+                    - generic [ref=e3321]:
+                      - link [ref=e3322] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/samsung-s25-ultra-vs-samsung-s25
+                        - heading [level=2] [ref=e3323]: "Samsung S25 Ultra y Samsung S25: ¿cuál elegir?"
+                      - paragraph [ref=e3324]: Diferencias, similitudes y comparaciones entre las características del Samsung S25 Ultra con su hermano menor S25.
+                  - generic [ref=e3326]:
+                    - link [ref=e3327] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/samsung/1
+                      - paragraph [ref=e3329]: SAMSUNG
+                    - link [ref=e3330] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3332]: CELULAR
+                    - link [ref=e3333] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/samsung-s25-ultra/1
+                      - paragraph [ref=e3335]: SAMSUNG S25 ULTRA
+                    - link [ref=e3336] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3338]: CELULARES Y TELEFONOS
+              - group [ref=e3339]:
+                - generic [ref=e3341]:
+                  - generic [ref=e3342]:
+                    - img [ref=e3344]
+                    - generic [ref=e3345]:
+                      - link [ref=e3346] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/comparativa-iphone-16e-vs-iphone-16
+                        - heading [level=2] [ref=e3347]: Análisis del iPhone 16 e y iPhone 16 para elegir el correcto
+                      - paragraph [ref=e3348]: Comparativa detallada de diseño, rendimiento, batería y cámara entre iPhone 16e y iPhone 16 para hallar el ideal según.
+                  - generic [ref=e3350]:
+                    - link [ref=e3351] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone/1
+                      - paragraph [ref=e3353]: IPHONE
+                    - link [ref=e3354] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3356]: CELULAR
+                    - link [ref=e3357] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-16/1
+                      - paragraph [ref=e3359]: IPHONE 16
+                    - link [ref=e3360] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-16e/1
+                      - paragraph [ref=e3362]: IPHONE 16E
+                    - link [ref=e3363] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3365]: CELULARES Y TELEFONOS
+              - group [ref=e3366]:
+                - generic [ref=e3368]:
+                  - generic [ref=e3369]:
+                    - img [ref=e3371]
+                    - generic [ref=e3372]:
+                      - link [ref=e3373] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/como-es-iphone-17
+                        - heading [level=2] [ref=e3374]: Últimas filtraciones de todo las novedades que trae iPhone 17
+                      - paragraph [ref=e3375]: Todas las filtraciones que hay hasta ahora de la nueva línea 17 que sale a finales de 2025 y promete un novedoso modelo.
+                  - generic [ref=e3377]:
+                    - link [ref=e3378] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-17/1
+                      - paragraph [ref=e3380]: IPHONE 17
+                    - link [ref=e3381] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone/1
+                      - paragraph [ref=e3383]: IPHONE
+                    - link [ref=e3384] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3386]: CELULAR
+                    - link [ref=e3387] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3389]: CELULARES Y TELEFONOS
+              - group [ref=e3390]:
+                - generic [ref=e3392]:
+                  - generic [ref=e3393]:
+                    - img [ref=e3395]
+                    - generic [ref=e3396]:
+                      - link [ref=e3397] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/como-es-iphone-16
+                        - heading [level=2] [ref=e3398]: Todo sobre los nuevos modelos de la línea iPhone 16
+                      - paragraph [ref=e3399]: Análisis de cada modelo de la línea iPhone 16. la última propuesta de Apple para 2025.
+                  - generic [ref=e3401]:
+                    - link [ref=e3402] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone/1
+                      - paragraph [ref=e3404]: IPHONE
+                    - link [ref=e3405] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3407]: CELULAR
+                    - link [ref=e3408] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-16/1
+                      - paragraph [ref=e3410]: IPHONE 16
+                    - link [ref=e3411] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-16e/1
+                      - paragraph [ref=e3413]: IPHONE 16E
+                    - link [ref=e3414] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3416]: CELULARES Y TELEFONOS
+              - group [ref=e3417]:
+                - generic [ref=e3419]:
+                  - generic [ref=e3422]:
+                    - link [ref=e3423] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/guia-para-solucionar-problemas-de-pantalla-en-zte-blade-v10
+                      - heading [level=2] [ref=e3424]: Guía para solucionar problemas de pantalla en ZTE Blade V10 | Mercado Libre
+                    - paragraph [ref=e3425]: En este artículo identificarás los problemas más comunes que se pueden presentar en la pantalla del ZTE Blade V10
+                  - generic [ref=e3427]:
+                    - link [ref=e3428] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/zte-blade-v10/1
+                      - paragraph [ref=e3430]: ZTE BLADE V10
+                    - link [ref=e3431] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3433]: CELULAR
+                    - link [ref=e3434] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3436]: CELULARES Y TELEFONOS
+              - group [ref=e3437]:
+                - generic [ref=e3439]:
+                  - generic [ref=e3440]:
+                    - img [ref=e3442]
+                    - generic [ref=e3443]:
+                      - link [ref=e3444] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/guia-compra-samsung-galaxy-a15
+                        - heading [level=2] [ref=e3445]: Todo lo que necesitas saber antes de comprar el Samsung Galaxy A15
+                      - paragraph [ref=e3446]: Descubre las claves del Samsung Galaxy A15 y lo que debes saber antes de comprarlo.
+                  - generic [ref=e3448]:
+                    - link [ref=e3449] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3451]: CELULARES Y TELEFONOS
+                    - link [ref=e3452] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3454]: CELULAR
+                    - link [ref=e3455] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular-samsung-a15/1
+                      - paragraph [ref=e3457]: CELULAR SAMSUNG A15
+              - group [ref=e3458]:
+                - generic [ref=e3460]:
+                  - generic [ref=e3461]:
+                    - img [ref=e3463]
+                    - generic [ref=e3464]:
+                      - link [ref=e3465] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/iphone-17-vs-iphone-16
+                        - heading [level=2] [ref=e3466]: Comparativa entre lo que sabemos de iPhone 17 vs iPhone 16
+                      - paragraph [ref=e3467]: Gracias a las últimas filtraciones del iPhone 17 hacemos una comparación con el actual iPhone 16.
+                  - generic [ref=e3469]:
+                    - link [ref=e3470] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-17/1
+                      - paragraph [ref=e3472]: IPHONE 17
+                    - link [ref=e3473] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone/1
+                      - paragraph [ref=e3475]: IPHONE
+                    - link [ref=e3476] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3478]: CELULAR
+                    - link [ref=e3479] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3481]: CELULARES Y TELEFONOS
+              - group [ref=e3482]:
+                - generic [ref=e3484]:
+                  - generic [ref=e3485]:
+                    - img [ref=e3487]
+                    - generic [ref=e3488]:
+                      - link [ref=e3489] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/como-configurar-samsung-galaxy-a15
+                        - heading [level=2] [ref=e3490]: Guía práctica para configurar tu Samsung Galaxy A15 correctamente desde el primer uso
+                      - paragraph [ref=e3491]: Configura tu Samsung Galaxy A15 paso a paso y aprovecha su seguridad, rendimiento y conectividad.
+                  - generic [ref=e3493]:
+                    - link [ref=e3494] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3496]: CELULARES Y TELEFONOS
+                    - link [ref=e3497] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3499]: CELULAR
+                    - link [ref=e3500] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular-samsung-a15/1
+                      - paragraph [ref=e3502]: CELULAR SAMSUNG A15
+              - group [ref=e3503]:
+                - generic [ref=e3505]:
+                  - generic [ref=e3508]:
+                    - link [ref=e3509] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/guia-de-compra-para-zte-blade-v10-comparativas-caracteristicas-y-ventajas
+                      - heading [level=2] [ref=e3510]: "Guía de compra del ZTE Blade V10: comparativas, características y ventajas | Mercado Libre"
+                    - paragraph [ref=e3511]: En esta guía verás en detalle las especificaciones tecnológicas y todas las ventajas que ofrece el ZTE Blade V10
+                  - generic [ref=e3513]:
+                    - link [ref=e3514] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3516]: CELULARES Y TELEFONOS
+                    - link [ref=e3517] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3519]: CELULAR
+                    - link [ref=e3520] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/zte-blade-v10/1
+                      - paragraph [ref=e3522]: ZTE BLADE V10
+              - group [ref=e3523]:
+                - generic [ref=e3525]:
+                  - generic [ref=e3526]:
+                    - img [ref=e3528]
+                    - generic [ref=e3529]:
+                      - link [ref=e3530] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/sepa-como-liberar-la-memoria-ram-del-celular-android-y-aumente-el-rendimiento
+                        - heading [level=2] [ref=e3531]: Aprende a liberar la memoria RAM de tu celular Android y mejora el rendimiento.
+                      - paragraph [ref=e3532]: Encuentra lo que estás buscando en Aprende cómo liberar la memoria RAM de tu celular Android y mejora el rendimiento. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3534]:
+                    - link [ref=e3535] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3537]: CELULARES Y TELEFONOS
+                    - link [ref=e3538] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3540]: CELULAR
+              - group [ref=e3541]:
+                - generic [ref=e3543]:
+                  - generic [ref=e3544]:
+                    - img [ref=e3546]
+                    - generic [ref=e3547]:
+                      - link [ref=e3548] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/como-cargar-el-celular-mas-rapido-consulta-8-consejos-eficaces
+                        - heading [level=2] [ref=e3549]: ¿Cómo cargar el celular más rápido? Descubre 8 consejos efectivos
+                      - paragraph [ref=e3550]: Encuentra lo que estás buscando en Cómo cargar el celular más rápido, descubre 8 consejos efectivos. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3552]:
+                    - link [ref=e3553] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3555]: CELULARES Y TELEFONOS
+                    - link [ref=e3556] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3558]: CELULAR
+                    - link [ref=e3559] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cargador/1
+                      - paragraph [ref=e3561]: CARGADOR
+                    - link [ref=e3562] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cable/1
+                      - paragraph [ref=e3564]: CABLE
+              - group [ref=e3565]:
+                - generic [ref=e3567]:
+                  - generic [ref=e3568]:
+                    - img [ref=e3570]
+                    - generic [ref=e3571]:
+                      - link [ref=e3572] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/tipos-de-pelicula-para-celular
+                        - heading [level=2] [ref=e3573]: Tipos de película para celular
+                      - paragraph [ref=e3574]: Encuentra lo que estás buscando en Tipos de película para celular. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3576]:
+                    - link [ref=e3577] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3579]: CELULARES Y TELEFONOS
+                    - link [ref=e3580] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3582]: CELULAR
+              - group [ref=e3583]:
+                - generic [ref=e3585]:
+                  - generic [ref=e3586]:
+                    - img [ref=e3588]
+                    - generic [ref=e3589]:
+                      - link [ref=e3590] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/como-hacer-que-tu-celular-cargue-mas-rapido-7-recomendaciones
+                        - heading [level=2] [ref=e3591]: ¿Cómo hacer que tu celular cargue más rápido? ¡7 recomendaciones!
+                      - paragraph [ref=e3592]: "Encuentra lo que buscas en Cómo hacer que tu celular cargue más rápido: 7 recomendaciones. Todo lo que necesitas lo encuentras en un solo lugar, en Mercado Libre."
+                  - generic [ref=e3594]:
+                    - link [ref=e3595] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3597]: CELULARES Y TELEFONOS
+                    - link [ref=e3598] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3600]: CELULAR
+                    - link [ref=e3601] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cargador/1
+                      - paragraph [ref=e3603]: CARGADOR
+              - group [ref=e3604]:
+                - generic [ref=e3606]:
+                  - generic [ref=e3607]:
+                    - img [ref=e3609]
+                    - generic [ref=e3610]:
+                      - link [ref=e3611] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/smartwatch-compatible-con-motorola
+                        - heading [level=2] [ref=e3612]: Los mejores relojes inteligentes compatibles con Motorola
+                      - paragraph [ref=e3613]: Encuentra lo que buscas en Smartwatch compatible con Motorola. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3615]:
+                    - link [ref=e3616] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/smartwatch/1
+                      - paragraph [ref=e3618]: SMARTWATCH
+                    - link [ref=e3619] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3621]: CELULARES Y TELEFONOS
+                    - link [ref=e3622] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/motorola/1
+                      - paragraph [ref=e3624]: MOTOROLA
+                    - link [ref=e3625] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3627]: CELULAR
+              - group [ref=e3628]:
+                - generic [ref=e3630]:
+                  - generic [ref=e3631]:
+                    - img [ref=e3633]
+                    - generic [ref=e3634]:
+                      - link [ref=e3635] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/mejor-soporte-celular-vehicular
+                        - heading [level=2] [ref=e3636]: Los mejores soportes para celular para automóvil de 2023
+                      - paragraph [ref=e3637]: Encuentra lo que estás buscando en el mejor soporte de celular para automóvil. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3639]:
+                    - link [ref=e3640] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3642]: CELULARES Y TELEFONOS
+                    - link [ref=e3643] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3645]: CELULAR
+              - group [ref=e3646]:
+                - generic [ref=e3648]:
+                  - generic [ref=e3649]:
+                    - img [ref=e3651]
+                    - generic [ref=e3652]:
+                      - link [ref=e3653] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/tr/como-cargar-el-celular-mas-rapido-revisa-8-consejos-eficaces
+                        - heading [level=2] [ref=e3654]: ¿Cómo cargar el celular más rápido? Descubre 8 consejos efectivos
+                      - paragraph [ref=e3655]: Encuentra lo que estás buscando en Cómo cargar el celular más rápido, descubre 8 consejos efectivos. Todo lo que necesitas está en Mercado Libre.
+                  - generic [ref=e3657]:
+                    - link [ref=e3658] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3660]: CELULARES Y TELEFONOS
+                    - link [ref=e3661] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3663]: CELULAR
+                    - link [ref=e3664] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cargador/1
+                      - paragraph [ref=e3666]: CARGADOR
+                    - link [ref=e3667] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/cable/1
+                      - paragraph [ref=e3669]: CABLE
+              - group [ref=e3670]:
+                - generic [ref=e3672]:
+                  - generic [ref=e3673]:
+                    - img [ref=e3675]
+                    - generic [ref=e3676]:
+                      - link [ref=e3677] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/reviews/realme-12-series-12-pro-plus
+                        - heading [level=2] [ref=e3678]: ¡Descubre toda la potencia del Realme 12 Pro Plus en nuestra reseña completa!
+                      - paragraph [ref=e3679]: Al analizar a fondo la serie 12 Pro Plus de Realme, nos encontramos con un dispositivo que destaca por su potencia y rendimiento excepcional. Con una combinación perfecta entre diseño elegante y funcionalidad avanzada, este producto se posiciona como una opción a considerar para aquellos usuarios exigentes en busca de calidad y eficiencia. ¡Acompáñanos en esta reseña completa para descubrir todo lo que el Realme 12 Pro Plus tiene para ofrecer!
+                  - generic [ref=e3681]:
+                    - link [ref=e3682] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/realme/1
+                      - paragraph [ref=e3684]: REALME
+                    - link [ref=e3685] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3687]: CELULARES Y TELEFONOS
+                    - link [ref=e3688] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/iphone-12-pro-max/1
+                      - paragraph [ref=e3690]: IPHONE 12 PRO MAX
+                    - link [ref=e3691] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3693]: CELULAR
+              - group [ref=e3694]:
+                - generic [ref=e3696]:
+                  - generic [ref=e3697]:
+                    - img [ref=e3699]
+                    - generic [ref=e3700]:
+                      - link [ref=e3701] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/reviews/samsung-galaxy-a12-duos
+                        - heading [level=2] [ref=e3702]: "Análisis completo del Samsung Galaxy A12 Duos: ¡Potencia y estilo en tus manos!"
+                      - paragraph [ref=e3703]: El Samsung Galaxy A12 Duos combina potencia y estilo en un solo dispositivo, ofreciendo una experiencia de usuario excepcional. Con un diseño elegante y funcionalidades avanzadas, este smartphone se posiciona como una excelente opción para aquellos que buscan rendimiento y estética en un mismo equipo. ¡Descubre todo lo que este dispositivo tiene para ofrecerte!
+                  - generic [ref=e3705]:
+                    - link [ref=e3706] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/samsung/1
+                      - paragraph [ref=e3708]: SAMSUNG
+                    - link [ref=e3709] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/dual-sim/1
+                      - paragraph [ref=e3711]: DUAL SIM
+                    - link [ref=e3712] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3714]: CELULARES Y TELEFONOS
+                    - link [ref=e3715] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3717]: CELULAR
+              - group [ref=e3718]:
+                - generic [ref=e3720]:
+                  - generic [ref=e3721]:
+                    - img [ref=e3723]
+                    - generic [ref=e3724]:
+                      - link [ref=e3725] [cursor=pointer]:
+                        - /url: https://www.mercadolibre.com.pe/blog/reviews/motorola-moto-g14
+                        - heading [level=2] [ref=e3726]: "Moto G14: ¡El smartphone que lo tiene todo!"
+                      - paragraph [ref=e3727]: El Motorola Moto G14 ha llegado al mercado para sorprender a los amantes de la tecnología móvil. Con un diseño elegante y funcionalidades innovadoras, este smartphone promete ser una excelente opción para aquellos que buscan rendimiento y versatilidad en un solo dispositivo. ¡Descubre todo lo que este increíble equipo tiene para ofrecer!
+                  - generic [ref=e3729]:
+                    - link [ref=e3730] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celulares-y-telefonos/1
+                      - paragraph [ref=e3732]: CELULARES Y TELEFONOS
+                    - link [ref=e3733] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/motorola/1
+                      - paragraph [ref=e3735]: MOTOROLA
+                    - link [ref=e3736] [cursor=pointer]:
+                      - /url: https://www.mercadolibre.com.pe/blog/celular/1
+                      - paragraph [ref=e3738]: CELULAR
+            - button "Siguiente" [ref=e3739] [cursor=pointer]:
+              - img [ref=e3740]
+        - generic [ref=e3743]:
+          - heading "Destacado en Celulares y Teléfonos" [level=3] [ref=e3745]
+          - generic [ref=e3746]:
+            - generic [ref=e3747]:
+              - heading "Iphone" [level=4] [ref=e3748]:
+                - link "Iphone" [ref=e3749] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/iphone#headterms
+              - list [ref=e3750]:
+                - listitem [ref=e3751]:
+                  - link "Iphone 11" [ref=e3752] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-11#headterms
+                - listitem [ref=e3753]:
+                  - link "Iphone 13" [ref=e3754] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-13#headterms
+                - listitem [ref=e3755]:
+                  - link "Iphone 14" [ref=e3756] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-14#headterms
+                - listitem [ref=e3757]:
+                  - link "Iphone 12" [ref=e3758] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-12#headterms
+                - listitem [ref=e3759]:
+                  - link "Iphone 13 pro" [ref=e3760] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-13-pro#headterms
+                - listitem [ref=e3761]:
+                  - link "Iphone 15" [ref=e3762] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-15#headterms
+                - listitem [ref=e3763]:
+                  - link "Iphone 16" [ref=e3764] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/iphone-16#headterms
+              - button "Ver todo" [ref=e3765] [cursor=pointer]:
+                - text: Ver todo
+                - img [ref=e3766]
+            - generic [ref=e3768]:
+              - heading "Samsung" [level=4] [ref=e3769]:
+                - link "Samsung" [ref=e3770] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/samsung#headterms
+              - list [ref=e3771]:
+                - listitem [ref=e3772]:
+                  - link "Samsung Galaxy S25" [ref=e3773] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-galaxy-s25#headterms
+                - listitem [ref=e3774]:
+                  - link "Samsung s25" [ref=e3775] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-s25#headterms
+                - listitem [ref=e3776]:
+                  - link "Samsung s24" [ref=e3777] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-s24#headterms
+                - listitem [ref=e3778]:
+                  - link "Samsung s23 ultra" [ref=e3779] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-s23-ultra#headterms
+                - listitem [ref=e3780]:
+                  - link "Samsung s21 ultra" [ref=e3781] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-s21-ultra#headterms
+                - listitem [ref=e3782]:
+                  - link "Galaxy s22 ultra" [ref=e3783] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/galaxy-s22-ultra#headterms
+                - listitem [ref=e3784]:
+                  - link "Samsung galaxy s23" [ref=e3785] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/samsung-galaxy-s23#headterms
+              - button "Ver todo" [ref=e3786] [cursor=pointer]:
+                - text: Ver todo
+                - img [ref=e3787]
+            - generic [ref=e3789]:
+              - heading "Motorola" [level=4] [ref=e3790]:
+                - link "Motorola" [ref=e3791] [cursor=pointer]:
+                  - /url: https://listado.mercadolibre.com.pe/motorola#headterms
+              - list [ref=e3792]:
+                - listitem [ref=e3793]:
+                  - link "Motorola g54" [ref=e3794] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/motorola-g54#headterms
+                - listitem [ref=e3795]:
+                  - link "Motorola Edge 40" [ref=e3796] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/motorola-edge-40#headterms
+                - listitem [ref=e3797]:
+                  - link "Motorola g86" [ref=e3798] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/moto-g86#headterms
+                - listitem [ref=e3799]:
+                  - link "Motorola edge 50 fusion" [ref=e3800] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/motorola-edge-50-fusion#headterms
+                - listitem [ref=e3801]:
+                  - link "Motorola g60" [ref=e3802] [cursor=pointer]:
+                    - /url: https://listado.mercadolibre.com.pe/motorola-g60#headterms
+  - generic [ref=e3805]:
+    - heading "Productos más buscados" [level=3] [ref=e3806]
+    - list [ref=e3807]:
+      - listitem [ref=e3808]:
+        - link "aire acondicionado portatil" [ref=e3809] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/aires-acondicionados-portatil
+        - text: "-"
+      - listitem [ref=e3810]:
+        - link "airpods" [ref=e3811] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/airpods
+        - text: "-"
+      - listitem [ref=e3812]:
+        - link "airpods pro" [ref=e3813] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/airpods-pro
+        - text: "-"
+      - listitem [ref=e3814]:
+        - link "airpods pro 2" [ref=e3815] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/airpods-pro-2
+        - text: "-"
+      - listitem [ref=e3816]:
+        - link "camaras de seguridad" [ref=e3817] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/camara-vigilancia
+        - text: "-"
+      - listitem [ref=e3818]:
+        - link "chromecast" [ref=e3819] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/chromecast
+        - text: "-"
+      - listitem [ref=e3820]:
+        - link "frigobar" [ref=e3821] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/frigobar
+        - text: "-"
+      - listitem [ref=e3822]:
+        - link "gopro" [ref=e3823] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/go-pro
+        - text: "-"
+      - listitem [ref=e3824]:
+        - link "grabadora de voz" [ref=e3825] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/grabador-voz
+        - text: "-"
+      - listitem [ref=e3826]:
+        - link "honor" [ref=e3827] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/honor
+        - text: "-"
+      - listitem [ref=e3828]:
+        - link "honor 8x" [ref=e3829] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/honor-x8
+        - text: "-"
+      - listitem [ref=e3830]:
+        - link "horno electrico" [ref=e3831] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/horno-electrico
+        - text: "-"
+      - listitem [ref=e3832]:
+        - link "iphone 8 plus" [ref=e3833] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-8-plus
+        - text: "-"
+      - listitem [ref=e3834]:
+        - link "iphone 10" [ref=e3835] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-10
+        - text: "-"
+      - listitem [ref=e3836]:
+        - link "iphone 11" [ref=e3837] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-11
+        - text: "-"
+      - listitem [ref=e3838]:
+        - link "iphone 11 pro" [ref=e3839] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-11-pro
+        - text: "-"
+      - listitem [ref=e3840]:
+        - link "iphone 11 pro max" [ref=e3841] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-11-pro-max
+        - text: "-"
+      - listitem [ref=e3842]:
+        - link "iphone 12 pro" [ref=e3843] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-12-pro
+        - text: "-"
+      - listitem [ref=e3844]:
+        - link "iphone 12 pro max" [ref=e3845] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-12-pro-max
+        - text: "-"
+      - listitem [ref=e3846]:
+        - link "iphone 13 pro" [ref=e3847] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-13-pro
+        - text: "-"
+      - listitem [ref=e3848]:
+        - link "iphone 13 pro max" [ref=e3849] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-13-pro-max
+        - text: "-"
+      - listitem [ref=e3850]:
+        - link "iphone 14" [ref=e3851] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-14
+        - text: "-"
+      - listitem [ref=e3852]:
+        - link "iphone 14 plus" [ref=e3853] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-14-plus
+        - text: "-"
+      - listitem [ref=e3854]:
+        - link "iphone 16" [ref=e3855] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-16
+        - text: "-"
+      - listitem [ref=e3856]:
+        - link "iphone 16 plus" [ref=e3857] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-16-plus
+        - text: "-"
+      - listitem [ref=e3858]:
+        - link "iphone 16 pro" [ref=e3859] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-16-pro
+        - text: "-"
+      - listitem [ref=e3860]:
+        - link "iphone 16 pro max" [ref=e3861] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-16-pro-max
+        - text: "-"
+      - listitem [ref=e3862]:
+        - link "iphone se" [ref=e3863] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-se
+        - text: "-"
+      - listitem [ref=e3864]:
+        - link "iphone xr" [ref=e3865] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-xr
+        - text: "-"
+      - listitem [ref=e3866]:
+        - link "iphone xs" [ref=e3867] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/iphone-xs
+        - text: "-"
+      - listitem [ref=e3868]:
+        - link "laptop gamer" [ref=e3869] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/laptop-gamer
+        - text: "-"
+      - listitem [ref=e3870]:
+        - link "licuadora" [ref=e3871] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/licuadora
+        - text: "-"
+      - listitem [ref=e3872]:
+        - link "macbook" [ref=e3873] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/macbook
+        - text: "-"
+      - listitem [ref=e3874]:
+        - link "microonda" [ref=e3875] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/microondas
+        - text: "-"
+      - listitem [ref=e3876]:
+        - link "nintendo switch" [ref=e3877] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/nintendo-switch
+        - text: "-"
+      - listitem [ref=e3878]:
+        - link "pc" [ref=e3879] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/pc
+        - text: "-"
+      - listitem [ref=e3880]:
+        - link "playstation 5" [ref=e3881] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/playstation-5
+        - text: "-"
+      - listitem [ref=e3882]:
+        - link "redmi 9" [ref=e3883] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/redmi-9
+        - text: "-"
+      - listitem [ref=e3884]:
+        - link "redmi note 10" [ref=e3885] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/xiaomi-redmi-note-10
+        - text: "-"
+      - listitem [ref=e3886]:
+        - link "redmi note 10 pro" [ref=e3887] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/xiaomi-redmi-note-10-pro
+        - text: "-"
+      - listitem [ref=e3888]:
+        - link "redmi note 11" [ref=e3889] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/celular-xiaomi-redmi-note-11
+        - text: "-"
+      - listitem [ref=e3890]:
+        - link "redmi note 11 pro" [ref=e3891] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/redmi-note-11-pro
+        - text: "-"
+      - listitem [ref=e3892]:
+        - link "redmi note 8" [ref=e3893] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/redmi-note-8
+        - text: "-"
+      - listitem [ref=e3894]:
+        - link "refrigerador lg" [ref=e3895] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/refrigerador-lg
+        - text: "-"
+      - listitem [ref=e3896]:
+        - link "roku" [ref=e3897] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/roku
+        - text: "-"
+      - listitem [ref=e3898]:
+        - link "rolex" [ref=e3899] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/rolex
+        - text: "-"
+      - listitem [ref=e3900]:
+        - link "samsung a53" [ref=e3901] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/samsung-a53
+        - text: "-"
+      - listitem [ref=e3902]:
+        - link "samsung s21 ultra" [ref=e3903] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/samsung-s21-ultra
+        - text: "-"
+      - listitem [ref=e3904]:
+        - link "samsung s22 ultra" [ref=e3905] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/samsung-s22-ultra
+        - text: "-"
+      - listitem [ref=e3906]:
+        - link "silla gamer" [ref=e3907] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/silla-gamer
+        - text: "-"
+      - listitem [ref=e3908]:
+        - link "smartwatch" [ref=e3909] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/smart-watch
+        - text: "-"
+      - listitem [ref=e3910]:
+        - link "televisores" [ref=e3911] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/televisores
+        - text: "-"
+      - listitem [ref=e3912]:
+        - link "xiaomi 11t pro" [ref=e3913] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/xiaomi-mi-11t-pro
+        - text: "-"
+      - listitem [ref=e3914]:
+        - link "xiaomi 12 pro" [ref=e3915] [cursor=pointer]:
+          - /url: https://listado.mercadolibre.com.pe/xiaomi-12-pro
+  - generic [ref=e3918]:
+    - heading "Buscar productos por letra inicial" [level=3] [ref=e3919]
+    - list "Buscar productos por letra inicial" [ref=e3921]:
+      - listitem [ref=e3922]:
+        - link "Buscar productos por letra inicial A" [ref=e3923] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/A/1
+          - text: A
+      - listitem [ref=e3924]: "-"
+      - listitem [ref=e3925]:
+        - link "Buscar productos por letra inicial B" [ref=e3926] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/B/1
+          - text: B
+      - listitem [ref=e3927]: "-"
+      - listitem [ref=e3928]:
+        - link "Buscar productos por letra inicial C" [ref=e3929] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/C/1
+          - text: C
+      - listitem [ref=e3930]: "-"
+      - listitem [ref=e3931]:
+        - link "Buscar productos por letra inicial D" [ref=e3932] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/D/1
+          - text: D
+      - listitem [ref=e3933]: "-"
+      - listitem [ref=e3934]:
+        - link "Buscar productos por letra inicial E" [ref=e3935] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/E/1
+          - text: E
+      - listitem [ref=e3936]: "-"
+      - listitem [ref=e3937]:
+        - link "Buscar productos por letra inicial F" [ref=e3938] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/F/1
+          - text: F
+      - listitem [ref=e3939]: "-"
+      - listitem [ref=e3940]:
+        - link "Buscar productos por letra inicial G" [ref=e3941] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/G/1
+          - text: G
+      - listitem [ref=e3942]: "-"
+      - listitem [ref=e3943]:
+        - link "Buscar productos por letra inicial H" [ref=e3944] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/H/1
+          - text: H
+      - listitem [ref=e3945]: "-"
+      - listitem [ref=e3946]:
+        - link "Buscar productos por letra inicial I" [ref=e3947] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/I/1
+          - text: I
+      - listitem [ref=e3948]: "-"
+      - listitem [ref=e3949]:
+        - link "Buscar productos por letra inicial J" [ref=e3950] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/J/1
+          - text: J
+      - listitem [ref=e3951]: "-"
+      - listitem [ref=e3952]:
+        - link "Buscar productos por letra inicial K" [ref=e3953] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/K/1
+          - text: K
+      - listitem [ref=e3954]: "-"
+      - listitem [ref=e3955]:
+        - link "Buscar productos por letra inicial L" [ref=e3956] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/L/1
+          - text: L
+      - listitem [ref=e3957]: "-"
+      - listitem [ref=e3958]:
+        - link "Buscar productos por letra inicial M" [ref=e3959] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/M/1
+          - text: M
+      - listitem [ref=e3960]: "-"
+      - listitem [ref=e3961]:
+        - link "Buscar productos por letra inicial N" [ref=e3962] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/N/1
+          - text: "N"
+      - listitem [ref=e3963]: "-"
+      - listitem [ref=e3964]:
+        - link "Buscar productos por letra inicial O" [ref=e3965] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/O/1
+          - text: O
+      - listitem [ref=e3966]: "-"
+      - listitem [ref=e3967]:
+        - link "Buscar productos por letra inicial P" [ref=e3968] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/P/1
+          - text: P
+      - listitem [ref=e3969]: "-"
+      - listitem [ref=e3970]:
+        - link "Buscar productos por letra inicial Q" [ref=e3971] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/Q/1
+          - text: Q
+      - listitem [ref=e3972]: "-"
+      - listitem [ref=e3973]:
+        - link "Buscar productos por letra inicial R" [ref=e3974] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/R/1
+          - text: R
+      - listitem [ref=e3975]: "-"
+      - listitem [ref=e3976]:
+        - link "Buscar productos por letra inicial S" [ref=e3977] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/S/1
+          - text: S
+      - listitem [ref=e3978]: "-"
+      - listitem [ref=e3979]:
+        - link "Buscar productos por letra inicial T" [ref=e3980] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/T/1
+          - text: T
+      - listitem [ref=e3981]: "-"
+      - listitem [ref=e3982]:
+        - link "Buscar productos por letra inicial U" [ref=e3983] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/U/1
+          - text: U
+      - listitem [ref=e3984]: "-"
+      - listitem [ref=e3985]:
+        - link "Buscar productos por letra inicial V" [ref=e3986] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/V/1
+          - text: V
+      - listitem [ref=e3987]: "-"
+      - listitem [ref=e3988]:
+        - link "Buscar productos por letra inicial W" [ref=e3989] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/W/1
+          - text: W
+      - listitem [ref=e3990]: "-"
+      - listitem [ref=e3991]:
+        - link "Buscar productos por letra inicial X" [ref=e3992] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/X/1
+          - text: X
+      - listitem [ref=e3993]: "-"
+      - listitem [ref=e3994]:
+        - link "Buscar productos por letra inicial Y" [ref=e3995] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/Y/1
+          - text: "Y"
+      - listitem [ref=e3996]: "-"
+      - listitem [ref=e3997]:
+        - link "Buscar productos por letra inicial Z" [ref=e3998] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/glossary/Z/1
+          - text: Z
+  - generic:
+    - heading "Más información " [level=2]:
+      - button "Más información " [ref=e3999] [cursor=pointer]:
+        - text: Más información
+        - generic [ref=e4000]: 
+  - contentinfo [ref=e4001]:
+    - generic [ref=e4003]:
+      - generic [ref=e4004]:
+        - generic [ref=e4005]: Copyright © 1999-2026 MercadoLibre Perú S.R.L.
+        - navigation [ref=e4006]:
+          - list [ref=e4007]:
+            - listitem [ref=e4008]:
+              - link "Trabaja con nosotros" [ref=e4009] [cursor=pointer]:
+                - /url: https://careers-meli.mercadolibre.com/?utm_campaign=site-mpe&utm_source=mercadolibre&utm_medium=mercadolibre
+            - listitem [ref=e4010]:
+              - link "Términos y condiciones" [ref=e4011] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/ayuda/terminos-condiciones-uso-pe_2280
+            - listitem [ref=e4012]:
+              - link "Promociones" [ref=e4013] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/l/promociones
+            - listitem [ref=e4014]:
+              - link "Cómo cuidamos tu privacidad" [ref=e4015] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/privacidad
+            - listitem [ref=e4016]:
+              - link "Accesibilidad" [ref=e4017] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/accesibilidad
+            - listitem [ref=e4018]:
+              - link "Ayuda" [ref=e4019] [cursor=pointer]:
+                - /url: https://www.mercadolibre.com.pe/ayuda
+      - paragraph [ref=e4020]: Avenida Victor Andrés Belaunde N°332 oficina 702, San Isidro, Lima, Perú.
+    - link "Mercado Libre" [ref=e4021] [cursor=pointer]:
+      - /url: https://hp.mercadolibre.com/?p=ML&s=MPE&d=desktop
+  - region [ref=e4022]:
+    - generic [ref=e4023]:
+      - paragraph [ref=e4025]:
+        - text: Usamos cookies para mejorar tu experiencia en Mercado Libre. Consultar más en nuestro
+        - link "Centro de Privacidad." [ref=e4026] [cursor=pointer]:
+          - /url: https://www.mercadolibre.com.pe/privacidad#tech-and-cookies
+      - generic [ref=e4027]:
+        - button "Aceptar cookies" [ref=e4028] [cursor=pointer]
+        - button "Configurar cookies" [ref=e4029] [cursor=pointer]
+  - tooltip "Conoce el envío a tu ubicación Agrega tu dirección para ver costos y tiempos de entrega precisos en tu búsqueda. Agregar ubicación Más tarde" [ref=e4032]:
+    - generic [ref=e4034]:
+      - heading "Conoce el envío a tu ubicación" [level=2] [ref=e4035]
+      - generic [ref=e4036]: Agrega tu dirección para ver costos y tiempos de entrega precisos en tu búsqueda.
+      - generic [ref=e4037]:
+        - button "Agregar ubicación" [ref=e4038] [cursor=pointer]:
+          - generic [ref=e4039]: Agregar ubicación
+        - button "Más tarde" [ref=e4040] [cursor=pointer]:
+          - generic [ref=e4041]: Más tarde
+```
+
+# Test source
+
+```ts
+  19  |     // Si no está logueado, hacer login automático
+  20  |     console.log('⚠️ No estás logueado. Intentando login automático...');
+  21  |     
+  22  |     // Hacer clic en "Ingresar"
+  23  |     await page.click('a:has-text("Ingresar")');
+  24  |     await page.waitForSelector('input#user_id', { timeout: 15000 });
+  25  |     
+  26  |     // Usar credenciales de .env
+  27  |     const email = process.env.ML_EMAIL;
+  28  |     const password = process.env.ML_PASSWORD;
+  29  |     
+  30  |     if (!email || !password) {
+  31  |       throw new Error('❌ Credenciales no encontradas en .env. Verifica el archivo.');
+  32  |     }
+  33  |     
+  34  |     await page.fill('input#user_id', email);
+  35  |     await page.click('button:has-text("Continuar")');
+  36  |     
+  37  |     await page.waitForSelector('input#password', { timeout: 15000 });
+  38  |     await page.fill('input#password', password);
+  39  |     await page.click('button:has-text("Ingresar")');
+  40  |     
+  41  |     // Esperar login
+  42  |     await page.waitForTimeout(3000);
+  43  |     await expect(page.locator('.nav-header-user')).toBeVisible({ timeout: 15000 });
+  44  |     console.log('✅ Login automático exitoso');
+  45  |     
+  46  |   } catch (error) {
+  47  |     console.error('Error en login:', error);
+  48  |     throw error;
+  49  |   }
+  50  | }
+  51  | 
+  52  | // Modulo con las pruebas relacionadas con búsquedas
+  53  |     test('TC-001: Buscar producto genérico (Laptop Lenovo)', async ({ page }) => {
+  54  |         await page.goto('https://www.mercadolibre.com.pe/');
+  55  |         //Se busca el termino
+  56  |         const terminoBusqueda = 'Laptop Lenovo';
+  57  |         await page.locator('input[id="cb1-edit"]').fill(terminoBusqueda);
+  58  |         await page.keyboard.press('Enter');
+  59  |         //Resultados cargados 
+  60  |         const contenedorResultados = page.locator('ol.ui-search-layout');
+  61  |         await expect(contenedorResultados).toBeVisible({ timeout: 15000 });
+  62  |         //Capturas resultados de todos los titulos
+  63  |         const elementosTitulo = page.locator('.poly-component__title');
+  64  |         const primerTitulo = await elementosTitulo.first().innerText();
+  65  |         console.log(`El primer resultado es: "${primerTitulo}"`);
+  66  |         //Verificación
+  67  |         expect(primerTitulo.toLowerCase()).toMatch(/lenovo/);
+  68  |     });
+  69  | 
+  70  |     test('TC-002: Búsqueda sin coincidencias', async ({ page }) => {
+  71  |     await page.goto('https://www.mercadolibre.com.pe/');
+  72  | 
+  73  |     // Se busca un termino destinado a fallar
+  74  |     await page.locator('input[id="cb1-edit"]').fill('laptopinexistente99996434');
+  75  |     await page.keyboard.press('Enter');
+  76  | 
+  77  |     const mensajeError = page.locator('.ui-search-rescue__title'); 
+  78  |     
+  79  |     // Verificación de que el mensaje de error es visible y contiene el texto esperado
+  80  |     await expect(mensajeError).toBeVisible({ timeout: 10000 });
+  81  |     
+  82  |     // Corroboración de que el mensaje contiene el texto esperado
+  83  |     await expect(mensajeError).toContainText('No encontramos resultados para tu búsqueda');
+  84  |   });
+  85  | 
+  86  |   
+  87  |   test('TC-003: Validación cruzada de Filtros de Precio', async ({ page }) => {
+  88  |   // Configurar timeout de la prueba
+  89  |   test.setTimeout(90000);
+  90  |   
+  91  |   // Navegar con timeout extendido
+  92  |   await page.goto('https://www.mercadolibre.com.pe/', { 
+  93  |     timeout: 60000 
+  94  |   });
+  95  |   
+  96  |   // Realizar búsqueda
+  97  |   await page.getByRole('combobox', { name: 'Ingresa lo que quieras' }).fill('celular');
+  98  |   await page.keyboard.press('Enter');
+  99  |   
+  100 |   // Esperar resultados con timeout extendido
+  101 |   await expect(page.locator('ol.ui-search-layout')).toBeVisible({ 
+  102 |     timeout: 30000 
+  103 |   });
+  104 |   
+  105 |   // Esperar filtros
+  106 |   const minPrice = page.getByTestId('Minimum-price');
+  107 |   await expect(minPrice).toBeVisible({ timeout: 15000 });
+  108 |   
+  109 |   // Llenar filtros
+  110 |   await minPrice.click();
+  111 |   await minPrice.clear();
+  112 |   await minPrice.fill('2500');
+  113 |   
+  114 |   await page.getByTestId('Maximum-price').click();
+  115 |   await page.getByTestId('Maximum-price').clear();
+  116 |   await page.getByTestId('Maximum-price').fill('4500');
+  117 |   
+  118 |   // 🔥 CORREGIDO: Hacer clic en el botón ">" (flecha para aplicar)
+> 119 |   await page.getByTestId('ui-search-range-filter__text-submit-test').click();
+      |                                                                      ^ Error: locator.click: Error: strict mode violation: getByTestId('ui-search-range-filter__text-submit-test') resolved to 6 elements:
+  120 |   
+  121 |   // Esperar a que se aplique el filtro
+  122 |   await page.waitForTimeout(3000);
+  123 |   
+  124 |   // Verificar URL con el rango de precios
+  125 |   await expect(page).toHaveURL(/.*PriceRange_2500-4500.*/, { 
+  126 |     timeout: 30000 
+  127 |   });
+  128 |   
+  129 |   // Verificar que hay resultados
+  130 |   await expect(page.locator('.ui-search-result__content').first()).toBeVisible({ 
+  131 |     timeout: 10000 
+  132 |   });
+  133 | });
+  134 | 
+  135 |   test('TC-004: Inyección de caracteres especiales (XSS)', async ({ page }) => {
+  136 |   await page.goto('https://www.mercadolibre.com.pe/');
+  137 |   
+  138 |   // Caracteres especiales
+  139 |   await page.locator('input[id="cb1-edit"]').fill("&%");
+  140 |   await page.keyboard.press('Enter');
+  141 | 
+  142 |   // Validar que se muestre el mensaje de "No encontramos resultados"
+  143 |   const mensajeError = page.locator('.ui-search-rescue__title'); 
+  144 |   await expect(mensajeError).toBeVisible({ timeout: 10000 });
+  145 |   await expect(mensajeError).toContainText('No encontramos resultados para tu búsqueda');
+  146 | });
+  147 |   
+  148 |   test('TC-005: Procesamiento de Filtros Simultáneos', async ({ page }) => {
+  149 |   await page.goto('https://www.mercadolibre.com.pe/');
+  150 |   await page.locator('input[id="cb1-edit"]').fill('Audifonos Bluetooth');
+  151 |   await page.keyboard.press('Enter');
+  152 |   
+  153 |   // Esperar que carguen los resultados
+  154 |   await expect(page.locator('.ui-search-layout')).toBeVisible({ timeout: 15000 });
+  155 |   
+  156 |   // Aplicar filtros
+  157 |   await page.getByRole('link', { name: 'Negro', exact: true }).click(); 
+  158 |   await page.getByRole('link', { name: 'Es inalámbrico', description: 'Es inalámbrico' }).click();
+  159 |   
+  160 |   await page.waitForTimeout(2000);
+  161 |   
+  162 |   // Validamos las etiquetas de filtros aplicados
+  163 |   const etiquetasAplicadas = page.locator('.andes-tag');
+  164 |   await expect(etiquetasAplicadas).toHaveCount(2, { timeout: 15000 });
+  165 | });
+  166 | 
+  167 |   test('TC-006: Agregar producto al carrito', async ({ page }) => {
+  168 |     await page.goto('https://www.mercadolibre.com.pe/');
+  169 |     await page.locator('input[id="cb1-edit"]').fill('Teclado gamer');
+  170 |     await page.keyboard.press('Enter');
+  171 |     await expect(page.locator('.ui-search-layout')).toBeVisible({ timeout: 15000 });
+  172 | 
+  173 |     // Entramos al primer producto de la lista
+  174 |     await page.locator('.poly-component__title').first().click();
+  175 | 
+  176 |     // Agregamos al carrito
+  177 |     await page.locator('button', { hasText: 'Agregar al carrito' }).click();
+  178 | 
+  179 |     // Validamos que nos mande a la ruta de carrito
+  180 |     await expect(page).toHaveURL(/.*cart.*/, { timeout: 15000 });
+  181 |   });
+  182 | 
+  183 | 
+  184 |   test('TC-007: Límite superior de stock', async ({ page }) => {
+  185 |   test.setTimeout(180000);
+  186 |   
+  187 |   console.log('🚀 Iniciando prueba de stock...');
+  188 |   
+  189 |   // PASO 1: Intentar login automático
+  190 |   await page.goto('https://www.mercadolibre.com.pe/');
+  191 |   
+  192 |   // Verificar si ya está logueado
+  193 |   const isLoggedIn = await page.locator('.nav-header-user').isVisible().catch(() => false);
+  194 |   
+  195 |   if (!isLoggedIn) {
+  196 |     console.log('⚠️ No estás logueado. Intentando login automático...');
+  197 |     
+  198 |     try {
+  199 |       // Intentar login automático
+  200 |       await page.click('a:has-text("Ingresar")');
+  201 |       await page.waitForSelector('input#user_id', { timeout: 10000 });
+  202 |       
+  203 |       const email = process.env.ML_EMAIL;
+  204 |       const password = process.env.ML_PASSWORD;
+  205 |       
+  206 |       await page.fill('input#user_id', email);
+  207 |       await page.click('button:has-text("Continuar")');
+  208 |       
+  209 |       await page.waitForSelector('input#password', { timeout: 10000 });
+  210 |       await page.fill('input#password', password);
+  211 |       await page.click('button:has-text("Ingresar")');
+  212 |       
+  213 |       // Esperar y verificar si hay captcha
+  214 |       await page.waitForTimeout(3000);
+  215 |       
+  216 |       // Verificar si apareció captcha
+  217 |       const hasCaptcha = await page.locator('iframe[src*="captcha"]').isVisible().catch(() => false);
+  218 |       
+  219 |       if (hasCaptcha) {
+```
