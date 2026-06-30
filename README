@@ -1,7 +1,7 @@
 ## Laboratorio de AUTOMATIZACIÓN E2E CON PLAYWRIGHT - Mercado Libre Perú
 * **Nombres:** Grissel Arascely Rodríguez Quispe,  Carrillo Cardenas Luis Rene
 * **Sistema Bajo Prueba:** Mercado Libre Perú 
-- **Entorno:** VS Code + Node.js + ESLint
+- **Entorno:** VS Code + Node.js + playwrigh
 
 ## 1. Configuración y Optimización del Entorno de Pruebas
 Durante la etapa inicial de construcción del script, se identificaron inestabilidades (*flaky tests*) al ejecutar las pruebas en múltiples motores de navegación simultáneamente. Para optimizar el flujo de desarrollo y depuración, se realizaron los siguientes ajustes:
@@ -57,7 +57,7 @@ Se automatizó el primer flujo crítico del sistema, reemplazando los datos de e
 - La validación consistió en:
   - Comprobar la actualización de la URL con el método `toHaveURL()`.
   - Verificar la presencia visual del **tag de filtrado** en la interfaz, confirmando que el sistema refleja los cambios aplicados.
-
+  - Complicaciones en la prueba al no poder verificar con el boton de aplicar filtros. Por lo que genera un error en la búsqueda.
 ---
 
 ### TC-004: Inyección de caracteres especiales (Prueba de Seguridad / XSS)
@@ -98,3 +98,12 @@ Se automatizó el primer flujo crítico del sistema, reemplazando los datos de e
 **Implementación:**
 - Dentro de la vista de producto, se alteró el selector de cantidad para solicitar un número irracionalmente alto (ej. **9999 unidades**).
 - Se verificó que el sistema **bloquee la acción** o muestre el mensaje de error correspondiente a la falta de stock, gestionando adecuadamente el límite de inventario disponible.
+- Dificil de corroborar, requiere iniciar sesión. Se guardo la sesión y contraseña con :".env" y aun que  me loguee hay cambios en cada inicio de sesión como verificar en 2 pasos, desbloquear capcha que hace mas complicado la prueba.
+
+## Casos de uso del TC-008 al TC-014
+
+https://github.com/Luis159-ui/Tarea-guia7
+
+
+
+
