@@ -1,3 +1,8 @@
+## Laboratorio de AUTOMATIZACIÓN E2E CON PLAYWRIGHT - Mercado Libre Perú
+* **Nombres:** Grissel Arascely Rodríguez Quispe,  Carrillo Cardenas Luis Rene
+* **Sistema Bajo Prueba:** Mercado Libre Perú 
+- **Entorno:** VS Code + Node.js + playwrigh
+
 ## 1. Configuración y Optimización del Entorno de Pruebas
 Durante la etapa inicial de construcción del script, se identificaron inestabilidades (*flaky tests*) al ejecutar las pruebas en múltiples motores de navegación simultáneamente. Para optimizar el flujo de desarrollo y depuración, se realizaron los siguientes ajustes:
 
@@ -7,15 +12,16 @@ Durante la etapa inicial de construcción del script, se identificaron inestabil
 ## 2. Estructuración del Proyecto
 Se estableció una arquitectura escalable para alojar la matriz de casos de prueba. En lugar de generar scripts aislados, se creó el archivo `mercado-libre.spec.ts` utilizando el bloque `test.describe('Búsquedas en Mercado Libre', () => { ... })`. Esta práctica de agrupación permite mantener el código ordenado y ejecutar funcionalidades completas por lotes.
 
-# Informe de Aseguramiento de Calidad - Lab_03_Guia_2
-
-## 1. Introducción y Datos
-- **Estudiante:** Grissel Arascely Rodríguez Quispe
-- **Proyecto:** Lab_03_Guia_2 - Aseguramiento de Calidad
-- **Entorno:** VS Code + Node.js + ESLint
-
-## 2. Fase de Identificación (Rama qa)
-En esta fase se utilizó ESLint para detectar defectos técnicos antes de cualquier corrección.
+| ID     | Módulo           | Nombre del Caso                          | Estado  |
+|--------|------------------|------------------------------------------|---------|
+| TC-001 | Búsqueda/Filtros | Búsqueda exitosa con término genérico    | ✅ PASS |
+| TC-002 | Búsqueda/Filtros | Búsqueda sin coincidencias               | ✅ PASS |
+| TC-003 | Búsqueda/Filtros | Validación cruzada de Filtros de Precio  | 🔴 FAIL |
+| TC-004 | Búsqueda/Filtros | Inyección de caracteres especiales       | ✅ PASS |
+| TC-004 | Búsqueda/Filtros | Inyección de caracteres especiales       | ✅ PASS |
+| TC-005 | Búsqueda/Filtros | Procesamiento de Filtros Simultáneos     | ✅ PASS |
+| TC-006 | Carrito          | Agregar producto al carrito              | ✅ PASS |
+| TC-007 | Carrito          | Límite superior de stock                 | 🔴 FAIL |
 
 ---
 
@@ -51,7 +57,7 @@ Se automatizó el primer flujo crítico del sistema, reemplazando los datos de e
 - La validación consistió en:
   - Comprobar la actualización de la URL con el método `toHaveURL()`.
   - Verificar la presencia visual del **tag de filtrado** en la interfaz, confirmando que el sistema refleja los cambios aplicados.
-
+  - Complicaciones en la prueba al no poder verificar con el boton de aplicar filtros. Por lo que genera un error en la búsqueda.
 ---
 
 ### TC-004: Inyección de caracteres especiales (Prueba de Seguridad / XSS)
@@ -92,3 +98,12 @@ Se automatizó el primer flujo crítico del sistema, reemplazando los datos de e
 **Implementación:**
 - Dentro de la vista de producto, se alteró el selector de cantidad para solicitar un número irracionalmente alto (ej. **9999 unidades**).
 - Se verificó que el sistema **bloquee la acción** o muestre el mensaje de error correspondiente a la falta de stock, gestionando adecuadamente el límite de inventario disponible.
+- Dificil de corroborar, requiere iniciar sesión. Se guardo la sesión y contraseña con :".env" y aun que  me loguee hay cambios en cada inicio de sesión como verificar en 2 pasos, desbloquear capcha que hace mas complicado la prueba.
+
+## Casos de uso del TC-008 al TC-014
+
+https://github.com/Luis159-ui/Tarea-guia7
+
+
+
+
