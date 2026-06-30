@@ -1,3 +1,8 @@
+## Laboratorio de AUTOMATIZACIÓN E2E CON PLAYWRIGHT - Mercado Libre Perú
+* **Nombres:** Grissel Arascely Rodríguez Quispe,  Carrillo Cardenas Luis Rene
+* **Sistema Bajo Prueba:** Mercado Libre Perú 
+- **Entorno:** VS Code + Node.js + ESLint
+
 ## 1. Configuración y Optimización del Entorno de Pruebas
 Durante la etapa inicial de construcción del script, se identificaron inestabilidades (*flaky tests*) al ejecutar las pruebas en múltiples motores de navegación simultáneamente. Para optimizar el flujo de desarrollo y depuración, se realizaron los siguientes ajustes:
 
@@ -7,15 +12,16 @@ Durante la etapa inicial de construcción del script, se identificaron inestabil
 ## 2. Estructuración del Proyecto
 Se estableció una arquitectura escalable para alojar la matriz de casos de prueba. En lugar de generar scripts aislados, se creó el archivo `mercado-libre.spec.ts` utilizando el bloque `test.describe('Búsquedas en Mercado Libre', () => { ... })`. Esta práctica de agrupación permite mantener el código ordenado y ejecutar funcionalidades completas por lotes.
 
-# Informe de Aseguramiento de Calidad - Lab_03_Guia_2
-
-## 1. Introducción y Datos
-- **Estudiante:** Grissel Arascely Rodríguez Quispe
-- **Proyecto:** Lab_03_Guia_2 - Aseguramiento de Calidad
-- **Entorno:** VS Code + Node.js + ESLint
-
-## 2. Fase de Identificación (Rama qa)
-En esta fase se utilizó ESLint para detectar defectos técnicos antes de cualquier corrección.
+| ID     | Módulo           | Nombre del Caso                          | Estado  |
+|--------|------------------|------------------------------------------|---------|
+| TC-001 | Búsqueda/Filtros | Búsqueda exitosa con término genérico    | ✅ PASS |
+| TC-002 | Búsqueda/Filtros | Búsqueda sin coincidencias               | ✅ PASS |
+| TC-003 | Búsqueda/Filtros | Validación cruzada de Filtros de Precio  | 🔴 FAIL |
+| TC-004 | Búsqueda/Filtros | Inyección de caracteres especiales       | ✅ PASS |
+| TC-004 | Búsqueda/Filtros | Inyección de caracteres especiales       | ✅ PASS |
+| TC-005 | Búsqueda/Filtros | Procesamiento de Filtros Simultáneos     | ✅ PASS |
+| TC-006 | Carrito          | Agregar producto al carrito              | ✅ PASS |
+| TC-007 | Carrito          | Límite superior de stock                 | 🔴 FAIL |
 
 ---
 
