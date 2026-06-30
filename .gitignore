@@ -1,0 +1,9 @@
+node_modules/
+blob-report
+playwright/.cache/
+playwright/.auth/
+playwright/data/
+playwright.config.ts
+.env
+package-lock.json
+package.json

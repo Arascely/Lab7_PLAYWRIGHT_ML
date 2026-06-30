@@ -1,0 +1,94 @@
+## 1. Configuración y Optimización del Entorno de Pruebas
+Durante la etapa inicial de construcción del script, se identificaron inestabilidades (*flaky tests*) al ejecutar las pruebas en múltiples motores de navegación simultáneamente. Para optimizar el flujo de desarrollo y depuración, se realizaron los siguientes ajustes:
+
+- **Aislamiento de Navegador:** Se modificó el archivo `playwright.config.ts` para ejecutar las pruebas exclusivamente en el motor **Chromium**, comentando temporalmente WebKit y Firefox.
+- **Depuración Visual:** Se implementó la bandera `--headed` en la terminal (`npx playwright test --headed`) para renderizar el navegador y observar el comportamiento del script en tiempo real, facilitando la identificación de bloqueos por pop-ups o tiempos de carga.
+
+## 2. Estructuración del Proyecto
+Se estableció una arquitectura escalable para alojar la matriz de casos de prueba. En lugar de generar scripts aislados, se creó el archivo `mercado-libre.spec.ts` utilizando el bloque `test.describe('Búsquedas en Mercado Libre', () => { ... })`. Esta práctica de agrupación permite mantener el código ordenado y ejecutar funcionalidades completas por lotes.
+
+# Informe de Aseguramiento de Calidad - Lab_03_Guia_2
+
+## 1. Introducción y Datos
+- **Estudiante:** Grissel Arascely Rodríguez Quispe
+- **Proyecto:** Lab_03_Guia_2 - Aseguramiento de Calidad
+- **Entorno:** VS Code + Node.js + ESLint
+
+## 2. Fase de Identificación (Rama qa)
+En esta fase se utilizó ESLint para detectar defectos técnicos antes de cualquier corrección.
+
+---
+
+## 3. Desarrollo de los casos de uso
+
+### TC-001: Búsqueda exitosa con término genérico
+Se automatizó el primer flujo crítico del sistema, reemplazando los datos de ejemplo por un escenario de búsqueda realista de hardware tecnológico utilizando el término **"Laptop Lenovo"**.
+
+**Pasos realizados:**
+- **Inspección del DOM (F12):** Se identificaron selectores únicos y robustos para garantizar la estabilidad de las pruebas:
+  - **Barra de búsqueda:** `input[id="cb1-edit"]`
+  - **Contenedor de la grilla de productos:** `.ui-search-layout`
+  - **Títulos de los productos:** `.poly-component__title`
+- **Interacción con el usuario:** Se simuló el tipeo natural mediante el método `.fill()` y se ejecutó la búsqueda capturando el evento del teclado con `await page.keyboard.press('Enter')`.
+- **Validación:** Se capturó el primer elemento del listado utilizando `.first().innerText()` para confirmar que los resultados se muestran correctamente.
+
+---
+
+### TC-002: Búsqueda sin coincidencias
+**Objetivo:** Evaluar la gestión de errores del sistema ante consultas que no arrojan resultados.
+
+**Implementación:**
+- Se inyectó una cadena alfanumérica sin coincidencias en el campo de búsqueda.
+- Se validó que el sistema muestre correctamente el **componente de rescate** (`.ui-search-rescue__title`) junto con el mensaje esperado, asegurando que la ejecución no genere errores inesperados.
+
+---
+
+### TC-003: Validación cruzada de filtros de precio
+**Objetivo:** Confirmar que los filtros de precio aplican correctamente los rangos establecidos por el usuario.
+
+**Implementación:**
+- Se manipularon los campos de **precio mínimo** y **precio máximo** utilizando sus respectivos `data-testid`.
+- La validación consistió en:
+  - Comprobar la actualización de la URL con el método `toHaveURL()`.
+  - Verificar la presencia visual del **tag de filtrado** en la interfaz, confirmando que el sistema refleja los cambios aplicados.
+
+---
+
+### TC-004: Inyección de caracteres especiales (Prueba de Seguridad / XSS)
+**Objetivo:** Verificar la robustez y seguridad del input de búsqueda ante intentos de inyección de código (*Cross-Site Scripting*).
+
+**Implementación:**
+- Se simuló el ingreso de etiquetas HTML/JavaScript en la barra de búsqueda:  
+  `<script>alert('hack')</script>`
+- Se validó que el backend de Mercado Libre **sanitice** correctamente el *string*, evitando la ejecución del script malicioso.
+- Como resultado esperado, se comprobó que el sistema retorna el componente visual de **"Búsqueda sin coincidencias"**, demostrando que la entrada es tratada de forma segura.
+
+---
+
+### TC-005: Procesamiento de filtros simultáneos
+**Objetivo:** Comprobar la estabilidad del motor de búsqueda al anidar múltiples parámetros de exclusión.
+
+**Implementación:**
+- Sobre una búsqueda activa, se aplicaron filtros combinados, por ejemplo:
+  - **Condición:** Nuevo
+  - **Costo de envío:** Gratis
+- La validación verificó que el sistema **apile ambos tags** en la interfaz sin perder el estado de la búsqueda principal, garantizando que la experiencia del usuario sea coherente.
+
+---
+
+### TC-006: Agregar producto al carrito
+**Objetivo:** Validar la navegación hacia la página de Detalle de Producto (PDP) y la interacción con la funcionalidad de carrito.
+
+**Implementación:**
+- El script extrajo dinámicamente el **primer resultado** de la grilla de productos.
+- Navegó a su vista de detalle y ejecutó un clic en el botón **"Agregar al carrito"**.
+- Se validó la aparición de la **confirmación de agregado** en el DOM, asegurando que el producto se haya añadido correctamente.
+
+---
+
+### TC-007: Límite superior de stock (Análisis de valores límite)
+**Objetivo:** Evaluar el manejo de excepciones cuando el usuario solicita una cantidad que excede el inventario físico (*Boundary Value Analysis*).
+
+**Implementación:**
+- Dentro de la vista de producto, se alteró el selector de cantidad para solicitar un número irracionalmente alto (ej. **9999 unidades**).
+- Se verificó que el sistema **bloquee la acción** o muestre el mensaje de error correspondiente a la falta de stock, gestionando adecuadamente el límite de inventario disponible.
